@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/identify_leader.md
+name: projects/bad_influence/identify_leader.md
 type: noResponse
 ---
 

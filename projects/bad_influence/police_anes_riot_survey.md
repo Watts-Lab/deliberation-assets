@@ -1,5 +1,5 @@
 ---
-name: projects/bad_influence/police_riot_survey.md
+name: projects/bad_influence/police_anes_riot_survey.md
 type: multipleChoice
 ---
 

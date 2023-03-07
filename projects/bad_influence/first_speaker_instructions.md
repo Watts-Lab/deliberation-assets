@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/first_speaker_instructions.md
+name: projects/bad_influence/first_speaker_instructions.md
 type: noResponse
 ---
 

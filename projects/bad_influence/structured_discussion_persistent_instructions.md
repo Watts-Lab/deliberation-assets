@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/structured_discussion_persistent_instructions.md
+name: projects/bad_influence/structured_discussion_persistent_instructions.md
 type: noResponse
 ---
 

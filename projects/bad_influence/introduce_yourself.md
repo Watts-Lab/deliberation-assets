@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/introduce_yourself.md
+name: projects/bad_influence/introduce_yourself.md
 type: noResponse
 ---
 

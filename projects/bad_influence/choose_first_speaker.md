@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/choose_first_speaker.md
+name: projects/bad_influence/choose_first_speaker.md
 type: noResponse
 ---
 

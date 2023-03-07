@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/group_free_discussion.md
+name: projects/bad_influence/group_free_discussion.md
 type: noResponse
 ---
 

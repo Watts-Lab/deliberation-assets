@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/persistent_instructions.md
+name: projects/bad_influence/initial_instructions.md
 type: noResponse
 ---
 

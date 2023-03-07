@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/pre_instructions_assigned_leader.md
+name: projects/bad_influence/pre_instructions_assigned_leader.md
 type: noResponse
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: projects/policing_2020/new_discussion_question_header_racism.md
+name: projects/bad_influence/new_discussion_question_header_racism.md
 type: noResponse
 ---
 
