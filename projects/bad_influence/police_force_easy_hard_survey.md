@@ -9,8 +9,8 @@ type: multipleChoice
 
 - Much easier
 - Easier
-- Somewhat easier
+- A little bit easier
 - Neither easier nor harder
-- Somewhat harder
+- A little bit harder
 - Harder
 - Much harder

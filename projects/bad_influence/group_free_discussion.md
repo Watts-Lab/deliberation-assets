@@ -3,7 +3,7 @@ name: projects/bad_influence/group_free_discussion.md
 type: noResponse
 ---
 
-# Group Free Discussion (2 Minutes)
+# Whole Group Discussion (2 Minutes)
 
 ### Great! Now we have 2 minutes of open discussion.
 
