@@ -7,7 +7,7 @@ notes: Shared table of payoffs
 # Schedule of Benefits
 
 | Parties                        |  Amount  |
-| ------------------------------ | -------- |
+| :----------------------------- | -------: |
 | A alone gets                   | 0        |
 | B alone gets                   | 0        |
 | C alone gets                   | 0        |

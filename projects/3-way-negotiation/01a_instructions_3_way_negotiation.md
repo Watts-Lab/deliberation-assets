@@ -15,7 +15,7 @@ But again, any combination of parties that decides to work together must agree o
 
 # Your Goal
 
-Your goal in these negotiations is to ensure that Organization A gets as much of the benefits as possible in the time allotted.  All representatives have received this same information and have been empowered to commit their organizations.  It is uncertain whether you will have any future dealings with the other parties.
+Your goal in these negotiations is to ensure that Organization A gets as much of the benefits as possible in the time allotted. All representatives have received the same information and have been empowered to commit to agreements on behalf of their organizations. It is uncertain whether you will have any future dealings with the other parties.
 
 
 # Ground Rules

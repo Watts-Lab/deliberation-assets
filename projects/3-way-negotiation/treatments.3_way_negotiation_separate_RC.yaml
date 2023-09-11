@@ -25,15 +25,12 @@ treatments:
           - projects/3-way-negotiation/02_payoff_table.md
           - type: submitButton
 
-      - name: Reading Comprehension Questions
-        duration: 180
-        desc: Present four reading comprehension questions
+      - name: Reading Comprehension Question 1
+        duration: 30
+        desc: First of four reading comprehension questions
         elements:
-          - projects/3-way-negotiation/04_readingcomprehension_01setup_general.md
+          - projects/3-way-negotiation/04_readingcomprehension_01setup.md
           - projects/3-way-negotiation/04_readingcomprehension_q01.md
-          - projects/3-way-negotiation/04_readingcomprehension_q02.md
-          - projects/3-way-negotiation/04_readingcomprehension_q03.md
-          - projects/3-way-negotiation/04_readingcomprehension_q04.md
           - type: separator
           - projects/3-way-negotiation/01_repeated_instructions_header.md
           - type: prompt
@@ -51,14 +48,100 @@ treatments:
           - projects/3-way-negotiation/02_payoff_table.md
           - type: submitButton
 
-      - name: Reading Comprehension (Answers)
-        duration: 60
-        desc: Answers to reading comprehension questions
+      - name: Reading Comprehension Question 1 (Answer)
+        duration: 30
+        desc: Answer to first of four reading comprehension questions
         elements:
-          - projects/3-way-negotiation/04_readingcomprehension_01answer_setup.md
           - projects/3-way-negotiation/04_readingcomprehension_q01_answer.md
+          - type: submitButton
+
+      - name: Reading Comprehension Question 2
+        duration: 30
+        desc: Second of four reading comprehension questions
+        elements:
+          - projects/3-way-negotiation/04_readingcomprehension_02setup.md
+          - projects/3-way-negotiation/04_readingcomprehension_q02.md
+          - type: separator
+          - projects/3-way-negotiation/01_repeated_instructions_header.md
+          - type: prompt
+            file: projects/3-way-negotiation/01a_instructions_3_way_negotiation.md
+            showToPositions:
+              - 0
+          - type: prompt
+            file: projects/3-way-negotiation/01b_instructions_3_way_negotiation.md
+            showToPositions:
+              - 1
+          - type: prompt
+            file: projects/3-way-negotiation/01c_instructions_3_way_negotiation.md
+            showToPositions:
+              - 2
+          - projects/3-way-negotiation/02_payoff_table.md
+          - type: submitButton
+
+      - name: Reading Comprehension Question 2 (Answer)
+        duration: 30
+        desc: Second of four reading comprehension questions
+        elements:
           - projects/3-way-negotiation/04_readingcomprehension_q02_answer.md
+          - type: submitButton
+
+      - name: Reading Comprehension Question 3
+        duration: 30
+        desc: Third of four reading comprehension questions
+        elements:
+          - projects/3-way-negotiation/04_readingcomprehension_03setup.md
+          - projects/3-way-negotiation/04_readingcomprehension_q03.md
+          - type: separator
+          - projects/3-way-negotiation/01_repeated_instructions_header.md
+          - type: prompt
+            file: projects/3-way-negotiation/01a_instructions_3_way_negotiation.md
+            showToPositions:
+              - 0
+          - type: prompt
+            file: projects/3-way-negotiation/01b_instructions_3_way_negotiation.md
+            showToPositions:
+              - 1
+          - type: prompt
+            file: projects/3-way-negotiation/01c_instructions_3_way_negotiation.md
+            showToPositions:
+              - 2
+          - projects/3-way-negotiation/02_payoff_table.md
+          - type: submitButton
+
+      - name: Reading Comprehension Question 3 (Answer)
+        duration: 30
+        desc: Answer to third of four reading comprehension questions
+        elements:
           - projects/3-way-negotiation/04_readingcomprehension_q03_answer.md
+          - type: submitButton
+
+      - name: Reading Comprehension Question 4
+        duration: 30
+        desc: Last of four reading comprehension questions
+        elements:
+          - projects/3-way-negotiation/04_readingcomprehension_04setup.md
+          - projects/3-way-negotiation/04_readingcomprehension_q04.md
+          - type: separator
+          - projects/3-way-negotiation/01_repeated_instructions_header.md
+          - type: prompt
+            file: projects/3-way-negotiation/01a_instructions_3_way_negotiation.md
+            showToPositions:
+              - 0
+          - type: prompt
+            file: projects/3-way-negotiation/01b_instructions_3_way_negotiation.md
+            showToPositions:
+              - 1
+          - type: prompt
+            file: projects/3-way-negotiation/01c_instructions_3_way_negotiation.md
+            showToPositions:
+              - 2
+          - projects/3-way-negotiation/02_payoff_table.md
+          - type: submitButton
+          
+      - name: Reading Comprehension Question 4 (Answer)
+        duration: 30
+        desc: Answer to last of four reading comprehension questions
+        elements:
           - projects/3-way-negotiation/04_readingcomprehension_q04_answer.md
           - type: submitButton
 
@@ -67,9 +150,6 @@ treatments:
         desc: Main Discussion Time
         chatType: text
         elements: 
-          - type: prompt
-            file: projects/3-way-negotiation/03_initial_instructions.md
-            hideTime: 30
           - type: prompt
             file: projects/3-way-negotiation/03a_rep_a.md
             showToPositions:
