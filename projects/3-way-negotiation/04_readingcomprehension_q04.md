@@ -9,7 +9,7 @@ modified: August 22, 2023
 
 ---
 
-- Maximize the total benefits that ALL 3 organizations can earn.
-- Maximize the benefits that MY organization can earn.
+- Maximize the total number of points that ALL 3 organizations can earn.
+- Maximize the number of points that MY organization can earn.
 - Maximize the amount of fun in the negotiation.
 - Maximize the number of offers made in the negotiation.

@@ -45,7 +45,7 @@ introSequences:
               value: "34"
             - promptName: compQ4
               comparator: equal
-              value: "Maximize the benefits that MY organization can earn."
+              value: "Maximize the number of points that MY organization can earn."
           - type: separator
           - type: prompt
             file: projects/3-way-negotiation/01_repeated_instructions_header.md
