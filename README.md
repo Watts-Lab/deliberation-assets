@@ -1,4 +1,4 @@
-# Deliberation Assets
+jignore this # Deliberation Assets
 
 This repository contains assets served to participants in deliberation experiments.
 
