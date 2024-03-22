@@ -10,19 +10,19 @@ introSequences:
       - name: Racial Attitudes Survey
         elements:
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q1.md
+            file: projects/replications/2020_Yeomans_et_al/Q1.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q2.md
+            file: projects/replications/2020_Yeomans_et_al/Q2.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q3.md
+            file: projects/replications/2020_Yeomans_et_al/Q3.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q4.md
+            file: projects/replications/2020_Yeomans_et_al/Q4.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q5.md
+            file: projects/replications/2020_Yeomans_et_al/Q5.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q6.md
+            file: projects/replications/2020_Yeomans_et_al/Q6.md
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q7.md
+            file: projects/replications/2020_Yeomans_et_al/Q7.md
           - type: submitButton
 
       - name: Demographics
@@ -38,7 +38,7 @@ treatments:
       - name: instructions
         duration: 45
         elements:
-          - projects/replications/1970_Myers_Bishop/prediscussion_instructions.md
+          - projects/replications/2020_Yeomans_et_al/prediscussion_instructions.md
           - type: submitButton
             buttonText: Begin Discussion
 
@@ -50,13 +50,13 @@ treatments:
           showTitle: false
         elements:
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/intro_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/intro_discussion.md
             hideTime: 60
           - type: timer
             hideTime: 60
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q1_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q1_discussion.md
             displayTime: 60
             hideTime: 180
           - type: timer
@@ -68,7 +68,7 @@ treatments:
             hideTime: 185
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q1.md
+            file: projects/replications/2020_Yeomans_et_al/Q1.md
             name: Q1DiscussionResponse
             displayTime: 180
             hideTime: 200
@@ -81,7 +81,7 @@ treatments:
             hideTime: 125
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q2_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q2_discussion.md
             displayTime: 200
             hideTime: 420
           - type: timer
@@ -93,7 +93,7 @@ treatments:
             hideTime: 145
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q2.md
+            file: projects/replications/2020_Yeomans_et_al/Q2.md
             name: Q2DiscussionResponse
             displayTime: 260
             hideTime: 280
@@ -102,7 +102,7 @@ treatments:
             hideTime: 280
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q3_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q3_discussion.md
             displayTime: 280
             hideTime: 400
           - type: timer
@@ -110,7 +110,7 @@ treatments:
             hideTime: 400
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q3.md
+            file: projects/replications/2020_Yeomans_et_al/Q3.md
             name: Q3DiscussionResponse
             displayTime: 400
             hideTime: 420
@@ -119,7 +119,7 @@ treatments:
             hideTime: 420
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q4_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q4_discussion.md
             displayTime: 420
             hideTime: 540
           - type: timer
@@ -127,7 +127,7 @@ treatments:
             hideTime: 540
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q4.md
+            file: projects/replications/2020_Yeomans_et_al/Q4.md
             name: Q4DiscussionResponse
             displayTime: 540
             hideTime: 560
@@ -136,7 +136,7 @@ treatments:
             hideTime: 560
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q5_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q5_discussion.md
             displayTime: 560
             hideTime: 680
           - type: timer
@@ -144,7 +144,7 @@ treatments:
             hideTime: 680
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q5.md
+            file: projects/replications/2020_Yeomans_et_al/Q5.md
             name: Q5DiscussionResponse
             displayTime: 680
             hideTime: 700
@@ -153,7 +153,7 @@ treatments:
             hideTime: 700
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q5_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q5_discussion.md
             displayTime: 700
             hideTime: 820
           - type: timer
@@ -161,7 +161,7 @@ treatments:
             hideTime: 820
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q5.md
+            file: projects/replications/2020_Yeomans_et_al/Q5.md
             name: Q5DiscussionResponse
             displayTime: 820
             hideTime: 840
@@ -170,7 +170,7 @@ treatments:
             hideTime: 840
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q6_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q6_discussion.md
             displayTime: 840
             hideTime: 960
           - type: timer
@@ -178,7 +178,7 @@ treatments:
             hideTime: 960
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q6.md
+            file: projects/replications/2020_Yeomans_et_al/Q6.md
             name: Q6DiscussionResponse
             displayTime: 960
             hideTime: 980
@@ -187,7 +187,7 @@ treatments:
             hideTime: 980
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q7_discussion.md
+            file: projects/replications/2020_Yeomans_et_al/Q7_discussion.md
             displayTime: 980
             hideTime: 1100
           - type: timer
@@ -195,7 +195,7 @@ treatments:
             hideTime: 1100
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/Q7.md
+            file: projects/replications/2020_Yeomans_et_al/Q7.md
             name: Q7DiscussionResponse
             displayTime: 1100
             hideTime: 1180
@@ -204,7 +204,7 @@ treatments:
             hideTime: 1180
 
           - type: prompt
-            file: projects/replications/1970_Myers_Bishop/postdiscussion_instructions.md
+            file: projects/replications/2020_Yeomans_et_al/postdiscussion_instructions.md
             displayTime: 1180
             hideTime: 1150
           - type: submitButton
