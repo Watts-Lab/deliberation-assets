@@ -127,3 +127,36 @@
   ]
 }
 ```
+
+Prod configuration for super sabbatical (WBL)
+```
+{
+  "batchName": "super_sabbatical_wbl",
+  "introSequence": "baseline",
+  "consentAddendum": "projects/constructive_disagreement/00_consentAddendum.md",
+  "treatmentFile": "projects/constructive_disagreement/super_sabbatical_wbl/super_sabbatical_wbl.treatments.yaml",
+  "dispatchWait": 10,
+  "exitCodeStem": "none",
+  "treatments": [
+    "negotiation"
+  ],
+  "cdn": "prod",
+  "videoStorageLocation": "deliberation-lab-recordings-icbs",
+  "dataRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "constructive-disagreement",
+      "branch": "main",
+      "directory": "super_sabbatical_wbl"
+    }
+  ],
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "constructive-disagreement",
+      "branch": "main",
+      "directory": "super_sabbatical_wbl"
+    }
+  ]
+}
+```
