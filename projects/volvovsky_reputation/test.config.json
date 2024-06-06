@@ -1,0 +1,31 @@
+{
+  "batchName": "demo",
+  "cdn": "prod",
+  "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "baseline",
+  "treatments": ["baseline"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 10,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "reputation"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-test",
+    "region": "us-east-1"
+  },
+  "exitCodes": "none"
+}
