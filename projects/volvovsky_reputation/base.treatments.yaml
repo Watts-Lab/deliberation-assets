@@ -28,6 +28,16 @@ introSequences:
             file: projects/volvovsky_reputation/recall_instruction_comp_check_3.md
           - type: submitButton
             buttonText: Submit
+            conditions:
+              - promptName: comp1
+                comparator: equal
+                value: If everyone on your team agrees on a name for the image, regardless of who suggested it
+              - promptName: comp2
+                comparator: equal
+                value: False
+              - promptName: comp3
+                comparator: equal
+                value: Everyone on your team submits the exact name your team picked for the image
             note: need to add conditions for submit button
 
 treatments:
@@ -119,6 +129,7 @@ treatments:
           - type: display
             promptName: recall_2
             position: 2
+          - type: submitButton
 
       # - name: recall 2
       # - name: feedback 2
@@ -134,28 +145,82 @@ treatments:
       # - name: feedback 7
 
     exitSequence:
-      - name: Instructions for Principal
+      - name: Instructions for Buyer
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
-      - name: Play as Principal
+      - name: Play as Buyer
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/chose_to_hire_agent.md
+            name: buyer_choice_to_hire
+          - type: separator
+          - type: prompt
+            file: projects/volvovsky_reputation/play_as_buyer.md
+            name: buyer_description
+            conditions:
+              - promptName: buyer_choice_to_hire
+                comparator: equals
+                value: "Yes"
+          - type: submitButton
+            conditions:
+              - promptName: buyer_choice_to_hire
+                comparator: equals
+                value: "Yes"
+              - promptName: buyer_description
+                comparator: hasLengthAtMost
+                value: 15
+      - name: Result of playing as Buyer
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
+          - type: submitButton
+      - name: Buyer Training Over
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/chose_to_hire_agent_no.md
+            name: buyer_choice_to_hire_no
+          - type: submitButton
+            conditions:
+              - promptName: buyer_choice_to_hire_no
+                comparator: equals
+                value: "No"
+
       - name: Instructions for Agent
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
       - name: Play as Agent
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/waiting_for_buyer.md
+          - type: prompt
+            file: projects/volvovsky_reputation/play_as_agent.md
+          - type: submitButton
+      - name: Result of playing as Agent
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/result_of_playing_as_agent.md
+          - type: submitButton
+      - name: Training over
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/video_placeholder.md
+          - type: submitButton
+
       - name: Instructions for Observer
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
-      - name: Observe Principal Agent Interaction as Observer
+      - name: Observe Buyer / Agent Interaction as Observer
         elements:
           - name: notes
           - type: submitButton
-      - name: Decision to take over role of principal to play again
+
+      - name: Decide whether to hire that agent for your next game
         elements:
           - name: was this someone you played with before?
           - name: would you like to play with them again?

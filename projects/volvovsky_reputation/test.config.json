@@ -1,6 +1,6 @@
 {
   "batchName": "demo",
-  "cdn": "prod",
+  "cdn": "local",
   "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
   "customIdInstructions": "none",
   "platformConsent": "US",
@@ -11,7 +11,7 @@
   "treatments": ["baseline"],
   "payoffs": "equal",
   "knockdowns": "none",
-  "dispatchWait": 10,
+  "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
   "preregRepos": [],
