@@ -8,7 +8,7 @@ rows: 8
 
 As a group, come up with labels for each of these images, and enter them in the shared text box below.
 
-![tangrams][projects/exaptation/Tangram_Panel_A.jpg]
+![tangrams](projects/exaptation/Tangram_Panel_A.jpg)
 
 Make sure names are memorable, short, and **unique**.
 

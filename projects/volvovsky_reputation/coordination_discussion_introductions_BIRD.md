@@ -7,7 +7,7 @@ type: noResponse
 
 Your teammates are FISH and BEAR
 
-![teammates][projects/volvovsky_reputation/animal_icons_3.jpg]
+![teammates](projects/volvovsky_reputation/animal_icons_3.jpg)
 
 _Click "proceed" to join the video discussion._
 
