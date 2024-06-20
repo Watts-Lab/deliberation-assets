@@ -38,7 +38,6 @@ introSequences:
               - promptName: comp3
                 comparator: equal
                 value: Everyone on your team submits the exact name your team picked for the image
-            note: need to add conditions for submit button
 
 treatments:
   - name: baseline
@@ -150,7 +149,7 @@ treatments:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
-      - name: Play as Buyer
+      - name: Training round as Buyer
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/chose_to_hire_agent.md
@@ -187,24 +186,33 @@ treatments:
                 comparator: equals
                 value: "No"
 
-      - name: Instructions for Agent
+      - name: Training as Agent
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
-      - name: Play as Agent
+      - name: Play as Agent part 1
         elements:
           - type: prompt
-            file: projects/volvovsky_reputation/waiting_for_buyer.md
+            file: projects/volvovsky_reputation/play_as_agent_intro.md
+            name: agent_intro_taxi
+          - type: submitButton
+            conditions:
+              - promptName: agent_intro_taxi
+                comparator: equals
+                value: "Yes"
+      - name: Play as Agent part 2
+        elements:
           - type: prompt
-            file: projects/volvovsky_reputation/play_as_agent.md
+            file: projects/volvovsky_reputation/play_as_agent_message.md
           - type: submitButton
       - name: Result of playing as Agent
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/result_of_playing_as_agent.md
           - type: submitButton
-      - name: Training over
+
+      - name: Non-training "random assignment" round
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/video_placeholder.md
@@ -216,8 +224,10 @@ treatments:
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
       - name: Observe Buyer / Agent Interaction as Observer
+        note: remind of the various pieces of the roles
         elements:
-          - name: notes
+          - type: prompt
+            file: projects/volvovsky_reputation/observe_buyer_agent_interaction.md
           - type: submitButton
 
       - name: Decide whether to hire that agent for your next game
