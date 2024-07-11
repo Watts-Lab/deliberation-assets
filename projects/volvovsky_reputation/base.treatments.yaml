@@ -1,3 +1,232 @@
+templates:
+  - templateName: recallTask
+    templateContent:
+      - name: recall ${recallIndex}
+        duration: 30
+        elements:
+          - type: image
+            file: ${imageFilepath} # projects/volvovsky_reputation/Tangram_A3.jpg
+          - type: prompt
+            name: recall_${recallIndex}
+            file: projects/volvovsky_reputation/recall.md
+          - type: submitButton
+            buttonText: Submit
+            name: recall_${recallIndex}
+
+      - name: feedback ${recallIndex}
+        duration: 20
+        elements:
+          - type: image
+            file: ${imageFilepath}
+          - type: prompt
+            file: projects/volvovsky_reputation/labels_match.md
+            conditions:
+              - reference: prompt.recall_${recallIndex}
+                position: percentAgreement
+                comparator: equal
+                value: 100
+              - reference: recall_${recallIndex}
+                position: all
+                comparator: lengthAtLeast
+                value: 1
+          - type: prompt
+            file: projects/volvovsky_reputation/labels_not_match.md
+            conditions:
+              - reference: prompt.recall_${recallIndex}
+                position: percentAgreement
+                comparator: isBelow
+                value: 100
+            note: make it so that we put the icon for the players next to who submitted what
+
+          - type: display
+            promptName: recall_${recallIndex}
+            position: 0
+          - type: display
+            promptName: recall_${recallIndex}
+            position: 1
+          - type: display
+            promptName: recall_${recallIndex}
+            position: 2
+          - type: submitButton
+
+  - templateName: observeYourTeammate
+    desc: for when buyer is your team
+    templateContent:
+      - type: prompt
+        file: projects/volvovsky_reputation/observer_instructions.md
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_bear.jpg
+        showToPositions: [1]
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_bird.jpg
+        showToPositions: [2]
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_fish.jpg
+        showToPositions: [0]
+
+  - templateName: observeOtherTeam
+    desc: for condition when buyer is other team
+    templateContent:
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_dog.jpg
+
+  - templateName: treatmentBase
+    templateContent:
+      - name: ${treatmentName}
+        playerCount: 3
+        groupComposition:
+          - position: 0
+            title: BEAR
+          - position: 1
+            title: FISH
+          - position: 2
+            title: BIRD
+
+        gameStages:
+          - name: preDiscussion
+            duration: 30
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_introductions_BEAR.md
+                showToPositions: [0]
+              - type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_introductions_FISH.md
+                showToPositions: [1]
+              - type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_introductions_BIRD.md
+                showToPositions: [2]
+              - type: submitButton
+                buttonText: Proceed
+              - note: image of animal icons is not displaying properly
+
+          - name: coordination discussion
+            duration: 600
+            discussion:
+              chatType: video
+              showNickname: true
+              showTitle: true
+            elements:
+              - name: labeling
+                type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_labeling.md
+                shared: true
+              - type: submitButton
+                displayTime: 300
+                buttonText: End discussion and proceed to next steps
+                name: labeling
+
+          - template: recallTask
+            fields:
+              recallIndex: ${d0}
+            broadcast:
+              d0:
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+                - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+
+        exitSequence:
+          - name: Instructions for Buyer
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/video_placeholder.md
+              - type: submitButton
+          - name: Training round as Buyer
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/chose_to_hire_agent.md
+                name: buyer_choice_to_hire
+              - type: separator
+              - type: prompt
+                file: projects/volvovsky_reputation/play_as_buyer.md
+                name: buyer_description
+                conditions:
+                  - promptName: buyer_choice_to_hire
+                    comparator: equals
+                    value: "Yes"
+              - type: submitButton
+                conditions:
+                  - promptName: buyer_choice_to_hire
+                    comparator: equals
+                    value: "Yes"
+                  - promptName: buyer_description
+                    comparator: hasLengthAtMost
+                    value: 15
+          - name: Result of playing as Buyer
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
+              - type: submitButton
+          - name: Buyer Training Over
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/chose_to_hire_agent_no.md
+                name: buyer_choice_to_hire_no
+              - type: submitButton
+                conditions:
+                  - promptName: buyer_choice_to_hire_no
+                    comparator: equals
+                    value: "No"
+
+          - name: Training as Agent
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/video_placeholder.md
+              - type: submitButton
+          - name: Play as Agent part 1
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/play_as_agent_intro.md
+                name: agent_intro_taxi
+              - type: submitButton
+                conditions:
+                  - promptName: agent_intro_taxi
+                    comparator: equals
+                    value: "Yes"
+          - name: Play as Agent part 2
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/play_as_agent_message.md
+              - type: submitButton
+          - name: Result of playing as Agent
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/result_of_playing_as_agent.md
+              - type: submitButton
+
+          # - name: Non-training "random assignment" round
+          #   elements:
+          #     - type: prompt
+          #       file: projects/volvovsky_reputation/video_placeholder.md
+          #     - type: submitButton
+
+          - name: Instructions for Observer
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/video_placeholder.md
+              - type: submitButton
+          - name: Observe Buyer / Agent Interaction as Observer
+
+            elements:
+              - template: ${observePair}
+
+              - type: submitButton
+
+          - name: Decide whether to hire that agent for your next game
+            elements:
+              - name: was this someone you played with before?
+              - name: would you like to play with them again?
+              - name: were the agent and the principal on the same team?
+              - type: submitButton
+
+          - name: In this condition you are not assigned to play another game
+          - name: Demographic Survey
+          - name: Open Feedback
+
 introSequences:
   - name: baseline
     description: standard conditions
@@ -40,6 +269,20 @@ introSequences:
                 value: Everyone on your team submits the exact name your team picked for the image
 
 treatments:
+  - template: treatmentBase
+    fields:
+      treatmentName: "images: ${observeImages}, pair: ${observePair}, success: ${observeSuccess}"
+    broadcast:
+      d0:
+        - observeImages: simple
+        - observeImages: complex
+      d1:
+        - observePair: observeOtherTeam
+        - observePair: observeYourTeammate
+      d2:
+        - observeSuccess: success
+        - observeSuccess: fail
+
   - name: baseline
     playerCount: 3
     groupComposition:
@@ -212,11 +455,11 @@ treatments:
             file: projects/volvovsky_reputation/result_of_playing_as_agent.md
           - type: submitButton
 
-      - name: Non-training "random assignment" round
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/video_placeholder.md
-          - type: submitButton
+      # - name: Non-training "random assignment" round
+      #   elements:
+      #     - type: prompt
+      #       file: projects/volvovsky_reputation/video_placeholder.md
+      #     - type: submitButton
 
       - name: Instructions for Observer
         elements:
@@ -224,10 +467,25 @@ treatments:
             file: projects/volvovsky_reputation/video_placeholder.md
           - type: submitButton
       - name: Observe Buyer / Agent Interaction as Observer
-        note: remind of the various pieces of the roles
+
         elements:
           - type: prompt
-            file: projects/volvovsky_reputation/observe_buyer_agent_interaction.md
+            notes: for when buyer is your team
+            file: projects/volvovsky_reputation/observer_instructions.md
+          - type: image
+            file: /Users/jamesphoughton/github/deliberation-assets/projects/volvovsky_reputation/observe_elephant_bear.jpg
+            showToPositions: [1]
+          - type: image
+            file: /Users/jamesphoughton/github/deliberation-assets/projects/volvovsky_reputation/observe_elephant_bird.jpg
+            showToPositions: [2]
+          - type: image
+            file: /Users/jamesphoughton/github/deliberation-assets/projects/volvovsky_reputation/observe_elephant_fish.jpg
+            showToPositions: [0]
+
+          - type: image
+            notes: for condition when buyer is other team
+            file: /Users/jamesphoughton/github/deliberation-assets/projects/volvovsky_reputation/observe_elephant_dog.jpg
+
           - type: submitButton
 
       - name: Decide whether to hire that agent for your next game

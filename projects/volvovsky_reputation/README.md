@@ -8,7 +8,27 @@ This game has one more role, an observer. The observer watches the art gallery g
 
 Since all the observer does is observe and take notes, there is no need for a training round for this role.
 
-Now you will be randomly assigned to either the Buyer, Agent, or Observer role.
+<!--
+Unfortunately we couldn't match you in the first game. But don't worry, this actually gives you an advantage: you get to observe an agent before deciding to hire them.
+You will observe a game between the following buyer and agent:
+<avatar and name of buyer and agent>
+
+At the end of the game, you will have the opportunity to hire the agent if you wish.
+
+Hiring an agent who buys the right art will earn you 30 points per piece (after accounting for the agent's wages). However, hiring an agent who buys the wrong art will earn you nothing, and you will lose the 50 points you paid the agent.
+
+You will get 25 points for every round you observe. -->
+
+Unfortunately we couldn't match you in the first game. But don't worry, this actually gives you an advantage: you get to observe an agent before deciding to hire them.
+
+At the end of the game, you will have the opportunity to hire the agent if you wish.
+
+Hiring an agent who buys the right art will earn you 30 points per piece (after accounting for the agent's wages). However, hiring an agent who buys the wrong art will earn you nothing, and you will lose the 50 points you paid the agent.
+
+You will get 25 points for every round you observe.
+
+You will observe a game between the following buyer and agent:
+<avatar and name of buyer and agent>
 
 # Conditions
 
@@ -21,6 +41,8 @@ Now you will be randomly assigned to either the Buyer, Agent, or Observer role.
 6. Complex images, Buyer your team, Agent other team, Fail (need group's name for this)
 7. Complex images, Buyer other team, Agent other team, different teams, Success
 8. Complex images, Buyer other team, Agent other team, different teams, Fail
+
+We never test an agent from your team, because you don't need a reputational signal for that, you already know them.
 
 signal is success-failure
 difference in signal is (7-8) - (5-6)
@@ -53,3 +75,33 @@ Does the observer plausibly believe that an agent can get the right art piece ev
 If you see a game where you and I agree that an image is karate, and then i see you play as the buyer, and you say "buy karate" and the other person buys the right or wrong image, there is a lot of information in whether I want to hire the agent.
 
 However, if the agent is from another team, so that they are not expected to know the name, then i don't know if the agent was lazy, or if they just didn't have the information that they needed.
+
+# Notes
+
+When we show them a buyer/agent combination in the observer round, we need to make sure that if the buyer is from their team, we don't show them their own avatar. so, we need 4 combinations:
+
+- Bird, Other1
+- Bear, Other1
+- Fish, Other1
+- Other1, Other2
+
+# where we are:
+
+- we have built up training for agent and buyer, and also have instructions for observer (who needs no training)
+- we set up the avatar combinations for the observer rounds.
+
+# Next time
+
+- create a template of the principal agent game that they will observe
+- plug in the image, the name and the outcome/number of rounds
+
+# Todo:
+
+- work out the sequence of observations for each of the following:
+
+  - simple success
+  - simple fail
+  - complex success
+  - complex fail
+
+- pull names of images from the labeling/recall round for when buyer is on your team.
