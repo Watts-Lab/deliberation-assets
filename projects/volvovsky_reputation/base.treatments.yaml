@@ -5,7 +5,7 @@ templates:
         duration: 30
         elements:
           - type: image
-            file: ${imageFilepath} # projects/volvovsky_reputation/Tangram_A3.jpg
+            file: ${imageFilepath}
           - type: prompt
             name: recall_${recallIndex}
             file: projects/volvovsky_reputation/recall.md
@@ -52,8 +52,6 @@ templates:
   - templateName: observeYourTeammate
     desc: for when buyer is your team
     templateContent:
-      - type: prompt
-        file: projects/volvovsky_reputation/observer_instructions.md
       - type: image
         file: projects/volvovsky_reputation/observe_elephant_bear.jpg
         showToPositions: [1]
@@ -212,8 +210,9 @@ templates:
           - name: Observe Buyer / Agent Interaction as Observer
 
             elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/observer_instructions.md
               - template: ${observePair}
-
               - type: submitButton
 
           - name: Decide whether to hire that agent for your next game
