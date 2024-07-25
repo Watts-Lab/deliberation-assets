@@ -99,9 +99,51 @@ When we show them a buyer/agent combination in the observer round, we need to ma
 
 - work out the sequence of observations for each of the following:
 
-  - simple success
-  - simple fail
-  - complex success
-  - complex fail
+  - simple success (five rounds of success)
+  - simple fail (two rounds of failures)
+  - complex success (five rounds of success) five rounds indicates that the game can continue if you want it to.
+  - complex fail (two rounds of failure)
 
 - pull names of images from the labeling/recall round for when buyer is on your team.
+
+# Observer rounds must contain:
+
+The buyer is deciding whether to hire the agent (10 second timer)
+
+The buyer asked for:
+
+- if it's your team, show name from your team
+- otherwise show other name
+
+<!-- The agent purchased: Not going to show images, because we don't want the observer to learn the agent's schema and then think they can use it.
+- correct image
+- incorrect image -->
+
+This was the
+
+- right piece, they spent n points to earn n points
+- wrong piece, they spent n points with no return
+
+The buyer decided:
+
+- not to hire the agent to purchase another piece
+- to hire the agent to purchase another piece
+
+The buyer and agent are waiting for you to complete the round.
+
+Whatever timers we put in here, we should also put into the training rounds for consistency.
+
+The number of rounds in the game is randomly selected by a computer.
+
+# June 25
+
+Where are we:
+
+- Created simple images
+- ddecided and mocked up templates for the observer stages
+
+Need to do:
+
+- markdown files for each other buyer stage with quoted names
+- markdown files for success and failure with decisions to hire agent
+- instantiate templates with the right recallIndexes and build up the exit sequences.
