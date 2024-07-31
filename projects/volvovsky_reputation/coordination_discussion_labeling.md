@@ -8,7 +8,11 @@ rows: 8
 
 As a group, come up with labels for each of these images, and enter them in the shared text box below.
 
-Make sure names are memorable, short, and **unique**.
+Names should be:
+
+- easy to remember
+- less than 15 characters long
+- unique to each image
 
 We will quiz you on the names you chose in the next stage of the experiment.
 

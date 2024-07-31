@@ -49,25 +49,6 @@ templates:
             position: 2
           - type: submitButton
 
-  - templateName: observeYourTeammate
-    desc: for when buyer is your team
-    templateContent:
-      - type: image
-        file: projects/volvovsky_reputation/observe_elephant_bear.jpg
-        showToPositions: [1]
-      - type: image
-        file: projects/volvovsky_reputation/observe_elephant_bird.jpg
-        showToPositions: [2]
-      - type: image
-        file: projects/volvovsky_reputation/observe_elephant_fish.jpg
-        showToPositions: [0]
-
-  - templateName: observeOtherTeam
-    desc: for condition when buyer is other team
-    templateContent:
-      - type: image
-        file: projects/volvovsky_reputation/observe_elephant_dog.jpg
-
   - templateName: simpleImages
     templateContent:
       - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg # need to also do this for the simple images
@@ -94,60 +75,190 @@ templates:
     templateContent:
       - name: ${name}
         elements:
+          - type: image
+            file: projects/volvovsky_reputation/observe_elephant_bear.jpg
+            showToPositions: [1]
+          - type: image
+            file: projects/volvovsky_reputation/observe_elephant_bird.jpg
+            showToPositions: [2]
+          - type: image
+            file: projects/volvovsky_reputation/observe_elephant_fish.jpg
+            showToPositions: [0]
+
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 15
+            hideTime: 30
+          - type: timer
+            displayTime: 0
+            hideTime: 30
 
           - type: prompt
             file: projects/volvovsky_reputation/buyer_asks_for.md
-            displayTime: 15
-            hideTime: 40
+            displayTime: 30
+            hideTime: 60
           - type: display
             reference: prompt.recall_${recallIndex}
             position: 0
-            displayTime: 15
-            hideTime: 40
+            displayTime: 30
+            hideTime: 60
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 15
-            hideTime: 40
+            displayTime: 30
+            hideTime: 60
+          - type: timer
+            displayTime: 30
+            hideTime: 60
 
           - type: prompt
-            file: ${outcome}
-            displayTime: 40
+            file: projects/volvovsky_reputation/${outcomeFile}
+            displayTime: 60
           - type: submitButton
-            displayTime: 40
+            displayTime: 60
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 50
+            displayTime: 70
+
+  - templateName: observerOwnTeamSuccess
+    templateContent:
+      - template: observerOwnTeamStage
+        fields:
+          name: observerOwnTeam_Round_{d0}
+          outcomeFile: observe_agent_success.md
+        broadcast:
+          - recallIndex: 3
+          - recallIndex: 1
+          - recallIndex: 5
+          - recallIndex: 2
+          - recallIndex: 4
+
+      - name: successChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+          - type: submitButton
+
+  - templateName: observerOwnTeamFailure
+    templateContent:
+      - template: observerOwnTeamStage
+        fields:
+          name: observerOwnTeam_Round_{d0}
+          outcome: projects/volvovsky_reputation/observe_agent_failure.md
+        broadcast:
+          - recallIndex: 3
+          - recallIndex: 1
+
+      - name: failureChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+          - type: submitButton
 
   - templateName: observerOtherTeamStage
     templateContent:
       - name: ${name}
         elements:
+          - type: image
+            file: projects/volvovsky_reputation/observe_elephant_dog.jpg
+
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 15
+            hideTime: 30
+          - type: timer
+            displayTime: 0
+            hideTime: 30
 
           - type: prompt
-            file: projects/volvovsky_reputation/other_buyer_asks_for_${recallIndex}.md
-            displayTime: 15
-            hideTime: 40
+            file: projects/volvovsky_reputation/{asksForFile}
+            displayTime: 30
+            hideTime: 60
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 15
-            hideTime: 40
+            displayTime: 30
+            hideTime: 60
+          - type: timer
+            displayTime: 30
+            hideTime: 60
 
           - type: prompt
-            file: ${outcome}
-            displayTime: 40
+            file: projects/volvovsky_reputation/${outcomeFile}
+            displayTime: 60
           - type: submitButton
-            displayTime: 40
+            displayTime: 60
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 50
+            displayTime: 70
+
+  - templateName: observerOtherTeamSuccessSimple
+    templateContent:
+      - template: observerOtherTeamStage
+        fields:
+          name: observerOtherTeam_Round_{d0}
+          outcomeFile: observe_buyer_success.md
+        broadcast:
+          - asksForFile: buyer_asks_for_simple_1.md
+          - asksForFile: buyer_asks_for_simple_2.md
+          - asksForFile: buyer_asks_for_simple_3.md
+          - asksForFile: buyer_asks_for_simple_4.md
+          - asksForFile: buyer_asks_for_simple_5.md
+
+      - name: successChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+          - type: submitButton
+
+  - templateName: observerOtherTeamSuccessComplex
+    templateContent:
+      - template: observerOtherTeamStage
+        fields:
+          name: observerOtherTeam_Round_{d0}
+          outcomeFile: observe_buyer_success.md
+        broadcast:
+          - asksForFile: buyer_asks_for_complex_1.md
+          - asksForFile: buyer_asks_for_complex_2.md
+          - asksForFile: buyer_asks_for_complex_3.md
+          - asksForFile: buyer_asks_for_complex_4.md
+          - asksForFile: buyer_asks_for_complex_5.md
+
+      - name: successChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+          - type: submitButton
+
+  - templateName: observerOtherTeamFailureSimple
+    templateContent:
+      - template: observerOtherTeamStage
+        fields:
+          name: observerOtherTeam_Round_{d0}
+          outcomeFile: observe_buyer_failure.md
+        broadcast:
+          - asksForFile: buyer_asks_for_simple_1.md
+          - asksForFile: buyer_asks_for_simple_2.md
+
+      - name: failureChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+          - type: submitButton
+
+  - templateName: observerOtherTeamFailureComplex
+    templateContent:
+      - template: observerOtherTeamStage
+        fields:
+          name: observerOtherTeam_Round_{d0}
+          outcomeFile: observe_buyer_failure.md
+        broadcast:
+          - asksForFile: buyer_asks_for_complex_1.md
+          - asksForFile: buyer_asks_for_complex_2.md
+
+      - name: failureChoose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+          - type: submitButton
 
   - templateName: treatmentBase
     templateContent:
@@ -271,35 +382,21 @@ templates:
                 file: projects/volvovsky_reputation/result_of_playing_as_agent.md
               - type: submitButton
 
-          # - name: Non-training "random assignment" round
-          #   elements:
-          #     - type: prompt
-          #       file: projects/volvovsky_reputation/video_placeholder.md
-          #     - type: submitButton
-
           - name: Instructions for Observer
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/video_placeholder.md
               - type: submitButton
-          - name: Observe Buyer / Agent Interaction as Observer
 
-            elements:
-              - type: prompt
-                file: projects/volvovsky_reputation/observer_instructions.md
-              - template: ${observePair}
-              - type: submitButton
+          - template: ${observerTemplateName}
 
-          - name: Decide whether to hire that agent for your next game
-            elements:
-              - name: was this someone you played with before?
-              - name: would you like to play with them again?
-              - name: were the agent and the principal on the same team?
-              - type: submitButton
+          - notes: if they say no, send them to exit surveys
+          - notes: if they say yes, "check in with the agent", set a timer, then say the agent chose not to play anymore
 
-          - name: In this condition you are not assigned to play another game
           - name: Demographic Survey
-          - name: Open Feedback
+            elements:
+              - type: survey
+                surveyName: demographics
 
 introSequences:
   - name: baseline
@@ -348,53 +445,53 @@ treatments:
       treatmentName: "simple success other team"
       imagePanel: Simple_Panel_A.jpg
       recallImages: ${simpleImages}
-      observeSequence: simpleSuccessOtherTeam
+      observerTemplateName: observerOtherTeamSuccessSimple
 
   - template: treatmentBase
     fields:
       treatmentName: "simple success own team"
       imagePanel: Simple_Panel_A.jpg
       recallImages: ${simpleImages}
-      observeSequence: simpleSuccessOwnTeam
+      observerTemplateName: observerOwnTeamSuccess
 
   - template: treatmentBase
     fields:
       treatmentName: "simple failure other team"
       imagePanel: Simple_Panel_A.jpg
       recallImages: ${simpleImages}
-      observeSequence: simpleFailureOtherTeam
+      observerTemplateName: observerOtherTeamFailureSimple
 
   - template: treatmentBase
     fields:
       treatmentName: "simple failure own team"
       imagePanel: Simple_Panel_A.jpg
       recallImages: ${simpleImages}
-      observeSequence: simpleFailureOwnTeam
+      observerTemplateName: observerOwnTeamFailure
 
   - template: treatmentBase
     fields:
       treatmentName: "complex success other team"
       imagePanel: Tangram_Panel_A.jpg
       recallImages: ${complexImages}
-      observeSequence: complexSuccessOtherTeam
+      observerTemplateName: observerOtherTeamSuccessComplex
 
   - template: treatmentBase
     fields:
       treatmentName: "complex success own team"
       imagePanel: Tangram_Panel_A.jpg
       recallImages: ${complexImages}
-      observeSequence: complexSuccessOwnTeam
+      observerTemplateName: observerOwnTeamSuccess
 
   - template: treatmentBase
     fields:
       treatmentName: "complex failure other team"
       imagePanel: Tangram_Panel_A.jpg
       recallImages: ${complexImages}
-      observeSequence: complexFailureOtherTeam
+      observerTemplateName: observerOtherTeamFailureComplex
 
   - template: treatmentBase
     fields:
       treatmentName: "complex failure own team"
       imagePanel: Tangram_Panel_A.jpg
       recallImages: ${complexImages}
-      observeSequence: complexFailureOwnTeam
+      observerTemplateName: observerOwnTeamFailure

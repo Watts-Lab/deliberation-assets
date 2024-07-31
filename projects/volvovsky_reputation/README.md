@@ -135,15 +135,26 @@ Whatever timers we put in here, we should also put into the training rounds for 
 
 The number of rounds in the game is randomly selected by a computer.
 
-# June 25
+# July 25
 
 Where are we:
 
 - Created simple images
-- ddecided and mocked up templates for the observer stages
+- Decided and mocked up templates for the observer stages
 
 Need to do:
 
 - markdown files for each other buyer stage with quoted names
 - markdown files for success and failure with decisions to hire agent
 - instantiate templates with the right recallIndexes and build up the exit sequences.
+
+# July 31
+
+where we are:
+
+- implemented most of the interventions and manipulation
+
+Need to do:
+
+- post-decision debrief
+- debug
