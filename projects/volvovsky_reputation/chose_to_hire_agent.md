@@ -3,6 +3,11 @@ name: projects/volvovsky_reputation/chose_to_hire_agent.md
 type: multipleChoice
 ---
 
+## You have finished the Labeling Game. 🥳
+
+Now we would like you to play another game we call the Art Buying game.
+We will run you through some training rounds before the game starts.
+
 ## Training round 1:
 
 You want to buy this piece of art on display at a gallery in New York:

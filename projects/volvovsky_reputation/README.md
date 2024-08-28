@@ -158,3 +158,17 @@ Need to do:
 
 - post-decision debrief
 - debug
+
+# Aug 28
+
+where we are:
+
+- prototyped the whole major experiment
+
+need to:
+
+- exit surveys
+- consider the two remaining teammates,, answer perception of others survey about them
+- create solo images for these teammates
+- debug treatments
+- debug timings
