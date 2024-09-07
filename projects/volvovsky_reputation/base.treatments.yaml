@@ -110,7 +110,7 @@ templates:
             hideTime: 60
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}
+            file: projects/volvovsky_reputation/${outcomeFile}.md
             displayTime: 60
           - type: submitButton
             displayTime: 60
@@ -123,14 +123,15 @@ templates:
     templateContent:
       - template: observerOwnTeamStage
         fields:
-          name: observerOwnTeam_Round_{d0}
-          outcomeFile: observe_agent_success.md
+          name: "observerOwnTeam_Round_${d0}"
+          outcomeFile: observe_agent_success
         broadcast:
-          - recallIndex: 3
-          - recallIndex: 1
-          - recallIndex: 5
-          - recallIndex: 2
-          - recallIndex: 4
+          d0:
+            - recallIndex: "3"
+            - recallIndex: "1"
+            - recallIndex: "5"
+            - recallIndex: "2"
+            - recallIndex: "4"
 
       - name: successChoose
         elements:
@@ -143,11 +144,12 @@ templates:
     templateContent:
       - template: observerOwnTeamStage
         fields:
-          name: observerOwnTeam_Round_{d0}
-          outcome: projects/volvovsky_reputation/observe_agent_failure.md
+          name: "observerOwnTeam_Round_${d0}"
+          outcomeFile: observe_agent_failure
         broadcast:
-          - recallIndex: 3
-          - recallIndex: 1
+          d0:
+            - recallIndex: "3"
+            - recallIndex: "1"
 
       - name: failureChoose
         elements:
@@ -183,7 +185,7 @@ templates:
             hideTime: 60
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}
+            file: projects/volvovsky_reputation/${outcomeFile}.md
             displayTime: 60
           - type: submitButton
             displayTime: 60
@@ -196,14 +198,15 @@ templates:
     templateContent:
       - template: observerOtherTeamStage
         fields:
-          name: observerOtherTeam_Round_{d0}
-          outcomeFile: observe_buyer_success.md
+          name: "observerOtherTeam_Round_${d0}"
+          outcomeFile: "observe_buyer_success"
         broadcast:
-          - asksForFile: buyer_asks_for_simple_1.md
-          - asksForFile: buyer_asks_for_simple_2.md
-          - asksForFile: buyer_asks_for_simple_3.md
-          - asksForFile: buyer_asks_for_simple_4.md
-          - asksForFile: buyer_asks_for_simple_5.md
+          d0:
+            - asksForFile: buyer_asks_for_simple_1.md
+            - asksForFile: buyer_asks_for_simple_2.md
+            - asksForFile: buyer_asks_for_simple_3.md
+            - asksForFile: buyer_asks_for_simple_4.md
+            - asksForFile: buyer_asks_for_simple_5.md
 
       - name: successChoose
         elements:
@@ -216,14 +219,15 @@ templates:
     templateContent:
       - template: observerOtherTeamStage
         fields:
-          name: observerOtherTeam_Round_{d0}
-          outcomeFile: observe_buyer_success.md
+          name: "observerOtherTeam_Round_${d0}"
+          outcomeFile: observe_buyer_success
         broadcast:
-          - asksForFile: buyer_asks_for_complex_1.md
-          - asksForFile: buyer_asks_for_complex_2.md
-          - asksForFile: buyer_asks_for_complex_3.md
-          - asksForFile: buyer_asks_for_complex_4.md
-          - asksForFile: buyer_asks_for_complex_5.md
+          d0:
+            - asksForFile: buyer_asks_for_complex_1.md
+            - asksForFile: buyer_asks_for_complex_2.md
+            - asksForFile: buyer_asks_for_complex_3.md
+            - asksForFile: buyer_asks_for_complex_4.md
+            - asksForFile: buyer_asks_for_complex_5.md
 
       - name: successChoose
         elements:
@@ -236,11 +240,12 @@ templates:
     templateContent:
       - template: observerOtherTeamStage
         fields:
-          name: observerOtherTeam_Round_{d0}
-          outcomeFile: observe_buyer_failure.md
+          name: "observerOtherTeam_Round_${d0}"
+          outcomeFile: observe_buyer_failure
         broadcast:
-          - asksForFile: buyer_asks_for_simple_1.md
-          - asksForFile: buyer_asks_for_simple_2.md
+          d0:
+            - asksForFile: buyer_asks_for_simple_1.md
+            - asksForFile: buyer_asks_for_simple_2.md
 
       - name: failureChoose
         elements:
@@ -253,11 +258,12 @@ templates:
     templateContent:
       - template: observerOtherTeamStage
         fields:
-          name: observerOtherTeam_Round_{d0}
-          outcomeFile: observe_buyer_failure.md
+          name: "observerOtherTeam_Round_${d0}"
+          outcomeFile: observe_buyer_failure
         broadcast:
-          - asksForFile: buyer_asks_for_complex_1.md
-          - asksForFile: buyer_asks_for_complex_2.md
+          d0:
+            - asksForFile: buyer_asks_for_complex_1.md
+            - asksForFile: buyer_asks_for_complex_2.md
 
       - name: failureChoose
         elements:
@@ -487,54 +493,62 @@ treatments:
     fields:
       treatmentName: "simple success other team"
       imagePanel: Simple_Panel_A.jpg
-      recallImages: ${simpleImages}
+      recallImages:
+        template: simpleImages
       observerTemplateName: observerOtherTeamSuccessSimple
 
   - template: treatmentBase
     fields:
       treatmentName: "simple success own team"
       imagePanel: Simple_Panel_A.jpg
-      recallImages: ${simpleImages}
+      recallImages:
+        template: simpleImages
       observerTemplateName: observerOwnTeamSuccess
 
   - template: treatmentBase
     fields:
       treatmentName: "simple failure other team"
       imagePanel: Simple_Panel_A.jpg
-      recallImages: ${simpleImages}
+      recallImages:
+        template: simpleImages
       observerTemplateName: observerOtherTeamFailureSimple
 
   - template: treatmentBase
     fields:
       treatmentName: "simple failure own team"
       imagePanel: Simple_Panel_A.jpg
-      recallImages: ${simpleImages}
+      recallImages:
+        template: simpleImages
       observerTemplateName: observerOwnTeamFailure
 
   - template: treatmentBase
     fields:
       treatmentName: "complex success other team"
       imagePanel: Tangram_Panel_A.jpg
-      recallImages: ${complexImages}
+      recallImages:
+        template: complexImages
       observerTemplateName: observerOtherTeamSuccessComplex
 
   - template: treatmentBase
     fields:
       treatmentName: "complex success own team"
       imagePanel: Tangram_Panel_A.jpg
-      recallImages: ${complexImages}
+      recallImages:
+        template: complexImages
       observerTemplateName: observerOwnTeamSuccess
 
   - template: treatmentBase
     fields:
       treatmentName: "complex failure other team"
       imagePanel: Tangram_Panel_A.jpg
-      recallImages: ${complexImages}
+      recallImages:
+        template: complexImages
       observerTemplateName: observerOtherTeamFailureComplex
 
   - template: treatmentBase
     fields:
       treatmentName: "complex failure own team"
       imagePanel: Tangram_Panel_A.jpg
-      recallImages: ${complexImages}
+      recallImages:
+        template: complexImages
       observerTemplateName: observerOwnTeamFailure
