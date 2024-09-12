@@ -172,3 +172,15 @@ need to:
 - create solo images for these teammates
 - debug treatments
 - debug timings
+
+# Sept 12
+
+Need to:
+
+- fix timer for exit stages for kitchenTimer, also display and hide times
+- check that images are properly displayed in labeling game
+- check that stage observer intro stage displays properly
+- check that play as agent task displays properly
+- check submit button in observer round advances
+- labels on manipulation check need to be different, no submit button
+- need comprehension checks for after training rounds.

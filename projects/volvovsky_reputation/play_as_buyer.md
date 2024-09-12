@@ -1,6 +1,7 @@
 ---
 name: projects/volvovsky_reputation/play_as_buyer.md
 type: openResponse
+rows: 1
 ---
 
 Now that you have decided to hire the agent, you need to tell them which piece of art you want them to buy.

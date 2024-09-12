@@ -5,10 +5,13 @@ type: multipleChoice
 
 ## You have finished the Labeling Game. 🥳
 
-Now we would like you to play another game we call the Art Buying game.
-We will run you through some training rounds before the game starts.
+Now we would like you to play the Art Buying game.
 
-## Training round 1:
+This game has several roles.
+
+We will run you through some training rounds so you can understand each role before we begin.
+
+## Training round 1: Play as Buyer
 
 You want to buy this piece of art on display at a gallery in New York:
 

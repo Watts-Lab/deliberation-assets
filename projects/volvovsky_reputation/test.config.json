@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "baseline",
-  "treatments": ["baseline"],
+  "treatments": ["simple success other team"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,

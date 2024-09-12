@@ -23,29 +23,28 @@ templates:
             conditions:
               - reference: prompt.recall_${recallIndex}
                 position: percentAgreement
-                comparator: equal
+                comparator: equals
                 value: 100
-              - reference: recall_${recallIndex}
+              - reference: prompt.recall_${recallIndex}
                 position: all
-                comparator: lengthAtLeast
+                comparator: hasLengthAtLeast
                 value: 1
-          - type: prompt
+          - type: prompt # todo: make it so that we put the icon for the players next to who submitted what
             file: projects/volvovsky_reputation/labels_not_match.md
             conditions:
               - reference: prompt.recall_${recallIndex}
                 position: percentAgreement
                 comparator: isBelow
                 value: 100
-            note: make it so that we put the icon for the players next to who submitted what
 
           - type: display
-            promptName: recall_${recallIndex}
+            reference: prompt.recall_${recallIndex}
             position: 0
           - type: display
-            promptName: recall_${recallIndex}
+            reference: prompt.recall_${recallIndex}
             position: 1
           - type: display
-            promptName: recall_${recallIndex}
+            reference: prompt.recall_${recallIndex}
             position: 2
           - type: submitButton
 
@@ -75,6 +74,8 @@ templates:
     templateContent:
       - name: ${name}
         elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/you_will_observe.md
           - type: image
             file: projects/volvovsky_reputation/observe_elephant_bear.jpg
             showToPositions: [1]
@@ -162,6 +163,8 @@ templates:
     templateContent:
       - name: ${name}
         elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/you_will_observe.md
           - type: image
             file: projects/volvovsky_reputation/observe_elephant_dog.jpg
 
@@ -285,7 +288,7 @@ templates:
             title: BIRD
 
         gameStages:
-          - name: preDiscussion
+          - name: preDiscussion # image of animal icons is not displaying properly
             duration: 30
             elements:
               - type: prompt
@@ -299,7 +302,6 @@ templates:
                 showToPositions: [2]
               - type: submitButton
                 buttonText: Proceed
-              - note: image of animal icons is not displaying properly
 
           - name: coordination discussion
             duration: 600
@@ -309,7 +311,7 @@ templates:
               showTitle: true
             elements:
               - type: image
-                file: ${imagePanel}
+                file: "projects/volvovsky_reputation/${imagePanel}"
               - name: labeling
                 type: prompt
                 file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
@@ -336,15 +338,15 @@ templates:
                 file: projects/volvovsky_reputation/play_as_buyer.md
                 name: buyer_description
                 conditions:
-                  - promptName: buyer_choice_to_hire
+                  - reference: prompt.buyer_choice_to_hire
                     comparator: equals
                     value: "Yes"
               - type: submitButton
                 conditions:
-                  - promptName: buyer_choice_to_hire
+                  - reference: prompt.buyer_choice_to_hire
                     comparator: equals
                     value: "Yes"
-                  - promptName: buyer_description
+                  - reference: prompt.buyer_description
                     comparator: hasLengthAtMost
                     value: 15
           - name: Result of playing as Buyer
@@ -352,16 +354,17 @@ templates:
               - type: prompt
                 file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
               - type: submitButton
-          - name: Buyer Training Over
-            elements:
-              - type: prompt
-                file: projects/volvovsky_reputation/chose_to_hire_agent_no.md
-                name: buyer_choice_to_hire_no
-              - type: submitButton
-                conditions:
-                  - promptName: buyer_choice_to_hire_no
-                    comparator: equals
-                    value: "No"
+                buttonText: Proceed to next round of training
+          # - name: Buyer Training Over
+          #   elements:
+          #     - type: prompt
+          #       file: projects/volvovsky_reputation/chose_to_hire_agent_no.md
+          #       name: buyer_choice_to_hire_no
+          #     - type: submitButton
+          #       conditions:
+          #         - reference: prompt.buyer_choice_to_hire_no
+          #           comparator: equals
+          #           value: "No"
 
           - name: Play as Agent part 1
             elements:
@@ -370,13 +373,13 @@ templates:
                 name: agent_intro_taxi
               - type: submitButton
                 conditions:
-                  - promptName: agent_intro_taxi
+                  - reference: prompt.agent_intro_taxi
                     comparator: equals
                     value: "Yes"
           - name: Play as Agent part 2
             elements:
               - type: prompt
-                file: projects/volvovsky_reputation/play_as_agent_message.md
+                file: projects/volvovsky_reputation/play_as_agent_task.md
               - type: submitButton
           - name: Result of playing as Agent
             elements:
@@ -387,7 +390,11 @@ templates:
           - name: Instructions for Observer
             elements:
               - type: prompt
-                file: projects/volvovsky_reputation/video_placeholder.md
+                file: projects/volvovsky_reputation/pairing_with_partner.md
+                hideTime: 10
+              - type: prompt
+                file: projects/volvovsky_reputation/observer_instructions.md
+                displayTime: 10
               - type: submitButton
 
           - template: ${observerTemplateName}
@@ -398,32 +405,32 @@ templates:
                 file: projects/volvovsky_reputation/post_choice_debrief_yes_a.md
                 hideTime: 9
                 conditions:
-                  - promptName: postObservation_choice
+                  - reference: prompt.postObservation_choice
                     comparator: equals
                     value: "Yes"
               - type: prompt
                 file: projects/volvovsky_reputation/post_choice_debrief_yes_b.md
                 displayTime: 9
                 conditions:
-                  - promptName: postObservation_choice
+                  - reference: prompt.postObservation_choice
                     comparator: equals
                     value: "Yes"
               - type: submitButton
                 displayTime: 9
                 conditions:
-                  - promptName: postObservation_choice
+                  - reference: prompt.postObservation_choice
                     comparator: equals
                     value: "Yes"
 
               - type: prompt
                 file: projects/volvovsky_reputation/post_choice_debrief_no.md
                 conditions:
-                  - promptName: postObservation_choice
+                  - reference: prompt.postObservation_choice
                     comparator: equals
                     value: "No"
               - type: submitButton
                 conditions:
-                  - promptName: postObservation_choice
+                  - reference: prompt.postObservation_choice
                     comparator: equals
                     value: "No"
 
@@ -433,6 +440,7 @@ templates:
                 file: projects/volvovsky_reputation/manipulation_check_agent.md
               - type: prompt
                 file: projects/volvovsky_reputation/manipulation_check_agent.md
+              - type: submitButton
 
           - name: perceptions of discussion alters 1
             elements:
@@ -440,7 +448,6 @@ templates:
                 file: projects/volvovsky_reputation/perceptions_of_discussion_alter_1.md
               - type: survey
                 surveyName: PerceptionOfOthers
-              - type: submitButton
 
           - name: Demographic Survey
             elements:
@@ -478,15 +485,15 @@ introSequences:
           - type: submitButton
             buttonText: Submit
             conditions:
-              - promptName: comp1
-                comparator: equal
-                value: If everyone on your team agrees on a name for the image, regardless of who suggested it
-              - promptName: comp2
-                comparator: equal
-                value: False
-              - promptName: comp3
-                comparator: equal
-                value: Everyone on your team submits the exact name your team picked for the image
+              - reference: prompt.comp1
+                comparator: includes
+                value: "everyone on your team agrees"
+              - reference: prompt.comp2
+                comparator: equals
+                value: "False"
+              - reference: prompt.comp3
+                comparator: includes
+                value: "the exact name"
 
 treatments:
   - template: treatmentBase
