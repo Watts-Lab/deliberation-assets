@@ -170,25 +170,25 @@ templates:
 
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 30
+            hideTime: 15
           - type: timer
             displayTime: 0
-            hideTime: 30
+            hideTime: 15
 
           - type: prompt
             file: projects/volvovsky_reputation/{asksForFile}
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
           - type: timer
             displayTime: 30
             hideTime: 60
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}.md
+            file: projects/volvovsky_reputation/${outcomeFile}.md # bug here
             displayTime: 60
           - type: submitButton
             displayTime: 60
@@ -386,6 +386,43 @@ templates:
               - type: prompt
                 file: projects/volvovsky_reputation/result_of_playing_as_agent.md
               - type: submitButton
+
+          - name: Art Game Comprehension Check
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_review.md
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_1.md
+                name: art_game_comp_1
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_2.md
+                name: art_game_comp_2
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_3.md
+                name: art_game_comp_3
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_4.md
+                name: art_game_comp_4
+              - type: prompt
+                file: projects/volvovsky_reputation/art_game_comp_5.md
+                name: art_game_comp_5
+              - type: submitButton
+                conditions:
+                  - reference: prompt.art_game_comp_1
+                    comparator: includes
+                    value: "correct piece of art"
+                  - reference: prompt.art_game_comp_2
+                    comparator: includes
+                    value: "buys a piece"
+                  - reference: prompt.art_game_comp_3
+                    comparator: includes
+                    value: "hire the same agent"
+                  - reference: prompt.art_game_comp_4
+                    comparator: includes
+                    value: "Art Game will end"
+                  - reference: prompt.art_game_comp_5
+                    comparator: includes
+                    value: "False"
 
           - name: Instructions for Observer
             elements:

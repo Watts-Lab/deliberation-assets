@@ -4,3 +4,5 @@ type: noResponse
 ---
 
 ## You will observe a game between the following buyer and agent:
+
+---

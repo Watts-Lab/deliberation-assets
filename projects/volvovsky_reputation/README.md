@@ -178,9 +178,15 @@ need to:
 Need to:
 
 - fix timer for exit stages for kitchenTimer, also display and hide times
-- check that images are properly displayed in labeling game
+- [x] check that images are properly displayed in labeling game
 - check that stage observer intro stage displays properly
 - check that play as agent task displays properly
 - check submit button in observer round advances
 - labels on manipulation check need to be different, no submit button
 - need comprehension checks for after training rounds.
+
+# Sept 28
+
+- bug on the rendering of the outcomeFile
+- need to double check the comprehension checks
+- confusing that you observe multiple rounds and they aren't labeled as multiple rounds. We should say how many rounds.
