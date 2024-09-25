@@ -88,26 +88,26 @@ templates:
 
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 30
+            hideTime: 15
           - type: timer
             displayTime: 0
-            hideTime: 30
+            hideTime: 15
 
           - type: prompt
             file: projects/volvovsky_reputation/buyer_asks_for.md
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
           - type: display
             reference: prompt.recall_${recallIndex}
             position: 0
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
           - type: timer
-            displayTime: 30
+            displayTime: 15
             hideTime: 60
 
           - type: prompt
@@ -128,8 +128,8 @@ templates:
           outcomeFile: observe_agent_success
         broadcast:
           d0:
-            - recallIndex: "3"
-            - recallIndex: "1"
+            - recallIndex: "8"
+            - recallIndex: "7"
             - recallIndex: "5"
             - recallIndex: "2"
             - recallIndex: "4"
@@ -149,8 +149,8 @@ templates:
           outcomeFile: observe_agent_failure
         broadcast:
           d0:
-            - recallIndex: "3"
-            - recallIndex: "1"
+            - recallIndex: "8"
+            - recallIndex: "7"
 
       - name: failureChoose
         elements:
@@ -176,7 +176,7 @@ templates:
             hideTime: 15
 
           - type: prompt
-            file: projects/volvovsky_reputation/{asksForFile}
+            file: projects/volvovsky_reputation/{asksForFile} # BUG: this isn't rendering at all
             displayTime: 15
             hideTime: 60
           - type: prompt
@@ -202,7 +202,7 @@ templates:
       - template: observerOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: "observe_buyer_success"
+          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - asksForFile: buyer_asks_for_simple_1.md
@@ -223,7 +223,7 @@ templates:
       - template: observerOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: observe_buyer_success
+          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - asksForFile: buyer_asks_for_complex_1.md
@@ -244,7 +244,7 @@ templates:
       - template: observerOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: observe_buyer_failure
+          outcomeFile: observe_agent_failure
         broadcast:
           d0:
             - asksForFile: buyer_asks_for_simple_1.md
@@ -262,7 +262,7 @@ templates:
       - template: observerOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: observe_buyer_failure
+          outcomeFile: observe_agent_failure
         broadcast:
           d0:
             - asksForFile: buyer_asks_for_complex_1.md
@@ -303,29 +303,30 @@ templates:
               - type: submitButton
                 buttonText: Proceed
 
-          - name: coordination discussion
-            duration: 600
-            discussion:
-              chatType: video
-              showNickname: true
-              showTitle: true
-            elements:
-              - type: image
-                file: "projects/volvovsky_reputation/${imagePanel}"
-              - name: labeling
-                type: prompt
-                file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
-                shared: true
-              - type: submitButton
-                displayTime: 300
-                buttonText: End discussion and proceed to next steps
-                name: labeling
+          # comment out to debug exit steps
+          # - name: coordination discussion
+          #   duration: 600
+          #   discussion:
+          #     chatType: video
+          #     showNickname: true
+          #     showTitle: true
+          #   elements:
+          #     - type: image
+          #       file: "projects/volvovsky_reputation/${imagePanel}"
+          #     - name: labeling
+          #       type: prompt
+          #       file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
+          #       shared: true
+          #     - type: submitButton
+          #       displayTime: 300
+          #       buttonText: End discussion and proceed to next steps
+          #       name: labeling
 
-          - template: recallTask
-            fields:
-              recallIndex: ${d0}
-            broadcast:
-              d0: ${recallImages}
+          # - template: recallTask
+          #   fields:
+          #     recallIndex: ${d0}
+          #   broadcast:
+          #     d0: ${recallImages}
 
         exitSequence:
           - name: Training round as Buyer
@@ -413,7 +414,7 @@ templates:
                     value: "correct piece of art"
                   - reference: prompt.art_game_comp_2
                     comparator: includes
-                    value: "buys a piece"
+                    value: "hires the agent"
                   - reference: prompt.art_game_comp_3
                     comparator: includes
                     value: "hire the same agent"
@@ -433,6 +434,7 @@ templates:
                 file: projects/volvovsky_reputation/observer_instructions.md
                 displayTime: 10
               - type: submitButton
+                displayTime: 10
 
           - template: ${observerTemplateName}
 

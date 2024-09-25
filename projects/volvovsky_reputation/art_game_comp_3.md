@@ -3,7 +3,7 @@ name: projects/volvovsky_reputation/art_game_comp_3.md
 type: multipleChoice
 ---
 
-## After the agent chooses a piece of art for the buyer:
+## After the agent chooses a piece of art and the buyer sees the result:
 
 ---
 

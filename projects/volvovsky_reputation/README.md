@@ -185,8 +185,16 @@ Need to:
 - labels on manipulation check need to be different, no submit button
 - need comprehension checks for after training rounds.
 
-# Sept 28
+# Sept 25
 
-- bug on the rendering of the outcomeFile
-- need to double check the comprehension checks
-- confusing that you observe multiple rounds and they aren't labeled as multiple rounds. We should say how many rounds.
+- [x] bug on the rendering of the outcomeFile
+- [x] need to double check the comprehension checks
+- [x] confusing that you observe multiple rounds and they aren't labeled as multiple rounds. We should say how many rounds.
+- [x] check that the name assigned to the original images are set in the various conditions
+
+# for Oct 3
+
+- check that generic names for images work
+- [ ] still having a bug where the stage isn't re-rendering after the timer elapses - James
+- [ ] binary choice or continuous choice for willingness to hire the agent. - Hagay
+- [ ] other team observe stage isn't rendering asksforfile properly, just gets loading message

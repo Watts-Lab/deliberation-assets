@@ -3,7 +3,7 @@ name: projects/volvovsky_reputation/art_game_comp_1.md
 type: multipleChoice
 ---
 
-## The buyer gets rewarded with 80 points if:
+## The buyer gets rewarded with 80 points only if:
 
 ---
 
