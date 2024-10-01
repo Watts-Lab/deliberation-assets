@@ -88,37 +88,41 @@ templates:
 
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 15
+            hideTime: 9
           - type: timer
             displayTime: 0
-            hideTime: 15
+            endTime: 15
+            hideTime: 9
+            warnTimeRemaining: 3
 
           - type: prompt
             file: projects/volvovsky_reputation/buyer_asks_for.md
-            displayTime: 15
-            hideTime: 60
+            displayTime: 10
+            hideTime: 20
           - type: display
             reference: prompt.recall_${recallIndex}
             position: 0
-            displayTime: 15
-            hideTime: 60
+            displayTime: 10
+            hideTime: 20
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 15
-            hideTime: 60
+            displayTime: 10
+            hideTime: 20
           - type: timer
-            displayTime: 15
-            hideTime: 60
+            displayTime: 10
+            endTime: 29
+            hideTime: 20
+            warnTimeRemaining: 3
 
           - type: prompt
             file: projects/volvovsky_reputation/${outcomeFile}.md
-            displayTime: 60
+            displayTime: 20
           - type: submitButton
-            displayTime: 60
+            displayTime: 20
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 70
+            displayTime: 30
 
   - templateName: observerOwnTeamSuccess
     templateContent:
@@ -174,28 +178,30 @@ templates:
           - type: timer
             displayTime: 0
             hideTime: 15
+            warnTimeRemaining: 3
 
           - type: prompt
-            file: projects/volvovsky_reputation/{asksForFile} # BUG: this isn't rendering at all
+            file: "projects/volvovsky_reputation/${asksForFile}" # BUG: this isn't rendering at all
             displayTime: 15
-            hideTime: 60
+            hideTime: 35
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
             displayTime: 15
-            hideTime: 60
+            hideTime: 35
           - type: timer
-            displayTime: 30
-            hideTime: 60
+            displayTime: 15
+            hideTime: 35
+            warnTimeRemaining: 3
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}.md # bug here
-            displayTime: 60
+            file: projects/volvovsky_reputation/${outcomeFile}.md
+            displayTime: 35
           - type: submitButton
-            displayTime: 60
+            displayTime: 35
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 70
+            displayTime: 45
 
   - templateName: observerOtherTeamSuccessSimple
     templateContent:
@@ -417,7 +423,7 @@ templates:
                     value: "hires the agent"
                   - reference: prompt.art_game_comp_3
                     comparator: includes
-                    value: "hire the same agent"
+                    value: "hire THE SAME AGENT"
                   - reference: prompt.art_game_comp_4
                     comparator: includes
                     value: "Art Game will end"
