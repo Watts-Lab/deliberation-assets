@@ -3,8 +3,8 @@ name: projects/volvovsky_reputation/post_choice_debrief_no.md
 type: noResponse
 ---
 
-# Unfortunately we were not able to match you with the agent.
+# Unfortunately, the agent decided not to play another round.
 
-The game is now over, we will now ask you several surveys about your experience.
+We will now ask you several surveys about your experience.
 
 ---

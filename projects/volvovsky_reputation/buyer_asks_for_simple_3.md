@@ -3,10 +3,10 @@ name: projects/volvovsky_reputation/buyer_asks_for_simple_3.md
 type: noResponse
 ---
 
-The buyer decided to hire the agent to purchase a piece of art.
+# The buyer decided to hire the agent to purchase a piece of art.
 
-They asked the agent to buy:
+# The message from the buyer is:
 
-> Heart
+# > `I want to buy the piece that looks like a "Heart"`
 
 ---

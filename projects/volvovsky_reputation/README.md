@@ -194,7 +194,27 @@ Need to:
 
 # for Oct 3
 
-- check that generic names for images work
-- [ ] still having a bug where the stage isn't re-rendering after the timer elapses - James
-- [ ] binary choice or continuous choice for willingness to hire the agent. - Hagay
-- [ ] other team observe stage isn't rendering asksforfile properly, just gets loading message
+- [ ] check that generic names for images work
+- [x] still having a bug where the stage isn't re-rendering after the timer elapses - James
+- [x] binary choice or continuous choice for willingness to hire the agent. - Hagay
+- [x] other team observe stage isn't rendering asksforfile properly, just gets loading message
+
+# Oct 10
+
+### Simple success other team
+
+- [x] format the name of the generic label
+
+### Simple success own team
+
+- [ ] do we want other measures of reputation?
+  - how intelligent, honest, competence, integrity,
+  - Do you think they paid to go back for their phone? (Hagay)
+- [ ] Finish instructions for labeling game (Hagay)
+- [ ] check that complex images are shown during both labeling and recall
+- [ ] own team vs other team displays the text of what they want you to buy differently, own team uses block quote, other team uses monospace font.
+
+For the 24th
+
+- [ ] For find 3 people who we can watch run through the experiment next thursday (Hagay)
+- [ ] push to prod server for running with friends (JAMES)

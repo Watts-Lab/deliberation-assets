@@ -8,6 +8,6 @@ note: we choose to tell the observer that there are 5 rounds because we don't be
 
 Don't worry, this actually gives you an advantage: you get to observe an agent before deciding to hire them if you wish.
 
-The buyer and agent will play up to 5 rounds of the game, if the buyer chooses to hire the agent for each round.
+The buyer and agent will play **up to 5 rounds** of the game, if the buyer chooses to hire the agent for each round.
 
 ---

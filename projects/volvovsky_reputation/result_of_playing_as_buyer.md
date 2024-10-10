@@ -7,7 +7,7 @@ The agent:
 
 ![robot image](projects/volvovsky_reputation/robot_icon.jpg)
 
-has successfully purchased the piece of art you wanted:
+bought the right piece of art:
 
 ![purchase image](projects/volvovsky_reputation/Tangram_A5.jpg)
 

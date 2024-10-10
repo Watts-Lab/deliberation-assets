@@ -48,9 +48,9 @@ templates:
             position: 2
           - type: submitButton
 
-  - templateName: simpleImages
+  - templateName: complexImages
     templateContent:
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg # need to also do this for the simple images
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg
       - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
       - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
       - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
@@ -59,7 +59,7 @@ templates:
       - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
       - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
 
-  - templateName: complexImages
+  - templateName: simpleImages
     templateContent:
       - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
       - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
@@ -98,12 +98,10 @@ templates:
           - type: prompt
             file: projects/volvovsky_reputation/buyer_asks_for.md
             displayTime: 10
-            hideTime: 20
           - type: display
             reference: prompt.recall_${recallIndex}
             position: 0
             displayTime: 10
-            hideTime: 20
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
             displayTime: 10
@@ -181,9 +179,8 @@ templates:
             warnTimeRemaining: 3
 
           - type: prompt
-            file: "projects/volvovsky_reputation/${asksForFile}" # BUG: this isn't rendering at all
+            file: "projects/volvovsky_reputation/${asksForFile}"
             displayTime: 15
-            hideTime: 35
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
             displayTime: 15
@@ -201,7 +198,7 @@ templates:
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 45
+            displayTime: 50
 
   - templateName: observerOtherTeamSuccessSimple
     templateContent:
@@ -310,29 +307,29 @@ templates:
                 buttonText: Proceed
 
           # comment out to debug exit steps
-          # - name: coordination discussion
-          #   duration: 600
-          #   discussion:
-          #     chatType: video
-          #     showNickname: true
-          #     showTitle: true
-          #   elements:
-          #     - type: image
-          #       file: "projects/volvovsky_reputation/${imagePanel}"
-          #     - name: labeling
-          #       type: prompt
-          #       file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
-          #       shared: true
-          #     - type: submitButton
-          #       displayTime: 300
-          #       buttonText: End discussion and proceed to next steps
-          #       name: labeling
+          - name: coordination discussion
+            duration: 600
+            discussion:
+              chatType: video
+              showNickname: true
+              showTitle: true
+            elements:
+              - type: image
+                file: "projects/volvovsky_reputation/${imagePanel}"
+              - name: labeling
+                type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
+                shared: true
+              - type: submitButton
+                displayTime: 300
+                buttonText: End discussion and proceed to next steps
+                name: labeling
 
-          # - template: recallTask
-          #   fields:
-          #     recallIndex: ${d0}
-          #   broadcast:
-          #     d0: ${recallImages}
+          - template: recallTask
+            fields:
+              recallIndex: ${d0}
+            broadcast:
+              d0: ${recallImages}
 
         exitSequence:
           - name: Training round as Buyer
@@ -484,13 +481,13 @@ templates:
               - type: prompt
                 file: projects/volvovsky_reputation/manipulation_check_agent.md
               - type: prompt
-                file: projects/volvovsky_reputation/manipulation_check_agent.md
+                file: projects/volvovsky_reputation/manipulation_check_buyer.md
               - type: submitButton
 
           - name: perceptions of discussion alters 1
             elements:
               - type: prompt
-                file: projects/volvovsky_reputation/perceptions_of_discussion_alter_1.md
+                file: projects/volvovsky_reputation/perception_of_group_instructions.md
               - type: survey
                 surveyName: PerceptionOfOthers
 
@@ -509,11 +506,11 @@ introSequences:
           - type: prompt
             file: projects/volvovsky_reputation/welcome.md
           - type: submitButton
-      - name: Recall Game Instructions
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/video_placeholder.md
-          - type: submitButton
+      # - name: Recall Game Instructions
+      #   elements:
+      #     - type: prompt
+      #       file: projects/volvovsky_reputation/video_placeholder.md
+      #     - type: submitButton
       - name: Comprehension Checks
         elements:
           - type: prompt

@@ -5,7 +5,7 @@ type: multipleChoice
 
 # Great, you got your phone! The message from the buyer (the bot player) is:
 
-> `I want to buy the piece that looks like "artichoke"`.
+# > `I want to buy the piece that looks like a "Banana"`.
 
 # Please select the image to purchase from the set below:
 
