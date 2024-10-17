@@ -53,8 +53,10 @@ treatments:
         duration: 60
         desc: participants give reasons for the other party's opinions
         elements:
-          - projects/example/01_instructions_reason_giving.md
-          - projects/example/ban_assault_rifles_discussion.md
+          - type: prompt
+            file: projects/example/01_instructions_reason_giving.md
+          - type: prompt
+            file: projects/example/ban_assault_rifles_discussion.md
           - type: prompt
             file: projects/example/republicanReasonGiving.md
             showToPositions:
@@ -76,7 +78,8 @@ treatments:
       - name: Pre-discussion instructions
         duration: 45
         elements:
-          - projects/example/preDiscussionInstructions.md
+          - type: prompt
+            file: projects/example/preDiscussionInstructions.md
           - type: submitButton
 
       - name: Discussion
