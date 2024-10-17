@@ -207,14 +207,20 @@ Need to:
 
 ### Simple success own team
 
-- [ ] do we want other measures of reputation?
+- [x] do we want other measures of reputation?
   - how intelligent, honest, competence, integrity,
   - Do you think they paid to go back for their phone? (Hagay)
-- [ ] Finish instructions for labeling game (Hagay)
-- [ ] check that complex images are shown during both labeling and recall
-- [ ] own team vs other team displays the text of what they want you to buy differently, own team uses block quote, other team uses monospace font.
+- [x] Finish instructions for labeling game (Hagay)
 
-For the 24th
+# Oct 17
+
+Todo:
+
+- [ ] debug why submit button doesn't show in labeling game instructions.
+- [ ] check that complex images are shown during both labeling and recall
+- [ ] own team vs other team displays the text of what they want you to buy differently, own team uses block quote, other team uses monospace font. (JAMES fix display CSS in markdown file)
+
+For nov 7:
 
 - [ ] For find 3 people who we can watch run through the experiment next thursday (Hagay)
 - [ ] push to prod server for running with friends (JAMES)

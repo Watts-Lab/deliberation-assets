@@ -476,6 +476,16 @@ templates:
                     comparator: equals
                     value: "No"
 
+          - name: other reputation questions
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/do_you_recommend.md
+              - type: prompt
+                file: projects/volvovsky_reputation/do_you_think_they_went_back.md
+              - type: prompt
+                file: projects/volvovsky_reputation/did_they_understand.md
+              - type: submitButton
+
           - name: manipulation check
             elements:
               - type: prompt
@@ -515,6 +525,7 @@ introSequences:
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/recall_instruction_transcript.md
+          - type: separator
           - name: comp1
             type: prompt
             file: projects/volvovsky_reputation/recall_instruction_comp_check_1.md
@@ -529,13 +540,13 @@ introSequences:
             conditions:
               - reference: prompt.comp1
                 comparator: includes
-                value: "everyone on your team agrees"
+                value: "regardless"
               - reference: prompt.comp2
                 comparator: equals
-                value: "False"
+                value: "your team picked"
               - reference: prompt.comp3
                 comparator: includes
-                value: "the exact name"
+                value: "Stage 1"
 
 treatments:
   - template: treatmentBase
