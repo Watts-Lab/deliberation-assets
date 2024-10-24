@@ -216,11 +216,33 @@ Need to:
 
 Todo:
 
-- [ ] debug why submit button doesn't show in labeling game instructions.
+- [x] debug why submit button doesn't show in labeling game instructions.
 - [ ] check that complex images are shown during both labeling and recall
-- [ ] own team vs other team displays the text of what they want you to buy differently, own team uses block quote, other team uses monospace font. (JAMES fix display CSS in markdown file)
+- [x] own team vs other team displays the text of what they want you to buy differently, own team uses block quote, other team uses monospace font. (JAMES fix display CSS in markdown file)
 
 For nov 7:
 
 - [ ] For find 3 people who we can watch run through the experiment next thursday (Hagay)
 - [ ] push to prod server for running with friends (JAMES)
+
+Checking
+
+- [ ] complex failure own team
+- [ ] complex failure other team
+- [ ] complex success own team
+- [ ] complex success other team
+- [ ] simple failure own team
+- [ ] simple failure other team
+- [ ] simple success own team
+- [ ] simple success other team
+
+# Oct 24
+
+Todos:
+
+- [ ] Additions to consent? IRB?
+
+Notes for pilots:
+
+- do we get people satisficing by ending the game early so they can move on to other tasks?
+- should we change the name of the "buyer" to "collector" to avoid confusion, as the agent actually performs the action of purchasing the art, "buying" it..

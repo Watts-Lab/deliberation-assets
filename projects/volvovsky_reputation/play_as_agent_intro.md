@@ -5,21 +5,23 @@ type: multipleChoice
 
 ## Training round 2: Play as Agent
 
-In this phase, you are playing as the **agent** in the art game.
+In this phase, you are playing as the **agent** in the Art Buying Game.
 
 _This is a training round, so the buyer will be played by a bot:_
 
 ![robot image](projects/volvovsky_reputation/robot_icon.jpg)
 
-A potential buyer has paid you **50 points** to hire you to purchase a piece of art, in addition to the money to buy the art. They have described the piece of art they want in a text message.
+A potential buyer has paid you **50 points** to purchase a piece of art, and has given you the money to buy it.
 
-Unfortunately, you left your phone at home, with their description of the art piece. The gallery is going to close soon, so the only way you can get your phone in time is to pay **30 points** for a taxi home and back.
+They described the piece they want in a text message, but unfortunately you left your phone at home.
 
-Alternatively, you can keep those 30 points, and buy whichever art piece you guess the buyer wants.
+The gallery closes soon, and the only way you can read the message in time is to **pay 30 points** for a taxi home and back.
 
-Just know, this is a prolific buyer who buys many pieces of art, and may want to hire you again in the future. If you get the wrong piece of art, the buyer might not want to hire you again.
+Or, you can keep those 30 points, and buy whichever art piece you guess the buyer wants.
 
-Are you going to **pay 30 points** to take a taxi home to get your phone?
+👉 If you get the right piece, this buyer may want to hire you again in the future.
+
+**Are you going to pay 30 points to take a taxi home to get your phone?**
 
 _As this is a training round, select "Yes"_
 

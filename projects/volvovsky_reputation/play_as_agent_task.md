@@ -3,9 +3,11 @@ name: projects/volvovsky_reputation/play_as_agent_task.md
 type: multipleChoice
 ---
 
-# Great, you got your phone! The message from the buyer (the bot player) is:
+# Great, you got your phone!
 
-# > `I want to buy the piece that looks like a "Banana"`.
+# The message from the buyer is:
+
+> Banana
 
 # Please select the image to purchase from the set below:
 

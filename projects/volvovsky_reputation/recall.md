@@ -4,9 +4,11 @@ type: openResponse
 rows: 1
 ---
 
-# Recall Stage
+# Quiz
 
-Please enter the label your group chose for this image, using all lowercase letters.
+Please enter the name your group chose for this image.
+
+_use only lowercase letters_
 
 ---
 

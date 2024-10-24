@@ -3,25 +3,27 @@ name: projects/volvovsky_reputation/art_game_comp_review.md
 type: noResponse
 ---
 
-# Excellent, you have completed training!
+# You have completed training
 
-_Before we begin, we want to check that you got everything._
+_Lets check that you got everything:_
 
 ## Review Art Game Instructions
 
-- The **buyer** decides whether to pay **50 points** to hire an **agent** to purchase a piece of art.
-- If the buyer hires the agent:
-  1. The buyer is shown which piece of art to buy.
-  2. The buyer sends a message to the agent, specifying which piece to purchase.
-- When the agent arrives at the gallery, they realize they left their phone (with the buyer's message) at home. The agent now faces two choices:
-  1. Spend **30 points** to take a cab home, retrieve the phone, and return to the gallery before it closes.
-  2. Buy a piece of art **blind** (without the message).
-- If the agent purchases the correct piece, the buyer earns **80 points**. If the agent buys the wrong piece, the buyer gets no additional points, and loses the **50 points** they paid the agent.
-- At the end of the round, the buyer can hire the same agent to buy another piece of art.
+_The **buyer** decides whether to pay **50 points** to hire an **agent** to purchase a piece of art, or to end the game._
 
-#### Important Notes:
+_If the buyer hires the agent, they send them a text message with a description of the piece._
 
-- If the buyer refuses to hire the agent, the game ends.
-- The buyer cannot see whether the agent took a cab home to retrieve the message, only whether the agent purchased the correct piece of art.
+_When the agent arrives at the gallery, they realize they left their phone (with the buyer's message) at home. They may either:_
+
+- _Spend **30 points** to take a cab home, retrieve the phone, and return to the gallery before it closes_
+- _Buy a piece of art without seeing the message_
+
+_If the agent purchases the correct piece, the buyer earns **80 points**._
+
+_If the agent buys the wrong piece, the buyer earns nothing, and loses the **50 points** they paid the agent._
+
+_At the end of the round, the buyer may choose to hire the same agent to buy another piece of art, or end the game._
+
+👉 _The buyer doesn't know that the agent forgot their phone, only whether they purchased the correct piece of art._
 
 ---

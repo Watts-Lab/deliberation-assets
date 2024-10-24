@@ -101,6 +101,17 @@ templates:
           - type: display
             reference: prompt.recall_${recallIndex}
             position: 0
+            showToPositions: [1]
+            displayTime: 10
+          - type: display
+            reference: prompt.recall_${recallIndex}
+            position: 1
+            showToPositions: [2]
+            displayTime: 10
+          - type: display
+            reference: prompt.recall_${recallIndex}
+            position: 2
+            showToPositions: [0]
             displayTime: 10
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
@@ -306,7 +317,7 @@ templates:
               - type: submitButton
                 buttonText: Proceed
 
-          # comment out to debug exit steps
+          # # comment out to debug exit steps
           - name: coordination discussion
             duration: 600
             discussion:
@@ -540,13 +551,13 @@ introSequences:
             conditions:
               - reference: prompt.comp1
                 comparator: includes
-                value: "regardless"
+                value: regardless
               - reference: prompt.comp2
-                comparator: equals
-                value: "your team picked"
+                comparator: includes
+                value: exact
               - reference: prompt.comp3
                 comparator: includes
-                value: "Stage 1"
+                value: Images
 
 treatments:
   - template: treatmentBase

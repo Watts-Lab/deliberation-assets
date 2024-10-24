@@ -7,7 +7,6 @@ type: multipleChoice
 
 ---
 
-- The agent buys a piece of art
-- The agent spends 30 points to get a cab home so that he can read the buyer’s message
-- The agent buys the correct piece of art
-- The buyer re-hires the agent
+- the agent buys a piece of art
+- the agent buys the correct piece of art
+- the buyer re-hires the agent

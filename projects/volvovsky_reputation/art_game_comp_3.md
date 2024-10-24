@@ -7,6 +7,6 @@ type: multipleChoice
 
 ---
 
-- The buyer has another opportunity to hire THE SAME AGENT to buy another piece of art, or terminate the art game
-- The buyer has another opportunity to hire A DIFFERENT AGENT to buy another piece of art, or terminate the art game
-- The buyer and agent trade places
+- the buyer can either rehire THE SAME AGENT to buy another piece of art, or end the game
+- the buyer can hire A DIFFERENT AGENT to buy a piece of art
+- the buyer and agent trade places

@@ -7,6 +7,6 @@ type: multipleChoice
 
 ---
 
-- The buyer will get an opportunity to hire a different agent.
-- The Art Game will end
-- The buyer will play as an agent with someone else
+- they may hire a different agent
+- the Art Buying Game will end
+- they will play as an agent for someone else

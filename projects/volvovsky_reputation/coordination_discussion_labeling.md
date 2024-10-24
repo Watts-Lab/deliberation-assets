@@ -14,7 +14,9 @@ Names should be:
 - less than 15 characters long
 - unique to each image
 
-We will quiz you on the names you chose in the next stage of the experiment. You'll get more points the more accurately you recall your labels.
+In the next stage, we will quiz you on the names you chose.
+
+You will earn points only if **everyone** in your group remembers the correct name.
 
 ---
 
