@@ -12,3 +12,4 @@ type: multipleChoice
 - Unsure
 - Probably yes
 - Definitely yes
+- N/A

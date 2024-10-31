@@ -227,22 +227,28 @@ For nov 7:
 
 Checking
 
-- [ ] complex failure own team
-- [ ] complex failure other team
-- [ ] complex success own team
-- [ ] complex success other team
-- [ ] simple failure own team
-- [ ] simple failure other team
-- [ ] simple success own team
-- [ ] simple success other team
+- [x] complex failure own team
+- [x] complex failure other team
+- [x] complex success own team
+- [x] complex success other team
+- [x] simple failure own team
+- [x] simple failure other team
+- [x] simple success own team
+- [x] simple success other team
 
 # Oct 24
 
 Todos:
 
 - [ ] Additions to consent? IRB?
+- [x] set timimgs for observe other team to short circuit with the same timings as for own team
 
 Notes for pilots:
 
 - do we get people satisficing by ending the game early so they can move on to other tasks?
 - should we change the name of the "buyer" to "collector" to avoid confusion, as the agent actually performs the action of purchasing the art, "buying" it..
+
+potential deception:
+
+- they think they are observing a group mate
+-

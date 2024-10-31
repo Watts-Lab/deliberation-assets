@@ -29,7 +29,7 @@ templates:
                 position: all
                 comparator: hasLengthAtLeast
                 value: 1
-          - type: prompt # todo: make it so that we put the icon for the players next to who submitted what
+          - type: prompt
             file: projects/volvovsky_reputation/labels_not_match.md
             conditions:
               - reference: prompt.recall_${recallIndex}
@@ -141,7 +141,7 @@ templates:
           outcomeFile: observe_agent_success
         broadcast:
           d0:
-            - recallIndex: "8"
+            - recallIndex: "1"
             - recallIndex: "7"
             - recallIndex: "5"
             - recallIndex: "2"
@@ -162,7 +162,7 @@ templates:
           outcomeFile: observe_agent_failure
         broadcast:
           d0:
-            - recallIndex: "8"
+            - recallIndex: "1"
             - recallIndex: "7"
 
       - name: failureChoose
@@ -183,33 +183,35 @@ templates:
 
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_buyer.md
-            hideTime: 15
+            hideTime: 9
           - type: timer
             displayTime: 0
-            hideTime: 15
+            endTime: 15
+            hideTime: 9
             warnTimeRemaining: 3
 
           - type: prompt
             file: "projects/volvovsky_reputation/${asksForFile}"
-            displayTime: 15
+            displayTime: 10
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
-            displayTime: 15
-            hideTime: 35
+            displayTime: 10
+            hideTime: 20
           - type: timer
-            displayTime: 15
-            hideTime: 35
+            displayTime: 10
+            endTime: 29
+            hideTime: 20
             warnTimeRemaining: 3
 
           - type: prompt
             file: projects/volvovsky_reputation/${outcomeFile}.md
-            displayTime: 35
+            displayTime: 20
           - type: submitButton
-            displayTime: 35
+            displayTime: 20
 
           - type: prompt
             file: projects/volvovsky_reputation/please_click_forward.md
-            displayTime: 50
+            displayTime: 30
 
   - templateName: observerOtherTeamSuccessSimple
     templateContent:
@@ -370,16 +372,6 @@ templates:
                 file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
               - type: submitButton
                 buttonText: Proceed to next round of training
-          # - name: Buyer Training Over
-          #   elements:
-          #     - type: prompt
-          #       file: projects/volvovsky_reputation/chose_to_hire_agent_no.md
-          #       name: buyer_choice_to_hire_no
-          #     - type: submitButton
-          #       conditions:
-          #         - reference: prompt.buyer_choice_to_hire_no
-          #           comparator: equals
-          #           value: "No"
 
           - name: Play as Agent part 1
             elements:
@@ -428,22 +420,22 @@ templates:
                     value: "correct piece of art"
                   - reference: prompt.art_game_comp_2
                     comparator: includes
-                    value: "hires the agent"
+                    value: "hires them"
                   - reference: prompt.art_game_comp_3
                     comparator: includes
-                    value: "hire THE SAME AGENT"
+                    value: "THE SAME AGENT"
                   - reference: prompt.art_game_comp_4
                     comparator: includes
-                    value: "Art Game will end"
+                    value: "Game will end"
                   - reference: prompt.art_game_comp_5
                     comparator: includes
-                    value: "False"
+                    value: "No"
 
           - name: Instructions for Observer
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/pairing_with_partner.md
-                hideTime: 10
+                hideTime: 9
               - type: prompt
                 file: projects/volvovsky_reputation/observer_instructions.md
                 displayTime: 10
@@ -527,11 +519,7 @@ introSequences:
           - type: prompt
             file: projects/volvovsky_reputation/welcome.md
           - type: submitButton
-      # - name: Recall Game Instructions
-      #   elements:
-      #     - type: prompt
-      #       file: projects/volvovsky_reputation/video_placeholder.md
-      #     - type: submitButton
+
       - name: Comprehension Checks
         elements:
           - type: prompt

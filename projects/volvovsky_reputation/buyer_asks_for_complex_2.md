@@ -7,6 +7,6 @@ type: noResponse
 
 # The message from the buyer is:
 
-# > `I want to buy the piece that looks like a "Celebration"`
+> celebration
 
 ---

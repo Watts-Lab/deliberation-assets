@@ -7,6 +7,6 @@ type: noResponse
 
 # The message from the buyer is:
 
-> Sun
+> sun
 
 ---
