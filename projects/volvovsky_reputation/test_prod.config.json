@@ -1,6 +1,6 @@
 {
   "batchName": "demo",
-  "cdn": "local",
+  "cdn": "prod",
   "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
   "customIdInstructions": "none",
   "platformConsent": "US",

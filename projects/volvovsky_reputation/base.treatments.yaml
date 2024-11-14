@@ -138,14 +138,18 @@ templates:
       - template: observerOwnTeamStage
         fields:
           name: "observerOwnTeam_Round_${d0}"
-          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - recallIndex: "1"
+              outcomeFile: observe_agent_success
             - recallIndex: "7"
+              outcomeFile: observe_agent_failure
             - recallIndex: "5"
+              outcomeFile: observe_agent_success
             - recallIndex: "2"
+              outcomeFile: observe_agent_success
             - recallIndex: "4"
+              outcomeFile: observe_agent_success
 
       - name: successChoose
         elements:
@@ -204,7 +208,7 @@ templates:
             warnTimeRemaining: 3
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}.md
+            file: "projects/volvovsky_reputation/${outcomeFile}.md"
             displayTime: 20
           - type: submitButton
             displayTime: 20
@@ -218,14 +222,18 @@ templates:
       - template: observerOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - asksForFile: buyer_asks_for_simple_1.md
+              outcomeFile: observe_agent_success
             - asksForFile: buyer_asks_for_simple_2.md
+              outcomeFile: observe_agent_failure
             - asksForFile: buyer_asks_for_simple_3.md
+              outcomeFile: observe_agent_success
             - asksForFile: buyer_asks_for_simple_4.md
+              outcomeFile: observe_agent_success
             - asksForFile: buyer_asks_for_simple_5.md
+              outcomeFile: observe_agent_success
 
       - name: successChoose
         elements:
@@ -324,19 +332,19 @@ templates:
             duration: 600
             discussion:
               chatType: video
-              showNickname: true
+              showNickname: false
               showTitle: true
             elements:
               - type: image
                 file: "projects/volvovsky_reputation/${imagePanel}"
-              - name: labeling
-                type: prompt
-                file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
-                shared: true
               - type: submitButton
                 displayTime: 300
                 buttonText: End discussion and proceed to next steps
                 name: labeling
+              - name: labeling
+                type: prompt
+                file: projects/volvovsky_reputation/coordination_discussion_labeling.md # need to also do this for the simple images
+                shared: true
 
           - template: recallTask
             fields:
@@ -413,6 +421,8 @@ templates:
               - type: prompt
                 file: projects/volvovsky_reputation/art_game_comp_5.md
                 name: art_game_comp_5
+              - type: prompt
+                file: projects/volvovsky_reputation/all_mandatory.md
               - type: submitButton
                 conditions:
                   - reference: prompt.art_game_comp_1
@@ -504,6 +514,12 @@ templates:
               - type: survey
                 surveyName: PerceptionOfOthers
 
+          - name: debrief
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/debrief.md
+              - type: submitButton
+
           - name: Demographic Survey
             elements:
               - type: survey
@@ -511,10 +527,10 @@ templates:
 
 introSequences:
   - name: baseline
-    description: standard conditions
+    desc: standard conditions
     introSteps:
       - name: Welcome
-        description: outline the stages of the experiment, how long it will take, etc.
+        desc: outline the stages of the experiment, how long it will take, etc.
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/welcome.md
@@ -534,6 +550,8 @@ introSequences:
           - name: comp3
             type: prompt
             file: projects/volvovsky_reputation/recall_instruction_comp_check_3.md
+          - type: prompt
+            file: projects/volvovsky_reputation/all_mandatory.md
           - type: submitButton
             buttonText: Submit
             conditions:
