@@ -1,0 +1,28 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/css_lab/scheduler/scheduler.treatments.yaml",
+  "customIdInstructions": "projects/css_lab/scheduler/checkOnly_prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "signup_20241118",
+  "treatments": ["dummy"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "demo"
+    }
+  ],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}

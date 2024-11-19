@@ -325,65 +325,17 @@ introSequences:
     fields:
       sequenceName: wave2
       discussionTopicNames:
-        - topicName: freeInternet
-        - topicName: gunControl
-        - topicName: abortionLegality
-        - topicName: teacherTenure
-        - topicName: reduceMilitaryBudget
+        - topicName: drinkingAge
+        - topicName: sportsPEDs
+        - topicName: capAndTrade
+        - topicName: policeDefundingDiscrimination
+        - topicName: cubaEmbargo
       otherWaveTopicNames:
-        - topicName: prisonerVoting
-        - topicName: altMedInsurance
-        - topicName: wealthTax
-        - topicName: birthrightCitizenship
-        - topicName: banWeaponsExport
-
-  - template: introSequence
-    fields:
-      sequenceName: wave3
-      discussionTopicNames:
-        - topicName: prisonerVoting
-        - topicName: altMedInsurance
-        - topicName: wealthTax
-        - topicName: birthrightCitizenship
-        - topicName: banWeaponsExport
-      otherWaveTopicNames:
-        - topicName: athleteAnthem
-        - topicName: ukraineAid
-        - topicName: banJobExport
-        - topicName: fundArtsCulture
-        - topicName: immigrantCitizenship
-
-  - template: introSequence
-    fields:
-      sequenceName: wave4
-      discussionTopicNames:
-        - topicName: athleteAnthem
-        - topicName: ukraineAid
-        - topicName: banJobExport
-        - topicName: fundArtsCulture
-        - topicName: immigrantCitizenship
-      otherWaveTopicNames:
-        - topicName: puertoRicoStatehood
-        - topicName: childcareSubsidy
-        - topicName: carbonTax
-        - topicName: fastFoodHealth
-        - topicName: limitExecPay
-
-  - template: introSequence
-    fields:
-      sequenceName: wave5
-      discussionTopicNames:
-        - topicName: puertoRicoStatehood
-        - topicName: childcareSubsidy
-        - topicName: carbonTax
-        - topicName: fastFoodHealth
-        - topicName: limitExecPay
-      otherWaveTopicNames:
-        - topicName: fundNeedleExchange
-        - topicName: israelAid
-        - topicName: slaveReparations
-        - topicName: universalIncome
-        - topicName: schoolDressCode
+        - topicName: sugaryDrinkBan
+        - topicName: controlledBurns
+        - topicName: minorityGrants
+        - topicName: affirmativeAction
+        - topicName: nativeReparations
 
 treatments:
   - template: crossPartisanDiscussion
@@ -436,92 +388,8 @@ treatments:
         - repPosition: Mostly Yes
         - repPosition: Strongly Yes
       d2:
-        - topicName: freeInternet
-        - topicName: gunControl
-        - topicName: abortionLegality
-        - topicName: teacherTenure
-        - topicName: reduceMilitaryBudget
-
-  - template: crossPartisanDiscussion
-    fields:
-      waveNumber: 3
-      treatmentName: "wave_3_${topicName}_dem_${d0}_rep_${d1}"
-    broadcast:
-      d0:
-        - demPosition: Strongly No
-        - demPosition: Mostly No
-        - demPosition: Slightly No
-        - demPosition: Neutral
-        - demPosition: Slightly Yes
-        - demPosition: Mostly Yes
-        - demPosition: Strongly Yes
-      d1:
-        - repPosition: Strongly No
-        - repPosition: Mostly No
-        - repPosition: Slightly No
-        - repPosition: Neutral
-        - repPosition: Slightly Yes
-        - repPosition: Mostly Yes
-        - repPosition: Strongly Yes
-      d2:
-        - topicName: prisonerVoting
-        - topicName: altMedInsurance
-        - topicName: wealthTax
-        - topicName: birthrightCitizenship
-        - topicName: banWeaponsExport
-
-  - template: crossPartisanDiscussion
-    fields:
-      waveNumber: 4
-      treatmentName: "wave_4_${topicName}_dem_${d0}_rep_${d1}"
-    broadcast:
-      d0:
-        - demPosition: Strongly No
-        - demPosition: Mostly No
-        - demPosition: Slightly No
-        - demPosition: Neutral
-        - demPosition: Slightly Yes
-        - demPosition: Mostly Yes
-        - demPosition: Strongly Yes
-      d1:
-        - repPosition: Strongly No
-        - repPosition: Mostly No
-        - repPosition: Slightly No
-        - repPosition: Neutral
-        - repPosition: Slightly Yes
-        - repPosition: Mostly Yes
-        - repPosition: Strongly Yes
-      d2:
-        - topicName: athleteAnthem
-        - topicName: ukraineAid
-        - topicName: banJobExport
-        - topicName: fundArtsCulture
-        - topicName: immigrantCitizenship
-
-  - template: crossPartisanDiscussion
-    fields:
-      waveNumber: 5
-      treatmentName: "wave_5_${topicName}_dem_${d0}_rep_${d1}"
-    broadcast:
-      d0:
-        - demPosition: Strongly No
-        - demPosition: Mostly No
-        - demPosition: Slightly No
-        - demPosition: Neutral
-        - demPosition: Slightly Yes
-        - demPosition: Mostly Yes
-        - demPosition: Strongly Yes
-      d1:
-        - repPosition: Strongly No
-        - repPosition: Mostly No
-        - repPosition: Slightly No
-        - repPosition: Neutral
-        - repPosition: Slightly Yes
-        - repPosition: Mostly Yes
-        - repPosition: Strongly Yes
-      d2:
-        - topicName: puertoRicoStatehood
-        - topicName: childcareSubsidy
-        - topicName: carbonTax
-        - topicName: fastFoodHealth
-        - topicName: limitExecPay
+        - topicName: drinkingAge
+        - topicName: sportsPEDs
+        - topicName: capAndTrade
+        - topicName: policeDefundingDiscrimination
+        - topicName: cubaEmbargo
