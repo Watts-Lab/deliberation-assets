@@ -225,10 +225,10 @@ treatments:
           - type: prompt
             file: projects/constructive_disagreement/super_sabbatical_wbl/pre_nego_next_page.md
             conditions:
-                - promptName: targetPrice
-                  comparator: exists
-                - promptName: strategyPlan
-                  comparator: exists
+              - promptName: targetPrice
+                comparator: exists
+              - promptName: strategyPlan
+                comparator: exists
 
           - type: separator
             style: thin
