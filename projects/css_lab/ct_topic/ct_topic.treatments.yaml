@@ -45,7 +45,7 @@ templates:
               file: projects/css_lab/ct_topic/consider_republicans.md
               conditions:
                 - reference: survey.partyAffiliation.result.normPosition
-                  comparator: isAtMost # we haven't screened true independents yet, so have them rate republicans
+                  comparator: isBelow
                   value: 0.5
                 - reference: connectionInfo.country
                   comparator: equals
@@ -66,7 +66,7 @@ templates:
               file: projects/css_lab/ct_topic/screener.md
               conditions:
                 - reference: survey.partyAffiliation.result.normPosition
-                  comparator: doesNotEqual
+                  comparator: equals
                   value: 0.5
 
             - type: prompt # show screener if not in the US
