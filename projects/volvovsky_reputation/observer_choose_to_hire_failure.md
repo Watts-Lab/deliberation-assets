@@ -5,15 +5,18 @@ type: multipleChoice
 
 **The buyer you were observing decided not to hire the agent for any more purchases.**
 
-You have some art you want to buy, and the same agent you just observed is available to purchase art for you.
+## Observed Game Summary
 
-![robot image](projects/volvovsky_reputation/agent_elephant.jpg)
+- Round 1: Failure ❌
+- Round 2: Failure ❌
 
-As a reminder, you would have to pay them **50 points** to purchase the art for you.
+## Now it's your turn. Do you want to hire the agent you observed to buy art for you?
 
-If the agent buys the correct art piece, you would get **80 points**. Otherwise, you would get nothing.
+![elephant image](projects/volvovsky_reputation/agent_elephant.jpg)
 
-## Would you like to hire the same agent you just observed to buy art for you?
+As a reminder, it costs **50 points** to hire them.
+
+If they buy the right piece, you get **80 points**. Otherwise, you get nothing.
 
 ---
 

@@ -7,6 +7,6 @@ type: multipleChoice
 
 ---
 
-- the agent buys a piece of art
-- the agent buys the correct piece of art
+- the agent buys ANY piece of art
+- the agent buys the CORRECT piece of art
 - the buyer re-hires the agent

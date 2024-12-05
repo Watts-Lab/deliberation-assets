@@ -14,7 +14,7 @@ templates:
             name: recall_${recallIndex}
 
       - name: feedback ${recallIndex}
-        duration: 20
+        duration: 15
         elements:
           - type: image
             file: ${imageFilepath}
@@ -338,7 +338,7 @@ templates:
               - type: image
                 file: "projects/volvovsky_reputation/${imagePanel}"
               - type: submitButton
-                displayTime: 300
+                displayTime: 180
                 buttonText: End discussion and proceed to next steps
                 name: labeling
               - name: labeling
@@ -355,6 +355,8 @@ templates:
         exitSequence:
           - name: Training round as Buyer
             elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
                 file: projects/volvovsky_reputation/chose_to_hire_agent.md
                 name: buyer_choice_to_hire
@@ -377,12 +379,16 @@ templates:
           - name: Result of playing as Buyer
             elements:
               - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
+              - type: prompt
                 file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
               - type: submitButton
                 buttonText: Proceed to next round of training
 
           - name: Play as Agent part 1
             elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
                 file: projects/volvovsky_reputation/play_as_agent_intro.md
                 name: agent_intro_taxi
@@ -394,16 +400,22 @@ templates:
           - name: Play as Agent part 2
             elements:
               - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
+              - type: prompt
                 file: projects/volvovsky_reputation/play_as_agent_task.md
               - type: submitButton
           - name: Result of playing as Agent
             elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
                 file: projects/volvovsky_reputation/result_of_playing_as_agent.md
               - type: submitButton
 
           - name: Art Game Comprehension Check
             elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
                 file: projects/volvovsky_reputation/art_game_comp_review.md
               - type: prompt
@@ -427,7 +439,7 @@ templates:
                 conditions:
                   - reference: prompt.art_game_comp_1
                     comparator: includes
-                    value: "correct piece of art"
+                    value: "CORRECT piece of art"
                   - reference: prompt.art_game_comp_2
                     comparator: includes
                     value: "hires them"
@@ -541,9 +553,6 @@ introSequences:
           - type: prompt
             file: projects/volvovsky_reputation/recall_instruction_transcript.md
           - type: separator
-          - name: comp1
-            type: prompt
-            file: projects/volvovsky_reputation/recall_instruction_comp_check_1.md
           - name: comp2
             type: prompt
             file: projects/volvovsky_reputation/recall_instruction_comp_check_2.md
@@ -555,12 +564,9 @@ introSequences:
           - type: submitButton
             buttonText: Submit
             conditions:
-              - reference: prompt.comp1
-                comparator: includes
-                value: regardless
               - reference: prompt.comp2
                 comparator: includes
-                value: exact
+                value: EXACT SAME
               - reference: prompt.comp3
                 comparator: includes
                 value: Images
