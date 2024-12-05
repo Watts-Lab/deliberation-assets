@@ -31,23 +31,50 @@ templates:
               tags: ["predictor"]
 
         - name: TraitRatingsPretest # 8 questions
-          elements:
+          elements: # if participants are not US partisans, we use this page to show them a screen-out code
             - type: prompt
               file: projects/css_lab/ct_topic/consider_democrats.md
               conditions:
                 - reference: survey.partyAffiliation.result.normPosition
                   comparator: isAbove
                   value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
             - type: prompt
               file: projects/css_lab/ct_topic/consider_republicans.md
               conditions:
                 - reference: survey.partyAffiliation.result.normPosition
-                  comparator: isAtMost # we haven't screened true independents yet, so have them rate republicans
+                  comparator: isBelow
                   value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
             - type: survey
               surveyName: TraitRatings
               name: traitRatingsPretest
               tags: ["predictor"]
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: doesNotEqual
+                  value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
+
+            - type: prompt # show screener if not a partisan
+              file: projects/css_lab/ct_topic/screener.md
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: equals
+                  value: 0.5
+
+            - type: prompt # show screener if not in the US
+              file: projects/css_lab/ct_topic/screener.md
+              conditions:
+                - reference: connectionInfo.country
+                  comparator: doesNotEqual
+                  value: US
 
         - name: RME # 10 questions
           elements:
