@@ -12,7 +12,6 @@ This game has two stages:
 
 - Have a video call with two other participants 👤👤👤
 - As a group, decide names for 8 different images
-- Earn **20 points** for each image your group names
 
 👉 Pick names that are **memorable** and **unique**
 

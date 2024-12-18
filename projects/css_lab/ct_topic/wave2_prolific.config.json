@@ -1,5 +1,5 @@
 {
-  "batchName": "w2s19_ctt_prolific",
+  "batchName": "w2s1_ctt_prolific",
   "cdn": "prod",
   "treatmentFile": "projects/css_lab/ct_topic/ct_topic.treatments.yaml",
   "customIdInstructions": "shared/id_instructions/prolific.md",

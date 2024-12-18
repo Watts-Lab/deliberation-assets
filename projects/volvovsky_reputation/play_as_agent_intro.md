@@ -13,7 +13,7 @@ _This is a training round, so the buyer will be played by a bot:_
 
 A potential buyer has paid you **50 points** to purchase a piece of art, and has given you the money to buy it.
 
-They described the piece they want in a text message, but unfortunately you left your phone at home.
+They described the piece they want in a text message, but unfortunately you left your phone at home, so you can't read the message.
 
 The gallery closes soon, and the only way you can read the message in time is to **pay 30 points** for a taxi home and back.
 
