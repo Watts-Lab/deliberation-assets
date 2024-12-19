@@ -1,5 +1,5 @@
 {
-  "batchName": "w2s13_ctt_cloudResearch",
+  "batchName": "w2s15_ctt_cloudResearch",
   "cdn": "prod",
   "treatmentFile": "projects/css_lab/ct_topic/ct_topic.treatments.yaml",
   "customIdInstructions": "shared/id_instructions/CloudResearch.md",
@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "dispatchWait": 20,
-  "launchDate": "12 Dec 2024 14:00:00 EST",
+  "launchDate": "12 Dec 2024 16:00:00 EST",
   "centralPrereg": true,
   "preregRepos": [
     {
