@@ -154,7 +154,7 @@ templates:
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -172,7 +172,7 @@ templates:
       - name: failureChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
           - type: submitButton
 
@@ -238,7 +238,7 @@ templates:
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -259,7 +259,7 @@ templates:
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -515,8 +515,10 @@ templates:
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/manipulation_check_agent.md
+                name: manipulation_check_agent
               - type: prompt
                 file: projects/volvovsky_reputation/manipulation_check_buyer.md
+                name: manipulation_check_buyer
               - type: submitButton
 
           - name: perceptions of discussion alters 1
@@ -535,7 +537,7 @@ templates:
           - name: Demographic Survey
             elements:
               - type: survey
-                surveyName: demographics
+                surveyName: DemographicsShortUS
 
 introSequences:
   - name: baseline
@@ -548,7 +550,7 @@ introSequences:
             file: projects/volvovsky_reputation/welcome.md
           - type: submitButton
 
-      - name: Comprehension Checks
+      - name: Labeling_Game_Comprehension_Checks
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/recall_instruction_transcript.md

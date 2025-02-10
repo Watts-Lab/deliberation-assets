@@ -1,14 +1,14 @@
 {
-  "batchName": "demo",
+  "batchName": "prolific_pilot",
   "cdn": "prod",
   "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
-  "customIdInstructions": "none",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
   "platformConsent": "US",
   "consentAddendum": "projects/volvovsky_reputation/consent_addendum.md",
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "baseline",
-  "treatments": ["simple success own team"],
+  "treatments": ["simple success own team", "complex failure other team"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,
@@ -27,5 +27,10 @@
     "bucket": "deliberation-lab-recordings-test",
     "region": "us-east-1"
   },
-  "exitCodes": "none"
+  "exitCodes": {
+    "complete": "CN3M1AG5",
+    "error": "CX8GUBBQ",
+    "lobbyTimeout": "CNKR0OP8",
+    "failedEquipmentCheck": "C1JR13XY"
+  }
 }

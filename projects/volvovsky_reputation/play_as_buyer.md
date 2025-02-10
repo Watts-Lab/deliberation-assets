@@ -4,7 +4,7 @@ type: openResponse
 rows: 1
 ---
 
-To tell the agent what to buy, describe the artwork using **15** characters or less.
+To tell the agent what to buy, describe the artwork using **15 characters** or less.
 
 ---
 
