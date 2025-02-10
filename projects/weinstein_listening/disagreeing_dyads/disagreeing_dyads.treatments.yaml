@@ -1,0 +1,177 @@
+templates:
+
+# one person in dyad is never given a goal
+# in condition A the other is assigned to persuade
+# in condition B the other is assigned to learn
+
+  - templateName: disagreeing_dyads
+    templateDesc: Main experiment template 
+    templateContent:
+      name: "${learningOrPersuasion}_condition"
+      playerCount: 2 
+      # don't care about who gets assigned to which position
+      # position 0 "goal absent" 
+      # position 1A "persuade"
+      # position 1B "learn"
+
+      gameStages:
+        - name: # TODO
+          duration: 300
+          elements:
+
+        - name: Strategies and Filler
+          duration: 180
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/breakfast_filler.md
+              showToPositions: [0] # pos 0 needs something to do while pos 1 writes about learning/persuading
+
+            
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/topic_introduction.md
+              showToPositions: [1]
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/bathroom_choice_discussion.md    
+              conditions:
+                # TODO - work out how to show the topic of maximal disagreement here
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_utility.md" # learningOrPersuasion takes [learning, persuasion]
+              showToPositions: [1]
+         
+            
+        - name: Opinion Notes
+          duration: 180
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/topic_introduction.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/bathroom_choice_discussion.md    
+              conditions:
+                # TODO - work out how to show the topic of maximal disagreement here
+            
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/reflection_instructions_goal_absent.md
+              showToPositions: [0]
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/reflection_instructions_${learningOrPersuasion}_goal.md" # learningOrPersuasion takes [learning, persuasion]
+              showToPositions: [1]
+              
+        - name: Attitude Attributes
+          duration: 90
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/attitude_attributes_introduction.md
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/bathroom_choice_discussion.md    
+              conditions:
+                # TODO - work out how to show the topic of maximal disagreement here
+
+            - type: prompt
+                # add questionnaire
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/attitude_attributes_introduction.md
+              
+          
+
+        - name: Discussion
+          duration: 600 # always exactly 10 mins
+          discussion:
+            chatType: video
+            showNickname: true
+            showTitle: true
+          elements:
+            - type: prompt
+              file: projects/css_lab/ct_topic/discussion_instructions.md
+            - type: prompt
+              file: "shared/yesNo/${topicName}_discussion.md"
+            - type: prompt
+              file: projects/css_lab/ct_topic/discussion_wrapup.md
+              displayTime: 600
+            - type: submitButton
+              name: endCall
+              buttonText: End the call and proceed to surveys
+              displayTime: 600
+              tags: ["outcome"]
+
+      exitSequence:
+        - name: PostDiscussionInstructions
+          elements:
+            - type: prompt
+              file: projects/css_lab/ct_topic/post_discussion_instructions.md
+            - type: submitButton
+              buttonText: Proceed to Survey
+
+        
+
+introSequences:
+  - name: default
+    introSteps:
+     # - name: self_construal
+      #  elements:
+          - # TODO
+      - name: topic_survey
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey_instructions.md
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/restricting_legal_abortion.md
+            name: restricting_legal_abortion
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/restricting_immigrants.md
+            name: restricting_immigrants
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/privatise_NHS.md
+            name: privatise_NHS
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/remote_classes.md
+            name: remote_classes
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/raise_cost_of_uni.md
+            name: raise_cost_of_uni
+          - type: prompt 
+            file: projects/weinstein_listening/disagreeing_dyads/topics/bathroom_choice.md
+            name: bathroom_choice
+          - type: prompt 
+            file: projects/weinstein_listening/disagreeing_dyads/topics/education_employability.md
+            name: education_employability
+          - type: prompt 
+            file: projects/weinstein_listening/disagreeing_dyads/topics/censoring_extremism.md
+            name: censoring_extremism
+
+
+
+
+ 
+
+treatments:
+  - template: crossPartisanDiscussion
+    fields:
+      waveNumber: 1
+      treatmentName: "wave_1_${topicName}_dem_${d0}_rep_${d1}"
+    broadcast:
+      d0:
+        - demPosition: Strongly No
+        - demPosition: Mostly No
+        - demPosition: Slightly No
+        - demPosition: Neutral
+        - demPosition: Slightly Yes
+        - demPosition: Mostly Yes
+        - demPosition: Strongly Yes
+      d1:
+        - repPosition: Strongly No
+        - repPosition: Mostly No
+        - repPosition: Slightly No
+        - repPosition: Neutral
+        - repPosition: Slightly Yes
+        - repPosition: Mostly Yes
+        - repPosition: Strongly Yes
+      d2:
+        - topicName: fundNeedleExchange
+        - topicName: israelAid
+        - topicName: slaveReparations
+        - topicName: universalIncome
+        - topicName: schoolDressCode
+
+  
