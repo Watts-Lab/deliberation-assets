@@ -23,8 +23,8 @@ templates:
           duration: 180
           elements:
             - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/breakfast_filler.md
-              showToPositions: [0] # pos 0 needs something to do while pos 1 writes about learning/persuading
+              file: projects/weinstein_listening/disagreeing_dyads/please_wait.md
+              showToPositions: [0] # ask pos 0 to wait while pos 1 writes about learning/persuading
 
             
             - type: prompt
@@ -37,8 +37,11 @@ templates:
             - type: prompt
               file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_utility.md" # learningOrPersuasion takes [learning, persuasion]
               showToPositions: [1]
+
+            - type: submitButton
+              displayTime: 120
+              buttonText: Continue
          
-            
         - name: Opinion Notes
           duration: 180
           elements:
@@ -52,9 +55,15 @@ templates:
             - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/reflection_instructions_goal_absent.md
               showToPositions: [0]
+              name: reflection_goal_absent
             - type: prompt
               file: "projects/weinstein_listening/disagreeing_dyads/reflection_instructions_${learningOrPersuasion}_goal.md" # learningOrPersuasion takes [learning, persuasion]
               showToPositions: [1]
+              name: reflection_goal_present
+
+            - type: submitButton
+              displayTime: 120
+              buttonText: Continue
               
         - name: Attitude Attributes
           duration: 90
@@ -68,32 +77,103 @@ templates:
                 # TODO - work out how to show the topic of maximal disagreement here
 
             - type: prompt
-                # add questionnaire
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/topic_attitude.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/topic_importance.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/topic_knowledge.md
+
+            - type: submitButton
+              buttonText: Continue    
+
+        - name: Conversation Expectations
+          duration: 120
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/conversation_expectations.md
 
             - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/attitude_attributes_introduction.md
-              
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_enjoyment.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_get_along.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_smooth.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_learning.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_attitude_change.md
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/discussion_expected_partner_attitude_change.md
+
+            - type: submitButton
+              buttonText: Continue      
           
+        - name: Pre-discussion Reminder
+          duration: 60
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/pre_discussion_reminder_A_Goal_Absent.md
+              showToPositions: [0]
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/pre_discussion_reminder_A_${learningOrPersuasion}_goal.md" # learningOrPersuasion takes [learning, persuasion]
+              showToPositions: [1]
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/bathroom_choice_discussion.md    
+              conditions:
+                # TODO - work out how to show the topic of maximal disagreement here
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/pre_discussion_reminder_B_Goal_Absent.md
+              showToPositions: [0]
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/pre_discussion_reminder_B_${learningOrPersuasion}_goal.md" # learningOrPersuasion takes [learning, persuasion]
+              showToPositions: [1]
+
+            - type: display
+              reference: prompt.reflection_goal_absent
+              showToPositions: [0]
+            - type: display
+              reference: prompt.reflection_goal_present
+              showToPositions: [1]
+
+            - type: submitButton
+              buttonText: Continue
 
         - name: Discussion
           duration: 600 # always exactly 10 mins
           discussion:
             chatType: video
             showNickname: true
-            showTitle: true
+            showTitle: false
           elements:
             - type: prompt
-              file: projects/css_lab/ct_topic/discussion_instructions.md
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_5min.md
+              displayTime: 300
+              hideTime: 330
+
             - type: prompt
-              file: "shared/yesNo/${topicName}_discussion.md"
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_8min.md
+              displayTime: 480
+              hideTime: 510
+              
             - type: prompt
-              file: projects/css_lab/ct_topic/discussion_wrapup.md
-              displayTime: 600
-            - type: submitButton
-              name: endCall
-              buttonText: End the call and proceed to surveys
-              displayTime: 600
-              tags: ["outcome"]
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_A.md
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/bathroom_choice_discussion.md    
+              conditions:
+                # TODO - work out how to show the topic of maximal disagreement here
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_A.md
+
+            - type: display
+              reference: prompt.reflection_goal_absent
+              showToPositions: [0]
+            - type: display
+              reference: prompt.reflection_goal_present
+              showToPositions: [1]
 
       exitSequence:
         - name: PostDiscussionInstructions
@@ -110,7 +190,7 @@ introSequences:
     introSteps:
      # - name: self_construal
       #  elements:
-          - # TODO
+          - # TODO - implement as canned survey
       - name: topic_survey
         elements:
           - type: prompt
@@ -142,36 +222,17 @@ introSequences:
 
 
 
-
  
 
 treatments:
-  - template: crossPartisanDiscussion
+  - template: disagreeing_dyads
     fields:
-      waveNumber: 1
-      treatmentName: "wave_1_${topicName}_dem_${d0}_rep_${d1}"
+      # none?
     broadcast:
       d0:
-        - demPosition: Strongly No
-        - demPosition: Mostly No
-        - demPosition: Slightly No
-        - demPosition: Neutral
-        - demPosition: Slightly Yes
-        - demPosition: Mostly Yes
-        - demPosition: Strongly Yes
-      d1:
-        - repPosition: Strongly No
-        - repPosition: Mostly No
-        - repPosition: Slightly No
-        - repPosition: Neutral
-        - repPosition: Slightly Yes
-        - repPosition: Mostly Yes
-        - repPosition: Strongly Yes
-      d2:
-        - topicName: fundNeedleExchange
-        - topicName: israelAid
-        - topicName: slaveReparations
-        - topicName: universalIncome
-        - topicName: schoolDressCode
+        - learningOrPersuasion: learning
+        - learningOrPersuasion: persuasion
+        
+    
 
   

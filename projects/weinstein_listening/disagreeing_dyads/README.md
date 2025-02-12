@@ -1,0 +1,2 @@
+- assign to dyads just in the order that they arrive
+- assign to topics based on the max disagreement
