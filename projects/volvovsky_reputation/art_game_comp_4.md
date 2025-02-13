@@ -3,7 +3,7 @@ name: projects/volvovsky_reputation/art_game_comp_4.md
 type: multipleChoice
 ---
 
-## If the buyer decides not to hire the agent:
+## If the collector decides not to hire the agent:
 
 ---
 

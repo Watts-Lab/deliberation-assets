@@ -5,15 +5,15 @@ type: multipleChoice
 
 # Game 2: Art Buying Game
 
-This game has two roles: **Buyer** and **Agent**.
+This game has two roles: **collector** and **Agent**.
 
 Before we begin, you will play a training round to learn each role.
 
-## Training round 1: Play as **Buyer**
+## Training round 1: Play as **collector**
 
 You want to buy this piece of art from a gallery in New York:
 
-![purchase image](projects/volvovsky_reputation/Tangram_A5.jpg)
+![purchase image](projects/volvovsky_reputation/training_art.jpg)
 
 Unfortunately, you can't travel to the gallery. You can either:
 

@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/observe_buyer_agent_interaction.md
+name: projects/volvovsky_reputation/observe_collector_agent_interaction.md
 type: noResponse
 ---
 

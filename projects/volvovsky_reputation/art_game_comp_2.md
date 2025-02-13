@@ -7,6 +7,6 @@ type: multipleChoice
 
 ---
 
-- they spend 30 points to get a cab home to read the buyer’s message
+- they spend 30 points to get a cab home to read the collector’s message
 - they buy the correct piece of art
-- the buyer hires them at the beginning of the round
+- the collector hires them at the beginning of the round

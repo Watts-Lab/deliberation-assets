@@ -5,7 +5,7 @@ type: multipleChoice
 
 # Great, you got your phone!
 
-# The message from the buyer is:
+# The message from the collector is:
 
 > Banana
 

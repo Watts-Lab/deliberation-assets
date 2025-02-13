@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/result_of_playing_as_buyer.md
+name: projects/volvovsky_reputation/result_of_playing_as_collector.md
 type: noResponse
 ---
 

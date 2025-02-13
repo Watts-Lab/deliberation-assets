@@ -12,6 +12,6 @@ type: noResponse
 
 ## 2. The Art buying game
 
-- Work as either a buyer or a buyer's agent to purchase a piece of art from a gallery
+- Work as either a collector or a collector's agent to purchase a piece of art from a gallery
 
 ---

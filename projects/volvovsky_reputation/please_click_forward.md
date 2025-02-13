@@ -5,6 +5,6 @@ type: noResponse
 
 # Please click "Next"
 
-The Buyer and Agent cannot progress until you advance the stage.
+The Collector and Agent cannot progress until you advance the stage.
 
 ---

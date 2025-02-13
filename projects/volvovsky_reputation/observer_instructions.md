@@ -6,10 +6,10 @@ note: we choose to tell the observer that there are 5 rounds because we don't be
 
 # Unfortunately we couldn't match you in the first game.
 
-Don't worry, this actually gives you an advantage: you get to observe a game between one agent and one buyer, before deciding to hire the agent yourself.
+Don't worry, this actually gives you an advantage: you get to observe a game between one agent and one collector, before deciding to hire the agent yourself.
 
-The buyer and agent will play **up to 5 rounds** of the game, if the buyer chooses to hire the agent for each round.
+The collector and agent will play **up to 5 rounds** of the game, if the collector chooses to hire the agent for each round.
 
-Then you will have the chance to switch places with the buyer if you want to.
+Then you will have the chance to switch places with the collector if you want to.
 
 ---

@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/play_as_buyer.md
+name: projects/volvovsky_reputation/play_as_collector.md
 type: openResponse
 rows: 1
 ---

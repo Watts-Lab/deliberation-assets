@@ -1,4 +1,4 @@
-# Text for Buyer training video
+# Text for Collector training video
 
 # Text for Agent training video
 
@@ -10,8 +10,8 @@ Since all the observer does is observe and take notes, there is no need for a tr
 
 <!--
 Unfortunately we couldn't match you in the first game. But don't worry, this actually gives you an advantage: you get to observe an agent before deciding to hire them.
-You will observe a game between the following buyer and agent:
-<avatar and name of buyer and agent>
+You will observe a game between the following collector and agent:
+<avatar and name of collector and agent>
 
 At the end of the game, you will have the opportunity to hire the agent if you wish.
 
@@ -27,20 +27,20 @@ Hiring an agent who buys the right art will earn you 30 points per piece (after 
 
 You will get 25 points for every round you observe.
 
-You will observe a game between the following buyer and agent:
-<avatar and name of buyer and agent>
+You will observe a game between the following collector and agent:
+<avatar and name of collector and agent>
 
 # Conditions
 
-1. Simple images, Buyer your team, Agent other team, Success (need group's name for this)
-2. Simple images, Buyer your team, Agent other team, Fail (need group's name for this)
-3. Simple images, Buyer other team, Agent other team, different teams, Success
-4. Simple images, Buyer other team, Agent other team, different teams, Fail
+1. Simple images, Collector your team, Agent other team, Success (need group's name for this)
+2. Simple images, Collector your team, Agent other team, Fail (need group's name for this)
+3. Simple images, Collector other team, Agent other team, different teams, Success
+4. Simple images, Collector other team, Agent other team, different teams, Fail
 
-5. Complex images, Buyer your team, Agent other team, Success (need group's name for this)
-6. Complex images, Buyer your team, Agent other team, Fail (need group's name for this)
-7. Complex images, Buyer other team, Agent other team, different teams, Success
-8. Complex images, Buyer other team, Agent other team, different teams, Fail
+5. Complex images, Collector your team, Agent other team, Success (need group's name for this)
+6. Complex images, Collector your team, Agent other team, Fail (need group's name for this)
+7. Complex images, Collector other team, Agent other team, different teams, Success
+8. Complex images, Collector other team, Agent other team, different teams, Fail
 
 We never test an agent from your team, because you don't need a reputational signal for that, you already know them.
 
@@ -64,21 +64,21 @@ Focussing mostly on the second mechanism.
 Using simple images, the primary issue is whether the agent is competent, engaged
 Using complex images, the issue is whether the agent is a good match/fit for someone like me.
 
-Reputational signal always comes from the buyer
+Reputational signal always comes from the collector
 Object of the reputation is the Agent
-Manipulation is how far away in your network is the buyer, plus content of signal.
+Manipulation is how far away in your network is the collector, plus content of signal.
 Reputational signal is used to decide whether to hire an agent (from another team).
 
 Question:
 Does the observer plausibly believe that an agent can get the right art piece even if they were on a different team, which may have used different names for the images? If not, then if there is a negative signal, they may interpret it to be due to the fact that NO agent could have gotten it right under those conditions, and so instead of being a reputational signal, it just tells you about the game. A positive signal will maybe surprise them, because
 
-If you see a game where you and I agree that an image is karate, and then i see you play as the buyer, and you say "buy karate" and the other person buys the right or wrong image, there is a lot of information in whether I want to hire the agent.
+If you see a game where you and I agree that an image is karate, and then i see you play as the collector, and you say "buy karate" and the other person buys the right or wrong image, there is a lot of information in whether I want to hire the agent.
 
 However, if the agent is from another team, so that they are not expected to know the name, then i don't know if the agent was lazy, or if they just didn't have the information that they needed.
 
 # Notes
 
-When we show them a buyer/agent combination in the observer round, we need to make sure that if the buyer is from their team, we don't show them their own avatar. so, we need 4 combinations:
+When we show them a collector/agent combination in the observer round, we need to make sure that if the collector is from their team, we don't show them their own avatar. so, we need 4 combinations:
 
 - Bird, Other1
 - Bear, Other1
@@ -87,7 +87,7 @@ When we show them a buyer/agent combination in the observer round, we need to ma
 
 # where we are:
 
-- we have built up training for agent and buyer, and also have instructions for observer (who needs no training)
+- we have built up training for agent and collector, and also have instructions for observer (who needs no training)
 - we set up the avatar combinations for the observer rounds.
 
 # Next time
@@ -104,13 +104,13 @@ When we show them a buyer/agent combination in the observer round, we need to ma
   - complex success (five rounds of success) five rounds indicates that the game can continue if you want it to.
   - complex fail (two rounds of failure)
 
-- pull names of images from the labeling/recall round for when buyer is on your team.
+- pull names of images from the labeling/recall round for when collector is on your team.
 
 # Observer rounds must contain:
 
-The buyer is deciding whether to hire the agent (10 second timer)
+The collector is deciding whether to hire the agent (10 second timer)
 
-The buyer asked for:
+The collector asked for:
 
 - if it's your team, show name from your team
 - otherwise show other name
@@ -124,12 +124,12 @@ This was the
 - right piece, they spent n points to earn n points
 - wrong piece, they spent n points with no return
 
-The buyer decided:
+The collector decided:
 
 - not to hire the agent to purchase another piece
 - to hire the agent to purchase another piece
 
-The buyer and agent are waiting for you to complete the round.
+The collector and agent are waiting for you to complete the round.
 
 Whatever timers we put in here, we should also put into the training rounds for consistency.
 
@@ -144,7 +144,7 @@ Where are we:
 
 Need to do:
 
-- markdown files for each other buyer stage with quoted names
+- markdown files for each other collector stage with quoted names
 - markdown files for success and failure with decisions to hire agent
 - instantiate templates with the right recallIndexes and build up the exit sequences.
 
@@ -246,7 +246,7 @@ Todos:
 Notes for pilots:
 
 - do we get people satisficing by ending the game early so they can move on to other tasks?
-- should we change the name of the "buyer" to "collector" to avoid confusion, as the agent actually performs the action of purchasing the art, "buying" it..
+- should we change the name of the "collector" to "collector" to avoid confusion, as the agent actually performs the action of purchasing the art, "buying" it..
 
 potential deception:
 

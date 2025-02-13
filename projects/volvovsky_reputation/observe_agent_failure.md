@@ -5,6 +5,6 @@ type: noResponse
 
 The agent purchased the wrong piece of art. ❌
 
-The buyer gets **no points**.
+The collector gets **no points**.
 
 ---
