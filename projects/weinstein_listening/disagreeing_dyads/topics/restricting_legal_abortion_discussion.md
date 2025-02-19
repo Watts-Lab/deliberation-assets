@@ -3,6 +3,6 @@ name: projects/weinstein_listening/disagreeing_dyads/topics/restricting_legal_ab
 type: noResponse
 ---
 
-### Restricting legal access to abortion
+> Restricting legal access to abortion
 
 ---

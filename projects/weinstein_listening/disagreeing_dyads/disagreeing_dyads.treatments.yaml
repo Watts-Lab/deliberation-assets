@@ -30,7 +30,7 @@ templates:
               showToPositions: [1]
 
             - type: prompt
-              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}.md"
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
               showToPositions: [1]
 
             - type: prompt
@@ -53,7 +53,7 @@ templates:
               showToPositions: [1]
 
             - type: prompt
-              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}.md"
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
 
             - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/GA_B.md
@@ -75,7 +75,7 @@ templates:
               file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_setup.md
 
             - type: prompt
-              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}.md"
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
 
             - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_1.md
@@ -129,7 +129,7 @@ templates:
               showToPositions: [1]
 
             - type: prompt
-              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}.md"
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
 
             - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/GA_remind_B.md
@@ -169,7 +169,7 @@ templates:
               file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_A.md
 
             - type: prompt
-              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}.md"
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
 
             - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_B.md
@@ -185,142 +185,17 @@ templates:
         - name: PostDiscussionInstructions
           elements:
             - type: prompt
-              file: projects/css_lab/ct_topic/post_discussion_instructions.md
+              file: projects/weinstein_listening/disagreeing_dyads/postdiscussion_instructions.md
             - type: submitButton
               buttonText: Proceed to Survey
 
-        - name: MC_Other
+        - name: Qualtrics_Escape_Hatch
           elements:
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_1.md
-              name: MC_Other_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_2.md
-              name: MC_Other_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_3.md
-              name: MC_Other_3
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_4.md
-              name: MC_Other_4
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/Attn_chk_1.md
-              name: Attn_chk_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_5.md
-              name: MC_Other_5
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_6.md
-              name: MC_Other_6
-            - type: submitButton
-              buttonText: Continue
-
-        - name: MC_self
-          elements:
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_1.md
-              name: MC_self_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_2.md
-              name: MC_self_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_3.md
-              name: MC_self_3
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_4.md
-              name: MC_self_4
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_5.md
-              name: MC_self_5
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_self_6.md
-              name: MC_self_6
-
-        - name: LQ_Other
-          elements:
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_1.md
-              name: LQ_Oth_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_2.md
-              name: LQ_Oth_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_3.md
-              name: LQ_Oth_3
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_4.md
-              name: LQ_Oth_4
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_5.md
-              name: LQ_Oth_5
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_6.md
-              name: LQ_Oth_6
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_7.md
-              name: LQ_Oth_7
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Oth_8.md
-              name: LQ_Oth_8
-            - type: submitButton
-              buttonText: Continue
-
-        - name: LQ_self
-          elements:
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_1.md
-              name: LQ_Self_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_2.md
-              name: LQ_Self_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_3.md
-              name: LQ_Self_3
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_4.md
-              name: LQ_Self_4
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_5.md
-              name: LQ_Self_5
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_6.md
-              name: LQ_Self_6
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_7.md
-              name: LQ_Self_7
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/LQ_Self_8.md
-              name: LQ_Self_8
-            - type: submitButton
-              buttonText: Continue
-
-        - name: DPS
-          elements:
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_1.md
-              name: DPS_1
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_2.md
-              name: DPS_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/Attn_chk_2.md
-              name: Attn_chk_2
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_3.md
-              name: DPS_3
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_4.md
-              name: DPS_4
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_5.md
-              name: DPS_5
-            - type: prompt
-              file: projects/weinstein_listening/disagreeing_dyads/postsurvey/DPS_6.md
-              name: DPS_6
-            - type: submitButton
-              buttonText: Continue
-
-        # PSafety goes here - do we build up as its own canned survey?
+            - type: qualtrics
+              url: https://upenn.co1.qualtrics.com/jfe/form/SV_2bfMgUw37Y2AUZg
+              params:
+                - key: deliberationId
+                  value: participantInfo.deliberationId
 
 introSequences:
   - name: default
@@ -383,5 +258,7 @@ treatments:
   - template: disagreeing_dyads
     broadcast:
       d0:
-        - learningOrPersuasion: learning
-        - learningOrPersuasion: persuasion
+        - learningOrPersuasion: LG
+        - learningOrPersuasion: PG
+      d1:
+        - topic: censoring_extremism

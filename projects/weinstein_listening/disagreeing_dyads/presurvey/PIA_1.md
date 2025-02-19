@@ -3,7 +3,7 @@ name: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_1.md
 type: multipleChoice
 ---
 
-### Please indicate you attitude toward this topic
+### Please indicate your attitude toward this topic.
 
 ---
 

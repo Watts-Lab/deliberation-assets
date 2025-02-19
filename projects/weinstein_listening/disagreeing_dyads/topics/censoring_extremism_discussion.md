@@ -3,6 +3,6 @@ name: projects/weinstein_listening/disagreeing_dyads/topics/censoring_extremism_
 type: noResponse
 ---
 
-### Censoring to protect from extremist views online
+> Censoring to protect from extremist views online
 
 ---

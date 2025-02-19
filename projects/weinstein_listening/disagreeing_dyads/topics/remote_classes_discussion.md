@@ -3,6 +3,6 @@ name: projects/weinstein_listening/disagreeing_dyads/topics/remote_classes_discu
 type: noResponse
 ---
 
-### Remote university classes are better than in-person classes
+> Remote university classes are better than in-person classes
 
 ---

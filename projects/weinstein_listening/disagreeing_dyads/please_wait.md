@@ -1,16 +1,12 @@
 ---
-name: projects/weinstein_listening/disagreeing_dyads/postsurvey/MC_Other_1.md
-type: multipleChoice
+name: projects/weinstein_listening/disagreeing_dyads/please_wait.md
+type: noResponse
 ---
 
-### Tried to learn about my perspective
+### Please wait while your partner completes another task.
+
+This will take between 2 and 3 minutes.
+
+Please stay at the computer during this time, so you are ready to continue.
 
 ---
-
-- Not at all 1
-- 2
-- 3
-- Moderately 4
-- 5
-- 6
-- Very much 7
