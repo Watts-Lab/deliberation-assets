@@ -192,10 +192,7 @@ templates:
         - name: Qualtrics_Escape_Hatch
           elements:
             - type: qualtrics
-              url: https://upenn.co1.qualtrics.com/jfe/form/SV_2bfMgUw37Y2AUZg
-              params:
-                - key: deliberationId
-                  value: participantInfo.deliberationId
+              url: https://upenn.co1.qualtrics.com/jfe/form/SV_2bfMgUw37Y2AUZg # deliberationId will be automatically included as a urlParam
 
 introSequences:
   - name: default
@@ -261,4 +258,11 @@ treatments:
         - learningOrPersuasion: LG
         - learningOrPersuasion: PG
       d1:
+        - topic: bathroom_choice
         - topic: censoring_extremism
+        - topic: education_employability
+        - topic: privatise_NHS
+        - topic: raise_cost_of_uni
+        - topic: remote_classes
+        - topic: restricting_immigrants
+        - topic: restricting_legal_abortion
