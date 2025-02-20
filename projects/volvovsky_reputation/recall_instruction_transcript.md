@@ -4,13 +4,13 @@ type: noResponse
 note: Transcript of first video instructions
 ---
 
-# Welcome to Game 1: The Labeling Game!
+# Game 1: The Labeling Game!
 
 This game has two stages:
 
 ## Stage 1: Label Images
 
-- Have a video call with two other participants 👤👤👤
+- Video call with two other participants 👤👤👤
 - As a group, decide names for 8 different images
 
 👉 Pick names that are **memorable** and **unique**

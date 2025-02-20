@@ -5,13 +5,17 @@ type: multipleChoice
 
 # Game 2: Art Buying Game
 
-This game has two roles: **collector** and **Agent**.
+This game has two roles: **Collector** and **Agent**.
 
 Before we begin, you will play a training round to learn each role.
 
-## Training round 1: Play as **collector**
+## Training round 1: Play as **Collector**
 
-You want to buy this piece of art from a gallery in New York:
+In this training round you play as the wealthy art collector, and the agent will be played by this cute little robot:
+
+![robot image](projects/volvovsky_reputation/robot_icon.jpg)
+
+## You want to buy this piece of art from a gallery in New York:
 
 ![purchase image](projects/volvovsky_reputation/training_art.jpg)
 
@@ -21,10 +25,6 @@ Unfortunately, you can't travel to the gallery. You can either:
 - pay an agent **50 points** to purchase the art for you. If the agent buys the right piece, you get **80 points**. Otherwise, you get nothing.
 
 👉 _If you hire the agent, you can hire them again to purchase other pieces. If you don't, the Art Buying Game will end._
-
-In this training round, the agent will be played by a bot:
-
-![robot image](projects/volvovsky_reputation/robot_icon.jpg)
 
 **Would you like to hire the agent to purchase this art for you?**
 

@@ -9,7 +9,7 @@ _Lets check that you got everything:_
 
 ## Review Art Game Instructions
 
-_The **collector** decides whether to pay **50 points** to hire an **agent** to purchase a piece of art, or to end the game._
+_At the beginning of the round, the collector decides whether to pay the agent **50 points** to purchase a piece of art, or to end the game._
 
 _If the collector hires the agent, they send them a text message with a description of the piece._
 

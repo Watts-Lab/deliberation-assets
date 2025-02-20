@@ -3,8 +3,8 @@ name: projects/volvovsky_reputation/group_assignment.md
 type: noResponse
 ---
 
-# Randomizing you to a group
+# You will be in team:
 
-![Randomize to Group](roulette.gif)
+![Randomize to Group](projects/volvovsky_reputation/roulette.gif)
 
 ---
