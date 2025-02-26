@@ -70,24 +70,29 @@ templates:
       - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
       - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
+  - templateName: observeOwnTeamImages
+    templateContent:
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_bear.jpg
+        showToPositions: [1]
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_bird.jpg
+        showToPositions: [2]
+      - type: image
+        file: projects/volvovsky_reputation/observe_elephant_fish.jpg
+        showToPositions: [0]
+
   - templateName: observerOwnTeamStage
     templateContent:
       - name: ${name}
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/you_will_observe.md
-          - type: image
-            file: projects/volvovsky_reputation/observe_elephant_bear.jpg
-            showToPositions: [1]
-          - type: image
-            file: projects/volvovsky_reputation/observe_elephant_bird.jpg
-            showToPositions: [2]
-          - type: image
-            file: projects/volvovsky_reputation/observe_elephant_fish.jpg
-            showToPositions: [0]
+
+          - template: observeOwnTeamImages
 
           - type: prompt
-            file: projects/volvovsky_reputation/waiting_for_buyer.md
+            file: projects/volvovsky_reputation/waiting_for_collector.md
             hideTime: 9
           - type: timer
             displayTime: 0
@@ -96,7 +101,7 @@ templates:
             warnTimeRemaining: 3
 
           - type: prompt
-            file: projects/volvovsky_reputation/buyer_asks_for.md
+            file: projects/volvovsky_reputation/collector_asks_for.md
             displayTime: 10
           - type: display
             reference: prompt.recall_${recallIndex}
@@ -154,7 +159,10 @@ templates:
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_own_team.md
+          - template: observeOwnTeamImages
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -172,7 +180,10 @@ templates:
       - name: failureChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_own_team.md
+          - template: observeOwnTeamImages
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
           - type: submitButton
 
@@ -186,7 +197,7 @@ templates:
             file: projects/volvovsky_reputation/observe_elephant_dog.jpg
 
           - type: prompt
-            file: projects/volvovsky_reputation/waiting_for_buyer.md
+            file: projects/volvovsky_reputation/waiting_for_collector.md
             hideTime: 9
           - type: timer
             displayTime: 0
@@ -224,21 +235,23 @@ templates:
           name: "observerOtherTeam_Round_${d0}"
         broadcast:
           d0:
-            - asksForFile: buyer_asks_for_simple_1.md
+            - asksForFile: collector_asks_for_simple_1.md
               outcomeFile: observe_agent_success
-            - asksForFile: buyer_asks_for_simple_2.md
+            - asksForFile: collector_asks_for_simple_2.md
               outcomeFile: observe_agent_failure
-            - asksForFile: buyer_asks_for_simple_3.md
+            - asksForFile: collector_asks_for_simple_3.md
               outcomeFile: observe_agent_success
-            - asksForFile: buyer_asks_for_simple_4.md
+            - asksForFile: collector_asks_for_simple_4.md
               outcomeFile: observe_agent_success
-            - asksForFile: buyer_asks_for_simple_5.md
+            - asksForFile: collector_asks_for_simple_5.md
               outcomeFile: observe_agent_success
 
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_other_team.md
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -250,16 +263,18 @@ templates:
           outcomeFile: observe_agent_success
         broadcast:
           d0:
-            - asksForFile: buyer_asks_for_complex_1.md
-            - asksForFile: buyer_asks_for_complex_2.md
-            - asksForFile: buyer_asks_for_complex_3.md
-            - asksForFile: buyer_asks_for_complex_4.md
-            - asksForFile: buyer_asks_for_complex_5.md
+            - asksForFile: collector_asks_for_complex_1.md
+            - asksForFile: collector_asks_for_complex_2.md
+            - asksForFile: collector_asks_for_complex_3.md
+            - asksForFile: collector_asks_for_complex_4.md
+            - asksForFile: collector_asks_for_complex_5.md
 
       - name: successChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_other_team.md
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
           - type: submitButton
 
@@ -271,13 +286,18 @@ templates:
           outcomeFile: observe_agent_failure
         broadcast:
           d0:
-            - asksForFile: buyer_asks_for_simple_1.md
-            - asksForFile: buyer_asks_for_simple_2.md
+            - asksForFile: collector_asks_for_simple_1.md
+            - asksForFile: collector_asks_for_simple_2.md
 
       - name: failureChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_other_team.md
+          - type: prompt
+            file: projects/volvovsky_reputation/observer_game_summary_failure.md
+
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
           - type: submitButton
 
@@ -289,13 +309,15 @@ templates:
           outcomeFile: observe_agent_failure
         broadcast:
           d0:
-            - asksForFile: buyer_asks_for_complex_1.md
-            - asksForFile: buyer_asks_for_complex_2.md
+            - asksForFile: collector_asks_for_complex_1.md
+            - asksForFile: collector_asks_for_complex_2.md
 
       - name: failureChoose
         elements:
           - type: prompt
-            name: postObservation_choice
+            file: projects/volvovsky_reputation/reminder_your_observed_other_team.md
+          - type: prompt
+            name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
           - type: submitButton
 
@@ -312,7 +334,15 @@ templates:
             title: BIRD
 
         gameStages:
-          - name: preDiscussion # image of animal icons is not displaying properly
+          - name: groupAssignment
+            duration: 15
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/group_assignment.md
+              - type: submitButton
+                displayTime: 10
+
+          - name: preDiscussion
             duration: 30
             elements:
               - type: prompt
@@ -353,35 +383,35 @@ templates:
               d0: ${recallImages}
 
         exitSequence:
-          - name: Training round as Buyer
+          - name: Training round as collector
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
                 file: projects/volvovsky_reputation/chose_to_hire_agent.md
-                name: buyer_choice_to_hire
+                name: collector_choice_to_hire
               - type: separator
               - type: prompt
-                file: projects/volvovsky_reputation/play_as_buyer.md
-                name: buyer_description
+                file: projects/volvovsky_reputation/play_as_collector.md
+                name: collector_description
                 conditions:
-                  - reference: prompt.buyer_choice_to_hire
+                  - reference: prompt.collector_choice_to_hire
                     comparator: equals
                     value: "Yes"
               - type: submitButton
                 conditions:
-                  - reference: prompt.buyer_choice_to_hire
+                  - reference: prompt.collector_choice_to_hire
                     comparator: equals
                     value: "Yes"
-                  - reference: prompt.buyer_description
+                  - reference: prompt.collector_description
                     comparator: hasLengthAtMost
                     value: 15
-          - name: Result of playing as Buyer
+          - name: Result of playing as collector
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/training_banner.md
               - type: prompt
-                file: projects/volvovsky_reputation/result_of_playing_as_buyer.md
+                file: projects/volvovsky_reputation/result_of_playing_as_collector.md
               - type: submitButton
                 buttonText: Proceed to next round of training
 
@@ -472,51 +502,62 @@ templates:
                 file: projects/volvovsky_reputation/post_choice_debrief_yes_a.md
                 hideTime: 9
                 conditions:
-                  - reference: prompt.postObservation_choice
+                  - reference: prompt.choice_to_hire_observed_agent
                     comparator: equals
                     value: "Yes"
               - type: prompt
                 file: projects/volvovsky_reputation/post_choice_debrief_yes_b.md
                 displayTime: 9
                 conditions:
-                  - reference: prompt.postObservation_choice
+                  - reference: prompt.choice_to_hire_observed_agent
                     comparator: equals
                     value: "Yes"
               - type: submitButton
                 displayTime: 9
                 conditions:
-                  - reference: prompt.postObservation_choice
+                  - reference: prompt.choice_to_hire_observed_agent
                     comparator: equals
                     value: "Yes"
 
               - type: prompt
                 file: projects/volvovsky_reputation/post_choice_debrief_no.md
                 conditions:
-                  - reference: prompt.postObservation_choice
+                  - reference: prompt.choice_to_hire_observed_agent
                     comparator: equals
                     value: "No"
               - type: submitButton
                 conditions:
-                  - reference: prompt.postObservation_choice
+                  - reference: prompt.choice_to_hire_observed_agent
                     comparator: equals
                     value: "No"
+
+          - name: manipulation check # ask them to remember who they played with?
+            elements:
+              - type: prompt
+                file: projects/volvovsky_reputation/manipulation_check_agent.md
+                name: manipulation_check_agent
+              - type: prompt
+                file: projects/volvovsky_reputation/manipulation_check_collector.md
+                name: manipulation_check_collector
+              - type: submitButton
 
           - name: other reputation questions
             elements:
               - type: prompt
                 file: projects/volvovsky_reputation/do_you_recommend.md
               - type: prompt
-                file: projects/volvovsky_reputation/do_you_think_they_went_back.md
+                file: projects/volvovsky_reputation/did_observed_agent_succeed.md
+                name: did_observed_agent_succeed
               - type: prompt
-                file: projects/volvovsky_reputation/did_they_understand.md
-              - type: submitButton
-
-          - name: manipulation check
-            elements:
-              - type: prompt
-                file: projects/volvovsky_reputation/manipulation_check_agent.md
-              - type: prompt
-                file: projects/volvovsky_reputation/manipulation_check_buyer.md
+                file: projects/volvovsky_reputation/diagnose_observed_agent_error.md
+                conditions:
+                  - reference: prompt.did_observed_agent_succeed
+                    comparator: doesNotEqual
+                    value: "Every time"
+              #- type: prompt
+              #  file: projects/volvovsky_reputation/do_you_think_they_went_back.md
+              #- type: prompt
+              #  file: projects/volvovsky_reputation/did_they_understand.md
               - type: submitButton
 
           - name: perceptions of discussion alters 1
@@ -535,7 +576,7 @@ templates:
           - name: Demographic Survey
             elements:
               - type: survey
-                surveyName: demographics
+                surveyName: DemographicsShortUS
 
 introSequences:
   - name: baseline
@@ -548,7 +589,7 @@ introSequences:
             file: projects/volvovsky_reputation/welcome.md
           - type: submitButton
 
-      - name: Comprehension Checks
+      - name: Labeling_Game_Comprehension_Checks
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/recall_instruction_transcript.md

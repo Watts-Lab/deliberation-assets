@@ -87,6 +87,8 @@ templates:
               file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_3.md
               name: PIA_3
 
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/all_requested.md
             - type: submitButton
               buttonText: Continue
 
@@ -166,6 +168,10 @@ templates:
               hideTime: 510
 
             - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_discussion_goal_reminder.md"
+              showToPositions: [1]
+
+            - type: prompt
               file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_A.md
 
             - type: prompt
@@ -197,9 +203,76 @@ templates:
 introSequences:
   - name: default
     introSteps:
-      # - name: self_construal
-      #  elements:
-      # TODO - implement as canned survey
+      - name: self_construal
+        # note that in the original this is in randomized order and is not here
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_setup.md
+
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_1.md
+            name: SC_1
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_2.md
+            name: SC_2
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_3.md
+            name: SC_3
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_4.md
+            name: SC_4
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_5.md
+            name: SC_5
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_6.md
+            name: SC_6
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_7.md
+            name: SC_7
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_8.md
+            name: SC_8
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_9.md
+            name: SC_9
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_10.md
+            name: SC_10
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_11.md
+            name: SC_11
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_12.md
+            name: SC_12
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_13.md
+            name: SC_13
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_14.md
+            name: SC_14
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_15.md
+            name: SC_15
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_16.md
+            name: SC_16
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_17.md
+            name: SC_17
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_18.md
+            name: SC_18
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_19.md
+            name: SC_19
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_20.md
+            name: SC_20
+
+          - type: submitButton
+            buttonText: Continue
+
       - name: topic_survey
         elements:
           - type: prompt

@@ -1,0 +1,16 @@
+---
+name: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_3.md
+type: multipleChoice
+---
+
+### The best decisions for me are the ones I made by myself.
+
+---
+
+- Strongly disagree 1
+- Disagree 2
+- Somewhat disagree 3
+- Neither agree nor disagree 4
+- Somewhat disagree 5
+- Agree 6
+- Strongly agree 7
