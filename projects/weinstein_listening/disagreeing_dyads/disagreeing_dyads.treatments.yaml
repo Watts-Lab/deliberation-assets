@@ -6,19 +6,27 @@ templates:
   - templateName: disagreeing_dyads
     templateDesc: Main experiment template
     templateContent:
-      name: "${learningOrPersuasion}_condition"
+      name: ${treatmentName}
       playerCount: 2
       # don't care about who gets assigned to which position
       # position 0 "goal absent"
       # position 1A "persuade"
       # position 1B "learn"
 
-      gameStages:
-        #- name: # TODO
-        #  duration: 300
-        #  elements:
+      groupComposition:
+        - position: 0 # goal absent
+          conditions:
+            - reference: "prompt.${topic}"
+              comparator: includes
+              value: ${p0}
+        - position: 1 # goal present
+          conditions:
+            - reference: "prompt.${topic}"
+              comparator: includes
+              value: ${p1}
 
-        - name: Strategies and Filler WHY
+      gameStages:
+        - name: Strategies and Filler
           duration: 180
           elements:
             - type: prompt # Not in existing document
@@ -326,6 +334,8 @@ introSequences:
 
 treatments:
   - template: disagreeing_dyads
+    fields:
+      treatmentName: "${learningOrPersuasion}_condition_${topic}_${p0}_${p1}"
     broadcast:
       d0:
         - learningOrPersuasion: LG
@@ -339,3 +349,20 @@ treatments:
         - topic: remote_classes
         - topic: restricting_immigrants
         - topic: restricting_legal_abortion
+      d2:
+        - p0: "1"
+        - p0: "2"
+        - p0: "3"
+        - p0: "4"
+        - p0: "5"
+        - p0: "6"
+        - p0: "7"
+
+      d3:
+        - p1: "1"
+        - p1: "2"
+        - p1: "3"
+        - p1: "4"
+        - p1: "5"
+        - p1: "6"
+        - p1: "7"
