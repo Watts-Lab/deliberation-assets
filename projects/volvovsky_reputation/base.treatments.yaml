@@ -539,6 +539,7 @@ templates:
               - type: prompt
                 file: projects/volvovsky_reputation/manipulation_check_collector.md
                 name: manipulation_check_collector
+              - type: submitButton
 
           - name: other reputation questions
             elements:

@@ -3,8 +3,12 @@ name: projects/volvovsky_reputation/reminder_your_observed_own_team.md
 type: noResponse
 ---
 
-As a reminder, you observed a game between someone from the blue team and the green team.
+## The collector you were observing decided not to hire the agent (Green Elephant) for any more purchases.
 
-You played the labeling game on the blue team.
+Now you have an opportunity to hire the **Green Elephant** as an agent to buy art for you.
+
+Before you do, we wanted to remind you of the game you observed.
+
+The game was played between the following people:
 
 ---

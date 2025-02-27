@@ -7,8 +7,8 @@ type: multipleChoice
 
 ---
 
-- The agent definitely didn't want to pay for a cab to go back to get their phone, so they just guessed
-- The agent probably didn't want to pay for a cab to go back to get their phone, so they just guessed
+- The agent definitely did NOT pay to go get their phone, so they just guessed
+- The agent probably did NOT pay to go get their phone, so they just guessed
 - Unsure - could be either
-- The agent probably went back for their phone, but didn't understand the message
-- The agent definitely went back for their phone, but didn't understand the message
+- The agent probably paid to go get their phone, but didn't understand the message
+- The agent definitely paid to go get their phone, but didn't understand the message
