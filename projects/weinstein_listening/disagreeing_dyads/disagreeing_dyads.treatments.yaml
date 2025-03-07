@@ -1,0 +1,368 @@
+templates:
+  # one person in dyad is never given a goal
+  # in condition A the other is assigned to persuade
+  # in condition B the other is assigned to learn
+
+  - templateName: disagreeing_dyads
+    templateDesc: Main experiment template
+    templateContent:
+      name: ${treatmentName}
+      playerCount: 2
+      # don't care about who gets assigned to which position
+      # position 0 "goal absent"
+      # position 1A "persuade"
+      # position 1B "learn"
+
+      groupComposition:
+        - position: 0 # goal absent
+          conditions:
+            - reference: "prompt.${topic}"
+              comparator: includes
+              value: ${p0}
+        - position: 1 # goal present
+          conditions:
+            - reference: "prompt.${topic}"
+              comparator: includes
+              value: ${p1}
+
+      gameStages:
+        - name: Strategies and Filler
+          duration: 180
+          elements:
+            - type: prompt # Not in existing document
+              file: projects/weinstein_listening/disagreeing_dyads/please_wait.md
+              showToPositions: [0] # ask pos 0 to wait while pos 1 writes about learning/persuading
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/LG_PG_why_A.md
+              showToPositions: [1]
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
+              showToPositions: [1]
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_why_B.md" # learningOrPersuasion takes [LG, PG]
+              name: LG_PG_why
+              showToPositions: [1]
+
+            - type: submitButton
+              displayTime: 120 # is this too weird for the person who is sitting and waiting?
+              buttonText: Continue
+
+        - name: Opinion Notes
+          duration: 180
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/GA_A.md
+              showToPositions: [0]
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/LG_PG_write_A.md
+              showToPositions: [1]
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/GA_B.md
+              showToPositions: [0]
+              name: GA
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_write_B.md" # learningOrPersuasion takes [LG, PG]
+              showToPositions: [1]
+              name: LG_PG_write
+
+            - type: submitButton
+              displayTime: 120
+              buttonText: Continue
+
+        - name: Attitude Attributes
+          duration: 90
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_setup.md
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_1.md
+              name: PIA_1
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_2.md
+              name: PIA_2
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIA_3.md
+              name: PIA_3
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/all_requested.md
+            - type: submitButton
+              buttonText: Continue
+
+        - name: Conversation Expectations
+          duration: 120
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_setup.md
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_1.md
+              name: PIQ_1
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_2.md
+              name: PIQ_2
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_3.md
+              name: PIQ_3
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_4.md
+              name: PIQ_4
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_5.md
+              name: PIQ_5
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/presurvey/PIQ_6.md
+              name: PIQ_6
+
+            - type: submitButton
+              buttonText: Continue
+
+        - name: Pre-discussion Reminder
+          duration: 60
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/GA_remind_A.md
+              showToPositions: [0]
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_remind_A.md" # learningOrPersuasion takes [LG, PG]
+              showToPositions: [1]
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/GA_remind_B.md
+              showToPositions: [0]
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_remind_B.md" # learningOrPersuasion takes [LG, PG]
+              showToPositions: [1]
+
+            - type: display
+              reference: prompt.GA # notes from earlier
+              showToPositions: [0]
+            - type: display
+              reference: prompt.LG_PG_write # notes from earlier
+              showToPositions: [1]
+
+            - type: submitButton
+              buttonText: Continue
+
+        - name: Discussion
+          duration: 600 # always exactly 10 mins
+          discussion:
+            chatType: video
+            showNickname: true
+            showTitle: false
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_5min.md
+              displayTime: 300
+              hideTime: 330
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_8min.md
+              displayTime: 480
+              hideTime: 510
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/${learningOrPersuasion}_discussion_goal_reminder.md"
+              showToPositions: [1]
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_A.md
+
+            - type: prompt
+              file: "projects/weinstein_listening/disagreeing_dyads/topics/${topic}_discussion.md"
+
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/discussion_instructions_B.md
+
+            - type: display
+              reference: prompt.GA # notes from earlier
+              showToPositions: [0]
+            - type: display
+              reference: prompt.LG_PG_write # notes from earlier
+              showToPositions: [1]
+
+      exitSequence:
+        - name: PostDiscussionInstructions
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/disagreeing_dyads/postdiscussion_instructions.md
+            - type: submitButton
+              buttonText: Proceed to Survey
+
+        - name: Qualtrics_Escape_Hatch
+          elements:
+            - type: qualtrics
+              url: https://upenn.co1.qualtrics.com/jfe/form/SV_2bfMgUw37Y2AUZg # deliberationId will be automatically included as a urlParam
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: self_construal
+        # note that in the original this is in randomized order and is not here
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_setup.md
+
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_1.md
+            name: SC_1
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_2.md
+            name: SC_2
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_3.md
+            name: SC_3
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_4.md
+            name: SC_4
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_5.md
+            name: SC_5
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_6.md
+            name: SC_6
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_7.md
+            name: SC_7
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_8.md
+            name: SC_8
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_9.md
+            name: SC_9
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_10.md
+            name: SC_10
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_11.md
+            name: SC_11
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_12.md
+            name: SC_12
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_13.md
+            name: SC_13
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_14.md
+            name: SC_14
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_15.md
+            name: SC_15
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_16.md
+            name: SC_16
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_17.md
+            name: SC_17
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_18.md
+            name: SC_18
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_19.md
+            name: SC_19
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey/SC_20.md
+            name: SC_20
+
+          - type: submitButton
+            buttonText: Continue
+
+      - name: topic_survey
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/presurvey_instructions.md
+
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/restricting_legal_abortion.md
+            name: restricting_legal_abortion
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/restricting_immigrants.md
+            name: restricting_immigrants
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/privatise_NHS.md
+            name: privatise_NHS
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/remote_classes.md
+            name: remote_classes
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/raise_cost_of_uni.md
+            name: raise_cost_of_uni
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/bathroom_choice.md
+            name: bathroom_choice
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/education_employability.md
+            name: education_employability
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/topics/censoring_extremism.md
+            name: censoring_extremism
+          - type: prompt
+            file: projects/weinstein_listening/disagreeing_dyads/all_mandatory.md
+          - type: submitButton
+            buttonText: Continue # All questions are mandatory
+            conditions:
+              - reference: prompt.restricting_legal_abortion
+                comparator: exists
+              - reference: prompt.restricting_immigrants
+                comparator: exists
+              - reference: prompt.privatise_NHS
+                comparator: exists
+              - reference: prompt.remote_classes
+                comparator: exists
+              - reference: prompt.raise_cost_of_uni
+                comparator: exists
+              - reference: prompt.bathroom_choice
+                comparator: exists
+              - reference: prompt.education_employability
+                comparator: exists
+              - reference: prompt.censoring_extremism
+                comparator: exists
+
+treatments:
+  - template: disagreeing_dyads
+    fields:
+      treatmentName: "${learningOrPersuasion}_condition_${topic}_${p0}_${p1}"
+    broadcast:
+      d0:
+        - learningOrPersuasion: LG
+        - learningOrPersuasion: PG
+      d1:
+        - topic: bathroom_choice
+        - topic: censoring_extremism
+        - topic: education_employability
+        - topic: privatise_NHS
+        - topic: raise_cost_of_uni
+        - topic: remote_classes
+        - topic: restricting_immigrants
+        - topic: restricting_legal_abortion
+      d2:
+        - p0: "1"
+        - p0: "2"
+        - p0: "3"
+        - p0: "4"
+        - p0: "5"
+        - p0: "6"
+        - p0: "7"
+
+      d3:
+        - p1: "1"
+        - p1: "2"
+        - p1: "3"
+        - p1: "4"
+        - p1: "5"
+        - p1: "6"
+        - p1: "7"
