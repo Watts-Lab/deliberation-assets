@@ -12,7 +12,14 @@
   "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
-  "preregRepos": [],
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "listening-study",
+      "branch": "main",
+      "directory": "dyads_LG_PG"
+    }
+  ],
   "dataRepos": [
     {
       "owner": "JamesPHoughton",
