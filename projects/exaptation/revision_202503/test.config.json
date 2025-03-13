@@ -1,0 +1,28 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/exaptation/revision_202503/baseline.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "none",
+  "treatments": ["schema A", "schema B"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "exaptation/revision_202503"
+    }
+  ],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}
