@@ -7,7 +7,7 @@
   "consentAddendum": "none",
   "checkAudio": true,
   "checkVideo": true,
-  "introSequence": "none",
+  "introSequence": "Default",
   "treatments": ["schema A", "schema B"],
   "payoffs": "equal",
   "knockdowns": "none",
@@ -15,14 +15,7 @@
   "launchDate": "immediate",
   "centralPrereg": false,
   "preregRepos": [],
-  "dataRepos": [
-    {
-      "owner": "Watts-Lab",
-      "repo": "deliberation-data-test",
-      "branch": "main",
-      "directory": "exaptation/revision_202503"
-    }
-  ],
+  "dataRepos": [],
   "videoStorage": "none",
   "exitCodes": "none"
 }

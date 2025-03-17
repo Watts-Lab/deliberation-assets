@@ -2,7 +2,7 @@ templates:
   - templateName: recallTask
     # an individual recall and feedback stage
     templateContent:
-      - name: recall ${recallIndex}
+      - name: "recall_${roundIndex}_${recallIndex}"
         duration: 30
         elements:
           - type: image
@@ -14,7 +14,7 @@ templates:
             buttonText: Submit
             name: "recall_${roundIndex}_${recallIndex}"
 
-      - name: feedback ${recallIndex}
+      - name: "feedback_${roundIndex}_${recallIndex}"
         duration: 15
         elements:
           - type: image
@@ -47,6 +47,7 @@ templates:
           - type: submitButton
 
   - templateName: round
+    # a round of discussion and recall tasks
     templateContent:
       - name: "Discussion ${roundIndex}"
         duration: 600
@@ -72,16 +73,19 @@ templates:
         broadcast:
           d0: ${recallImages}
 
+introSequences:
+  - name: Default
+    introSteps:
+      - name: Instructions Page
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202503/instructions.md
+          - type: submitButton
+
 treatments:
   - name: schema A
     playerCount: 2
     gameStages:
-      - name: Intro
-        duration: 90
-        elements:
-          - projects/exaptation/revision_202503/instructions.md
-          - type: submitButton
-
       - template: round
         fields:
           roundIndex: "1"
@@ -131,12 +135,6 @@ treatments:
   - name: schema B
     playerCount: 2
     gameStages:
-      - name: Intro
-        duration: 90
-        elements:
-          - projects/exaptation/revision_202503/instructions.md
-          - type: submitButton
-
       - template: round
         fields:
           roundIndex: "1"
