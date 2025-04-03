@@ -60,6 +60,7 @@ templates:
             file: "${panelFilepath}"
           - type: submitButton
             buttonText: End discussion and proceed to next steps
+
             name: "labeling_${roundIndex}"
           - name: "labeling_${roundIndex}"
             type: prompt
@@ -115,6 +116,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SPBB.jpg
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORB.jpg
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORB.jpg # mistake in recall stage
+
 
       - template: round
         fields:
