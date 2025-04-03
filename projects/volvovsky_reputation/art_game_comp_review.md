@@ -9,13 +9,13 @@ _Lets check that you got everything:_
 
 ## Review Art Game Instructions
 
-_At the beginning of the round, the collector decides whether to pay the agent **50 points** to purchase a piece of art, or to end the game._
+_At the beginning of the round, the collector decides whether to pay the agent **50 points** from their current earnings to purchase a piece of art, or to end the game._
 
 _If the collector hires the agent, they send them a text message with a description of the piece._
 
 _When the agent arrives at the gallery, they realize they left their phone (with the collector's message) at home. They may either:_
 
-- _Spend **30 points** to take a cab home, retrieve the phone, and return to the gallery before it closes_
+- _Spend **30 points** from the 50 they got paid to take a cab home, retrieve the phone, and return to the gallery before it closes_
 - _Buy a piece of art without seeing the message_
 
 _The **collector pays the agent regardless of what the agent decides to do**._
@@ -27,5 +27,7 @@ _If the agent buys the wrong piece, the collector earns nothing, and loses the *
 _At the end of the round, the collector may choose to hire the same agent to buy another piece of art, or end the game._
 
 👉 _The collector doesn't know that the agent forgot their phone, only whether they purchased the correct piece of art._
+
+_100 points is worth $2.00_
 
 ---

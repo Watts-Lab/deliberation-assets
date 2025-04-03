@@ -6,7 +6,7 @@ note: Comprehension check for recall game video
 
 # ✅ Check your understanding
 
-### During Stage 1, you will get 20 points if everyone...
+### During Stage 1, you will get 25 points if everyone...
 
 ---
 

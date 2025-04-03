@@ -15,11 +15,13 @@ A wealthy art collector has paid you **50 points** to purchase a piece of art, a
 
 They described the piece they want in a text message, but unfortunately you left your phone at home, so you can't read the message.
 
-The gallery closes soon, and the only way you can read the message in time is to **pay 30 points** for a taxi home and back.
+The gallery closes soon, and the only way you can read the message in time is to **pay 30 points** from what the collector paid you, to get a taxi home and back.
 
 Or, you can keep those 30 points, and buy whichever art piece you guess the collector wants.
 
 👉 If you get the right piece, this collector may want to hire you again in the future.
+
+100 Points is worth $2.00
 
 **Are you going to pay 30 points to take a taxi home to get your phone?**
 

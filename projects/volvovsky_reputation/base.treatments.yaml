@@ -164,6 +164,10 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
   - templateName: observerOwnTeamFailure
@@ -185,6 +189,9 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
   - templateName: observerOtherTeamStage
@@ -253,6 +260,9 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
   - templateName: observerOtherTeamSuccessComplex
@@ -276,6 +286,9 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
   - templateName: observerOtherTeamFailureSimple
@@ -299,6 +312,11 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
+
           - type: submitButton
 
   - templateName: observerOtherTeamFailureComplex
@@ -319,6 +337,10 @@ templates:
           - type: prompt
             name: choice_to_hire_observed_agent
             file: projects/volvovsky_reputation/observer_choose_to_hire_failure.md
+
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
   - templateName: treatmentBase

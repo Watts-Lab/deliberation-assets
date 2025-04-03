@@ -9,7 +9,7 @@ You want to buy this piece of art on display at a gallery in New York:
 
 ![purchase image](projects/volvovsky_reputation/Tangram_A6.jpg)
 
-Since you can't travel to the gallery, you need to decide whether to pay an agent **50 points** to purchase the art for you or to forgo the opportunity.
+Since you can't travel to the gallery, you need to decide whether to pay an agent **50 points** from your current earnings to purchase the art for you or to forgo the opportunity.
 
 _This is a training round, so the agent will be played by a bot:_
 

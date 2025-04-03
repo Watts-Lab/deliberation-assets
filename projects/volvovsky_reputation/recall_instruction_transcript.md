@@ -21,5 +21,6 @@ This game has two stages:
 - Over 8 rounds, we'll show you each image from Stage 1 and ask you to type in the name your group gave that image
 - If everyone enters **the exact same name** for the image, you earn **25 points** for each image
 - If one of you forgets the name, nobody will get any points for that image
+- 100 points are worth **$2.00**
 
 ---

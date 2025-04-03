@@ -22,7 +22,9 @@ In this training round you play as the wealthy art collector, and the agent will
 Unfortunately, you can't travel to the gallery. You can either:
 
 - choose not to buy the art and get **0 points**, or
-- pay an agent **50 points** to purchase the art for you. If the agent buys the right piece, you get **80 points**. Otherwise, you get nothing.
+- pay an agent **50 points** from your current earnings to purchase the art for you. If the agent buys the right piece, you get **80 points**. Otherwise, you get nothing, and lose the points you paid the agent.
+
+Earning 100 points is worth $2.00
 
 👉 _If you hire the agent, you can hire them again to purchase other pieces. If you don't, the Art Buying Game will end._
 

@@ -16,7 +16,9 @@ Names should be:
 
 In the next stage, we will quiz you on the names you chose.
 
-You will earn points only if **everyone** in your group remembers the correct name.
+You will earn 25 points only if **everyone** in your group remembers the correct name.
+
+100 points are worth $2.00
 
 ---
 
