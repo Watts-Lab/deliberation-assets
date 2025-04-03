@@ -1,0 +1,21 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/exaptation/revision_202504/baseline.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "Default",
+  "treatments": ["schema"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}

@@ -1,0 +1,322 @@
+templates:
+  - templateName: guessTask
+    templateContent:
+      - type: prompt
+        file: projects/exaptation/revision_202504/instruction_describer.md
+        hideFromPositions:
+          - ${guesserPosition}
+        conditions:
+          - reference: "prompt.continue_${lastIndex}"
+            position: any
+            comparator: exists
+          - reference: "prompt.guess_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: image
+        file: ${imageFilepath}
+        hideFromPositions:
+          - ${guesserPosition}
+        conditions:
+          - reference: "prompt.continue_${lastIndex}"
+            position: any
+            comparator: exists
+          - reference: "prompt.continue_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: image
+        file: ${panelFilepath}
+        showToPositions:
+          - ${guesserPosition}
+        conditions:
+          - reference: "prompt.continue_${lastIndex}"
+            position: any
+            comparator: exists
+          - reference: "prompt.continue_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: prompt
+        name: "guess_${index}"
+        file: projects/exaptation/revision_202504/guess.md
+        showToPositions:
+          - ${guesserPosition}
+        conditions:
+          - reference: "prompt.continue_${lastIndex}"
+            position: any
+            comparator: exists
+          - reference: "prompt.guess_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: prompt
+        file: projects/exaptation/revision_202504/answer_correct.md
+        conditions:
+          - reference: "prompt.guess_${index}"
+            position: any
+            comparator: equals
+            value: ${correctAnswer}
+          - reference: "prompt.continue_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: prompt
+        file: projects/exaptation/revision_202504/answer_incorrect.md
+        conditions:
+          - reference: "prompt.guess_${index}"
+            position: any
+            comparator: exists
+          - reference: "prompt.guess_${index}"
+            position: all
+            comparator: doesNotEqual
+            value: ${correctAnswer}
+          - reference: "prompt.continue_${index}"
+            position: all
+            comparator: doesNotExist
+
+      - type: prompt
+        file: projects/exaptation/revision_202504/continue.md
+        name: "continue_${index}"
+        hideFromPositions:
+          - ${guesserPosition}
+        conditions:
+          - reference: "prompt.guess_${index}"
+            position: any
+            comparator: exists
+          - reference: "prompt.continue_${index}"
+            position: all
+            comparator: doesNotExist
+
+introSequences:
+  - name: Default
+    introSteps:
+      - name: Instructions Page
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202503/instructions.md
+          - type: submitButton
+
+treatments:
+  - name: schema
+    playerCount: 2
+    gameStages:
+      - name: Instructions
+        duration: 60
+        elements:
+          - type: prompt # practice
+            file: projects/exaptation/revision_202504/guess.md
+            name: "continue_demo"
+          - type: submitButton
+
+      - name: Discussion
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+        elements:
+          - template: guessTask
+            broadcast:
+              d0:
+                - index: "1_1"
+                  lastIndex: "demo"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SOBB.jpg
+                  correctAnswer: "2"
+                - index: "1_2"
+                  lastIndex: "1_1"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SORB.jpg
+                  correctAnswer: "3"
+                - index: "1_3"
+                  lastIndex: "1_2"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SPRY.jpg
+                  correctAnswer: "8"
+                - index: "1_4"
+                  lastIndex: "1_3"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SPBY.jpg
+                  correctAnswer: "5"
+                - index: "1_5"
+                  lastIndex: "1_4"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SOBY.jpg
+                  correctAnswer: "1"
+                - index: "1_6"
+                  lastIndex: "1_5"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SORY.jpg
+                  correctAnswer: "4"
+                - index: "1_7"
+                  lastIndex: "1_6"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SPRB.jpg
+                  correctAnswer: "7"
+                - index: "1_8"
+                  lastIndex: "1_7"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_1_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_1_SPBB.jpg
+                  correctAnswer: "6"
+
+                - index: "2_1"
+                  lastIndex: "1_8"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SORB.jpg
+                  correctAnswer: "8"
+                - index: "2_2"
+                  lastIndex: "2_1"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SPBY.jpg
+                  correctAnswer: "4"
+                - index: "2_3"
+                  lastIndex: "2_2"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SOBY.jpg
+                  correctAnswer: "3"
+                - index: "2_4"
+                  lastIndex: "2_3"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SORY.jpg
+                  correctAnswer: "7"
+                - index: "2_5"
+                  lastIndex: "2_4"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SPBB.jpg
+                  correctAnswer: "6"
+                - index: "2_6"
+                  lastIndex: "2_5"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SPRY.jpg
+                  correctAnswer: "5"
+                - index: "2_7"
+                  lastIndex: "2_6"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SOBB.jpg
+                  correctAnswer: "2"
+                - index: "2_8"
+                  lastIndex: "2_7"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_2_panel_S.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_2_SPRB.jpg
+                  correctAnswer: "1"
+
+                - index: "3_1"
+                  lastIndex: "2_8"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SPBY.jpg
+                  correctAnswer: "1"
+                - index: "3_2"
+                  lastIndex: "3_1"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SPRB.jpg
+                  correctAnswer: "2"
+                - index: "3_3"
+                  lastIndex: "3_2"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SORB.jpg
+                  correctAnswer: "5"
+                - index: "3_4"
+                  lastIndex: "3_3"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SPBB.jpg
+                  correctAnswer: "7"
+                - index: "3_5"
+                  lastIndex: "3_4"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SOBB.jpg
+                  correctAnswer: "6"
+                - index: "3_6"
+                  lastIndex: "3_5"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SPRY.jpg
+                  correctAnswer: "4"
+                - index: "3_7"
+                  lastIndex: "3_6"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SORY.jpg
+                  correctAnswer: "8"
+                - index: "3_8"
+                  lastIndex: "3_7"
+                  guesserPosition: 0
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_3_panel.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_3_SOBY.jpg
+                  correctAnswer: "3"
+
+                - index: "4_1"
+                  lastIndex: "3_8"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SORB3.jpg
+                  correctAnswer: "6"
+                - index: "4_2"
+                  lastIndex: "4_1"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SPBY1.jpg
+                  correctAnswer: "2"
+                - index: "4_3"
+                  lastIndex: "4_2"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SPBY4.jpg
+                  correctAnswer: "7"
+                - index: "4_4"
+                  lastIndex: "4_3"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SORB4.jpg
+                  correctAnswer: "8"
+                - index: "4_5"
+                  lastIndex: "4_4"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SORB1.jpg
+                  correctAnswer: "1"
+                - index: "4_6"
+                  lastIndex: "4_5"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SPBY2.jpg
+                  correctAnswer: "4"
+                - index: "4_7"
+                  lastIndex: "4.6"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SORB2.jpg
+                  correctAnswer: "3"
+                - index: "4_8"
+                  lastIndex: "4_7"
+                  guesserPosition: 1
+                  panelFilepath: projects/exaptation/revision_202504/stimuli/round_4_panel_B.jpg
+                  imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SPBY3.jpg
+                  correctAnswer: "5"
+
+    exitSequence:
+      - name: Demographics
+        elements:
+          - type: survey
+            surveyName: Demographics
