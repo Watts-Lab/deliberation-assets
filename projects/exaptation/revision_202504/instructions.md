@@ -3,26 +3,38 @@ name: projects/exaptation/revision_202503/instructions.md
 type: noResponse
 ---
 
-# The game you are about to play has two stages:
+# 🎯 Your Task: Describe & Guess Images
 
-## Stage 1: Discussion and labeling (Video Call)
+You’ll be paired with another participant for a short interactive game. You’ll take turns playing two roles:
 
-In the first stage, your group will be shown a set of eight images, such as the ones blurred out below.
+### 🗣️ The Describer
 
-You will have 10 minutes to come up with unique labels for each image, and enter them in the shared document that follows.
+- You will see one image and describe it out loud to your partner.
+- Your goal is to describe it clearly and specifically so they can pick the matching image from a panel of 8.
 
-![labeling_demo](projects/exaptation/revision_202503/instructions_demo_labeling.jpg)
+### 🧠 The Guesser
 
-You will need to remember each label exactly, and so labels should be memorable, short, and _distinct_ from one another.
+- You will see a panel of 8 numbered images (1–8).
+- Your partner will describe one of those images.
+- Your job is to figure out which image they’re describing and select the correct number.
 
-## Stage 2: Recall (On your own)
+# 🔁 The Game Flow
 
-After your discussion, we will show you images one at a time, and ask you to type the label your group decided on for that image.
+- First, one of you describes 8 images while the other guesses.
+- Then, you switch roles.
+- You’ll repeat this so that each of you plays both roles twice.
+- That means you’ll describe 16 different images, and guess on two different image panels.
 
-![recall_demo](projects/exaptation/revision_202503/instructions_demo_recall.jpg)
+# 🧪 Practice
 
-If everyone's enters the correct label for the image, you will earn 10 points. If anyone writes the label incorrectly, you earn no points.
+This is an example image that could be shown to the describer:
 
-### You will play four rounds of labeling and recall, with different images in each round.
+![Practice Image](projects/exaptation/revision_202504/stimuli/demo_image.jpg)
+
+This is an example panel that could be shown to the guesser:
+
+![Practice Panel](projects/exaptation/revision_202504/stimuli/demo_panel.jpg)
+
+👉 A "Continue" button will appear when you select the correct number.
 
 ---

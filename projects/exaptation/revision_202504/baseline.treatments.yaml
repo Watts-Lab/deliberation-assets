@@ -94,21 +94,22 @@ introSequences:
       - name: Instructions Page
         elements:
           - type: prompt
-            file: projects/exaptation/revision_202503/instructions.md
+            file: projects/exaptation/revision_202504/instructions.md
+          - type: prompt # practice
+            file: projects/exaptation/revision_202504/guess.md
+            name: "continue_demo" # needs this name so that it can be referenced in the guessTask template for the first round
           - type: submitButton
+            buttonText: "Continue"
+            conditions:
+              - reference: "prompt.continue_demo"
+                position: player
+                comparator: equals
+                value: "5"
 
 treatments:
   - name: schema
     playerCount: 2
     gameStages:
-      - name: Instructions
-        duration: 60
-        elements:
-          - type: prompt # practice
-            file: projects/exaptation/revision_202504/guess.md
-            name: "continue_demo"
-          - type: submitButton
-
       - name: Discussion
         duration: 600
         discussion:
@@ -315,7 +316,20 @@ treatments:
                   imageFilepath: projects/exaptation/revision_202504/stimuli/round_4_SPBY3.jpg
                   correctAnswer: "5"
 
+          - type: submitButton
+            buttonText: "Continue"
+            conditions:
+              - reference: "prompt.continue_4_8"
+                position: any
+                comparator: exists
+
     exitSequence:
+      - name: Describe Strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202504/describe_strategy.md
+          - type: submitButton
+
       - name: Demographics
         elements:
           - type: survey
