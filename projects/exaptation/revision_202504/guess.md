@@ -3,7 +3,7 @@ name: projects/exaptation/revision_202504/guess.md
 type: multipleChoice
 ---
 
-#### Which image is being described?
+#### Which of these images does the describer see?
 
 ---
 
