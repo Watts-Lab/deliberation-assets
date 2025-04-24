@@ -1,5 +1,5 @@
 {
-  "batchName": "pilotA",
+  "batchName": "pilot",
   "cdn": "prod",
   "treatmentFile": "projects/exaptation/revision_202504/baseline.treatments.yaml",
   "customIdInstructions": "none",
@@ -27,11 +27,11 @@
       "owner": "JamesPHoughton",
       "repo": "exaptation",
       "branch": "main",
-      "directory": "pilot/revision_202503"
+      "directory": "pilot/revision_202504"
     }
   ],
   "videoStorage": {
-    "bucket": "deliberation-lab-recordings-test",
+    "bucket": "deliberation-lab-recordings-exaptation",
     "region": "us-east-1"
   },
   "exitCodes": {

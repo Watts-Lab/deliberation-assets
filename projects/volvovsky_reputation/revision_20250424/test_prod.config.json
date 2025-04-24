@@ -1,0 +1,45 @@
+{
+  "batchName": "prolific_pilot",
+  "cdn": "prod",
+  "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "projects/volvovsky_reputation/consent_addendum.md",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "baseline",
+  "treatments": [
+    "simple success own team",
+    "simple success other team",
+    "simple failure own team",
+    "simple failure other team",
+    "complex success own team",
+    "complex success other team",
+    "complex failure own team",
+    "complex failure other team"
+  ],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "reputation"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-test",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "CN3M1AG5",
+    "error": "CX8GUBBQ",
+    "lobbyTimeout": "CNKR0OP8",
+    "failedEquipmentCheck": "C1JR13XY"
+  }
+}

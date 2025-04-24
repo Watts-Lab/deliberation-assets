@@ -1,4 +1,26 @@
 templates:
+  - templateName: complexImages
+    templateContent:
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+      - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+
+  - templateName: simpleImages
+    templateContent:
+      - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+      - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+
   - templateName: recallTask
     templateContent:
       - name: recall ${recallIndex}
@@ -7,7 +29,7 @@ templates:
           - type: image
             file: ${imageFilepath}
           - type: prompt
-            name: recall_${recallIndex}
+            name: "recall_${recallIndex}"
             file: projects/volvovsky_reputation/recall.md
           - type: submitButton
             buttonText: Submit
@@ -32,43 +54,21 @@ templates:
           - type: prompt
             file: projects/volvovsky_reputation/labels_not_match.md
             conditions:
-              - reference: prompt.recall_${recallIndex}
+              - reference: "prompt.recall_${recallIndex}"
                 position: percentAgreement
                 comparator: isBelow
                 value: 100
 
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 0
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 1
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 2
           - type: submitButton
-
-  - templateName: complexImages
-    templateContent:
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
-      - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
-
-  - templateName: simpleImages
-    templateContent:
-      - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-      - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
   - templateName: observeOwnTeamImages
     templateContent:
@@ -104,17 +104,17 @@ templates:
             file: projects/volvovsky_reputation/collector_asks_for.md
             displayTime: 10
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 0
             showToPositions: [1]
             displayTime: 10
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 1
             showToPositions: [2]
             displayTime: 10
           - type: display
-            reference: prompt.recall_${recallIndex}
+            reference: "prompt.recall_${recallIndex}"
             position: 2
             showToPositions: [0]
             displayTime: 10
@@ -129,7 +129,7 @@ templates:
             warnTimeRemaining: 3
 
           - type: prompt
-            file: projects/volvovsky_reputation/${outcomeFile}.md
+            file: "projects/volvovsky_reputation/${outcomeFile}.md"
             displayTime: 20
           - type: submitButton
             displayTime: 20
@@ -342,6 +342,34 @@ templates:
             name: explain_choice
             file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
+
+  - templateName: observeRound
+    templateContent:
+      - name: ${name}
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/you_will_observe.md
+          - type: image
+            file: projects/volvovsky_reputation/observe_elephant_dog.jpg
+
+          - type: prompt
+            file: projects/volvovsky_reputation/waiting_for_collector.md
+            hideTime: 9
+          - type: timer
+            displayTime: 0
+            endTime: 15
+            hideTime: 9
+            warnTimeRemaining: 3
+
+          - type: prompt
+            file: projects/volvovsky_reputation/waiting_for_agent.md
+            displayTime: 10
+            hideTime: 20
+          - type: timer
+            displayTime: 10
+            endTime: 29
+            hideTime: 20
+            warnTimeRemaining: 3
 
   - templateName: treatmentBase
     templateContent:
@@ -576,10 +604,6 @@ templates:
                   - reference: prompt.did_observed_agent_succeed
                     comparator: doesNotEqual
                     value: "Every time"
-              #- type: prompt
-              #  file: projects/volvovsky_reputation/do_you_think_they_went_back.md
-              #- type: prompt
-              #  file: projects/volvovsky_reputation/did_they_understand.md
               - type: submitButton
 
           - name: perceptions of discussion alters 1
@@ -641,6 +665,7 @@ treatments:
       imagePanel: Simple_Panel_A.jpg
       recallImages:
         template: simpleImages
+
       observerTemplateName: observerOtherTeamSuccessSimple
 
   - template: treatmentBase
