@@ -343,10 +343,11 @@ templates:
             file: projects/volvovsky_reputation/explain_choice_to_hire.md
           - type: submitButton
 
-  - templateName: observeRound
+  - templateName: observeRound # an complete exit step
     templateContent:
       - name: ${name}
         elements:
+          # Banner of who you are observing
           - type: prompt
             file: projects/volvovsky_reputation/you_will_observe.md
           - type: image
@@ -362,6 +363,9 @@ templates:
             warnTimeRemaining: 3
 
           - type: prompt
+            file: "projects/volvovsky_reputation/${asksForFile}"
+            displayTime: 10
+          - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
             displayTime: 10
             hideTime: 20
@@ -370,6 +374,16 @@ templates:
             endTime: 29
             hideTime: 20
             warnTimeRemaining: 3
+
+          - type: prompt
+            file: "projects/volvovsky_reputation/${outcomeFile}.md"
+            displayTime: 20
+          - type: submitButton
+            displayTime: 20
+
+          - type: prompt
+            file: projects/volvovsky_reputation/please_click_forward.md
+            displayTime: 30
 
   - templateName: treatmentBase
     templateContent:
