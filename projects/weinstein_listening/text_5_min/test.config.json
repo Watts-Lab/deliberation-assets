@@ -1,0 +1,26 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/weinstein_listening/text_5_min/text_5_min.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "custom",
+  "consentAddendum": "projects/weinstein_listening/text_5_min/consentText.md",
+  "checkAudio": false,
+  "checkVideo": false,
+  "introSequence": "default",
+  "treatments": ["default"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": {
+    "complete": "C1D0OZ1N",
+    "error": "CX8GUBBQ",
+    "lobbyTimeout": "C1BS10OU",
+    "failedEquipmentCheck": "FailedEquipmentCheckDummy"
+  }
+}

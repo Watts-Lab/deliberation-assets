@@ -11,6 +11,6 @@ type: multipleChoice
 - Disagree 2
 - Somewhat disagree 3
 - Neither agree nor disagree 4
-- Somewhat disagree 5
+- Somewhat agree 5
 - Agree 6
 - Strongly agree 7

@@ -1,0 +1,40 @@
+{
+  "batchName": "prolific",
+  "cdn": "prod",
+  "treatmentFile": "projects/weinstein_listening/text_5_min/text_5_min.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "custom",
+  "consentAddendum": "projects/weinstein_listening/text_5_min/consentText.md",
+  "checkAudio": false,
+  "checkVideo": false,
+  "introSequence": "default",
+  "treatments": ["default"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "listening-study",
+      "branch": "main",
+      "directory": "text_5_min"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "listening-study",
+      "branch": "main",
+      "directory": "text_5_min"
+    }
+  ],
+  "videoStorage": "none",
+  "exitCodes": {
+    "complete": "C1IWVCW5",
+    "error": "C5OXN8UL",
+    "lobbyTimeout": "C5OXN8UL",
+    "failedEquipmentCheck": "C5OXN8UL"
+  }
+}
