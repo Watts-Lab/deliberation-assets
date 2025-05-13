@@ -103,6 +103,7 @@ templates:
           - type: prompt
             file: projects/volvovsky_reputation/collector_asks_for.md
             displayTime: 10
+
           - type: display
             reference: "prompt.recall_${recallIndex}"
             position: 0
@@ -118,6 +119,7 @@ templates:
             position: 2
             showToPositions: [0]
             displayTime: 10
+
           - type: prompt
             file: projects/volvovsky_reputation/waiting_for_agent.md
             displayTime: 10

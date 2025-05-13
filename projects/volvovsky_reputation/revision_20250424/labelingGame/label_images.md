@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/coordination_discussion_labeling.md
+name: projects/volvovsky_reputation/revision_20250424/labelingGame/label_images.md
 type: openResponse
 rows: 8
 ---

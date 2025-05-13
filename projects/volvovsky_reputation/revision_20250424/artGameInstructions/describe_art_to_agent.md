@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/play_as_collector.md
+name: projects/volvovsky_reputation/revision_20250424/artGameInstructions/describe_art_to_agent.md
 type: openResponse
 rows: 1
 ---

@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/recall_instruction_transcript.md
+name: projects/volvovsky_reputation/revision_20250424/labelingGame/instructions.md
 type: noResponse
 note: Transcript of first video instructions
 ---

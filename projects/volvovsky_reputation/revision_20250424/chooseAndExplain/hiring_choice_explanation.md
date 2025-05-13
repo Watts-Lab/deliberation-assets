@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/explain_choice_to_hire.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_explanation.md
 type: openResponse
 ---
 

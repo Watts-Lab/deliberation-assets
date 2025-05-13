@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/recall_instruction_comp_check_2.md
+name: projects/volvovsky_reputation/revision_20250424/labelingGame/comprehension_check_stage2Points.md
 type: multipleChoice
 note: Comprehension check for recall game video
 ---
