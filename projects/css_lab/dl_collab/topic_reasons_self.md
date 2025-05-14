@@ -4,7 +4,7 @@ type: openResponse
 rows: 12
 ---
 
-# We want to know what **you** think about this topic
+# We want to know what 🫵 **you** 🫵 think about this topic
 
 Please list as many reasons as you can think of to support **your position** on this issue.
 

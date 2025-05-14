@@ -11,7 +11,9 @@
   "treatments": [
     "gaza_aid_control",
     "pardon_january_6_control",
-    "transgender_sports_control"
+    "transgender_sports_control",
+    "fast_food_tax_control",
+    "religious_exemptions_control"
   ],
   "payoffs": "equal",
   "knockdowns": "none",
