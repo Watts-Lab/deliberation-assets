@@ -7,17 +7,24 @@ type: multipleChoice
 
 You played the labeling game with the Blue Team.
 
-It costs you **50 points** to hire the Green Elephant.
-
-If the Green Elephant buys the piece you ask for, you get **80 points**. Otherwise, you get nothing.
+If you hire the `Green Elephant` and they buy the piece you ask for, you get **80 points**. Otherwise, you get nothing.
 
 100 Points is worth $2.00
 
 ![elephant image](projects/volvovsky_reputation/agent_elephant.jpg)
 
-## Do you want to pay 50 points out of your earnings to hire the Green Elephant to buy art for you?
+## How many points would you like to offer the agent in order to buy the art for you?
+
+The agent will have an opportunity to accept or reject your bid.
 
 ---
 
-- Yes
-- No
+- 0 points
+- 10 points
+- 20 points
+- 30 points
+- 40 points
+- 50 points
+- 60 points
+- 70 points
+- 80 points

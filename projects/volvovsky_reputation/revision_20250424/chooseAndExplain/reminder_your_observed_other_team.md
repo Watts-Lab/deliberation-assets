@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/reminder_your_observed_other_team.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/reminder_your_observed_other_team.md
 type: noResponse
 ---
 

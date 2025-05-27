@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/manipulation_check_collector.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/manipulation_check_collector.md
 type: multipleChoice
 ---
 

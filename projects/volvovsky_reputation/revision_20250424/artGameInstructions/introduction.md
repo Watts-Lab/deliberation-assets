@@ -3,7 +3,7 @@ name: projects/volvovsky_reputation/chose_to_hire_agent.md
 type: noResponse
 ---
 
-# Game 2: Art Buying Game
+# Game 2: Art Buying Game 🖼️
 
 This game has two roles: **Collector** and **Agent**.
 

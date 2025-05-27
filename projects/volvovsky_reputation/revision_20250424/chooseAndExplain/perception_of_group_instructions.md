@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/perception_of_group_instructions.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/perception_of_group_instructions.md
 type: noResponse
 ---
 

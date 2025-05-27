@@ -134,23 +134,23 @@ templates:
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/artGameInstructions/training_banner.md
           - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/artGameInstructions/chose_to_hire_agent_bid.md
-            name: training_hire_agent_bid
+            file: projects/volvovsky_reputation/revision_20250424/artGameInstructions/chose_to_hire_agent_fixed_price.md
+            name: training_hire_agent
           - type: separator
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/artGameInstructions/describe_art_to_agent.md
             name: collector_description
             conditions:
-              - reference: prompt.training_hire_agent_bid
+              - reference: prompt.training_hire_agent
                 comparator: equals
-                value: "40 points"
+                value: "Yes"
           - type: submitButton
             conditions:
+              - reference: prompt.training_hire_agent
+                comparator: equals
+                value: "Yes"
               - reference: prompt.collector_description
                 comparator: exists
-              - reference: prompt.training_hire_agent_bid
-                comparator: equals
-                value: "40 points"
 
       - name: Result of playing as collector
         elements:
@@ -235,17 +235,11 @@ templates:
   - templateName: observerInstructions
     templateContent:
       # Exit sequence stages
-      - name: pre-bid
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/observeArtGame/pre_observe_bid.md
-            name: pre_observe_bid
-          - type: submitButton
-            conditions:
-              - reference: prompt.pre_observe_bid
-                comparator: exists
       - name: Instructions for Observer
         elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/observeArtGame/pairing_with_partner.md
+            hideTime: 9
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/observeArtGame/observer_instructions.md
             displayTime: 10

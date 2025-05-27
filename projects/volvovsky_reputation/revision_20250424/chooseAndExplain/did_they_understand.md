@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/did_they_understand.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/did_they_understand.md
 type: multipleChoice
 ---
 

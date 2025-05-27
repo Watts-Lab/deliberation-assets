@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/diagnose_observed_agent_error.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/diagnose_observed_agent_error.md
 type: multipleChoice
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/did_observed_agent_succeed.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/did_observed_agent_succeed.md
 type: multipleChoice
 ---
 

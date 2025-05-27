@@ -4,7 +4,7 @@ type: noResponse
 note: Transcript of first video instructions
 ---
 
-# Game 1: The Labeling Game!
+# Game 1: The Labeling Game! 🏷️
 
 This game has two stages:
 

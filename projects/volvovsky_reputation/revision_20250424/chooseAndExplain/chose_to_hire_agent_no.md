@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/chose_to_hire_agent.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/chose_to_hire_agent_no.md
 type: multipleChoice
 ---
 

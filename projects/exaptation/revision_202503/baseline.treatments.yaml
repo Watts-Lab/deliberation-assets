@@ -50,7 +50,7 @@ templates:
     # a round of discussion and recall tasks
     templateContent:
       - name: "Discussion ${roundIndex}"
-        duration: 600
+        duration: ${duration}
         discussion:
           chatType: video
           showNickname: true
@@ -59,7 +59,7 @@ templates:
           - type: image
             file: "${panelFilepath}"
           - type: submitButton
-            buttonText: End discussion and proceed to next steps
+            buttonText: End discussion and go to quiz
 
             name: "labeling_${roundIndex}"
           - name: "labeling_${roundIndex}"
@@ -90,6 +90,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1"
+          duration: 600
           panelFilepath: projects/exaptation/revision_202503/stimuli/round_1_panel_S.jpg
           recallImages:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_SOBB.jpg
@@ -100,6 +101,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
+          duration: 300
           panelFilepath: projects/exaptation/revision_202503/stimuli/round_2_panel_S.jpg
           recallImages:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_SPRY.jpg
@@ -110,6 +112,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
+          duration: 60
           panelFilepath: projects/exaptation/revision_202503/stimuli/round_3_panel.jpg
           recallImages:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SOBB.jpg
@@ -117,10 +120,10 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORB.jpg
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORB.jpg # mistake in recall stage
 
-
       - template: round
         fields:
           roundIndex: "4"
+          duration: 5
           panelFilepath: projects/exaptation/revision_202503/stimuli/round_4_panel_A.jpg
           recallImages:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SORB3.jpg
