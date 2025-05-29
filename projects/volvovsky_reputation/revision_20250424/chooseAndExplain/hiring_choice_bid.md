@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_fixed.md
+name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
 type: multipleChoice
 ---
 

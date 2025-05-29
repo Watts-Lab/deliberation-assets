@@ -5,7 +5,7 @@ type: multipleChoice
 
 ## Training round 1: Play as **Collector**
 
-In this training round you play as the wealthy art collector, and the agent will be played by this cute little robot:
+In this training round, you play as a wealthy art collector and your agent will be played by this cute little robot:
 
 ![robot image](projects/volvovsky_reputation/robot_icon.jpg)
 
@@ -16,7 +16,7 @@ In this training round you play as the wealthy art collector, and the agent will
 Unfortunately, you can't travel to the gallery. You can either:
 
 - choose not to buy the art and get **0 points**, or
-- pay an agent from what you have earned so far (you have earned `200` points so far) to purchase the art for you. If the agent buys the right piece, you get **80 points**. Otherwise, you get nothing, and lose the points you paid the agent.
+- pay your agent from what you have earned so far (you have earned `200` points so far) to purchase the art for you. If the agent buys the right piece, you get **80 points**. Otherwise, you get nothing, and lose the points you paid the agent.
 
 Earning 100 points is worth $2.00
 

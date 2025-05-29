@@ -18,7 +18,7 @@ _When the agent arrives at the gallery, they realize they left their phone (with
 - _Spend **20 points** from what they got paid to take a cab home, retrieve the phone, and return to the gallery before it closes_
 - _Buy a piece of art without seeing the message_
 
-_The **collector pays the agent regardless of what the agent decides to do**._
+_The **collector pays the agent even if they get the wrong piece of art**._
 
 _If the agent purchases the correct piece, the collector earns **80 points**._
 

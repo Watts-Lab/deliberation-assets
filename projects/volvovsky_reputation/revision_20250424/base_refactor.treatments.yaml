@@ -161,7 +161,7 @@ templates:
           - type: submitButton
             buttonText: Proceed to next round of training
 
-      - name: Training Round as Agent part 1 ## Bookmark - pick up here
+      - name: Training Round as Agent part 1
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/artGameInstructions/training_banner.md
@@ -244,97 +244,14 @@ templates:
             conditions:
               - reference: prompt.pre_observe_bid
                 comparator: exists
+
       - name: Instructions for Observer
         elements:
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/observeArtGame/observer_instructions.md
-            displayTime: 10
-          - type: submitButton
-            displayTime: 10
-
-  ############## Debriefing Templates #############
-  - templateName: debrief
-    templateContent:
-      # Exit sequence stages
-      - name: Post-choice debrief
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/post_choice_debrief_yes_a.md
-            hideTime: 9
-            conditions:
-              - reference: prompt.choice_to_hire_observed_agent
-                comparator: equals
-                value: "Yes"
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/post_choice_debrief_yes_b.md
-            displayTime: 9
-            conditions:
-              - reference: prompt.choice_to_hire_observed_agent
-                comparator: equals
-                value: "Yes"
-          - type: submitButton
-            displayTime: 9
-            conditions:
-              - reference: prompt.choice_to_hire_observed_agent
-                comparator: equals
-                value: "Yes"
-
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/post_choice_debrief_no.md
-            conditions:
-              - reference: prompt.choice_to_hire_observed_agent
-                comparator: equals
-                value: "No"
-          - type: submitButton
-            conditions:
-              - reference: prompt.choice_to_hire_observed_agent
-                comparator: equals
-                value: "No"
-
-      - name: manipulation check # ask them to remember who they played with?
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/manipulation_check_agent.md
-            name: manipulation_check_agent
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/manipulation_check_collector.md
-            name: manipulation_check_collector
           - type: submitButton
 
-      - name: other reputation questions
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/do_you_recommend.md
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/did_observed_agent_succeed.md
-            name: did_observed_agent_succeed
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/diagnose_observed_agent_error.md
-            conditions:
-              - reference: prompt.did_observed_agent_succeed
-                comparator: doesNotEqual
-                value: "Every time"
-          - type: submitButton
-
-      - name: perceptions of discussion alters 1
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/perception_of_group_instructions.md
-          - type: survey
-            surveyName: PerceptionOfOthers
-
-      - name: debrief
-        elements:
-          - type: prompt
-            file: projects/volvovsky_reputation/debrief.md
-          - type: submitButton
-
-      - name: Demographic Survey
-        elements:
-          - type: survey
-            surveyName: DemographicsShortUS
-
-  ##########
+  ########## Observer Stages ##########
 
   - templateName: observeOwnTeamImages
     templateContent:
@@ -445,6 +362,64 @@ templates:
             file: projects/volvovsky_reputation/revision_20250424/observeArtGame/please_click_forward.md
             displayTime: 30
 
+  ############## Debrief  #############
+  - templateName: debrief
+    templateContent:
+      # Exit sequence stages
+      - name: Post-choice debrief
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/post_choice_debrief_yes_a.md
+            hideTime: 9
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/post_choice_debrief_yes_b.md
+            displayTime: 9
+          - type: submitButton
+            displayTime: 9
+
+      - name: manipulation check # ask them to remember who they played with?
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/manipulation_check_agent.md
+            name: manipulation_check_agent
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/manipulation_check_collector.md
+            name: manipulation_check_collector
+          - type: submitButton
+
+      - name: other reputation questions
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/do_you_recommend.md
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/did_observed_agent_succeed.md
+            name: did_observed_agent_succeed
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/diagnose_observed_agent_error.md
+            conditions:
+              - reference: prompt.did_observed_agent_succeed
+                comparator: doesNotEqual
+                value: "Every time"
+          - type: submitButton
+
+      - name: perceptions of discussion alters 1
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/perception_of_group_instructions.md
+          - type: survey
+            surveyName: PerceptionOfOthers
+
+      - name: debrief
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/debrief.md
+          - type: submitButton
+
+      - name: Demographic Survey
+        elements:
+          - type: survey
+            surveyName: DemographicsShortUS
+
 introSequences:
   - name: baseline
     desc: standard conditions
@@ -552,13 +527,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+          #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructions
@@ -591,7 +566,7 @@ treatments:
             file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/summary_of_observation_success.md
           - type: prompt
             name: choice_to_hire_observed_agent
-            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_fixed.md
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
           - type: prompt
             name: explain_choice
             file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_explanation.md
