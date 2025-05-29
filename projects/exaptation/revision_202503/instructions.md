@@ -15,8 +15,6 @@ Come up with **unique** labels for each image, and enter them in a shared text b
 
 You will need to remember each label exactly, so make your labels short, memorable, and _distinct_ from one another.
 
-You will have a maximum of 10 minutes in the first round, 5 minutes in the second round, 1 minute in the third round, and will not be able to talk in the fourth round.
-
 ## Stage 2: Recall (On your own) 👤
 
 After your discussion, we will show you images one at a time, and ask you to type the label your group decided on for that image.
@@ -27,5 +25,8 @@ After your discussion, we will show you images one at a time, and ask you to typ
 - If anyone enters the wrong label, nobody earns any points.
 
 ### You will play four rounds of labeling and recall, with different images in each round.
+
+- You will have a maximum of 5 minutes to discuss in the first round, 3 minutes in the second round, and 90 seconds in the third and fourth rounds.
+- You may reuse labels between rounds, but not within a round.
 
 ---
