@@ -5,9 +5,9 @@ type: multipleChoice
 
 ## Now it's your turn.
 
-You played the labeling game with the Blue Team.
+You played the labeling game with the `Blue Group`.
 
-If you hire the `Green Elephant` and they buy the piece you ask for, you get **80 points**. Otherwise, you get nothing.
+If you hire the `Green Elephant` and they buy the piece you ask for, you get **80 points**. If the buy the wrong piece of art, you get nothing.
 
 100 Points is worth $2.00
 

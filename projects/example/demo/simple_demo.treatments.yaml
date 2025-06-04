@@ -1,33 +1,43 @@
 introSequences:
   - name: demoIntro
     desc: For demonstrating the platform
-    consentItems:
-      - projects/example/consentAddendum.md
     introSteps:
-      - name: Political Leanings Survey
+      - name: Intro
         elements:
+          - type: prompt
+            file: projects/example/demo/describeDemo.md
+          - type: submitButton
+        
+      - name: Sequence Description
+        elements:
+          - type: prompt
+            file: projects/example/demo/describeAsyncSync.md
+          - type: submitButton
+            buttonText: Continue using this customized continue button
+
+      - name: Prompts Introduction
+        elements:
+          - type: prompt
+            file: projects/example/demo/describePrompts.md
+          - type: prompt
+            file: projects/example/demo/prompt_listSorter_example.md
+          - type: prompt
+            file: projects/example/demo/prompt_openResponse_Example.md
+          - type: prompt
+            file: projects/example/demo/prompt_noResponse_example.md
+
+
+      - name: Canned Survey Demo
+        elements:
+          - type: prompt
+           file: projects/example/demo/describeSurvey.md
           - type: survey
             surveyName: PoliticalPartyUS
-      - name: Test Prompts
-        elements:
-          - type: prompt
-            file: projects/example/instructions_survey.md
-          - type: separator
-          - type: prompt
-            file: projects/example/ban_assault_rifles_survey.md
-          - type: separator
-            style: thin
-          - type: prompt
-            file: projects/example/gov_guarantees_job_survey.md
-          - type: separator
-            style: thin
-          - type: prompt
-            file: projects/example/gov_reduce_income_inequality_survey.md
-          - type: separator
-          - type: submitButton
+            name: partyAffiliation
+
 
 treatments:
-  - name: demo_2p
+  - name: demoTreatment
     desc: 2 player demo for showing off what the deliberation project can do.
     playerCount: 2
     groupComposition:

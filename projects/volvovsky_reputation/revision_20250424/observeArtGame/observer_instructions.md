@@ -6,14 +6,12 @@ note: we choose to tell the observer that there are 5 rounds because we don't be
 
 # Observe a game
 
-Because we have an odd number of players, we are running the Art Buying Game as a "Round Robin" style, so someone else will play with the `Green Elephant` before you.
+In this session we have an odd number of players, so we will run the Art Buying Game as a "Round Robin" style.
 
-You will watch the `Green Elephant` with another participant, either from your team, or another team.
+Someone else, from either your team (`Blue Group`) or another team (`Green Group` or `Orange Group`) will play with the `Green Elephant` before you, and you will observe.
 
-After you observe their game, you may update your bid, so pay attention, in case you decide to change your bid.
+After you observe their game, you may change how many points you bid to play with the `Green Elephant`, so pay attention to how well they do.
 
-You will observe **up to 5 rounds** of the game, if the collector chooses to hire the `Green Elephant` for each round.
-
-You will get 100 points for observing the game.
+You will observe **up to 5 rounds** of the game, and will get 100 points for observing.
 
 ---

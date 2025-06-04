@@ -456,13 +456,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructions
@@ -471,7 +471,6 @@ treatments:
       - template: observeOwnTeamStage
         fields:
           name: "observerOwnTeam_Round_${d0}"
-          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - recallIndex: "1"
@@ -491,13 +490,77 @@ treatments:
             file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/your_turn.md
           - template: observeOwnTeamImages
           - type: prompt
-            file: projects/volvovsky_reputation/revision_20250424/observeArtGame/summary_of_observation_success.md
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/summary_of_observation_success.md
           - type: prompt
             name: choice_to_hire_observed_agent
-            file: projects/volvovsky_reputation/revision_20250424/observeArtGame/hiring_choice_fixed.md
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
           - type: prompt
             name: explain_choice
-            file: projects/volvovsky_reputation/hiring_choice_explanation.md
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_explanation.md
+          - type: submitButton
+            conditions:
+              - reference: prompt.choice_to_hire_observed_agent
+                comparator: exists
+
+      - template: debrief
+
+  ######################### Simple Failure Own Team #########################
+  - name: "simple failure own team"
+    playerCount: 3
+    groupComposition:
+      - position: 0
+        title: BEAR
+      - position: 1
+        title: FISH
+      - position: 2
+        title: BIRD
+
+    gameStages:
+      - template: labelingGameDiscussion
+        fields:
+          imagePanel: Simple_Panel_A.jpg
+
+      - template: labelingGameRecallTask
+        fields:
+          recallIndex: ${d0}
+        broadcast:
+          d0:
+            - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+        #    - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+
+    exitSequence:
+      - template: artGameInstructions
+      - template: observerInstructions
+
+      - template: observeOwnTeamStage
+        fields:
+          name: "observerOwnTeam_Round_${d0}"
+        broadcast:
+          d0:
+            - recallIndex: "1"
+              outcomeFile: observe_agent_failure
+            - recallIndex: "7"
+              outcomeFile: observe_agent_failure
+
+      - name: Choose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/your_turn.md
+          - template: observeOwnTeamImages
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
+          - type: prompt
+            name: choice_to_hire_observed_agent
+            file: projects/volvovsky_reputation/revision_20250424/observeArtGame/hiring_choice_bid.md
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_explanation.md
           - type: submitButton
             conditions:
               - reference: prompt.choice_to_hire_observed_agent
@@ -542,7 +605,6 @@ treatments:
       - template: observeOtherTeamStage
         fields:
           name: "observerOtherTeam_Round_${d0}"
-          outcomeFile: observe_agent_success
         broadcast:
           d0:
             - asksForFile: collector_asks_for_simple_1.md
@@ -561,7 +623,72 @@ treatments:
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/your_turn.md
           - type: image
-            file: projects/volvovsky_reputation/observe_elephant_dog.jpg
+            file: projects/volvovsky_reputation/revision_20250424/icons/observe_elephant_dog.jpg
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/summary_of_observation_success.md
+          - type: prompt
+            name: choice_to_hire_observed_agent
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
+          - type: prompt
+            name: explain_choice
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_explanation.md
+          - type: submitButton
+            conditions:
+              - reference: prompt.choice_to_hire_observed_agent
+                comparator: exists
+
+      - template: debrief
+
+  ######################### Simple Failure Other Team #########################
+  - name: "simple failure other team"
+    playerCount: 3
+    groupComposition:
+      - position: 0
+        title: BEAR
+      - position: 1
+        title: FISH
+      - position: 2
+        title: BIRD
+
+    gameStages:
+      - template: labelingGameDiscussion
+        fields:
+          imagePanel: Simple_Panel_A.jpg
+
+      - template: labelingGameRecallTask
+        fields:
+          recallIndex: ${d0}
+        broadcast:
+          d0:
+            - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+          #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+          #   - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+
+    exitSequence:
+      - template: artGameInstructions
+      - template: observerInstructions
+
+      - template: observeOtherTeamStage
+        fields:
+          name: "observerOtherTeam_Round_${d0}"
+        broadcast:
+          d0:
+            - recallIndex: "1"
+              outcomeFile: observe_agent_failure
+            - recallIndex: "7"
+              outcomeFile: observe_agent_failure
+
+      - name: Choose
+        elements:
+          - type: prompt
+            file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/your_turn.md
+          - type: image
+            file: projects/volvovsky_reputation/revision_20250424/icons/observe_elephant_dog.jpg
           - type: prompt
             file: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/summary_of_observation_success.md
           - type: prompt
