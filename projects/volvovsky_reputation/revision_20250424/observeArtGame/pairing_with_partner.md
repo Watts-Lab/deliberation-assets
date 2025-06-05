@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/pairing_with_partner.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/pairing_with_partner.md
 type: noResponse
 ---
 

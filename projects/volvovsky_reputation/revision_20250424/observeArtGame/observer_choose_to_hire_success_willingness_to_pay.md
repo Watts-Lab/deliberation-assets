@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/observer_choose_to_hire_success.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/observer_choose_to_hire_success_willingness_to_pay.md
 type: multipleChoice
 ---
 

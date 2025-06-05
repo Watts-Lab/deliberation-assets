@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/result_of_playing_as_collector.md
+name: projects/volvovsky_reputation/revision_20250424/artGameInstructionsComplex/result_of_playing_as_agent.md
 type: noResponse
 ---
 

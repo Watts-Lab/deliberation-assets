@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/art_game_comp_3.md
+name: projects/volvovsky_reputation/revision_20250424/artGameInstructionsComplex/art_game_comp_3.md
 type: multipleChoice
 ---
 

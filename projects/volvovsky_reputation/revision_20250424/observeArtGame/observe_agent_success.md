@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/observe_agent_success.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/observe_agent_success.md
 type: noResponse
 ---
 

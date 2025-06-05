@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/waiting_for_collector.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/waiting_for_collector.md
 type: noResponse
 ---
 

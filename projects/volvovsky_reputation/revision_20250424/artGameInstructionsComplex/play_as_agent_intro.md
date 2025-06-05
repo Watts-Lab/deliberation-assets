@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/play_as_agent_intro.md
+name: projects/volvovsky_reputation/revision_20250424/artGameInstructionsComplex/play_as_agent_intro.md
 type: multipleChoice
 ---
 
@@ -9,9 +9,11 @@ In this phase, you are playing as the **agent** in the Art Buying Game.
 
 _This is a training round, so the collector will be played by a bot:_
 
-![robot image](projects/volvovsky_reputation/robot_icon.jpg)
+![robot image](projects/volvovsky_reputation/revision_20250424/icons/robot_icon.jpg)
 
-A wealthy art collector has paid you **40 points** to purchase a piece of art, and has given you the money to buy it.
+A wealthy art collector has paid you **40 points** to purchase a piece of art from the set below, and has given you the money to buy it.
+
+![Tangram Image Set](projects/volvovsky_reputation/revision_20250424/stimuli/Tangram_Panel_A.jpg)
 
 They described the piece they want in a text message, but unfortunately you left your phone at home, so you can't read the message.
 

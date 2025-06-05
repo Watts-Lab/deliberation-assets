@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/collector_asks_for_complex_2.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/collector_asks_for_complex_2.md
 type: noResponse
 ---
 

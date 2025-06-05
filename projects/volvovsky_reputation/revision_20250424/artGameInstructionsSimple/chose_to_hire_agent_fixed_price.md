@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/revision_20250424/artGameInstructions/chose_to_hire_agent_fixed_price.md
+name: projects/volvovsky_reputation/revision_20250424/artGameInstructionsSimple/chose_to_hire_agent_fixed_price.md
 type: multipleChoice
 ---
 
@@ -7,11 +7,11 @@ type: multipleChoice
 
 In this training round you play as the wealthy art collector, and the agent will be played by this cute little robot:
 
-![robot image](projects/volvovsky_reputation/robot_icon.jpg)
+![robot image](projects/volvovsky_reputation/revision_20250424/icons/robot_icon.jpg)
 
 ## You want to buy this piece of art from a gallery in New York:
 
-![purchase image](projects/volvovsky_reputation/training_art.jpg)
+![purchase image](projects/volvovsky_reputation/revision_20250424/artGameInstructionsSimple/training_art_simple.jpg)
 
 Unfortunately, you can't travel to the gallery. You can either:
 

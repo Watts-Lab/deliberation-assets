@@ -11,7 +11,7 @@ If you hire the `Green Elephant` and they buy the piece you ask for, you get **8
 
 100 Points is worth $2.00
 
-![elephant image](projects/volvovsky_reputation/agent_elephant.jpg)
+![elephant image](projects/volvovsky_reputation/revision_20250424/icons/agent_elephant.jpg)
 
 ## How many points would you like to offer the agent in order to buy the art for you?
 

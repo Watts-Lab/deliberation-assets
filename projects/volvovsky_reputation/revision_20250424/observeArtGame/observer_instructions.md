@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/observer_instructions.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/observer_instructions.md
 type: noResponse
 note: we choose to tell the observer that there are 5 rounds because we don't believe they will think about end-game effects with a known number of rounds. Its too game theoretic to think about as an observer. (they might think about it if they were actually playing, but this is simpler.)
 ---

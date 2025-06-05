@@ -5,6 +5,6 @@ type: noResponse
 
 # We'd like to ask some questions about the people you talked with in the labeling game:
 
-![groupmates](projects/volvovsky_reputation/animal_icons_3.jpg)
+![groupmates](projects/volvovsky_reputation/revision_20250424/icons/animal_icons_3.jpg)
 
 ---

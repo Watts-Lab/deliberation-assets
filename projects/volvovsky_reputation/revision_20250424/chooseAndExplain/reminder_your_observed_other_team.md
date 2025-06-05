@@ -11,6 +11,6 @@ Before you do, we wanted to remind you of the game you observed.
 
 The game was played between the following people:
 
-![Green Elephant and Orange Dog](projects/volvovsky_reputation/observe_elephant_dog.jpg)
+![Green Elephant and Orange Dog](projects/volvovsky_reputation/revision_20250424/icons/observe_elephant_dog.jpg)
 
 ---

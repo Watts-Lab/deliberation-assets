@@ -7,7 +7,7 @@ type: noResponse
 
 Your groupmates are BEAR and BIRD
 
-![groupmates](projects/volvovsky_reputation/animal_icons_3.jpg)
+![groupmates](projects/volvovsky_reputation/revision_20250424/icons/animal_icons_3.jpg)
 
 _Click "proceed" to join the video discussion._
 

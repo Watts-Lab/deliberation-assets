@@ -1,5 +1,5 @@
 ---
-name: projects/volvovsky_reputation/you_will_observe.md
+name: projects/volvovsky_reputation/revision_20250424/observeArtGame/you_will_observe.md
 type: noResponse
 ---
 
