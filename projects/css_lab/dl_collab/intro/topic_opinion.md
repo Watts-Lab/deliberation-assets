@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/topic_opinion.md
+name: projects/css_lab/dl_collab/intro/topic_opinion.md
 type: multipleChoice
 ---
 

@@ -13,13 +13,11 @@ templates:
 
           - type: prompt
             name: "${topicName}_presurvey_opinion"
-            file: projects/css_lab/dl_collab/topic_opinion.md
-            tags: ["predictor"]
+            file: projects/css_lab/dl_collab/intro/topic_opinion.md
 
           - type: prompt
             name: "${topicName}_presurvey_familiarity"
             file: projects/css_lab/dl_collab/topic_familiarity.md
-            tags: ["predictor"]
 
           - type: submitButton
             buttonText: Continue
