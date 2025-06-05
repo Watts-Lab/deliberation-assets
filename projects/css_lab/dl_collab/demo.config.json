@@ -1,14 +1,20 @@
 {
   "batchName": "demo",
   "cdn": "local",
-  "treatmentFile": "projects/css_lab/scheduler/scheduler.treatments.yaml",
-  "customIdInstructions": "projects/css_lab/scheduler/checkOnly_prolific.md",
+  "treatmentFile": "projects/css_lab/dl_collab/dl_collab.treatments.yaml",
+  "customIdInstructions": "none",
   "platformConsent": "US",
   "consentAddendum": "none",
   "checkAudio": true,
   "checkVideo": true,
-  "introSequence": "signup_20241118",
-  "treatments": ["dummy"],
+  "introSequence": "default",
+  "treatments": [
+    "gaza_aid_control",
+    "pardon_january_6_control",
+    "transgender_sports_control",
+    "fast_food_tax_control",
+    "religious_exemptions_control"
+  ],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,
@@ -20,7 +26,7 @@
       "owner": "Watts-Lab",
       "repo": "deliberation-data-test",
       "branch": "main",
-      "directory": "demo"
+      "directory": "dl_collab"
     }
   ],
   "videoStorage": "none",
