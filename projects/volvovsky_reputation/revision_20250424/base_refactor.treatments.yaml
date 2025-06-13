@@ -577,13 +577,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg # varies between condition
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsSimple
@@ -647,13 +647,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg # varies between condition
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsSimple
@@ -711,13 +711,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg # varies between condition
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-          #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsSimple
@@ -782,13 +782,13 @@ treatments:
         broadcast:
           d0: # varies between condition
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
-          #    - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Simple_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsSimple
@@ -847,13 +847,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg # varies between condition
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsComplex
@@ -917,13 +917,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg # varies between condition
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
-        #    - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsComplex
@@ -981,13 +981,13 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg # varies between condition
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
-          #    - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsComplex
@@ -1052,13 +1052,13 @@ treatments:
         broadcast:
           d0: # varies between condition
             - imageFilepath: projects/volvovsky_reputation/Tangram_A3.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
-          #    - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
-          #   - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A1.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A6.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A2.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A8.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A5.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A4.jpg
+            - imageFilepath: projects/volvovsky_reputation/Tangram_A7.jpg
 
     exitSequence:
       - template: artGameInstructionsComplex
