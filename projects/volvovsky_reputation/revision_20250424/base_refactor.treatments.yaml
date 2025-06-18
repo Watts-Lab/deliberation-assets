@@ -577,6 +577,7 @@ treatments:
         broadcast:
           d0:
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg # varies between condition
+
             - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
             - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
             - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
@@ -782,6 +783,7 @@ treatments:
         broadcast:
           d0: # varies between condition
             - imageFilepath: projects/volvovsky_reputation/Simple_A3.jpg
+
             - imageFilepath: projects/volvovsky_reputation/Simple_A1.jpg
             - imageFilepath: projects/volvovsky_reputation/Simple_A6.jpg
             - imageFilepath: projects/volvovsky_reputation/Simple_A2.jpg
