@@ -71,8 +71,9 @@ templates:
           - type: submitButton
             buttonText: End discussion and go to quiz
             name: "labeling_${roundIndex}"
-          - name: "labeling_${roundIndex}"
-            type: prompt
+
+          - type: prompt
+            name: "labeling_${roundIndex}"
             file: projects/exaptation/revision_202503/discussion_instructions.md
             shared: true
 
@@ -93,7 +94,7 @@ introSequences:
           - type: submitButton
 
 treatments:
-  - name: schema A
+  - name: schema
     playerCount: 2
     gameStages:
       - template: round
@@ -144,7 +145,76 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
+          duration: 90 # consistent between 3 and 4 means that the rounds are comparable
+          panelFilepath: projects/exaptation/revision_202503/stimuli/round_4_panel_A.jpg
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SPBY4.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SPBY1.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SORB2.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SORB4.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SORB1.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SORB3.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SPBY3.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SPBY2.jpg
+
+    exitSequence:
+      - name: Demographics
+        elements:
+          - type: survey
+            surveyName: Demographics
+
+  - name: nonschema
+    playerCount: 2
+    gameStages:
+      - template: round
+        fields:
+          roundIndex: "1"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202503/stimuli/round_1_panel_N.jpg
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N3.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_1_N8.jpg
+
+      - template: round
+        fields:
+          roundIndex: "2"
+          duration: 180
+          panelFilepath: projects/exaptation/revision_202503/stimuli/round_2_panel_N.jpg
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N8.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N6.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_2_N3.jpg
+
+      - template: round
+        fields:
+          roundIndex: "3"
           duration: 90
+          panelFilepath: projects/exaptation/revision_202503/stimuli/round_3_panel.jpg
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SOBY.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORB.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SORY.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SPRY.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SOBB.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SPBB.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SPBY.jpg
+            - imageFilepath: projects/exaptation/revision_202503/stimuli/round_3_SPRB.jpg
+
+      - template: round
+        fields:
+          roundIndex: "4"
+          duration: 90 # consistent between 3 and 4 means that the rounds are comparable
           panelFilepath: projects/exaptation/revision_202503/stimuli/round_4_panel_A.jpg
           recallImages:
             - imageFilepath: projects/exaptation/revision_202503/stimuli/round_4_SPBY4.jpg

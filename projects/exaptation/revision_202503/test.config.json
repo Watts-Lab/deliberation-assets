@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "Default",
-  "treatments": ["schema A", "schema B"],
+  "treatments": ["schema", "nonschema"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,
