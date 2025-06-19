@@ -1,0 +1,271 @@
+{
+  "containerTag": "local-dev",
+  "deliberationId": "8d795d17-c090-4fca-8d1b-538fb1717bb2",
+  "sampleId": "9a469dad-6c9b-40f1-b1c2-362503f81124",
+  "browserInfo": {
+    "screenWidth": 2056,
+    "screenHeight": 1285,
+    "width": 1741,
+    "height": 1198,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+    "language": "en-US",
+    "timezone": "America/New_York",
+    "referrer": "http://localhost:3000/?playerKey=1748878500457"
+  },
+  "connectionInfo": {
+    "country": "US",
+    "timezone": "America/New_York",
+    "isKnownVpn": false,
+    "timezoneOffset": "-04:00",
+    "isLikelyVpn": false,
+    "effectiveType": "4g",
+    "saveData": false,
+    "downlink": 10,
+    "rtt": 0
+  },
+  "batchId": "01JWRN6RTTS9VYQDWCHGNACRM3",
+  "config": {
+    "batchName": "short_demo",
+    "cdn": "local",
+    "treatmentFile": "projects/example/demo/short_demo.treatments.yaml",
+    "introSequence": "demoIntro",
+    "treatments": ["shortDemo"],
+    "payoffs": "equal",
+    "knockdowns": "none",
+    "exitCodes": {
+      "complete": "MyCompleteExitCode",
+      "error": "MyErrorExitCode",
+      "lobbyTimeout": "MyTimeoutExitCode",
+      "failedEquipmentCheck": "MyFailedEquipmentCheckExitCode"
+    },
+    "launchDate": "immediate",
+    "customIdInstructions": "none",
+    "platformConsent": "US",
+    "consentAddendum": "none",
+    "dispatchWait": 1,
+    "videoStorage": "none",
+    "preregRepos": [],
+    "dataRepos": [],
+    "centralPrereg": false,
+    "checkAudio": true,
+    "checkVideo": true
+  },
+  "times": {
+    "batchInitialized": "2025-06-02T15:47:19.121Z",
+    "playerArrived": "2025-06-02T15:47:57.970Z",
+    "playerEnteredCountdown": "missing",
+    "playerIntroDone": "2025-06-02T15:48:59.377Z",
+    "gameStarted": "2025-06-02T15:49:04.171Z",
+    "gameEnded": "2025-06-02T15:49:30.656Z",
+    "playerComplete": "2025-06-02T15:50:24.135Z"
+  },
+  "consent": [
+    "about",
+    "releaseAnonymizedData",
+    "storePlatformID",
+    "recordVideo",
+    "showVideoToCoders",
+    "shareVideoWithResearchers",
+    "storeVideoIndefinitely",
+    "storeWebsiteInteractions",
+    "upennContact",
+    "noAddendum",
+    "agree18Understand"
+  ],
+  "introSequence": "missing",
+  "gameId": "01JWRNA08M5P6R9W5KF2JMN2ZX",
+  "treatment": {
+    "name": "shortDemo",
+    "playerCount": 2,
+    "groupComposition": [
+      {
+        "title": "Democrat",
+        "position": 0,
+        "conditions": [
+          {
+            "reference": "survey.partyAffiliation.result.normPosition",
+            "comparator": "isBelow",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "title": "Republican",
+        "position": 1,
+        "conditions": [
+          {
+            "reference": "survey.partyAffiliation.result.normPosition",
+            "comparator": "isAbove",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "gameStages": [
+      {
+        "name": "Heineken Ad",
+        "duration": 360,
+        "elements": [
+          { "type": "video", "url": "https://youtu.be/t9isOc9Gy9Q" },
+          { "type": "submitButton", "buttonText": "Skip" }
+        ]
+      },
+      {
+        "name": "PreDiscussionInstructions",
+        "duration": 45,
+        "elements": [
+          {
+            "type": "prompt",
+            "file": "projects/example/demo/pre_discussion_instructions_democrat.md",
+            "showToPositions": [0]
+          },
+          {
+            "type": "prompt",
+            "file": "projects/example/demo/pre_discussion_instructions_republican.md",
+            "showToPositions": [1]
+          },
+          { "type": "submitButton", "buttonText": "Begin Discussion" }
+        ]
+      },
+      {
+        "name": "Discussion",
+        "duration": 120,
+        "discussion": {
+          "chatType": "video",
+          "showNickname": true,
+          "showTitle": true
+        },
+        "elements": [
+          {
+            "type": "prompt",
+            "file": "projects/example/demo/prompt_listSorter_example.md",
+            "shared": true
+          },
+          {
+            "type": "submitButton",
+            "buttonText": "End Discussion and Proceed to Survey",
+            "displayTime": 10
+          }
+        ]
+      }
+    ],
+    "exitSequence": [
+      {
+        "name": "Post-discussion followup survey",
+        "elements": [
+          {
+            "type": "prompt",
+            "file": "projects/example/demo/prompt_openResponse_Example.md"
+          },
+          { "type": "submitButton" }
+        ]
+      }
+    ]
+  },
+  "position": "0",
+  "recordingsFolder": "20250602_1547_short_JMN2ZX",
+  "recordingRoomName": "20250602_1547_short_JMN2ZX",
+  "recordingsPath": "missing",
+  "recordingIds": "missing",
+  "surveys": {
+    "survey_partyAffiliation": {
+      "surveySource": "@watts-lab/surveys",
+      "version": "1.18.1",
+      "surveySha": "d56d46da3f0f237afbce28c6e935cc07eb2af855",
+      "scoreSha": "4f9591e4781bc5e1c4ab6f57b1c3c9953c5f9dad",
+      "surveyName": "politicalPartyUS",
+      "responses": {
+        "party": "Democrat",
+        "democratStrength": "Strong Democrat",
+        "democratImportance": 18
+      },
+      "result": {
+        "party": "Democrat",
+        "position": -3,
+        "normPosition": "0.000",
+        "importance": 18,
+        "normImportance": 0.18
+      },
+      "secondsElapsed": 11.975,
+      "playerId": "01JWRN7ZWDB1HTZV30MPX42RAW",
+      "step": "intro_2_Canned_Survey_Demo"
+    }
+  },
+  "prompts": {
+    "prompt_intro_multiple_choice_example": {
+      "name": "intro_multiple_choice_example",
+      "type": "multipleChoice",
+      "step": "intro_1_Prompts_Introduction",
+      "prompt": "\n```\nMultiple choice prompts can be specified with any number of\noptions, as single select (shown here), or multiple select.\n```\n\n# What is your favorite day of the week?\n\n",
+      "responses": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "value": "Sunday",
+      "stageTimeElapsed": 0
+    },
+    "prompt_exit_0_Post-discussion_followup_survey_projects/example/demo/prompt_openResponse_Example.md": {
+      "name": "exit_0_Post-discussion_followup_survey_projects/example/demo/prompt_openResponse_Example.md",
+      "type": "openResponse",
+      "rows": 4,
+      "step": "exit_0_Post-discussion_followup_survey",
+      "prompt": "\n```\nOpen response prompts allow participants to enter free text.\nYou can adust the number of rows available in the entry box using the \"rows\" parameter.\nThis example provides 4 rows.\n```\n\n# Please describe your epistemological philosophy in 6 words or fewer\n\n",
+      "responses": ["enter your response here"],
+      "value": "Knowledge is useful but imperfect models",
+      "stageTimeElapsed": 0
+    },
+    "prompt_game_2_Discussion_projects/example/demo/prompt_listSorter_example.md": {
+      "name": "game_2_Discussion_projects/example/demo/prompt_listSorter_example.md",
+      "type": "listSorter",
+      "shuffleOptions": true,
+      "shared": true,
+      "step": "game_2_Discussion",
+      "prompt": "\n# Please sort these items in order of **Most Tasty** to **Least Tasty**\n\n`List sorter prompts allow participants to drag and drop items to arrange them in a list.`\n`This can be helpful for ranking and prioritization tasks.`\n`You can shuffle the starting order by setting \"shuffleOptions: true\" in the prompt header.`\n\n",
+      "responses": ["Eggs", "Doughnuts", "Chocolate", "Bananas", "Apples"],
+      "value": ["Apples", "Doughnuts", "Chocolate", "Bananas", "Eggs"],
+      "stageTimeElapsed": 8.209
+    }
+  },
+  "qualtrics": {},
+  "stageSubmissions": {
+    "submitButton_intro_0_Intro": { "time": 1.259 },
+    "submitButton_intro_1_Prompts_Introduction": { "time": 2.085 },
+    "submitButton_game_0_Heineken_Ad": { "time": 5.12 },
+    "submitButton_game_1_PreDiscussionInstructions": { "time": 4.189 },
+    "submitButton_game_2_Discussion": { "time": 13.687 },
+    "submitButton_exit_0_Post-discussion_followup_survey": { "time": 20.814 }
+  },
+  "stageDurations": {
+    "duration_consent": { "time": 1.747 },
+    "duration_AttentionCheck": { "time": 13.431 },
+    "duration_Intro": { "time": 1.258 },
+    "duration_Prompts Introduction": { "time": 2.085 },
+    "duration_Canned Survey Demo": { "time": 11.987 },
+    "duration_Post-discussion followup survey": { "time": 20.814 }
+  },
+  "QCSurvey": {
+    "surveySource": "@watts-lab/surveys",
+    "version": "1.18.1",
+    "surveySha": "01eed119b9f8b739122f80599537676432d787dd",
+    "scoreSha": "ba0f44e4945160b5327df9edc7bd5f840443f951",
+    "surveyName": "discussionQualityControl",
+    "responses": {},
+    "result": {},
+    "secondsElapsed": 32.117
+  },
+  "exitStatus": "complete",
+  "connectionHistory": [
+    { "time": "2025-06-02T15:47:57.971Z", "connected": true }
+  ],
+  "speakerEvents": {},
+  "reports": [],
+  "checkIns": [],
+  "textChats": {},
+  "cumulativeSpeakingTime": "missing",
+  "exportErrors": []
+}

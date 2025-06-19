@@ -37,6 +37,7 @@
   "exitCodes": {
     "complete": "MyCompleteExitCode",
     "error": "MyErrorExitCode",
-    "lobbyTimeout": "MyTimeoutExitCode"
+    "lobbyTimeout": "MyTimeoutExitCode",
+    "failedEquipmentCheck": "MyFailedEquipmentCheckExitCode"
   }
 }

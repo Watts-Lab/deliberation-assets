@@ -1,7 +1,7 @@
 {
   "batchName": "prolific_pilot",
   "cdn": "prod",
-  "treatmentFile": "projects/volvovsky_reputation/base.treatments.yaml",
+  "treatmentFile": "projects/volvovsky_reputation/base_refactor.treatments.yaml",
   "customIdInstructions": "shared/id_instructions/prolific.md",
   "platformConsent": "US",
   "consentAddendum": "projects/volvovsky_reputation/consent_addendum.md",
@@ -19,21 +19,28 @@
     "complex failure other team"
   ],
   "payoffs": "equal",
-  "knockdowns": "none",
+  "knockdowns": 0.9,
   "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
-  "preregRepos": [],
+  "preregRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "JamesPHoughton",
+      "branch": "main",
+      "directory": "data/test"
+    }
+  ],
   "dataRepos": [
     {
       "owner": "Watts-Lab",
-      "repo": "deliberation-data-test",
+      "repo": "JamesPHoughton",
       "branch": "main",
-      "directory": "reputation"
+      "directory": "data/test"
     }
   ],
   "videoStorage": {
-    "bucket": "deliberation-lab-recordings-test",
+    "bucket": "deliberation-lab-recordings-exaptation",
     "region": "us-east-1"
   },
   "exitCodes": {
