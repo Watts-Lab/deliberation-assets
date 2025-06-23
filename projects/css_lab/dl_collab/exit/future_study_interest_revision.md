@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/future_study_interest_revision.md
+name: projects/css_lab/dl_collab/exit/future_study_interest_revision.md
 type: multipleChoice
 rows: 1
 ---

@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/future_study_bid_reminder.md
+name: projects/css_lab/dl_collab/exit/future_study_bid_reminder.md
 type: noResponse
 ---
 

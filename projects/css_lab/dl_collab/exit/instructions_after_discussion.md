@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/instructions_after_discussion.md
+name: projects/css_lab/dl_collab/exit/instructions_after_discussion.md
 type: noResponse
 desc: TODO - update number of questions as known
 ---

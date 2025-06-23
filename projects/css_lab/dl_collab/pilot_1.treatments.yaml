@@ -6,19 +6,18 @@ templates:
       - name: ${topicName}_presurvey
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/consider_topic.md
+            file: projects/css_lab/dl_collab/intro/consider_topic.md
 
           - type: prompt
             file: "projects/css_lab/dl_collab/topics/${topicName}.md"
 
           - type: prompt
             name: "${topicName}_presurvey_opinion"
-            file: projects/css_lab/dl_collab/topic_opinion.md
-            tags: ["predictor"]
+            file: projects/css_lab/dl_collab/intro/topic_opinion.md
 
           - type: prompt
             name: "${topicName}_presurvey_familiarity"
-            file: projects/css_lab/dl_collab/topic_familiarity.md
+            file: projects/css_lab/dl_collab/intro/topic_familiarity.md
             tags: ["predictor"]
 
           - type: submitButton
@@ -37,21 +36,21 @@ templates:
       - name: PostDiscussionInstructions
         elements:
           - type: prompt
-            file: projects/css_lab/ct_topic/post_discussion_instructions.md
+            file: projects/css_lab/ct_topic/exit/post_discussion_instructions.md
           - type: submitButton
             buttonText: Proceed to Survey
 
       - name: AttitudeChange # 1 question
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/consider_topic.md
+            file: projects/css_lab/dl_collab/intro/consider_topic.md
 
           - type: prompt
             file: "projects/css_lab/dl_collab/topics/${topicName}.md"
 
           - type: prompt
             name: "discussionTopic_postSurvey_opinion"
-            file: projects/css_lab/dl_collab/topic_opinion.md
+            file: projects/css_lab/dl_collab/intro/topic_opinion.md
           - type: submitButton
             buttonText: Continue
             name: "discussionTopic_postSurvey_submit"
@@ -90,18 +89,18 @@ templates:
         # participants will be asked to revise their pretest responses
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/future_study_interest_revision.md
+            file: projects/css_lab/dl_collab/exit/future_study_interest_revision.md
             name: futureStudyInterest_posttest
           - type: prompt
-            file: projects/css_lab/dl_collab/future_study_bid_reminder.md
+            file: projects/css_lab/dl_collab/exit/future_study_bid_reminder.md
           - type: display
             reference: prompt.futureStudyBid_pretest
           - type: prompt
-            file: projects/css_lab/dl_collab/future_study_bid_revision.md
+            file: projects/css_lab/dl_collab/exit/future_study_bid_revision.md
             name: futureStudyBid_posttest
 
           - type: prompt
-            file: projects/css_lab/dl_collab/tell_us_about_your_decision.md
+            file: projects/css_lab/dl_collab/intro/tell_us_about_your_decision.md
             name: futureStudyRevision_decision_process
 
           - type: submitButton
@@ -118,11 +117,11 @@ templates:
           # TODO: should this be timed, to match the pretest?
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/topic_response_reminder.md
+            file: projects/css_lab/dl_collab/exit/topic_response_reminder.md
           - type: prompt
             file: "projects/css_lab/dl_collab/topics/${topicName}.md"
           - type: prompt
-            file: projects/css_lab/dl_collab/topic_reasons_self.md
+            file: projects/css_lab/dl_collab/intro/topic_reasons_self.md
             name: topicReasonsSelf_posttest
           - type: submitButton
             buttonText: Continue
@@ -135,11 +134,11 @@ templates:
         # TODO: should this be timed, to match the pretest?
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/topic_response_reminder.md
+            file: projects/css_lab/dl_collab/exit/topic_response_reminder.md
           - type: prompt
             file: "projects/css_lab/dl_collab/topics/${topicName}.md"
           - type: prompt
-            file: projects/css_lab/dl_collab/topic_reasons_other.md
+            file: projects/css_lab/dl_collab/intro/topic_reasons_other.md
             name: topicReasonsOther_posttest
           - type: submitButton
             buttonText: Continue
@@ -200,15 +199,15 @@ templates:
           duration: 90
           elements:
             - type: prompt
-              file: projects/css_lab/dl_collab/topic_response_reminder.md
+              file: projects/css_lab/dl_collab/exit/topic_response_reminder.md
             - type: prompt
               file: "projects/css_lab/dl_collab/topics/${topicName}.md"
             - type: prompt
-              file: projects/css_lab/dl_collab/topic_response_you_said.md
+              file: projects/css_lab/dl_collab/exit/topic_response_you_said.md
             - type: display
               reference: prompt.${topicName}_presurvey_opinion
             - type: prompt
-              file: projects/css_lab/dl_collab/topic_reasons_self.md
+              file: projects/css_lab/dl_collab/intro/topic_reasons_self.md
               name: topicReasonsSelf_pretest
               # TODO: should there be a submit button, or wait out the timer?
 
@@ -289,14 +288,14 @@ introSequences:
       - name: FutureStudyInterest
         elements:
           - type: prompt
-            file: projects/css_lab/dl_collab/future_study_interest.md
+            file: projects/css_lab/dl_collab/intro/future_study_interest.md
             name: futureStudyInterest_pretest
           - type: prompt
-            file: projects/css_lab/dl_collab/future_study_bid.md
+            file: projects/css_lab/dl_collab/intro/future_study_bid.md
             name: futureStudyBid_pretest
 
           - type: prompt
-            file: projects/css_lab/dl_collab/tell_us_about_your_decision.md
+            file: projects/css_lab/dl_collab/intro/tell_us_about_your_decision.md
             name: futureStudyInterest_decision_process
 
           - type: submitButton
