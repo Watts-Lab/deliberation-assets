@@ -1,0 +1,149 @@
+templates:
+  - templateName: topicPrompt
+    templateDesc: Displays a stage asking the user's opinion of the topic, used in the intro sequence to gauge opinions.
+    templateContent:
+      - name: ${topicName}_presurvey
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/text_listening_dyads/intro/consider_topic.md
+
+          - type: prompt
+            file: "projects/weinstein_listening/text_listening_dyads/topics/${topic_name}.md"
+
+          - type: prompt
+            name: "${topicName}_presurvey_opinion"
+            file: projects/weinstein_listening/text_listening_dyads/intro/topic_opinion.md
+
+          - type: submitButton
+            buttonText: Continue
+            name: "${topicName}_presurvey_submit"
+            conditions:
+              - reference: prompt.${topicName}_presurvey_opinion
+                comparator: exists
+
+  - templateName: disagreementGroup
+    templateContent:
+      - position: 0
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly oppose", "Moderately oppose"]
+      - position: 1
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly favor", "Moderately favor"]
+
+  - templateName: favorGroup
+    templateContent:
+      - position: 0
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly favor", "Moderately favor"]
+      - position: 1
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly favor", "Moderately favor"]
+
+  - templateName: opposeGroup
+    templateContent:
+      - position: 0
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly oppose", "Moderately oppose"]
+      - position: 1
+        conditions:
+          - reference: prompt.${topicName}_presurvey_opinion
+            comparator: isOneOf
+            value: ["Strongly oppose", "Moderately oppose"]
+
+  - templateName: treatment
+    templateContent:
+      name: default
+      playerCount: 2
+      groupComposition:
+        - template: ${groupType}
+          fields:
+          topicName: ${topicName}
+
+      gameStages:
+        - name: topic_attitudes
+          duration: 60
+          elements:
+            - type: prompt
+              file: "projects/weinstein_listening/text_listening_dyads/topics/${topic_name}.md"
+            - type: prompt
+              file: projects/weinstein_listening/text_listening_dyads/intro/topic_importance.md
+              name: topic_attitudes_importance
+            - type: submitButton
+              buttonText: Continue
+              name: topic_attitudes_submit
+              conditions:
+                - reference: prompt.topic_attitudes_importance
+                  comparator: exists
+
+        - name: pre_discussion_instructions
+          duration: 60
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/text_listening_dyads/intro/pre_discussion_instructions_${condition}.md
+            - type: submitButton
+              buttonText: Continue
+
+        - name: chat
+          duration: 300
+          discussion:
+            chatType: text
+            showNickname: true
+            showTitle: false
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/text_listening_dyads/discussion/discussion_instructions_both.md
+            - type: prompt
+              file: "projects/weinstein_listening/text_listening_dyads/topics/${topic_name}.md"
+            - type: prompt
+              file: projects/weinstein_listening/text_listening_dyads/discussion/discussion_instructions_{condition}.md
+
+      exitSequence:
+        - name: postsurvey
+          elements:
+            - type: qualtrics
+              url: https://oii.qualtrics.com/jfe/form/SV_bCKP9iurcrlpjLM
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: presurvey
+        elements:
+          - type: qualtrics
+            url: https://upenn.co1.qualtrics.com/jfe/form/SV_0JoQMzZK1ixL3Rc
+      - template: topicPrompt
+        broadcast:
+          d0:
+            - topicName: gaza_aid
+            - topicName: pardon_january_6
+            - topicName: transgender_sports
+            - topicName: fast_food_tax
+            - topicName: religious_exemptions
+
+treatments:
+  - template: treatment
+    fields:
+      condition_name: ${topicName}_{groupType}_{condition}
+    broadcast:
+      d0:
+        - topicName: academic_AI
+        - topicName: assisted_suicide
+        - topicName: no_strike_healthcare
+        - topicName: restroom_choice
+        - topicNmae: two_children
+      d1:
+        - groupType: disagreeGroup
+        - groupType: opposeGroup
+        - groupType: favorGroup
+      d2:
+        - condition: listening
+        - condition: sharing
