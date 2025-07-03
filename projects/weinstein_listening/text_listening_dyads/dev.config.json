@@ -1,0 +1,21 @@
+{
+  "batchName": "dev",
+  "cdn": "local",
+  "treatmentFile": "projects/weinstein_listening/text_listening_dyads/text_listening_dyads.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "custom",
+  "consentAddendum": "projects/weinstein_listening/text_listening_dyads/consentText.md",
+  "checkAudio": false,
+  "checkVideo": false,
+  "introSequence": "default",
+  "treatments": ["default"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}
