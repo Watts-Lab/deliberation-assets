@@ -1,5 +1,5 @@
 {
-  "batchName": "pilotA",
+  "batchName": "pilot",
   "cdn": "prod",
   "treatmentFile": "projects/exaptation/revision_202503/baseline.treatments.yaml",
   "customIdInstructions": "none",
@@ -8,9 +8,9 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "Default",
-  "treatments": ["schema A", "schema B"],
+  "treatments": ["schema", "nonschema"],
   "payoffs": "equal",
-  "knockdowns": "none",
+  "knockdowns": 0.9,
   "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
@@ -31,13 +31,13 @@
     }
   ],
   "videoStorage": {
-    "bucket": "deliberation-lab-recordings-test",
+    "bucket": "deliberation-lab-recordings-exaptation",
     "region": "us-east-1"
   },
   "exitCodes": {
-    "complete": "CN3M1AG5",
-    "error": "CX8GUBBQ",
-    "lobbyTimeout": "CNKR0OP8",
-    "failedEquipmentCheck": "C1JR13XY"
+    "complete": "CVZFDWA9",
+    "error": "C78R6USS",
+    "lobbyTimeout": "C78R6USS",
+    "failedEquipmentCheck": "C78R6USS"
   }
 }
