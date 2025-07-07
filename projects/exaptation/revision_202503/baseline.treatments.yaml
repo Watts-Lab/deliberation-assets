@@ -34,7 +34,7 @@ templates:
           - type: prompt
             file: projects/exaptation/revision_202503/labels_not_match.md
             conditions:
-              - reference: "prompt.recall_${roundIndex}_${recallIndex}"
+              - reference: prompt.recall_${roundIndex}_${recallIndex}
                 position: percentAgreement
                 comparator: isBelow
                 value: 100

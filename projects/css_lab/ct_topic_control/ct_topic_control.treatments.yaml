@@ -1,0 +1,302 @@
+templates:
+  - templateName: topicPrompt
+    contentType: element
+    templateContent:
+      type: prompt
+      name: "${topicName}_presurvey"
+      file: "shared/yesNo/${topicName}_survey.md"
+      tags: ["predictor"]
+
+  - templateName: topicCondition
+    contentType: condition
+    templateContent:
+      reference: prompt.${topicName}_presurvey
+      comparator: exists
+
+  - templateName: labelTask
+    contentType: elements
+    templateContent:
+      - type: image
+        file: projects/css_lab/ct_topic_control/images/${index}.jpg
+        conditions:
+          - reference: prompt.continue_${prev}
+            comparator: exists
+          - reference: prompt.continue_${index}
+            comparator: doesNotExist
+
+      - type: prompt
+        file: projects/css_lab/ct_topic_control/description_task.md
+        name: description_${index}
+        conditions:
+          - reference: prompt.continue_${prev}
+            comparator: exists
+          - reference: prompt.continue_${index}
+            comparator: doesNotExist
+
+      - type: prompt
+        file: projects/css_lab/ct_topic_control/continue.md
+        name: continue_${index}
+        conditions:
+          - reference: prompt.continue_${prev}
+            comparator: exists
+          - reference: prompt.description_${index}
+            comparator: hasLengthAtLeast
+            value: 30
+          - reference: prompt.continue_${index}
+            comparator: doesNotExist
+
+  - templateName: introSequence
+    contentType: introSequence
+    templateDesc: generic presurvey
+    templateContent:
+      name: ${sequenceName}
+      introSteps:
+        - name: PoliticalLeaningsSurvey
+          elements:
+            - type: survey
+              surveyName: PoliticalPartyUS
+              name: partyAffiliation
+              tags: ["predictor"]
+
+        - name: FeelingThermometerPretest # 2 questions
+          elements:
+            - type: survey
+              name: feelingThermometerPretest
+              surveyName: PartisanFeelingThermometerUS # asks about both parties
+              tags: ["predictor"]
+
+        - name: TraitRatingsPretest # 8 questions
+          elements: # if participants are not US partisans, we use this page to show them a screen-out code
+            - type: prompt
+              file: projects/css_lab/ct_topic/consider_democrats.md
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: isAbove
+                  value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
+            - type: prompt
+              file: projects/css_lab/ct_topic/consider_republicans.md
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: isBelow
+                  value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
+            - type: survey
+              surveyName: TraitRatings
+              name: traitRatingsPretest
+              tags: ["predictor"]
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: doesNotEqual
+                  value: 0.5
+                - reference: connectionInfo.country
+                  comparator: equals
+                  value: US
+
+            - type: prompt # show screener if not a partisan
+              file: projects/css_lab/ct_topic/screener.md
+              conditions:
+                - reference: survey.partyAffiliation.result.normPosition
+                  comparator: equals
+                  value: 0.5
+
+            - type: prompt # show screener if not in the US
+              file: projects/css_lab/ct_topic/screener.md
+              conditions:
+                - reference: connectionInfo.country
+                  comparator: doesNotEqual
+                  value: US
+
+        - name: RME # 10 questions
+          elements:
+            - type: survey
+              surveyName: RmeTen
+              name: RME
+              tags: ["predictor"]
+
+        - name: Big-5 # 10 questions
+          elements:
+            - type: survey
+              name: big5Personality
+              surveyName: TIPI
+              tags: ["predictor"]
+
+        - name: TopicPreSurvey
+          elements:
+            - type: prompt
+              file: projects/css_lab/ct_topic/presurvey_instructions.md
+
+            - template: topicPrompt
+              broadcast:
+                d0: ${discussionTopicNames}
+
+            - type: prompt
+              name: attentionCheck
+              file: projects/css_lab/ct_topic/attention_check.md
+
+            - template: topicPrompt
+              broadcast:
+                d0: ${otherWaveTopicNames}
+
+            - type: prompt
+              file: projects/css_lab/ct_topic/all_mandatory.md
+
+            - type: submitButton
+              buttonText: Continue
+              name: topicPreSurveySubmit
+              conditions:
+                - template: topicCondition
+                  broadcast:
+                    d0: ${discussionTopicNames}
+                - template: topicCondition
+                  broadcast:
+                    d0: ${otherWaveTopicNames}
+                - reference: prompt.attentionCheck
+                  comparator: exists
+
+        - name: Demographics
+          elements:
+            - type: survey
+              surveyName: DemographicsShortUS
+              name: demographics
+              tags: ["predictor"]
+
+introSequences:
+  - template: introSequence
+    fields:
+      sequenceName: control
+      discussionTopicNames:
+        - topicName: fundNeedleExchange
+        - topicName: israelAid
+        - topicName: slaveReparations
+        - topicName: universalIncome
+        - topicName: schoolDressCode
+      otherWaveTopicNames:
+        - topicName: drinkingAge
+        - topicName: sportsPEDs
+        - topicName: capAndTrade
+        - topicName: policeDefundingDiscrimination
+        - topicName: cubaEmbargo
+
+treatments:
+  - name: no_discussion_control
+    playerCount: 1
+    gameStages:
+      - name: PreDiscussionInstructions
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/css_lab/ct_topic_control/example_description.md
+          - type: prompt
+            file: projects/css_lab/ct_topic_control/continue.md
+            name: continue_0
+          - type: submitButton
+            buttonText: Begin
+            conditions:
+              - reference: prompt.continue_0
+                comparator: exists
+
+      - name: labeling
+        duration: 600
+        elements:
+          - template: labelTask
+            fields:
+              name: label_${index}
+            broadcast:
+              d0:
+                - index: "1"
+                  prev: "0"
+                - index: "2"
+                  prev: "1"
+                - index: "3"
+                  prev: "2"
+                - index: "4"
+                  prev: "3"
+                - index: "5"
+                  prev: "4"
+                - index: "6"
+                  prev: "5"
+                - index: "7"
+                  prev: "6"
+                - index: "8"
+                  prev: "7"
+                - index: "9"
+                  prev: "8"
+                - index: "10"
+                  prev: "9"
+                - index: "11"
+                  prev: "10"
+                - index: "12"
+                  prev: "11"
+                - index: "13"
+                  prev: "12"
+                - index: "14"
+                  prev: "13"
+                - index: "15"
+                  prev: "14"
+                - index: "16"
+                  prev: "15"
+                - index: "17"
+                  prev: "16"
+                - index: "18"
+                  prev: "17"
+                - index: "19"
+                  prev: "18"
+                - index: "20"
+                  prev: "19"
+                - index: "21"
+                  prev: "20"
+                - index: "22"
+                  prev: "21"
+                - index: "23"
+                  prev: "22"
+                - index: "24"
+                  prev: "23"
+                - index: "25"
+                  prev: "24"
+                - index: "26"
+                  prev: "25"
+                - index: "27"
+                  prev: "26"
+                - index: "28"
+                  prev: "27"
+                - index: "29"
+                  prev: "28"
+                - index: "30"
+                  prev: "29"
+                - index: "31"
+                  prev: "30"
+                - index: "32"
+                  prev: "31"
+
+    exitSequence:
+      - name: FeelingThermometerPostTest # 2 questions
+        elements:
+          - type: survey
+            name: feelingThermometerPosttest
+            surveyName: PartisanFeelingThermometerUS # asks about both parties
+            tags: ["outcome"]
+
+      - name: TraitRatingsPostTest # 8 questions
+        elements:
+          - type: prompt
+            file: projects/css_lab/ct_topic/consider_democrats.md
+            showToPositions: [1]
+          - type: prompt
+            file: projects/css_lab/ct_topic/consider_republicans.md
+            showToPositions: [0]
+          - type: survey
+            surveyName: TraitRatings
+            name: traitRatingsPosttest
+            tags: ["outcome"]
+
+      - name: Bipartisanship # 3 questions
+        elements:
+          - type: survey
+            surveyName: BipartisanshipUS
+            name: bipartisanship
+            tags: ["outcome"]
