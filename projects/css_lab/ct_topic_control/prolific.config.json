@@ -33,7 +33,8 @@
   "exitCodes": {
     "complete": "C1D0OZ1N",
     "error": "CX8GUBBQ",
-    "lobbyTimeout": "C1BS10OU"
+    "lobbyTimeout": "C1BS10OU",
+    "failedEquipmentCheck": "CK3OKG45"
   },
   "introSequence": "control",
   "treatments": ["no_discussion_control"],

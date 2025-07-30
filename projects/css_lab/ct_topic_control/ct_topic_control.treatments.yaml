@@ -285,10 +285,16 @@ treatments:
         elements:
           - type: prompt
             file: projects/css_lab/ct_topic/consider_democrats.md
-            showToPositions: [1]
+            conditions:
+              - reference: survey.partyAffiliation.result.normPosition
+                comparator: isAbove
+                value: 0.5
           - type: prompt
             file: projects/css_lab/ct_topic/consider_republicans.md
-            showToPositions: [0]
+            conditions:
+              - reference: survey.partyAffiliation.result.normPosition
+                comparator: isBelow
+                value: 0.5
           - type: survey
             surveyName: TraitRatings
             name: traitRatingsPosttest

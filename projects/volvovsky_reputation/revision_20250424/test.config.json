@@ -15,17 +15,7 @@
   "launchDate": "immediate",
   "centralPrereg": false,
   "preregRepos": [],
-  "dataRepos": [
-    {
-      "owner": "Watts-Lab",
-      "repo": "deliberation-data-test",
-      "branch": "main",
-      "directory": "reputation"
-    }
-  ],
-  "videoStorage": {
-    "bucket": "deliberation-lab-recordings-test",
-    "region": "us-east-1"
-  },
+  "dataRepos": [],
+  "videoStorage": "none",
   "exitCodes": "none"
 }
