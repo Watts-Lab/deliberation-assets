@@ -43,5 +43,11 @@
     "bucket": "deliberation-lab-recordings-exaptation",
     "region": "us-east-1"
   },
-  "exitCodes": "none"
+  "exitCodes": {
+    "complete": "C1B0BJJN",
+    "error": "C1CUSS95",
+    "lobbyTimeout": "C1CUSS95",
+    "failedEquipmentCheck": "C1CUSS95"
+  }
+
 }
