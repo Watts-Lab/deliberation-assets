@@ -295,6 +295,7 @@ treatments:
               - reference: survey.partyAffiliation.result.normPosition
                 comparator: isBelow
                 value: 0.5
+
           - type: survey
             surveyName: TraitRatings
             name: traitRatingsPosttest
