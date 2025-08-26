@@ -140,38 +140,28 @@ treatments:
         fields:
           roundIndex: "1a"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1a_panel_S.jpg # Replace with 2-image panel
-          recallImages: # 2 images to recall
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBB.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBB.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPRB.jpg
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1a_panel_S.jpg
+          recallImages: # 2 images to recall: PBY, OBY
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBY.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SORY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBY.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SORB.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPRY.jpg
 
       - template: round
         fields:
           roundIndex: "1b"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1b_panel_S.jpg # Replace with 4-image panel
-          recallImages: # 4 images to recall
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBB.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBB.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPRB.jpg
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1b_panel_S.jpg
+          recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SORY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBY.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SORB.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPRY.jpg
 
       - template: round
         fields:
           roundIndex: "1c"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_S.jpg # Replace with 8-image panel
-          recallImages: # 8 images to recall
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_S.jpg
+          recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBB.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBB.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPRB.jpg
@@ -239,29 +229,23 @@ treatments:
         fields:
           roundIndex: "1a"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1_panel_N.jpg # 2-image panel
-          recallImages: # 2 image filepaths
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N7.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N4.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N3.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N8.jpg
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1a_panel_N.jpg # 2-image panel
+          recallImages: # 2 image filepaths: N5, N1
+            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N1.jpg
 
       - template: round
         fields:
           roundIndex: "1b"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1_panel_N.jpg # 4-image panel
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1b_panel_N.jpg # 4-image panel
           recallImages: # 4 image filepaths
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N7.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N4.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N1.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N3.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N8.jpg
 
@@ -269,14 +253,14 @@ treatments:
         fields:
           roundIndex: "1c"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1_panel_N.jpg # 8-image panel
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_N.jpg # 8-image panel
           recallImages: # 8 image filepaths
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N7.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N4.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N1.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N3.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N8.jpg
 
