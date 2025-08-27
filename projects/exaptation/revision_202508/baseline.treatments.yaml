@@ -21,7 +21,7 @@ templates:
           - type: image
             file: ${imageFilepath}
           - type: prompt
-            file: projects/exaptation/revision_202508/labels_match.md
+            file: projects/exaptation/revision_202508/labels_correct.md
             conditions:
               - reference: "prompt.recall_${roundIndex}_${recallIndex}"
                 position: percentAgreement
@@ -32,12 +32,18 @@ templates:
                 comparator: hasLengthAtLeast
                 value: 1
           - type: prompt
-            file: projects/exaptation/revision_202508/labels_not_match.md
+            file: projects/exaptation/revision_202508/labels_incorrect.md
             conditions:
               - reference: prompt.recall_${roundIndex}_${recallIndex}
                 position: percentAgreement
                 comparator: isBelow
                 value: 100
+          - type: prompt # when nobody enters anything, agreement is not defined
+            file: projects/exaptation/revision_202508/labels_incorrect.md
+            conditions:
+              - reference: "prompt.recall_${roundIndex}_${recallIndex}"
+                position: all
+                comparator: doesNotExist
 
           - type: display
             reference: "prompt.recall_${roundIndex}_${recallIndex}"
@@ -76,7 +82,7 @@ templates:
 
           - type: prompt
             name: "labeling_${roundIndex}"
-            file: projects/exaptation/revision_202508/discussion_instructions.md
+            file: projects/exaptation/revision_202508/discussion_instructions_${numImages}.md
             shared: true
 
       - template: recallTask
@@ -141,6 +147,7 @@ treatments:
           roundIndex: "1a"
           duration: 120
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_1a_panel_S.jpg
+          numImages: "2"
           recallImages: # 2 images to recall: PBY, OBY
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBY.jpg
@@ -150,6 +157,7 @@ treatments:
           roundIndex: "1b"
           duration: 120
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_1b_panel_S.jpg
+          numImages: "4"
           recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SORY.jpg
@@ -161,6 +169,7 @@ treatments:
           roundIndex: "1c"
           duration: 120
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_S.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SPBB.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_SOBB.jpg
@@ -176,6 +185,7 @@ treatments:
           roundIndex: "2"
           duration: 180
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_2_panel_S.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_2_SPRB.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_2_SORY.jpg
@@ -191,6 +201,7 @@ treatments:
           roundIndex: "3"
           duration: 90
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_3_panel.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_3_SOBY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_3_SORB.jpg
@@ -206,6 +217,7 @@ treatments:
           roundIndex: "4"
           duration: 90 # consistent between 3 and 4 means that the rounds are comparable
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_4_panel_A.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_4_SPBY4.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_4_SPBY1.jpg
@@ -230,6 +242,7 @@ treatments:
           roundIndex: "1a"
           duration: 120
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_1a_panel_N.jpg # 2-image panel
+          numImages: "2"
           recallImages: # 2 image filepaths: N5, N1
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N1.jpg
@@ -239,22 +252,20 @@ treatments:
           roundIndex: "1b"
           duration: 120
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_1b_panel_N.jpg # 4-image panel
-          recallImages: # 4 image filepaths
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N7.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg
+          numImages: "4"
+          recallImages: # 4 image filepaths: N5, N4, N1, N8
+            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N4.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N1.jpg
-            - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N3.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N8.jpg
 
       - template: round
         fields:
           roundIndex: "1c"
           duration: 120
-          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_N.jpg # 8-image panel
-          recallImages: # 8 image filepaths
+          panelFilepath: projects/exaptation/revision_202508/stimuli/round_1c_panel_N.jpg
+          numImages: "8"
+          recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N2.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_1_N7.jpg
@@ -269,6 +280,7 @@ treatments:
           roundIndex: "2"
           duration: 180
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_2_panel_N.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_2_N1.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_2_N7.jpg
@@ -284,6 +296,7 @@ treatments:
           roundIndex: "3"
           duration: 90
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_3_panel.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_3_SOBY.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_3_SORB.jpg
@@ -299,6 +312,7 @@ treatments:
           roundIndex: "4"
           duration: 90 # consistent between 3 and 4 means that the rounds are comparable
           panelFilepath: projects/exaptation/revision_202508/stimuli/round_4_panel_A.jpg
+          numImages: "8"
           recallImages:
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_4_SPBY4.jpg
             - imageFilepath: projects/exaptation/revision_202508/stimuli/round_4_SPBY1.jpg

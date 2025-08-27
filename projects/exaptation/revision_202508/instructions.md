@@ -5,9 +5,9 @@ type: noResponse
 
 # The game you are about to play has two stages:
 
-# Stage 1: Discussion and Labeling (Video Call) 👤👤👤
+## Stage 1: Discussion and Labeling (Video Call) 👤👤👤
 
-Your group will see a set of eight images, like the ones blurred below.
+Your group will see a set of 2-8 images, like the ones blurred below.
 
 Together, come up with **unique** labels for each image and enter them into the shared text box.  
 **You must fill out a label for every image in each round.**
@@ -18,7 +18,7 @@ Together, come up with **unique** labels for each image and enter them into the 
 
 ⚠️ **Please don’t take screenshots.** This is a memory game designed to be fun — using screenshots takes away the challenge.
 
-# Stage 2: Recall (On Your Own) 👤
+## Stage 2: Recall (On Your Own) 👤
 
 After your group discussion, you’ll see the images again, one at a time.
 
@@ -31,13 +31,12 @@ Type the label your group agreed on for each image.
 - If **everyone** enters the correct label, your group earns **10 points**.
 - If **anyone** gets it wrong, no points are awarded.
 
-### You will play four rounds of labeling and recall, with different images in each round.
+## You will play **four** rounds of labeling and recall, with different images in each round.
 
-### You will play four rounds, each with a new set of images.
-
-- **Round 1:** 5 minutes to discuss
-- **Round 2:** 3 minutes
-- **Rounds 3 & 4:** 90 seconds each
+- **Round 1:** Training round, broken into 3 chunks. You have 2 minutes to discuss each chunk, followed by recall tasks
+- **Round 2:** 8 images, 3 minutes for discussion
+- **Round 3:** 8 images, 2 minutes for discussion
+- **Round 4:** 8 images, 2 minutes for discussion
 
 You **may reuse labels across rounds**, but **not within the same round**.
 
