@@ -34,9 +34,9 @@ Type the label your group agreed on for each image.
 ## You will play **four** rounds of labeling and recall, with different images in each round.
 
 - **Round 1:** Training round, broken into 3 chunks. You have 2 minutes to discuss each chunk, followed by recall tasks
-- **Round 2:** 8 images, 3 minutes for discussion
-- **Round 3:** 8 images, 2 minutes for discussion
-- **Round 4:** 8 images, 2 minutes for discussion
+- **Round 2:** 8 images, 4 minutes for discussion
+- **Round 3:** 8 images, 4 minutes for discussion
+- **Round 4:** 8 images, 4 minutes for discussion
 
 You **may reuse labels across rounds**, but **not within the same round**.
 

@@ -7,6 +7,6 @@ type: noResponse
 
 In this round, you will label 8 images.
 
-You will have **2 minutes** to come up with labels.
+You will have up to **2 minutes** to come up with labels.
 
 ---
