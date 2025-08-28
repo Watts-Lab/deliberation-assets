@@ -73,7 +73,6 @@ templates:
           - type: submitButton
             buttonText: End discussion and go to quiz
             name: "labeling_${roundIndex}"
-
           - type: prompt
             name: "labeling_${roundIndex}"
             file: projects/exaptation/revision_202503/discussion_instructions.md
