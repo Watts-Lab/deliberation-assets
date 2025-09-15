@@ -2,6 +2,7 @@ templates:
   # Displays a stage asking the user's opinion and knowledge of the topic,
   # used in the intro sequence to gauge opinions.
   - templateName: topicPrompt
+    contentType: introExitSteps
     templateContent:
       - name: ${topicName}_presurvey
         elements:
@@ -31,12 +32,12 @@ templates:
 
   # Displays the generic exit sequence
   - templateName: genericExitSequence
-    templateDesc: generic exit sequence
+    contentType: introExitSteps
     templateContent:
       - name: PostDiscussionInstructions
         elements:
           - type: prompt
-            file: projects/css_lab/ct_topic/exit/post_discussion_instructions.md
+            file: projects/css_lab/dl_collab/exit/post_discussion_instructions.md
           - type: submitButton
             buttonText: Proceed to Survey
 
@@ -172,6 +173,7 @@ templates:
             surveyName: DiscussionGeneral
 
   - templateName: condition
+    contentType: treatment
     templateDesc: Standard walkthrough starting with the synchronous portion
     templateContent:
       name: ${conditionName}
@@ -189,7 +191,7 @@ templates:
           conditions:
             - reference: prompt.${topicName}_presurvey_opinion
               comparator: includes
-              value: "strongly oppose"
+              value: "oppose" # TODO: should we only use "strongly oppose" here?
             - reference: prompt.${topicName}_presurvey_familiarity
               comparator: isOneOf
               value: ["Very familiar", "Moderately familiar"]
