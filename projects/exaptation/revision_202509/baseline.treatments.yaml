@@ -329,6 +329,7 @@ treatments:
           - type: survey
             surveyName: Demographics
   
+  # Could add a template for the first 3 rounds of these treatments since the first 3 rounds are the same
   - name: schema_black_and_white
     playerCount: 2
     gameStages:
