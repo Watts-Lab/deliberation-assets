@@ -189,7 +189,7 @@ templates:
           conditions:
             - reference: prompt.${topicName}_presurvey_opinion
               comparator: includes
-              value: "oppose" # TODO: should we only use "strongly oppose" here?
+              value: "strongly oppose"
             - reference: prompt.${topicName}_presurvey_familiarity
               comparator: isOneOf
               value: ["Very familiar", "Moderately familiar"]
