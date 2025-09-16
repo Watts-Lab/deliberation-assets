@@ -5,28 +5,40 @@ type: noResponse
 
 # The game you are about to play has two stages:
 
-## Stage 1: Discussion and labeling (Video Call) 👤👤👤
+# Stage 1: Discussion and Labeling (Video Call) 👤👤👤
 
-Your group will see a set of eight images, like the ones blurred out below.
+Your group will see a set of eight images, like the ones blurred below.
 
-Come up with **unique** labels for each image, and enter them in a shared text box.
+Together, come up with **unique** labels for each image and enter them into the shared text box.  
+**You must fill out a label for every image in each round.**
 
 ![labeling_demo](projects/exaptation/revision_202503/instructions_demo_labeling.jpg)
 
-You will need to remember each label exactly, so make your labels short, memorable, and _distinct_ from one another.
+💡 Make your labels short, memorable, and _distinct_ from one another — you’ll need to recall them exactly later.
 
-## Stage 2: Recall (On your own) 👤
+⚠️ **Please don’t take screenshots.** This is a memory game designed to be fun — using screenshots takes away the challenge.
 
-After your discussion, we will show you images one at a time, and ask you to type the label your group decided on for that image.
+# Stage 2: Recall (On Your Own) 👤
+
+After your group discussion, you’ll see the images again, one at a time.
+
+⚠️ You **won't see numbers on the images** during the recall stage
+
+Type the label your group agreed on for each image.
 
 ![recall_demo](projects/exaptation/revision_202503/instructions_demo_recall.jpg)
 
-- If everyone's enters the correct label for the image, you earn 10 points.
-- If anyone enters the wrong label, nobody earns any points.
+- If **everyone** enters the correct label, your group earns **10 points**.
+- If **anyone** gets it wrong, no points are awarded.
 
 ### You will play four rounds of labeling and recall, with different images in each round.
 
-- You will have a maximum of 5 minutes to discuss in the first round, 3 minutes in the second round, and 90 seconds in the third and fourth rounds.
-- You may reuse labels between rounds, but not within a round.
+### You will play four rounds, each with a new set of images.
+
+- **Round 1:** 5 minutes to discuss
+- **Round 2:** 3 minutes
+- **Rounds 3 & 4:** 90 seconds each
+
+You **may reuse labels across rounds**, but **not within the same round**.
 
 ---

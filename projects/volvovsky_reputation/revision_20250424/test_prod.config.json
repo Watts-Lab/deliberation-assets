@@ -1,10 +1,10 @@
 {
   "batchName": "prolific_pilot",
   "cdn": "prod",
-  "treatmentFile": "projects/volvovsky_reputation/base_refactor.treatments.yaml",
+  "treatmentFile": "projects/volvovsky_reputation/revision_20250424/base_refactor.treatments.yaml",
   "customIdInstructions": "shared/id_instructions/prolific.md",
   "platformConsent": "US",
-  "consentAddendum": "projects/volvovsky_reputation/consent_addendum.md",
+  "consentAddendum": "projects/volvovsky_reputation/revision_20250424/consent_addendum.md",
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "baseline",
@@ -25,16 +25,16 @@
   "centralPrereg": false,
   "preregRepos": [
     {
-      "owner": "Watts-Lab",
-      "repo": "JamesPHoughton",
+      "owner": "JamesPHoughton",
+      "repo": "reputation",
       "branch": "main",
       "directory": "data/test"
     }
   ],
   "dataRepos": [
     {
-      "owner": "Watts-Lab",
-      "repo": "JamesPHoughton",
+      "owner": "JamesPHoughton",
+      "repo": "reputation",
       "branch": "main",
       "directory": "data/test"
     }
@@ -44,9 +44,10 @@
     "region": "us-east-1"
   },
   "exitCodes": {
-    "complete": "CN3M1AG5",
-    "error": "CX8GUBBQ",
-    "lobbyTimeout": "CNKR0OP8",
-    "failedEquipmentCheck": "C1JR13XY"
+    "complete": "C1B0BJJN",
+    "error": "C1CUSS95",
+    "lobbyTimeout": "C1CUSS95",
+    "failedEquipmentCheck": "C1CUSS95"
   }
+
 }
