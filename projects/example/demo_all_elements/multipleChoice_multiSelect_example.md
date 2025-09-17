@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo/prompt_multipleChoice_multiSelect_example.md
+name: projects/example/demo_all_elements/multipleChoice_multiSelect_example.md
 type: multipleChoice
 select: multiple
 ---

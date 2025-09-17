@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo/prompt_openResponse_Example.md
+name: projects/example/demo_all_elements/openResponse_example.md
 type: openResponse
 rows: 4
 ---

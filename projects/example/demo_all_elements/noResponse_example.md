@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo/prompt_noResponse_example.md
+name: projects/example/demo_all_elements/noResponse_example.md
 type: noResponse
 ---
 

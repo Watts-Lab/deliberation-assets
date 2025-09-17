@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo/prompt_listSorter_example.md
+name: projects/example/demo_all_elements/prompt_listSorter_example.md
 type: listSorter
 shuffleOptions: true
 ---
