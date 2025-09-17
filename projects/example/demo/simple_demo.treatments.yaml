@@ -7,7 +7,7 @@ introSequences:
           - type: prompt
             file: projects/example/demo/describeDemo.md
           - type: submitButton
-        
+
       - name: Sequence Description
         elements:
           - type: prompt
@@ -26,15 +26,13 @@ introSequences:
           - type: prompt
             file: projects/example/demo/prompt_noResponse_example.md
 
-
       - name: Canned Survey Demo
         elements:
           - type: prompt
-           file: projects/example/demo/describeSurvey.md
+            file: projects/example/demo/describeSurvey.md
           - type: survey
             surveyName: PoliticalPartyUS
             name: partyAffiliation
-
 
 treatments:
   - name: demoTreatment
@@ -94,7 +92,10 @@ treatments:
 
       - name: Discussion
         duration: 60
-        chatType: video
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
         elements:
           - name: icebreaker
             type: prompt
@@ -130,9 +131,12 @@ treatments:
             type: qualtrics
             url: https://upenn.co1.qualtrics.com/jfe/form/SV_50yzfw6kWpnowIe
 
-    exitSurveys:
-      - DiscussionSelfInsight
-      - Demographics
+    exitSequence:
+      - name: Post-discussion followup survey
+        elements:
+          - type: survey
+            surveyName: PoliticalPartyUS
+            name: partyAffiliationPost
 
   - name: demo_4p_test_video
     desc: 4 player for recording a discussion to help test video processing

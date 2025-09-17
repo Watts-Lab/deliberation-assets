@@ -1,61 +1,26 @@
+# This file implements an annotated demo experiment that illustrates
+# various features of the platform, including conditional assignment,
+# video chat, and surveys.
+# It also illustrates the use of templates to create multiple similar
+# treatments and intro sequences that differ only in the topic of discussion.
+# The topics are specified in the broadcast section at the bottom of the file.
+
 templates:
   - templateName: topicPrompt
+    contentType: element
     templateContent:
       type: prompt
       name: "${topicName}_presurvey"
       file: "shared/yesNo/${topicName}_survey.md"
-      tags: ["predictor"]
 
   - templateName: topicCondition
+    contentType: condition
     templateContent:
       reference: prompt.${topicName}_presurvey
       comparator: exists
 
-  - templateName: introSequence
-    templateDesc: generic presurvey
-    templateContent:
-      name: ${sequenceName}
-      introSteps:
-        - name: Sequence Description
-          elements:
-            - type: prompt
-              file: projects/example/demo/describeAsyncSync.md
-            - type: submitButton
-              buttonText: Continue
-
-        - name: PoliticalLeaningsSurvey
-          elements:
-            - type: prompt
-              file: projects/example/demo/describeSurvey.md
-            - type: survey
-              surveyName: PoliticalPartyUS
-              name: partyAffiliation
-              tags: ["predictor"]
-
-        - name: TopicPreSurvey
-          elements:
-            - type: prompt
-              file: projects/example/demo/describePrompts.md
-
-            - type: prompt
-              file: projects/css_lab/ct_topic/presurvey_instructions.md
-
-            - template: topicPrompt
-              broadcast:
-                d0: ${topicNames}
-
-            - type: prompt
-              file: projects/css_lab/ct_topic/all_mandatory.md
-
-            - type: submitButton
-              buttonText: Continue
-              name: topicPreSurveySubmit
-              conditions:
-                - template: topicCondition
-                  broadcast:
-                    d0: ${topicNames}
-
   - templateName: crossPartisanDiscussion
+    contentType: treatment
     templateDesc: for measuring the effect of topic on cross-party discussion outcomes
     templateContent:
       name: ${treatmentName}
@@ -137,13 +102,11 @@ templates:
             - type: prompt
               file: projects/css_lab/ct_topic/guess_partner_party.md
               name: guessPartnerParty
-              tags: ["outcome"]
             - type: prompt
               file: projects/css_lab/ct_topic/guess_partner_position.md
             - type: prompt
-              file: "shared/yesNo/${topicName}_survey.md"
               name: guessPartnerPosition
-              tags: ["outcome"]
+              file: "shared/yesNo/${topicName}_survey.md"
             - type: prompt
               file: projects/css_lab/ct_topic/all_mandatory.md
             - type: submitButton
@@ -169,12 +132,48 @@ templates:
               tags: ["outcome"]
 
 introSequences:
-  - template: introSequence
-    fields:
-      sequenceName: demo_intro_sequence
-      topicNames:
-        - topicName: israelAid
-        - topicName: slaveReparations
+  - name: demo_intro_sequence
+    introSteps:
+      - name: Sequence Description
+        elements:
+          - type: prompt
+            file: projects/example/demo/describeAsyncSync.md
+          - type: submitButton
+            buttonText: Continue
+
+      - name: PoliticalLeaningsSurvey
+        elements:
+          - type: prompt
+            file: projects/example/demo/describeSurvey.md
+          - type: survey
+            surveyName: PoliticalPartyUS
+            name: partyAffiliation
+            tags: ["predictor"]
+
+      - name: TopicPreSurvey
+        elements:
+          - type: prompt
+            file: projects/example/demo/describePrompts.md
+
+          - type: prompt
+            file: projects/css_lab/ct_topic/presurvey_instructions.md
+
+          - template: topicPrompt
+            broadcast:
+              d0: ${topicNames}
+
+          - type: prompt
+            file: projects/css_lab/ct_topic/all_mandatory.md
+
+          - type: submitButton
+            buttonText: Continue
+            name: topicPreSurveySubmit
+            conditions:
+              - template: topicCondition
+                broadcast:
+                  d0:
+                    - topicName: israelAid
+                    - topicName: slaveReparations
 
 treatments:
   - template: crossPartisanDiscussion
