@@ -1,0 +1,21 @@
+{
+  "batchName": "v1demo",
+  "cdn": "local",
+  "treatmentFile": "projects/reinero/v1/v1.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": ["demo_flowerboy_strong_disagreement"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}
