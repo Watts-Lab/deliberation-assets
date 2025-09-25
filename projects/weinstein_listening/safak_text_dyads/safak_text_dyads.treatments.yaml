@@ -1,0 +1,109 @@
+introSequences:
+  - name: default
+    introSteps:
+      - name: presurvey
+        elements:
+          - type: qualtrics
+            url: https://oii.qualtrics.com/jfe/form/SV_cSkkngvdYj5mRF4
+      - name: topics
+        elements:
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/intro/presurvey_intro.md
+
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/topics/assisted_suicide_survey.md
+            name: assisted_suicide_presurvey
+
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/topics/healthcare_strike_survey.md
+            name: healthcare_strike_presurvey
+
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/topics/trans_bathroom_survey.md
+            name: trans_bathroom_presurvey
+
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/topics/undisclosed_AI_survey.md
+            name: undisclosed_AI_presurvey
+
+          - type: prompt
+            file: projects/weinstein_listening/safak_text_dyads/topics/climate_emergency_survey.md
+            name: climate_emergency_presurvey
+
+          - type: submitButton
+            buttonText: Submit
+
+templates:
+  - templateName: condition
+    contentType: treatment
+    templateContent:
+      name: ${treatmentName}
+      playerCount: 2
+      groupComposition:
+        - position: 0
+          conditions:
+            - reference: prompt.${topicName}_presurvey
+              comparator: isOneOf
+              value:
+                ["6 - Moderately ${p0_stance}", "7 - Extremely ${p0_stance}"]
+        - position: 1
+          conditions:
+            - reference: prompt.${topicName}_presurvey
+              comparator: isOneOf
+              value:
+                ["1 - Extremely ${p1_stance}", "2 - Moderately ${p1_stance}"]
+
+      gameStages:
+        - name: instructions
+          duration: 45
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/safak_text_dyads/game/p0_pre_instructions_${p0_condition}.md
+              showToPositions: [0]
+            - type: prompt
+              file: projects/weinstein_listening/safak_text_dyads/game/p1_pre_instructions.md
+              showToPositions: [1]
+            - type: submitButton
+              buttonText: Proceed to chat
+
+        - name: chat
+          duration: 300
+          discussion:
+            chatType: text
+            showNickname: true
+            showTitle: false
+          elements:
+            - type: prompt
+              file: projects/weinstein_listening/safak_text_dyads/topics/${topicName}_discussion.md
+              showToPositions: [1]
+
+      exitSequence:
+        - name: postsurvey
+          elements:
+            - type: qualtrics
+              url: https://oii.qualtrics.com/jfe/form/SV_5teFqZBYIiR9BSm
+
+treatments:
+  - template: condition
+    fields:
+      treatmentName: "t_${p0_condition}_${topicName}_p0_${p0_stance}_p1_${p1_stance}"
+    broadcast:
+      d0:
+        - p0_stance: "Negative" # opposite stance, treated individual is negative
+          p1_stance: "Positive"
+        - p0_stance: "Positive" # opposite stance, treated individual is positive
+          p1_stance: "Negative"
+        - p0_stance: "Positive" # same stance, positive
+          p1_stance: "Positive"
+        - p0_stance: "Negative" # same stance, negative
+          p1_stance: "Negative"
+
+      d1:
+        - topicName: "assisted_suicide"
+        - topicName: "healthcare_strike"
+        - topicName: "trans_bathroom"
+        - topicName: "undisclosed_AI"
+        - topicName: "climate_emergency"
+      d2:
+        - p0_condition: "listener"
+        - p0_condition: "expressor"
