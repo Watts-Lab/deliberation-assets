@@ -1,0 +1,21 @@
+introSequences:
+  - name: default
+    introSteps:
+      - name: instructions
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/intro/instructions.md
+          - type: submitButton
+            buttonText: "Continue"
+
+treatments:
+  - name: default
+    playerCount: 2
+    gameStages:
+      - name: instructions
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/instructions.md
+          - type: submitButton
+            buttonText: "Onward!"
