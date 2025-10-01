@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/exit/scoreDescriptionCompleteness.md
+name: projects/css_lab/dl_collab/pilot_2/exit/score_description_completeness.md
 type: multipleChoice
 ---
 

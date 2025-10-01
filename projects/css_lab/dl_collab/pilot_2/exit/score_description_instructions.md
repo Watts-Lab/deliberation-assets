@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/exit/scoreDescriptionInstructions.md
+name: projects/css_lab/dl_collab/pilot_2/exit/score_description_instructions.md
 type: noResponse
 ---
 

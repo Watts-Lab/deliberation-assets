@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/game/arms/describe_partner_views.md
+name: projects/css_lab/dl_collab/pilot_2/game/describe_partner_views.md
 type: openResponse
 rows: 8
 minLength: 300
@@ -17,8 +17,7 @@ Please summarize **your partner’s** position on the topic you discussed using 
 
 We will show your summary to your partner and ask them to rate its **accuracy**, **completeness**, and **fairness**—so do your best.
 
-👉 Please write at least **300 characters**
-👉 You have **5 minutes**
+👉 Please spend 3-5 minutes on this task, and write at least **300 characters**
 
 ---
 

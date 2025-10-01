@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/exit/scoreDescriptionAccuracy.md
+name: projects/css_lab/dl_collab/pilot_2/exit/score_description_accuracy.md
 type: multipleChoice
 ---
 
