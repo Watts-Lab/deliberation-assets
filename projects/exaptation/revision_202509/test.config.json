@@ -8,15 +8,9 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "Default",
-<<<<<<< HEAD
   "treatments": ["schema", "nonschema", "schema_black_and_white", "schema_tangrams", "schema_nonschema", "nonschema_black_and_white", "nonschema_tangrams"],
   "payoffs": "equal",
   "knockdowns": 0.95,
-=======
-  "treatments": ["schema", "nonschema", "schema_black_and_white", "schema_tangrams", "schema_nonschema"],
-  "payoffs": "equal",
-  "knockdowns": "none",
->>>>>>> origin/main
   "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
