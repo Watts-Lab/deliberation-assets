@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/game/arms/t1_prep_general/mid_A.md
+name: projects/css_lab/dl_collab/pilot_2/arms/t_prep_life_experiences/mid_A.md
 type: noResponse
 ---
 

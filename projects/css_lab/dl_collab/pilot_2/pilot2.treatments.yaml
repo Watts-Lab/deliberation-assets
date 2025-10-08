@@ -2,58 +2,60 @@ templates:
   ############# INTERVENTIONS #############
 
   # Control - no intervention, just a prompt to remind them of the topic
-  - templateName: c1_control_pre
+  - templateName: c_conversation_only_pre
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/c1_control/pre_A.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/c_conversation_only/pre_A.md
       - type: prompt
         file: projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md
       - type: submitButton
         name: c1_pre
         buttonText: Continue to Discussion
 
-  - templateName: t1_prep_general_pre
+  # Treatment 1 - General preparation
+  - templateName: t_prep_general_pre
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t1_prep_general/pre_A.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_prep_general/pre_A.md
       - type: prompt
         file: projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t1_prep_general/pre_B.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_prep_general/pre_B.md
       - type: submitButton
         name: t1_pre
         buttonText: Continue to Discussion
 
-  - templateName: t2_go_around_pre
+  # Treatment 2 - Go-around structure
+  - templateName: t_go_around_pre
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_A.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_A.md
       - type: prompt
         file: projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_B.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_B.md
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_comp_duration.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_comp_duration.md
         name: t2_pre_comp_duration
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_comp_interruptions.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_comp_interruptions.md
         name: t2_pre_comp_interruptions
         conditions:
           - reference: prompt.t2_pre_comp_duration # force a correct response on Q1
             comparator: equals
             value: "2 minutes"
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_comp_open.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_comp_open.md
         name: t2_pre_comp_open
         conditions:
           - reference: prompt.t2_pre_comp_interruptions # force a correct response on Q2
             comparator: equals
             value: "No"
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_comp_timer.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_comp_timer.md
         name: t2_pre_comp_timer
         conditions:
           - reference: prompt.t2_pre_comp_open # force a correct response on Q3
@@ -67,20 +69,21 @@ templates:
             comparator: includes
             value: "yourself"
 
-  - templateName: t3_goal_understanding_pre
+  # Treatment 3 - Goal setting: understanding
+  - templateName: t_goal_understanding_pre
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t3_goal_understanding/pre_A.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_understanding/pre_A.md
       - type: prompt
         file: projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t3_goal_understanding/pre_B.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_understanding/pre_B.md
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t3_goal_understanding/pre_comp_goal.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_understanding/pre_comp_goal.md
         name: t3_pre_comp_goal
       - type: prompt
-        file: projects/css_lab/dl_collab/pilot_2/game/arms/t3_goal_understanding/pre_comp_shared.md
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_understanding/pre_comp_shared.md
         name: t3_pre_comp_shared
         conditions:
           - reference: prompt.t3_pre_comp_goal # force a correct response on Q1
@@ -91,6 +94,34 @@ templates:
         buttonText: Continue to Discussion
         conditions:
           - reference: prompt.t3_pre_comp_shared # force a correct response on Q2
+            comparator: equals
+            value: "Yes"
+
+  # Treatment 4 - Goal setting: finding a solution
+  - templateName: t_goal_solution
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_solution/pre_A.md
+      - type: prompt
+        file: projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_solution/pre_B.md
+      - type: prompt
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_solution/pre_comp_goal.md
+        name: t4_pre_comp_goal
+      - type: prompt
+        file: projects/css_lab/dl_collab/pilot_2/arms/t_goal_solution/pre_comp_shared.md
+        name: t4_pre_comp_shared
+        conditions:
+          - reference: prompt.t4_pre_comp_goal # force a correct response on Q1
+            comparator: includes
+            value: "solution"
+      - type: submitButton
+        name: t4_pre
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: prompt.t4_pre_comp_shared # force a correct response on Q2
             comparator: equals
             value: "Yes"
 
@@ -189,11 +220,11 @@ templates:
           elements:
             # Persistent instructions
             - type: prompt
-              file: projects/css_lab/dl_collab/pilot_2/game/arms/${arm}/mid_A.md
+              file: projects/css_lab/dl_collab/pilot_2/arms/${arm}/mid_A.md
             - type: prompt
               file: "projects/css_lab/dl_collab/pilot_2/topics/${topicName}.md"
             - type: prompt
-              file: projects/css_lab/dl_collab/pilot_2/game/arms/${arm}/mid_B.md
+              file: projects/css_lab/dl_collab/pilot_2/arms/${arm}/mid_B.md
 
             # End-of-call alert (after 14 minutes)
             - type: prompt
@@ -396,6 +427,7 @@ treatments:
       d0:
         - topicName: placeholder_topic_1
       d1:
-        - arm: c1_control
-        - arm: t1_prep_general
-        - arm: t2_go_around
+        - arm: c_conversation_only
+        - arm: t_prep_general
+        - arm: t_go_around
+        - arm: t_goal_understanding

@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "default",
-  "treatments": ["placeholder_topic_1__t2_go_around"],
+  "treatments": ["placeholder_topic_1__t_go_around"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,

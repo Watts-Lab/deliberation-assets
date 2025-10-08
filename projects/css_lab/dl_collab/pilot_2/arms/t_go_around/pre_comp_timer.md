@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/game/arms/t2_go_around/pre_comp_timer.md
+name: projects/css_lab/dl_collab/pilot_2/arms/t_go_around/pre_comp_timer.md
 type: multipleChoice
 ---
 

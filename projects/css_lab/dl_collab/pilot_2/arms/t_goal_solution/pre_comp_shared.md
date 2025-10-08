@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dl_collab/pilot_2/game/arms/t3_goal_understanding/pre_comp_shared.md
+name: projects/css_lab/dl_collab/pilot_2/arms/t_goal_solution/pre_comp_shared.md
 type: multipleChoice
 ---
 
