@@ -1,6 +1,7 @@
 templates:
   ############# Labeling Game #############
   - templateName: labelingGameInstructions
+    contentType: introExitSteps
     templateContent:
       # Intro sequence stages
       - name: Labeling_Game_Comprehension_Checks
@@ -27,6 +28,7 @@ templates:
                 value: Images
 
   - templateName: labelingGameDiscussion
+    contentType: stages
     templateContent:
       # Game Stages
       - name: groupAssignment
@@ -71,6 +73,7 @@ templates:
             shared: true
 
   - templateName: labelingGameRecallTask
+    contentType: stages
     templateContent:
       # Game Stages
       - name: recall ${recallIndex}
@@ -122,6 +125,7 @@ templates:
 
   ############ Art Game Instructions ##########
   - templateName: artGameInstructionsComplex
+    contentType: introExitSteps
     templateContent:
       # Exit sequence stages
       - name: Introduction for Art Game
@@ -231,6 +235,7 @@ templates:
                 value: "No"
 
   - templateName: artGameInstructionsSimple
+    contentType: introExitSteps
     templateContent:
       # Exit sequence stages
       - name: Introduction for Art Game
@@ -354,6 +359,7 @@ templates:
   ############## Observer Templates #############
 
   - templateName: observerInstructions
+    contentType: introExitSteps
     templateContent:
       # Exit sequence stages
       - name: pre-bid
@@ -375,6 +381,7 @@ templates:
   ########## Observer Stages ##########
 
   - templateName: observeOwnTeamImages
+    contentType: elements
     templateContent:
       - type: image
         file: projects/volvovsky_reputation/revision_20250424/icons/observe_elephant_bear.jpg
@@ -387,6 +394,7 @@ templates:
         showToPositions: [0]
 
   - templateName: observeOwnTeamStage
+    contentType: introExitSteps
     templateContent:
       - name: ${name}
         elements:
@@ -443,6 +451,7 @@ templates:
             displayTime: 30
 
   - templateName: observeOtherTeamStage
+    contentType: introExitSteps
     templateContent:
       - name: ${name}
         elements:
@@ -485,6 +494,7 @@ templates:
 
   ############## Debrief  #############
   - templateName: debrief
+    contentType: introExitSteps
     templateContent:
       # Exit sequence stages
       - name: Post-choice debrief
