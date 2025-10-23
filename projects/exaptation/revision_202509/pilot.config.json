@@ -1,0 +1,43 @@
+{
+  "batchName": "pilot",
+  "cdn": "prod",
+  "treatmentFile": "projects/exaptation/revision_202509/baseline.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "Default",
+  "treatments": ["nonschema_black_and_white", "nonschema_tangrams"],
+  "payoffs": "equal",
+  "knockdowns": 0.9,
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "exaptation",
+      "branch": "main",
+      "directory": "pilot/revision_202509"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "exaptation",
+      "branch": "main",
+      "directory": "pilot/revision_202509"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-exaptation",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "CVZFDWA9",
+    "error": "CYAQQQJ3",
+    "lobbyTimeout": "CYAQQQJ3",
+    "failedEquipmentCheck": "CYAQQQJ3"
+  }
+}
