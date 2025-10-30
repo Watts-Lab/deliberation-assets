@@ -1,0 +1,81 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/weinstein_listening/safak_text_dyads/safak_text_dyads.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "custom",
+  "consentAddendum": "projects/weinstein_listening/safak_text_dyads/intro/consentText.md",
+  "checkAudio": false,
+  "checkVideo": false,
+  "introSequence": "default",
+  "treatments": [
+    "t_listener_assisted_suicide_p0_negative_p1_positive",
+    "t_listener_assisted_suicide_p0_negative_p1_negative",
+    "t_listener_assisted_suicide_p0_positive_p1_positive",
+    "t_listener_assisted_suicide_p0_positive_p1_negative",
+    "t_listener_healthcare_strike_p0_negative_p1_positive",
+    "t_listener_healthcare_strike_p0_negative_p1_negative",
+    "t_listener_healthcare_strike_p0_positive_p1_positive",
+    "t_listener_healthcare_strike_p0_positive_p1_negative",
+    "t_listener_trans_bathroom_p0_negative_p1_positive",
+    "t_listener_trans_bathroom_p0_negative_p1_negative",
+    "t_listener_trans_bathroom_p0_positive_p1_positive",
+    "t_listener_trans_bathroom_p0_positive_p1_negative",
+    "t_listener_undisclosed_AI_p0_negative_p1_positive",
+    "t_listener_undisclosed_AI_p0_negative_p1_negative",
+    "t_listener_undisclosed_AI_p0_positive_p1_positive",
+    "t_listener_undisclosed_AI_p0_positive_p1_negative",
+    "t_listener_climate_emergency_p0_negative_p1_positive",
+    "t_listener_climate_emergency_p0_negative_p1_negative",
+    "t_listener_climate_emergency_p0_positive_p1_positive",
+    "t_listener_climate_emergency_p0_positive_p1_negative",
+    "t_expressor_assisted_suicide_p0_negative_p1_positive",
+    "t_expressor_assisted_suicide_p0_negative_p1_negative",
+    "t_expressor_assisted_suicide_p0_positive_p1_positive",
+    "t_expressor_assisted_suicide_p0_positive_p1_negative",
+    "t_expressor_healthcare_strike_p0_negative_p1_positive",
+    "t_expressor_healthcare_strike_p0_negative_p1_negative",
+    "t_expressor_healthcare_strike_p0_positive_p1_positive",
+    "t_expressor_healthcare_strike_p0_positive_p1_negative",
+    "t_expressor_trans_bathroom_p0_negative_p1_positive",
+    "t_expressor_trans_bathroom_p0_negative_p1_negative",
+    "t_expressor_trans_bathroom_p0_positive_p1_positive",
+    "t_expressor_trans_bathroom_p0_positive_p1_negative",
+    "t_expressor_undisclosed_AI_p0_negative_p1_positive",
+    "t_expressor_undisclosed_AI_p0_negative_p1_negative",
+    "t_expressor_undisclosed_AI_p0_positive_p1_positive",
+    "t_expressor_undisclosed_AI_p0_positive_p1_negative",
+    "t_expressor_climate_emergency_p0_negative_p1_positive",
+    "t_expressor_climate_emergency_p0_negative_p1_negative",
+    "t_expressor_climate_emergency_p0_positive_p1_positive",
+    "t_expressor_climate_emergency_p0_positive_p1_negative"
+  ],
+  "payoffs": "equal",
+  "knockdowns": 0.95,
+  "dispatchWait": 30,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "listening-study",
+      "branch": "main",
+      "directory": "safak_text_dyads"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "listening-study",
+      "branch": "main",
+      "directory": "safak_text_dyads"
+    }
+  ],
+  "videoStorage": "none",
+  "exitCodes": {
+    "complete": "C1IWVCW5",
+    "error": "C5OXN8UL",
+    "lobbyTimeout": "C5OXN8UL",
+    "failedEquipmentCheck": "C5OXN8UL"
+  }
+}
