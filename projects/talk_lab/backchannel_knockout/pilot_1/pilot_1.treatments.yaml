@@ -1,7 +1,0 @@
-templates:
-  - templateName: natural_dyad_round
-    contentType: stage
-    templateContents: 
-      - name: natural_dyad
-        duration: 180
-        discussion
