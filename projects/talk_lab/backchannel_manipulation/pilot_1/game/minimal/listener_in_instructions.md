@@ -3,9 +3,19 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/minimal/listener_i
 type: noResponse
 ---
 
-**Reminder:** During this round, we want you to show _REDUCED_ backchannel behavior.
+# Minimal Responsiveness
 
-Keep your reactions minimal while still appearing attentive. You can occasionally nod or give a quiet “mm-hm” or “yeah,” but limit both verbal and nonverbal responses and avoid strong emotional reactions.
+In this round, listen with minimal responses.
+
+## ✅ You can:
+
+- Nod infrequently
+- Give an occasional "mm-hm" or "yeah" or "okay"
+
+## ❌ Try not to:
+
+- Give strong reactions
+- Show strong emotion
 
 When the speaker has finished, click the button below to continue to the next stage.
 

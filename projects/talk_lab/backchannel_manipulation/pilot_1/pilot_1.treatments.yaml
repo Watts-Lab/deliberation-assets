@@ -20,8 +20,7 @@ templates:
           chatType: video
           showNickname: true
           showTitle: true
-          # rooms:
-          #   - ${roomAssignments}
+          rooms: ${roomAssignments}
 
         elements:
           - type: prompt
@@ -33,16 +32,16 @@ templates:
           - type: submitButton
             buttonText: "End the call and start questions"
 
-      - name: post_story_questions
-        duration: 120
-        elements:
-          - type: prompt
-            file: projects/talk
+      # - name: post_story_questions
+      #   duration: 120
+      #   elements:
+      #     - type: prompt
+      #       file: projects/talk
 
   - templateName: game
     contentType: treatments
     templateContent:
-      - name: ${first_condition}_${second_condition}_${third_condition}
+      - name: ${treatment_name}
         playerCount: 6
         groupComposition:
           - position: 0
@@ -60,7 +59,7 @@ templates:
 
         gameStages:
           - name: practice_instructions
-            duration: 60
+            duration: 180
             elements:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/speaker_practice_pre_instructions.md
@@ -68,61 +67,79 @@ templates:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_practice_pre_instructions.md
                 showToPositions: [0, 2, 4]
-              - type: submitButton
-                buttonText: "Continue"
 
-          - name: practice_call
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_num_speakers.md
+                showToPositions: [0, 2, 4]
+                name: comp1
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_task.md
+                conditions:
+                  - reference: prompt.comp1
+                    comparator: equals
+                    value: "3"
+                showToPositions: [0, 2, 4]
+                name: comp2
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_reveal.md
+                conditions:
+                  - reference: prompt.comp2
+                    comparator: includes
+                    value: "responsively"
+                showToPositions: [0, 2, 4]
+                name: comp3
+
+              - type: submitButton # for speakers
+                buttonText: "Continue"
+                showToPositions: [1, 3, 5]
+
+              - type: submitButton # for listeners
+                buttonText: "Continue"
+                showToPositions: [0, 2, 4]
+                conditions:
+                  - reference: prompt.comp3
+                    comparator: includes
+                    value: "No"
+
+          - name: practice_round
             duration: 180
             discussion:
               chatType: video
               showNickname: true
               showTitle: true
-              # rooms:
-              #   - name: practice_speaker_room_A
-              #     includePositions: [1]
-              #   - name: practice_speaker_room_B
-              #     includePositions: [3]
-              #   - name: practice_speaker_room_C
-              #     includePositions: [5]
+              # showToPositions: [1, 3, 5] # only the speakers can see the call interface
+              rooms:
+                - includePositions: [1]
+                - includePositions: [3]
+                - includePositions: [5]
               # Q: how do we hide the call interface from the others? add a "showToPositions" field to the discussion, and not render the discussion for those positions?
             elements:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/speaker_practice_in_instructions.md
                 showToPositions: [1, 3, 5]
-              - type: prompt
+
               - type: video # a demo video showing how people do these things
                 url: https://youtu.be/R1qo5BxnXSw?si=ZE8qh_q84qhpg_iT # replace with actual video url
                 showToPositions: [0, 2, 4]
-              - type: submitButton
-                buttonText: "End the practice call and start questions"
 
           - template: storytelling_round
             broadcast:
               d0:
                 - condition: ${first_condition}
                   roomAssignments:
-                    - name: A
-                      includePositions: [0, 1]
-                    - name: B
-                      includePositions: [2, 3]
-                    - name: C
-                      includePositions: [4, 5]
+                    - includePositions: [0, 1]
+                    - includePositions: [2, 3]
+                    - includePositions: [4, 5]
                 - condition: ${second_condition}
                   roomAssignments:
-                    - name: A
-                      includePositions: [0, 3]
-                    - name: B
-                      includePositions: [2, 5]
-                    - name: C
-                      includePositions: [4, 1]
+                    - includePositions: [0, 3]
+                    - includePositions: [2, 5]
+                    - includePositions: [4, 1]
                 - condition: ${third_condition}
                   roomAssignments:
-                    - name: A
-                      includePositions: [0, 5]
-                    - name: B
-                      includePositions: [2, 1]
-                    - name: C
-                      includePositions: [4, 3]
+                    - includePositions: [0, 5]
+                    - includePositions: [2, 1]
+                    - includePositions: [4, 3]
 
         exitSequence:
           - name: Demographics
@@ -149,23 +166,28 @@ introSequences:
 
 treatments:
   - template: game
+    fields:
+      treatment_name: ${first_condition}_${second_condition}_${third_condition}
     broadcast:
       d0:
         - first_condition: expressive
           second_condition: minimal
-          third_condition: distracted
+          third_condition: natural
         - first_condition: expressive
-          second_condition: distracted
+          second_condition: natural
           third_condition: minimal
         - first_condition: minimal
           second_condition: expressive
-          third_condition: distracted
+          third_condition: natural
         - first_condition: minimal
-          second_condition: distracted
+          second_condition: natural
           third_condition: expressive
-        - first_condition: distracted
+        - first_condition: natural
           second_condition: expressive
           third_condition: minimal
-        - first_condition: distracted
+        - first_condition: natural
           second_condition: minimal
           third_condition: expressive
+        - first_condition: natural # To see changes just due to repetition
+          second_condition: natural
+          third_condition: minimal

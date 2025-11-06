@@ -16,7 +16,7 @@ We’d like you to tell a story about a close call or near-miss incident — a t
 
 Please choose a story you feel comfortable sharing. If you can’t think of something that happened to you, you can tell a close-call story that happened to someone you know.
 
-Tell your story in as much detail as you can, not just a few sentences. Describe what happened, what you were thinking or feeling, and how it turned out. Aim for about 1-2 minutes in length
+If you are the storyteller, you will tell your story in as much detail as you can, not just a few sentences. Describe what happened, what you were thinking or feeling, and how it turned out.
 
 Here are a few ideas to help you think of a story:
 

@@ -11,22 +11,27 @@ Before you begin, you’ll do a short **practice round** where you tell your sto
 
 ### 💭 If you don’t have a story yet
 
-Take a moment to think of one now.  
-It can be funny, surprising, or serious — anything that makes a good story.
+Take a moment to think of one now.
 
-Here are some ideas to get you started:
+Remember the story should be a close call or near-miss incident — a time when something almost went wrong or someone was almost hurt, but everything turned out okay in the end.
 
+Here are a few ideas to help you think of a story:
+
+- A **close call** when something almost went very wrong
 - A **bad travel experience** — what went wrong?
-- A time you had a **close call**, when something _almost_ went very wrong
-- A time you had to **admit a mistake**
-- The **craziest thing** you ever saw while driving
-- A time you **broke a bone** — what were you doing?
+- A story about bad **weather**, the **ocean**, or the **outdoors**
+- The craziest thing you ever saw while **driving**
+- A **near injury** — what were you doing and what happened next?
 
-You can use one of these prompts or tell **any other story** you like.  
-If you can’t think of one about yourself, it’s okay to tell a story you’ve **heard recently**.
+If you can't think of a story about yourself:
+
+- Tell any other story that fits the general description
+- Tell a story you have heard recently
+
+Remember, the story should be 1-2 minutes long.
 
 When you’ve thought of a story, **click the button below** to continue.
 
 ---
 
-> ✏️ Feel free to jot down a few notes below to help you plan your story.
+> ✏️ Feel free to jot down a few notes below to help you plan your story (note: you won't have access to these when you start talking).
