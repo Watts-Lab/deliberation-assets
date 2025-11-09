@@ -1,0 +1,49 @@
+{
+  "batchName": "pilot",
+  "cdn": "prod",
+  "treatmentFile": "projects/css_lab/dialogue_levers/dialogue_levers.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": [
+    "gaza_aid_control",
+    "pardon_january_6_control",
+    "transgender_sports_control",
+    "fast_food_tax_control",
+    "religious_exemptions_control"
+  ],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "dialogue_levers"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "Watts-Lab",
+      "repo": "deliberation-data-test",
+      "branch": "main",
+      "directory": "dialogue_levers"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-test",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "CN3M1AG5",
+    "error": "CX8GUBBQ",
+    "lobbyTimeout": "CNKR0OP8",
+    "failedEquipmentCheck": "C1JR13XY"
+  }
+}
