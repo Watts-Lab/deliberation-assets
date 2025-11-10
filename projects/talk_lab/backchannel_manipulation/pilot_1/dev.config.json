@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "default",
-  "treatments": ["expressive_minimal_distracted"],
+  "treatments": ["expressive_minimal_natural"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,
