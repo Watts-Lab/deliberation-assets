@@ -233,10 +233,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -336,10 +346,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -440,10 +460,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -543,10 +573,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -646,10 +686,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -749,10 +799,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
@@ -852,10 +912,20 @@ treatments:
         elements:
           - type: survey
             surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton
+            buttonText: Submit
       - name: playedBefore
         elements:
           - type: prompt
             file: projects/exaptation/revision_202509/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
       - name: Demographics
         elements:
           - type: survey
