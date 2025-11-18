@@ -1,0 +1,48 @@
+{
+  "batchName": "prolific_study_data",
+  "cdn": "prod",
+  "treatmentFile": "projects/volvovsky_reputation/revision_20250424/base_refactor.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "projects/volvovsky_reputation/revision_20250424/consent_addendum.md",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "baseline",
+  "treatments": [
+    "simple failure own team",
+    "simple failure other team",
+    "complex failure own team",
+    "complex failure other team"
+  ],
+  "payoffs": "equal",
+  "knockdowns": 0.97,
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "reputation",
+      "branch": "main",
+      "directory": "data/study"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "JamesPHoughton",
+      "repo": "reputation",
+      "branch": "main",
+      "directory": "data/study"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-exaptation",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "C1B0BJJN",
+    "error": "C1073OWL",
+    "lobbyTimeout": "C1073OWL",
+    "failedEquipmentCheck": "C1073OWL"
+  }
+}
