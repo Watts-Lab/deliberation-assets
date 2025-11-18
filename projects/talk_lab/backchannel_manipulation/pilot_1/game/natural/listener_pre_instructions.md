@@ -5,8 +5,12 @@ type: noResponse
 
 You are about to listen to someone tell a story.
 
-**Reminder:** During this round, please listen as you normally would while someone tells you a story.
+# Listen with **Normal** Responsiveness
 
-React in whatever way feels natural to you.
+## ✅ You should:
+
+- React as you normally would.
+
+### 👉 Do not let the speaker know you have been given these instructions. 👈
 
 ---

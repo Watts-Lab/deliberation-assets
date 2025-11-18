@@ -9,6 +9,8 @@ In this study, you’ll tell **the same story** to **three different people**, o
 
 Before you begin, you’ll do a short **practice round** where you tell your story to an empty room.
 
+At the end of the study you will tell your story a final time to just the camera.
+
 ### 💭 If you don’t have a story yet
 
 Take a moment to think of one now.

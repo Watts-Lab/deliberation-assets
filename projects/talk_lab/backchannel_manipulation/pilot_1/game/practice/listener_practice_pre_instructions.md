@@ -3,6 +3,32 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_
 type: noResponse
 ---
 
+## 🦻 You are the **listener**
+
+In this study, you will listen to **three different people** tell a story, one at a time.
+
+For each story, we want you to **change how you listen**.
+
+### Listening behavior
+
+You may not realize it, but while you listen to a story, you are also communicating to the storyteller. You naturally give little signals like:
+
+- saying "mm-hmm", "yeah", "right", etc.
+- nodding
+- showing surprise or empathy through facial expressions
+
+### Your role in this study
+
+We want to understand how these signals influence the speaker - so we need you to change the how expressive you are in your listening behavior.
+
+Before each story, we'll give you one of the following sets of instructions:
+
+#### Increase
+
+For one speaker, we want you to be
+
+In this study
+
 # Background
 
 In everyday conversation, people are always doing two things at once: 🗣️ one person is usually speaking, but the other person—the listener 👂—is also communicating, often in small but important ways.

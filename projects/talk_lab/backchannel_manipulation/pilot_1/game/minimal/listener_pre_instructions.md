@@ -3,9 +3,9 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/minimal/listener_p
 type: noResponse
 ---
 
-# Minimal Responsiveness
+You are about to listen to someone tell a story.
 
-In this round, listen with minimal responses.
+# Listen with **Minimal** Responsiveness
 
 ## ✅ You can:
 
@@ -16,5 +16,7 @@ In this round, listen with minimal responses.
 
 - Give strong reactions
 - Show strong emotion
+
+### 👉 Do not let the speaker know you have been given these instructions. 👈
 
 ---
