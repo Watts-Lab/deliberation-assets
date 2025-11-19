@@ -352,12 +352,12 @@ templates:
               file: projects/css_lab/dialogue_levers/pilot_2/exit/score_description_instructions.md
 
             - type: display
-              reference: prompt.describePartnerViews
+              reference: prompt.describe_partner_views
               position: 0
               showToPositions: [1]
 
             - type: display
-              reference: prompt.describePartnerViews
+              reference: prompt.describe_partner_views
               position: 1
               showToPositions: [0]
 
