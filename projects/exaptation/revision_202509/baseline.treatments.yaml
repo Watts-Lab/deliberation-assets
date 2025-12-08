@@ -85,12 +85,61 @@ templates:
             file: projects/exaptation/revision_202509/discussion_instructions_${numImages}.md
             shared: true
 
+      - name: "confidence_${roundIndex}"
+        duration: 30
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/game/confidence.md
+            name: "confidence_${roundIndex}"
+          - type: submitButton
+
       - template: recallTask
         fields:
           recallIndex: ${d0}
           roundIndex: ${roundIndex}
         broadcast:
           d0: ${recallImages}
+
+  - templateName: exitSequence
+    contentType: exitSteps
+    # a round of discussion and recall tasks
+    templateContent:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: strategy
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/strategy_describe.md
+            name: strategy
+          - type: submitButton # we request 200+ characters, but don't enforce it.
+            buttonText: Submit
+      - name: mistake
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/mistake_reasons.md
+            name: mistake
+          - type: submitButton
+            buttonText: Submit
+      - name: working_together
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/working_together.md
+            name: working_together
+          - type: submitButton
+            buttonText: Submit
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/exit/played_before.md
+          - type: submitButton
+            buttonText: Submit
+            name: "exit_played_before"
+      - name: Demographics
+        elements:
+          - type: survey
+            surveyName: Demographics
 
 introSequences:
   - name: Default
@@ -229,18 +278,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   - name: nonschema
     playerCount: 2
@@ -332,18 +370,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   # Could add a template for the first 3 rounds of these treatments since the first 3 rounds are the same
   - name: schema_black_and_white
@@ -436,18 +463,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2_BW.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   - name: schema_tangrams
     playerCount: 2
@@ -539,18 +555,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T4.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   - name: schema_nonschema
     playerCount: 2
@@ -642,18 +647,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N4.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   - name: nonschema_black_and_white
     playerCount: 2
@@ -745,18 +739,7 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2_BW.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
 
   - name: nonschema_tangrams
     playerCount: 2
@@ -848,15 +831,4 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T4.jpg
 
     exitSequence:
-      - name: Discussion General
-        elements:
-          - type: survey
-            surveyName: DiscussionGeneral
-      - name: playedBefore
-        elements:
-          - type: prompt
-            file: projects/exaptation/revision_202509/played_before.md
-      - name: Demographics
-        elements:
-          - type: survey
-            surveyName: Demographics
+      - template: exitSequence
