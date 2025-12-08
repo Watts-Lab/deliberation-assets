@@ -5,10 +5,10 @@ rows: 8
 minLength: 200
 ---
 
-# Game Strategy
+# What strategy did you use during the game?
 
-During the game, what strategy did you use to complete the task?
-If you changed your strategy during the game, please describe when and how you changed it?
+- How did you decide on your strategy?
+- Did you change your strategy? If so, when? How?
 
 Please use at least 200 characters.
 

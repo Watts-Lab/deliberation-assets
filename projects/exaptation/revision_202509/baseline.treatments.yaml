@@ -52,7 +52,7 @@ templates:
             reference: "prompt.recall_${roundIndex}_${recallIndex}"
             position: 1
           - type: submitButton
-          
+
   - templateName: round
     contentType: stages
     # a round of discussion and recall tasks
@@ -87,19 +87,19 @@ templates:
 
       - name: "confidence_${roundIndex}"
         duration: 30
-        elements: 
+        elements:
           - type: prompt
             file: projects/exaptation/revision_202509/game/confidence.md
             name: "confidence_${roundIndex}"
           - type: submitButton
-          
+
       - template: recallTask
         fields:
           recallIndex: ${d0}
           roundIndex: ${roundIndex}
         broadcast:
           d0: ${recallImages}
-  
+
   - templateName: exitSequence
     contentType: exitSteps
     # a round of discussion and recall tasks
@@ -113,7 +113,7 @@ templates:
           - type: prompt
             file: projects/exaptation/revision_202509/exit/strategy_describe.md
             name: strategy
-          - type: submitButton
+          - type: submitButton # we request 200+ characters, but don't enforce it.
             buttonText: Submit
       - name: mistake
         elements:
@@ -140,7 +140,7 @@ templates:
         elements:
           - type: survey
             surveyName: Demographics
-          
+
 introSequences:
   - name: Default
     introSteps:

@@ -3,7 +3,7 @@ name: projects/exaptation/revision_202509/game/confidence.md
 type: multipleChoice
 ---
 
-# How confident are you that you will remember the names you have chosen?
+# How confident are you that you'll remember the names you chose?
 
 ---
 
