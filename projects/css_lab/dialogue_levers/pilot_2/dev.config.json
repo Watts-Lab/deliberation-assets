@@ -9,12 +9,12 @@
   "checkVideo": true,
   "introSequence": "default",
   "treatments": [
-    "abortion-t_go_around",
-    "DEI-t_prep_general",
-    "death_penalty-c_conversation_only",
-    "reparations-t_go_around",
-    "support_ICE-c_conversation_only",
-    "tax_religion-t_goal_understanding"
+    "abortion-go_around",
+    "DEI-prep_collecting_thoughts",
+    "death_penalty-control",
+    "reparations-go_around",
+    "support_ICE-control",
+    "tax_religion-goal_understanding"
   ],
   "payoffs": "equal",
   "knockdowns": "none",

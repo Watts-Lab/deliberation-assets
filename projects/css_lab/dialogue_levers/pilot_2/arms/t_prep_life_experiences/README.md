@@ -1,1 +1,0 @@
-# Preparation considering life experiences
