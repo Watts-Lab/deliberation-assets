@@ -20,8 +20,6 @@ templates:
         file: projects/css_lab/dialogue_levers/pilot_2/arms/control/mid_A.md
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/control/mid_B.md
 
   # Treatment: Reflect and share - Collecting Thoughts
   - templateName: prep_collecting_thoughts_pre
