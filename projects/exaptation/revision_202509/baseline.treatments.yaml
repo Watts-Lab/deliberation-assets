@@ -145,7 +145,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1a"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_S.jpg
           numImages: "2"
           recallImages: # 2 images to recall: PBY, OBY
@@ -155,7 +155,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1b"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_S.jpg
           numImages: "4"
           recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
@@ -167,7 +167,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1c"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -183,7 +183,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -199,7 +199,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
           numImages: "8"
           recallImages:
@@ -215,7 +215,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_A.jpg
           numImages: "8"
           recallImages:
@@ -229,6 +229,14 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2.jpg
 
     exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
       - name: Demographics
         elements:
           - type: survey
@@ -240,7 +248,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1a"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_N.jpg # 2-image panel
           numImages: "2"
           recallImages: # 2 image filepaths: N5, N1
@@ -250,7 +258,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1b"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_N.jpg # 4-image panel
           numImages: "4"
           recallImages: # 4 image filepaths: N5, N4, N1, N8
@@ -262,7 +270,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1c"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_N.jpg
           numImages: "8"
           recallImages:
@@ -278,7 +286,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_N.jpg
           numImages: "8"
           recallImages:
@@ -294,7 +302,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
           numImages: "8"
           recallImages:
@@ -310,7 +318,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
-          duration: 240 # consistent between 3 and 4 means that the rounds are comparable
+          duration: 300 # consistent between 3 and 4 means that the rounds are comparable
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_A.jpg
           numImages: "8"
           recallImages:
@@ -324,11 +332,19 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2.jpg
 
     exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
       - name: Demographics
         elements:
           - type: survey
             surveyName: Demographics
-  
+
   # Could add a template for the first 3 rounds of these treatments since the first 3 rounds are the same
   - name: schema_black_and_white
     playerCount: 2
@@ -336,7 +352,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1a"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_S.jpg
           numImages: "2"
           recallImages: # 2 images to recall: PBY, OBY
@@ -346,7 +362,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1b"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_S.jpg
           numImages: "4"
           recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
@@ -358,7 +374,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1c"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -374,7 +390,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -390,7 +406,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
           numImages: "8"
           recallImages:
@@ -406,7 +422,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_A_BW.jpg
           numImages: "8"
           recallImages:
@@ -420,18 +436,26 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2_BW.jpg
 
     exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
       - name: Demographics
         elements:
           - type: survey
             surveyName: Demographics
-  
+
   - name: schema_tangrams
     playerCount: 2
     gameStages:
       - template: round
         fields:
           roundIndex: "1a"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_S.jpg
           numImages: "2"
           recallImages: # 2 images to recall: PBY, OBY
@@ -441,7 +465,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1b"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_S.jpg
           numImages: "4"
           recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
@@ -453,7 +477,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1c"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -469,7 +493,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -485,7 +509,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
           numImages: "8"
           recallImages:
@@ -501,7 +525,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_T.jpg
           numImages: "8"
           recallImages:
@@ -515,18 +539,26 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T4.jpg
 
     exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
       - name: Demographics
         elements:
           - type: survey
             surveyName: Demographics
-  
+
   - name: schema_nonschema
     playerCount: 2
     gameStages:
       - template: round
         fields:
           roundIndex: "1a"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_S.jpg
           numImages: "2"
           recallImages: # 2 images to recall: PBY, OBY
@@ -536,7 +568,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1b"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_S.jpg
           numImages: "4"
           recallImages: # 4 images to recall: PBY, ORY, OBY, PRY
@@ -548,7 +580,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "1c"
-          duration: 120
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -564,7 +596,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "2"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_S.jpg
           numImages: "8"
           recallImages:
@@ -580,7 +612,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "3"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
           numImages: "8"
           recallImages:
@@ -596,7 +628,7 @@ treatments:
       - template: round
         fields:
           roundIndex: "4"
-          duration: 240
+          duration: 300
           panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_N.jpg
           numImages: "8"
           recallImages:
@@ -610,6 +642,220 @@ treatments:
             - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N4.jpg
 
     exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
+      - name: Demographics
+        elements:
+          - type: survey
+            surveyName: Demographics
+
+  - name: nonschema_black_and_white
+    playerCount: 2
+    gameStages:
+      - template: round
+        fields:
+          roundIndex: "1a"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_N.jpg # 2-image panel
+          numImages: "2"
+          recallImages: # 2 image filepaths: N5, N1
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+
+      - template: round
+        fields:
+          roundIndex: "1b"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_N.jpg # 4-image panel
+          numImages: "4"
+          recallImages: # 4 image filepaths: N5, N4, N1, N8
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N8.jpg
+
+      - template: round
+        fields:
+          roundIndex: "1c"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_N.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N3.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N8.jpg
+
+      - template: round
+        fields:
+          roundIndex: "2"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_N.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N8.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N6.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N3.jpg
+
+      - template: round
+        fields:
+          roundIndex: "3"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SOBY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SORB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SORY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPRY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SOBB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPBB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPBY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPRB.jpg
+
+      - template: round
+        fields:
+          roundIndex: "4"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_A_BW.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY4_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY1_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SORB2_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SORB4_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SORB1_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SORB3_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY3_BW.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_SPBY2_BW.jpg
+
+    exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
+      - name: Demographics
+        elements:
+          - type: survey
+            surveyName: Demographics
+
+  - name: nonschema_tangrams
+    playerCount: 2
+    gameStages:
+      - template: round
+        fields:
+          roundIndex: "1a"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1a_panel_N.jpg # 2-image panel
+          numImages: "2"
+          recallImages: # 2 image filepaths: N5, N1
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+
+      - template: round
+        fields:
+          roundIndex: "1b"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1b_panel_N.jpg # 4-image panel
+          numImages: "4"
+          recallImages: # 4 image filepaths: N5, N4, N1, N8
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N8.jpg
+
+      - template: round
+        fields:
+          roundIndex: "1c"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_1c_panel_N.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N6.jpg # matches the locations in the panel of the schema condition
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N3.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_1_N8.jpg
+
+      - template: round
+        fields:
+          roundIndex: "2"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_2_panel_N.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N7.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N8.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N2.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N4.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N5.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N6.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_2_N3.jpg
+
+      - template: round
+        fields:
+          roundIndex: "3"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_3_panel.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SOBY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SORB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SORY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPRY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SOBB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPBB.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPBY.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_3_SPRB.jpg
+
+      - template: round
+        fields:
+          roundIndex: "4"
+          duration: 300
+          panelFilepath: projects/exaptation/revision_202509/stimuli/round_4_panel_T.jpg
+          numImages: "8"
+          recallImages:
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T7.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T2.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T3.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T8.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T1.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T6.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T5.jpg
+            - imageFilepath: projects/exaptation/revision_202509/stimuli/round_4_T4.jpg
+
+    exitSequence:
+      - name: Discussion General
+        elements:
+          - type: survey
+            surveyName: DiscussionGeneral
+      - name: playedBefore
+        elements:
+          - type: prompt
+            file: projects/exaptation/revision_202509/played_before.md
       - name: Demographics
         elements:
           - type: survey
