@@ -9,9 +9,9 @@ In this study, you will listen to **three different people** tell a story, one a
 
 For each story, we want you to **change how you listen**.
 
-### Listening behavior
+### Listening is active
 
-You may not realize it, but while you listen to a story, you are also communicating to the storyteller. You naturally give little signals like:
+You may not be fully conscious of it, but while you listen to a story, you are also communicating to the storyteller. You naturally give little signals like:
 
 - saying "mm-hmm", "yeah", "right", etc.
 - nodding
@@ -19,43 +19,27 @@ You may not realize it, but while you listen to a story, you are also communicat
 
 ### Your role in this study
 
-We want to understand how these signals influence the speaker - so we need you to change the how expressive you are in your listening behavior.
+We want to understand how these signals influence the speaker - so we need you to change how expressive you are in your listening behavior.
 
 Before each story, we'll give you one of the following sets of instructions:
 
-#### Increase
+#### Increase Responsiveness
 
-For one speaker, we want you to be
+- Listen more actively and expressively.
 
-In this study
+#### Decrease Responsiveness
 
-# Background
+- Keep your responses more minimal.
 
-In everyday conversation, people are always doing two things at once: 🗣️ one person is usually speaking, but the other person—the listener 👂—is also communicating, often in small but important ways.
+#### Normal Responsiveness
 
-These listener responses are called "backchannels"—things like nodding, smiling, saying “mm-hm,” “yeah,” “right,” or showing surprise or empathy through facial expressions. Even though they’re brief and often automatic, backchannels are a crucial part of how conversations flow and how people feel heard.
+- Listen as you naturally would.
 
-## What this study tests:
+### What to expect
 
-In this study, we’re exploring how these listener signals affect the way stories are told.
+Before each story, we'll tell you which of these three listening goals we'd like you to have for the upcoming call.
 
-To do this, you’ll listen to three different people tell short stories, one at a time, in random order.
-
-## Your role:
-
-For each story, you’ll receive a short on-screen reminder describing how we’d like you to respond while listening.
-
-Across the three rounds (in random order), you’ll be asked to:
-
-1. NATURAL RESPONSES: Listen as you naturally would.
-
-2. INCREASE RESPONSES: Listen more actively and expressively.
-
-3. MINIMAL RESPONSES: Keep your responses more minimal.
-
-You’ll always remain the listener, but your role is active: we need you to vary your backchannel behavior to help us understand how listener feedback influences storytelling.
-
-Please follow the reminder shown at the start of each round, listen carefully, and react in line with those instructions.
+You will also see a brief reminder during the call.
 
 ### 👉 Do not let the speaker know you have been given these instructions. 👈
 

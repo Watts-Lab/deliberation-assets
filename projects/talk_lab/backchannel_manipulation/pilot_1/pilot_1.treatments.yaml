@@ -44,12 +44,12 @@ templates:
             name: listener_story_well_told_${story_round}
             showToPositions: [0, 2, 4]
           - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_perception_of_speaker_comfort.md
-            name: listener_perception_of_speaker_comfort_${story_round}
-            showToPositions: [0, 2, 4]
-          - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_enjoy.md
             name: listener_enjoy_${story_round}
+            showToPositions: [0, 2, 4]
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_perception_of_speaker_comfort.md
+            name: listener_perception_of_speaker_comfort_${story_round}
             showToPositions: [0, 2, 4]
 
           - type: submitButton
@@ -68,12 +68,12 @@ templates:
             name: "speaker_story_well_told_${story_round}"
             showToPositions: [1, 3, 5]
           - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
-            name: speaker_comfort_${story_round}
-            showToPositions: [1, 3, 5]
-          - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
             name: speaker_perception_of_listener_enjoy_${story_round}
+            showToPositions: [1, 3, 5]
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
+            name: speaker_comfort_${story_round}
             showToPositions: [1, 3, 5]
 
           - type: submitButton
@@ -170,9 +170,50 @@ templates:
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/speaker_practice_in_instructions.md
                 showToPositions: [1, 3, 5]
 
-              - type: video # a demo video showing how people do these things
-                url: https://youtu.be/R1qo5BxnXSw?si=ZE8qh_q84qhpg_iT # replace with actual video url
+              # - type: video # a demo video showing how people do these things
+              #   url: https://youtu.be/R1qo5BxnXSw?si=ZE8qh_q84qhpg_iT # replace with actual video url
+              #   showToPositions: [0, 2, 4]
+
+              # Ask listeners to wait
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/please_wait.md
+              - type: submitButton
                 showToPositions: [0, 2, 4]
+                buttonText: "Continue"
+
+          - name: post_story_questions_${story_round}
+            duration: 120
+            elements:
+              # Ask listeners to wait
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/please_wait.md
+              - type: submitButton
+                showToPositions: [0, 2, 4]
+                buttonText: "Continue"
+
+              # Questions for storytellers
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
+                name: speaker_story_well_told_practice
+                showToPositions: [1, 3, 5]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoy.md
+                name: speaker_perception_of_listener_enjoy_practice
+                showToPositions: [1, 3, 5]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
+                name: speaker_comfort_practice
+                showToPositions: [1, 3, 5]
+
+              - type: submitButton
+                buttonText: "Continue"
+                conditions: # all required
+                  - reference: prompt.speaker_story_well_told_practice
+                    comparator: exists
+                  - reference: prompt.speaker_comfort_practice
+                    comparator: exists
+                  - reference: prompt.speaker_perception_of_listener_enjoy_practice
+                    comparator: exists
 
           - template: storytelling_round
             broadcast:
@@ -231,6 +272,30 @@ templates:
               - type: submitButton
                 buttonText: "Continue to final questions"
 
+          - name: post_story_questions_final
+            duration: 120
+            elements:
+              # Questions for storytellers
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
+                name: speaker_story_well_told_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoy.md
+                name: speaker_perception_of_listener_enjoy_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
+                name: speaker_comfort_final
+
+              - type: submitButton
+                buttonText: "Continue"
+                conditions: # all required
+                  - reference: prompt.speaker_story_well_told_final
+                    comparator: exists
+                  - reference: prompt.speaker_comfort_final
+                    comparator: exists
+                  - reference: prompt.speaker_perception_of_listener_enjoy_final
+                    comparator: exists
+
         exitSequence:
           - name: post-survey page 1
             elements:
@@ -272,10 +337,6 @@ templates:
             elements:
               # speaker questions
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_overall_story_well_told.md
-                name: speaker_overall_story_well_told
-                showToPositions: [1, 3, 5]
-              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_whose_story.md
                 name: speaker_whose_story
                 showToPositions: [1, 3, 5]
@@ -312,6 +373,10 @@ templates:
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_compliance_minimal.md
                 name: listener_compliance_minimal
                 showToPositions: [0, 2, 4]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_compliance_open_response.md
+                name: listener_compliance_open_response
+                showToPositions: [0, 2, 4]
               - type: submitButton
                 buttonText: "Continue"
                 conditions:
@@ -331,11 +396,11 @@ templates:
 introSequences:
   - name: default
     introSteps:
-      - name: Big-5 # 10 questions
-        elements:
-          - type: survey
-            name: big5Personality
-            surveyName: TIPI
+      # - name: Big-5 # 10 questions
+      #   elements:
+      #     - type: survey
+      #       name: big5Personality
+      #       surveyName: TIPI
 
       - name: Instructions
         elements:

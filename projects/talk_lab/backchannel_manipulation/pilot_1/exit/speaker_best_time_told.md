@@ -11,3 +11,4 @@ type: listSorter
 - For the first listener
 - For the second listener
 - For the third listener
+- During the final telling to the camera

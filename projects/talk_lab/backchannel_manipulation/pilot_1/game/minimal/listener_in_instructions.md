@@ -10,6 +10,8 @@ type: noResponse
 - Nod infrequently
 - Give an occasional "mm-hm" or "yeah" or "okay"
 
+### 👉 Do not let the speaker know you have been given these instructions. 👈
+
 When the speaker has finished, click the button below.
 
 ---
