@@ -3,7 +3,7 @@ name: projects/css_lab/dialogue_levers/pilot_2/arms/prep_general_values/mid_A.md
 type: noResponse
 ---
 
-## Step 1: Please start by sharing your response to one of the following questions:
+## Step 1 (3-4 minutes): Please start by sharing your response to one of the following questions:
 
 - What sense of purpose, mission, or duty guides you in your life?
 - What are the most important values you try to uphold every day?
@@ -11,6 +11,6 @@ type: noResponse
 
 You may share what you wrote about earlier or anything else that feels relevant.
 
-After you have completed this exercise, please move on to Step 2 below.
+When you’re done, move on to Step 2.
 
 ---

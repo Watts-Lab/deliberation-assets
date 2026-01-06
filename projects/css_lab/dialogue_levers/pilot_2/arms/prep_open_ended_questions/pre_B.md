@@ -16,11 +16,11 @@ Good open-ended questions:
 
 Please **write your questions** in the box below.
 
-## Why this helps
+## Why we’re asking you to do this
 
-Reflecting on the questions you want to ask can help you enter the conversation with more curiosity and a clearer sense of what you hope to learn.
+Writing questions in advance helps you think about what you want to learn from your partner.
 
-In addition, it can help you stay focused, and go deeper into the topic.
+Having a few open-ended questions ready can help you return to that curiosity during the conversation.
 
 ## What to expect
 

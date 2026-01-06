@@ -13,9 +13,9 @@ Choose **one** of the following questions and **write your thoughts** in the box
 - What are the most important values you try to uphold every day?
 - At the end of your life, how would you hope people describe who you are?
 
-## Why it helps
+## Why we’re asking you to do this
 
-Bringing your core values to mind can help you enter the discussion with a clearer sense of who you are and what matters most to you.
+Reflecting on your personal values can help you decide how you want to approach the conversation and what principles you want to uphold as you talk.
 
 ## What to expect
 

@@ -5,22 +5,20 @@ type: noResponse
 
 ## What you’ll do
 
-At the start of the conversation, we will ask you and your partner to set a shared goal: **to describe the main ways your views differ** — clearly, accurately, and fairly.
-You won’t be trying to resolve the disagreement. The goal is simply to identify it so you both understand where the real differences lie.
+You and your partner will be asked to adopt a shared goal for the conversation: **to discover the main ways your views differ**, and describe those differences clearly and fairly.
 
-## Why this helps
+You won’t be trying to resolve the disagreement. The goal is simply to make the differences explicit, so you both understand where your views diverge.
 
-When people disagree, it can be tempting to avoid uncomfortable differences and focus only on common ground.
+## Why we’re asking you to do this
 
-But naming the disagreement directly can:
+Beginning with a shared goal gives both partners the same starting point for the discussion.
 
-- keep you from talking past each other
-- make the conversation feel clearer and more grounded
-- create space for deeper engagement
+When the goal is to identify the differences between your views, both partners can focus on describing the disagreement itself—without needing to resolve it.
 
 ## What to expect
 
-Right at the beginning of the conversation, you’ll be asked to confirm this shared goal with your partner.
+At the beginning of the conversation, we’ll ask you and your partner to commit to this goal: to describe how your views differ, clearly and fairly.
+
 After that, you’ll continue with a normal discussion of the topic.
 
 ---

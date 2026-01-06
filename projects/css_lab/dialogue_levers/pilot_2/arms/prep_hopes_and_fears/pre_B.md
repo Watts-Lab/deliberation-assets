@@ -15,9 +15,9 @@ Consider:
 
 Please **write a few notes** in the box below about your hopes and fears.
 
-## Why it helps
+## Why we’re asking you to do this
 
-Thinking about your hopes and fears about this issue can help you enter the conversation with a clearer sense of what matters to you.
+Writing about your hopes and fears can help you identify the feelings and emotions that shape your perspective - both positive and negative - and tie them to specific outcomes you care about.
 
 ## What to expect
 

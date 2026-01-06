@@ -5,19 +5,18 @@ type: openResponse
 
 ## What you’ll do
 
-Before joining the call, take a few minutes to reflect on how people who share your view on this issue are sometimes stereotyped or misunderstood.
+Before joining the call, take a few minutes to reflect on common assumptions people make about those who share your view, especially ones that feel oversimplified or exaggerated.
 
-- What’s a common stereotype or misconception you’ve heard about people who hold your view?
-- Does any part of it seem exaggerated, incomplete, or oversimplified?
-- What do you wish someone understood about you—your values, intentions, or how you approach this issue—when they hear that stereotype?
+- What’s a common misunderstanding about people who hold your view?
+- What do you wish someone who made that assumption understood about you—your values, intentions, or how you approach this issue?
 
 Please **write your thoughts** in the box below.
 
-## Why this helps
+## Why we’re asking you to do this
 
-Reflecting on stereotypes you’ve encountered can help you enter the conversation with a clearer sense of what others sometimes get wrong about your perspective.
+Reflecting on common assumptions helps surface misunderstandings that may come up in the conversation.
 
-This can make it easier to explain who you are more fully—and to approach your partner with the same openness.
+Sharing these reflections gives you a chance to describe how you think about this issue, rather than being seen only through a general label or category.
 
 ## What to expect
 
@@ -26,5 +25,5 @@ You will be invited to share these thoughts at the start of your conversation, a
 ---
 
 > You can use this space to jot notes, or write freely. For example:
-> I think people with my beliefs are often seen as \_**\_.
+> People with my beliefs are often assumed to \_**\_.
 > I wish people understood that \_\_**.”

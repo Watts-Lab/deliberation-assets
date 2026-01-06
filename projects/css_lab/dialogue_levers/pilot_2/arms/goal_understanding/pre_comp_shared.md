@@ -3,7 +3,7 @@ name: projects/css_lab/dialogue_levers/pilot_2/arms/goal_understanding/pre_comp_
 type: multipleChoice
 ---
 
-## Are we asking your partner to set the same goal?
+## Are we asking your partner to adopt the same goal?
 
 ---
 

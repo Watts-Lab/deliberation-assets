@@ -5,23 +5,24 @@ type: openResponse
 
 ## What you’ll do
 
-Before joining the call, take a few minutes to think about the experiences that have influenced how you see this issue. Then choose **one story** that feels meaningful and **write about it in the box below**.
+Before joining the call, take a few minutes to think about the experiences that have influenced how you see this issue. Then choose **one personal story** that you feel comfortable sharing and **write about it in the box below**.
 
 Your story might come from:
 
-- a particular moment or event that shaped your view
-- a time when your perspective shifted or evolved
+- an experience at school, with family, or in your workplace or community group
+- a time in your life when your perspective shifted or evolved
 - something you lived through
-- an experience at home, school, work, or in your community
 - something that affected someone close to you
 
-## Why it helps
+## Why we’re asking you to do this
 
-Reflecting on the experiences that shaped your views can help you enter the conversation feeling grounded and ready to share. Personal stories also make it easier for partners to listen openly and understand where your views come from.
+Thinking through a specific, meaningful experience can help you tell the story of how you came to hold your perspective.
+
+When you talk about something that happened to you or someone close to you, you can focus on what you know—who was involved, what happened, and how it felt.
 
 ## What to expect
 
-We invite you to share this story during the conversation; you can refer to your notes if you find it helpful.
+We’ll invite you to share this story during the conversation; you can refer to your notes if you find it helpful.
 
 ---
 

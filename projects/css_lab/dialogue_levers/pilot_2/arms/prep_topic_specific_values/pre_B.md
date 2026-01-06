@@ -11,14 +11,14 @@ These might include:
 
 - moral values (e.g., fairness, care, freedom, responsibility)
 - personal commitments or life principles you try to uphold
-- aspects of your personal or family identity
+- aspects of your cultural or family identity
 - elements of your faith or philosophical outlook
 
 Please **write about the values** that feel most important in the box below.
 
-## Why it helps
+## Why we’re asking you to do this
 
-Knowing the values behind your beliefs makes it easier to explain where you’re coming from — and helps your partner understand your perspective, even if they disagree.
+Writing about the values behind your beliefs can help you to explain the principles that you think are most important when considering this issue.
 
 ## What to expect
 

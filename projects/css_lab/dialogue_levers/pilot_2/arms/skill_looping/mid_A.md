@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dialogue_levers/pilot_2/arms/control/mid_A.md
+name: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/mid_A.md
 type: noResponse
 ---
 

@@ -3,15 +3,14 @@ name: projects/css_lab/dialogue_levers/pilot_2/arms/prep_addressing_stereotypes/
 type: noResponse
 ---
 
-## Step 1: Please begin by discussing how people who share your view on this topic are sometimes **stereotyped or misunderstood**.
+## Step 1 (3-4 minutes): Begin by discussing how people who share your view on this topic are sometimes misunderstood.
 
 You might talk about:
 
-- a stereotype, misconception, or exaggerated assumption you’ve heard
-- what you wish people understood about you when they hear that stereotype
+- a common assumption or oversimplification you’ve encountered
+  what you wish people understood about you when they hear that assumption
+- You may share what you wrote about earlier or anything else that feels relevant.
 
-You may share what you wrote about earlier or anything else that feels relevant.
-
-After you have completed this exercise, please move on to Step 2 below.
+When you’re done, move on to Step 2.
 
 ---

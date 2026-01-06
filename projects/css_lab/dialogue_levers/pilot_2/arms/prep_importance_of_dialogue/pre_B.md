@@ -10,9 +10,11 @@ Before joining the call, take a moment to reflect on why is it important for peo
 - What makes this conversation hard—but still worth doing?
 - What could you personally get out of having this conversation?
 
-## Why it helps
+## Why we’re asking you to do this
 
-Focusing on the value of dialogue can help you enter the conversation with more opennes, focus, and readiness to listen. It gives the interaction a sense of purpose, and helps both partners take it seriously.
+Reflecting on why this conversation matters can help you enter it with a clearer sense of purpose.
+
+Keeping that purpose in mind can shape how you choose to participate in moments that require extra effort.
 
 ## What to expect
 

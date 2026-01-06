@@ -3,10 +3,14 @@ name: projects/css_lab/dialogue_levers/pilot_2/arms/goal_understanding/mid.md
 type: noResponse
 ---
 
-## Step 1: Begin by confirming your shared goal: **to try to understand one another’s perspective, without trying to persuade or influence each other.**
+## Step 1
 
-After you have established this shared goal, please move on to Step 2 below.
+Begin by briefly **committing to one another to focus on understanding each other’s views**, rather than trying to change each other’s minds.
 
-## Step 2: Please have a conversation about the following topic:
+When you’re done, move on to Step 2.
+
+## Step 2
+
+Please have a conversation about the following topic:
 
 ---

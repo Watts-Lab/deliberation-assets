@@ -17,7 +17,7 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/control/mid_A.md
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/control/mid.md
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
 
