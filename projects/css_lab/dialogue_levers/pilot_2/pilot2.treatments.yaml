@@ -5,12 +5,8 @@ templates:
   - templateName: control_pre
     contentType: elements
     templateContent:
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
       - type: submitButton
-        name: control_pre
+        name: pre # check that all submit buttons on _pre templates are named "pre", to make it easy to aggregate timing data
         buttonText: Continue to Discussion
 
   - templateName: control_mid
@@ -26,14 +22,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_collecting_thoughts/pre_B.md
         name: prep_collecting_thoughts_pre_notes
       - type: submitButton
-        name: prep_collecting_thoughts_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_collecting_thoughts_mid
@@ -53,14 +45,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_personal_storytelling/pre_B.md
         name: prep_personal_storytelling_pre_notes
       - type: submitButton
-        name: prep_personal_storytelling_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_personal_storytelling_mid
@@ -80,14 +68,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_hopes_and_fears/pre_B.md
         name: prep_hopes_fears_pre_notes
       - type: submitButton
-        name: prep_hopes_fears_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_hopes_and_fears_mid
@@ -107,23 +91,15 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_topic_specific_values/pre_B.md
         name: prep_topic_specific_values_pre_notes
       - type: submitButton
-        name: prep_topic_specific_values_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_topic_specific_values_mid
     contentType: elements
     templateContent:
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_topic_specific_values/mid_A.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_topic_specific_values/mid_B.md
       - type: display # Display P's notes from the pre-discussion stage
@@ -134,14 +110,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_general_values/pre_B.md
         name: prep_general_values_pre_notes
       - type: submitButton
-        name: prep_general_values_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_general_values_mid
@@ -161,14 +133,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_addressing_stereotypes/pre_B.md
         name: prep_addressing_stereotypes_pre_notes
       - type: submitButton
-        name: prep_addressing_stereotypes_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_addressing_stereotypes_mid
@@ -188,14 +156,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_importance_of_dialogue/pre_B.md
         name: prep_importance_of_dialogue_pre_notes
       - type: submitButton
-        name: prep_importance_of_dialogue_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_importance_of_dialogue_mid
@@ -215,14 +179,10 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/prep_open_ended_questions/pre_B.md
         name: prep_open_ended_questions_pre_notes
       - type: submitButton
-        name: prep_open_ended_questions_pre
+        name: pre
         buttonText: Continue to Discussion
 
   - templateName: prep_open_ended_questions_mid
@@ -242,10 +202,6 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/goal_understanding/pre_B.md
       - type: prompt # Q1
         file: projects/css_lab/dialogue_levers/pilot_2/arms/goal_understanding/pre_comp_goal.md
@@ -258,7 +214,7 @@ templates:
             comparator: includes
             value: "understand"
       - type: submitButton
-        name: goal_understanding_pre
+        name: pre
         buttonText: Continue to Discussion
         conditions:
           - reference: prompt.pre_comp_shared # force a correct response on Q2
@@ -278,10 +234,6 @@ templates:
     contentType: elements
     templateContent:
       - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
-      - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/goal_joint_problem_solving/pre_B.md
       - type: prompt # Q1
         file: projects/css_lab/dialogue_levers/pilot_2/arms/goal_joint_problem_solving/pre_comp_goal.md
@@ -294,7 +246,7 @@ templates:
             comparator: includes
             value: "joint solution"
       - type: submitButton
-        name: goal_joint_problem_solving_pre
+        name: pre
         buttonText: Continue to Discussion
         conditions:
           - reference: prompt.pre_comp_shared # force a correct response on Q2
@@ -309,14 +261,10 @@ templates:
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
 
-  # Treatment: Go-around structure
+  # Treatment: Instructions - Go-around structure
   - templateName: go_around_pre
     contentType: elements
     templateContent:
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
-      - type: prompt
-        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/go_around/pre_B.md
       - type: prompt # Q1
@@ -344,12 +292,125 @@ templates:
             comparator: includes
             value: "back-and-forth"
       - type: submitButton
-        name: go_around_pre
+        name: pre
         buttonText: Continue to Discussion
         conditions:
           - reference: prompt.go_around_pre_comp_timer # force a correct response on Q4
             comparator: includes
             value: "yourself"
+
+  - templateName: go_around_mid
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/go_around/mid_A.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/go_around/mid_B.md
+
+  # Treatment: Skill-building - Hedging
+  - templateName: skill_hedging_pre
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/pre_B.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/practice_cyclists.md
+        name: skill_hedging_practice_cyclists
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/practice_broccoli.md
+        name: skill_hedging_practice_broccoli
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/practice_boss.md
+        name: skill_hedging_practice_boss
+      - type: submitButton
+        name: pre
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: prompt.skill_hedging_practice_cyclists # force a response on Q1
+            comparator: exists
+          - reference: prompt.skill_hedging_practice_broccoli # force a response on Q2
+            comparator: exists
+          - reference: prompt.skill_hedging_practice_boss # force a response on Q3
+            comparator: exists
+
+  - templateName: skill_hedging_mid
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/mid_A.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_hedging/mid_B.md
+
+  # Treatment: Skill-building - Elaboration Questions
+  - templateName: skill_elaboration_questions_pre
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/pre_B.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/practice_pineapple.md
+        name: skill_elaboration_questions_practice_pineapple
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/practice_cyclists.md
+        name: skill_elaboration_questions_practice_cyclists
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/practice_kids.md
+        name: skill_elaboration_questions_practice_kids
+      - type: submitButton
+        name: pre
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: prompt.skill_elaboration_questions_practice_pineapple # force a response on Q1
+            comparator: exists
+          - reference: prompt.skill_elaboration_questions_practice_cyclists # force a response on Q2
+            comparator: exists
+          - reference: prompt.skill_elaboration_questions_practice_kids # force a response on Q3
+            comparator: exists
+
+  - templateName: skill_elaboration_questions_mid
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/mid_A.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_elaboration_questions/mid_B.md
+
+  # Treatment: Skill-building - Looping for understanding
+  - templateName: skill_looping_pre
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/pre_B.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/practice_neighborhood.md
+        name: skill_looping_practice_neighborhood
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/practice_work.md
+        name: skill_looping_practice_work
+      - type: submitButton
+        name: pre
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: prompt.skill_looping_practice_neighborhood # force a response on Q1
+            comparator: exists
+          - reference: prompt.skill_looping_practice_work # force a response on Q2
+            comparator: exists
+
+  - templateName: skill_looping_mid
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/mid_A.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/mid_B.md
 
   ############## REPEATED PIECES ##############
   # Displays a stage asking the user's opinion and knowledge of the topic,
@@ -431,6 +492,10 @@ templates:
         - name: pre_discussion_intervention
           duration: 300
           elements:
+            - type: prompt
+              file: projects/css_lab/dialogue_levers/pilot_2/arms/pre_A_shared.md
+            - type: prompt
+              file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
             - template: ${arm}_pre
               fields:
                 topicName: "${topicName}"

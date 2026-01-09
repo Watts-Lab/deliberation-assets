@@ -31,4 +31,6 @@ It invites your partner to confirm or refine your understanding before you move 
 
 Try using "looping" the following statements using the three steps above.
 
+(You may continue after you have responded to all practice items.)
+
 ---
