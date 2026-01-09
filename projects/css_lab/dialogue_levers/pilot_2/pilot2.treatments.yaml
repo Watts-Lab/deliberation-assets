@@ -412,6 +412,42 @@ templates:
       - type: prompt
         file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_looping/mid_B.md
 
+  # Treatment: Skill-building - Reframe to the positive
+  - templateName: skill_reframe_to_positive_pre
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/pre_B.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/practice_kids.md
+        name: skill_reframe_to_positive_practice_kids
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/practice_phone.md
+        name: skill_reframe_to_positive_practice_phone
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/practice_ready.md
+        name: skill_reframe_to_positive_practice_ready
+      - type: submitButton
+        name: pre
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: prompt.skill_reframe_to_positive_practice_kids # force a response on Q1
+            comparator: exists
+          - reference: prompt.skill_reframe_to_positive_practice_phone # force a response on Q2
+            comparator: exists
+          - reference: prompt.skill_reframe_to_positive_practice_ready # force a response on Q3
+            comparator: exists
+
+  - templateName: skill_reframe_to_positive_mid
+    contentType: elements
+    templateContent:
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/mid_A.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/topics/${topicName}.md
+      - type: prompt
+        file: projects/css_lab/dialogue_levers/pilot_2/arms/skill_reframe_to_positive/mid_B.md
+
   ############## REPEATED PIECES ##############
   # Displays a stage asking the user's opinion and knowledge of the topic,
   # used in the intro sequence to gauge opinions.
