@@ -1,0 +1,109 @@
+{
+  "preregistrations": {
+    "total": 6,
+    "treatmentBreakdown": {
+      "expressive_minimal_natural": 6
+    },
+    "percentComplete": 16.666666666666664
+  },
+  "participants": {
+    "total": 6,
+    "completeIntroSteps": 6,
+    "enterLobby": 6,
+    "beginGame": 6,
+    "finishGame": 6,
+    "complete": 1,
+    "ipTimezoneBreakdown": {
+      "undefined": 5,
+      "America/New_York": 1
+    },
+    "ipCountryBreakdown": {
+      "undefined": 5,
+      "US": 1
+    },
+    "possibleVPN": {
+      "false": 6
+    },
+    "browserLanguageBreakdown": {
+      "undefined": 5,
+      "en-US": 1
+    },
+    "browserTimezoneBreakdown": {
+      "undefined": 5,
+      "America/New_York": 1
+    },
+    "knownVPN": {
+      "undefined": 5,
+      "false": 1
+    },
+    "reportingDiscussionProblems": 0,
+    "checkingIn": 0
+  },
+  "completedSampleIds": [
+    "b3d79dc3-4806-4020-8e50-e69e1ce2e00d"
+  ],
+  "timings": {
+    "intro": {
+      "max": 258.03,
+      "min": 228.628,
+      "mean": 239.54066666666665,
+      "median": 241.143
+    },
+    "countdown": {
+      "max": null,
+      "min": null,
+      "mean": null
+    },
+    "lobby": {
+      "max": 26.097,
+      "min": 2.657,
+      "mean": 13.365333333333332,
+      "median": 2.657
+    },
+    "game": {
+      "max": 834.813,
+      "min": 834.813,
+      "mean": 834.813,
+      "median": 834.813
+    },
+    "exit": {
+      "max": 689.678,
+      "min": 689.678,
+      "mean": 689.678,
+      "median": 689.678
+    },
+    "totalTime": {
+      "max": null,
+      "min": null,
+      "mean": null,
+      "median": null
+    },
+    "totalActiveTime": {
+      "max": 1808.618,
+      "min": 1755.7759999999998,
+      "mean": 1777.397,
+      "median": 1768.2910000000002
+    }
+  },
+  "connections": {
+    "min": 1,
+    "max": 5,
+    "mean": 2.1666666666666665,
+    "median": 2
+  },
+  "QC": {
+    "participateAgain": {},
+    "adequateCompensation": {},
+    "adequateTime": {},
+    "clearInstructions": {},
+    "videoQuality": {},
+    "joiningProblems": {},
+    "technicalProblems": {},
+    "textExpansion": [],
+    "technicalDetail": [],
+    "joiningDetail": []
+  },
+  "finalPayoffs": [
+    1
+  ]
+}

@@ -181,7 +181,7 @@ templates:
                 showToPositions: [0, 2, 4]
                 buttonText: "Continue"
 
-          - name: post_story_questions_${story_round}
+          - name: post_story_questions_practice_round
             duration: 120
             elements:
               # Ask listeners to wait
@@ -197,7 +197,7 @@ templates:
                 name: speaker_story_well_told_practice
                 showToPositions: [1, 3, 5]
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoy.md
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
                 name: speaker_perception_of_listener_enjoy_practice
                 showToPositions: [1, 3, 5]
               - type: prompt
@@ -280,7 +280,7 @@ templates:
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
                 name: speaker_story_well_told_final
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoy.md
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
                 name: speaker_perception_of_listener_enjoy_final
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
@@ -308,13 +308,6 @@ templates:
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_best_listener.md
                 name: speaker_best_listener
                 showToPositions: [1, 3, 5]
-              - type: submitButton
-                buttonText: "Continue"
-                conditions:
-                  - reference: prompt.speaker_best_time_told
-                    comparator: exists
-                  - reference: prompt.speaker_best_listener
-                    comparator: exists
 
               # listener questions
               - type: prompt
@@ -325,13 +318,10 @@ templates:
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_best_speaker.md
                 name: listener_best_speaker
                 showToPositions: [0, 2, 4]
+
+              # ungated continue
               - type: submitButton
                 buttonText: "Continue"
-                conditions:
-                  - reference: prompt.listener_best_story
-                    comparator: exists
-                  - reference: prompt.listener_best_speaker
-                    comparator: exists
 
           - name: post-survey page 2
             elements:
@@ -341,18 +331,20 @@ templates:
                 name: speaker_whose_story
                 showToPositions: [1, 3, 5]
               - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_what_were_we_studying.md
+                name: speaker_what_were_we_studying
+                showToPositions: [1, 3, 5]
+              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_difference_between_listeners.md
                 name: difference_between_listeners
                 showToPositions: [1, 3, 5]
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_what_were_we_studying.md
-                name: speaker_what_were_we_studying
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_compliance_open_response.md
+                name: speaker_compliance_open_response
                 showToPositions: [1, 3, 5]
               - type: submitButton
                 buttonText: "Continue"
                 conditions:
-                  - reference: prompt.speaker_overall_story_well_told
-                    comparator: exists
                   - reference: prompt.speaker_whose_story
                     comparator: exists
                   - reference: prompt.difference_between_listeners
