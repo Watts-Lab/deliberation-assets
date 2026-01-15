@@ -23,4 +23,6 @@ At the beginning of the call, you’ll each pick **one** of the warm-up question
 
 After about 3–4 minutes, you’ll shift into a normal back-and-forth conversation about the assigned topic.
 
+(Correctly answer the following questions to continue)
+
 ---

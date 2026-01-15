@@ -28,6 +28,6 @@ It also helps make sure you respond to what your partner actually meant, rather 
 
 Try writing “tell-me-more questions” to ask after each of the following statements:
 
-(You may continue after you have responded to all practice items.)
+(Complete the following practice items to continue)
 
 ---

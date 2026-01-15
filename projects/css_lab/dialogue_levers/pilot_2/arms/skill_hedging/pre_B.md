@@ -37,6 +37,6 @@ It lets you convey your perspective without turning it into a claim your partner
 
 Try re-writing these statements using any of the hedging strategies above.
 
-(You may continue after you have responded to all practice items.)
+(Complete the following practice items to continue)
 
 ---

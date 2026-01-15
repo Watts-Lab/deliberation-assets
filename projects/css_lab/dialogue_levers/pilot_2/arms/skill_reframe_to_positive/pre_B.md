@@ -33,6 +33,6 @@ It helps shift conversations from opposition toward problem-solving.
 
 Try reframing the following statements to the positive:
 
-(You may continue after you have responded to all practice items.)
+(Complete the following practice items to continue)
 
 ---

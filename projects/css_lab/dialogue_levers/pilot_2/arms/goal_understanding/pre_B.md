@@ -19,4 +19,6 @@ At the beginning of the conversation, we’ll ask you and your partner to commit
 
 After that, you’ll continue with a normal discussion of the topic.
 
+(Correctly answer the following questions to continue)
+
 ---

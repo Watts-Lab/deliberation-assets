@@ -21,4 +21,6 @@ At the beginning of the conversation, you’ll have 3–4 minutes to identify sh
 
 After that, you’ll move into a normal discussion of the topic.
 
+(Correctly answer the following questions to continue)
+
 ---

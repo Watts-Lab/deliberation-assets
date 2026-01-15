@@ -28,4 +28,6 @@ At the beginning of the conversation, you’ll spend **3–4 minutes** agreeing 
 
 After that, you’ll move into a normal discussion of the topic.
 
+(Correctly answer the following questions to continue)
+
 ---
