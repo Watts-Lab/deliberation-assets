@@ -5,7 +5,7 @@ type: multipleChoice
 
 ## How well were you able to **decrease** your responsiveness as a listener when we asked you to?
 
-(This won't affect your payment, we are just just interested in how difficult the task was)
+(This won't affect your payment, we are just just interested in how difficult the task was.)
 
 ---
 

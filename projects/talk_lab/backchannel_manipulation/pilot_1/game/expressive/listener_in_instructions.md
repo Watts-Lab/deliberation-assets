@@ -9,10 +9,10 @@ type: noResponse
 
 - Nod and smile
 - Use "mm-hmm", "Yeah!", "Wow!", "OMG!" "Right!?!"
-- React to their speaker and show how how you feel
+- React to the storyteller and show how how you feel
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
 
-When the speaker has finished, click the button below.
+When the storyteller has finished, click the button below.
 
 ---

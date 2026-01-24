@@ -3,7 +3,9 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_difference
 type: openResponse
 ---
 
-## Was there a difference between how the listers behaved? If you noticed a difference, can you describe it?
+## Was there a difference in how the listers behaved?
+
+If you noticed a difference between the listeners, please describe it.
 
 ---
 

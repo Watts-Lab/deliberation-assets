@@ -11,6 +11,6 @@ You are about to listen to someone tell a story.
 
 - React as you normally would.
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
 
 ---

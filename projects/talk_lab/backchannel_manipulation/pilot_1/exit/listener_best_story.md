@@ -3,7 +3,7 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_best_stor
 type: listSorter
 ---
 
-## Please rank the **stories** you heard in order from best (at the top) to worst (at the bottom)
+## Please rank the **stories** you heard in order from best (at the top) to worst (at the bottom).
 
 You can click-and-drag the options below into your preferred order.
 

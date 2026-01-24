@@ -41,6 +41,8 @@ Before each story, we'll tell you which of these three listening goals we'd like
 
 You will also see a brief reminder during the call.
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
+
+Please leave your webcam and mic enabled.
 
 ---

@@ -3,9 +3,9 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_whose_stor
 type: multipleChoice
 ---
 
-## You had the option to tell someone else's story if you couldn't think of one of your own. Whose story did you tell?
+## Whose story did you tell?
 
 ---
 
-- Your own
-- Someone else's
+- My own story
+- Someone else's story

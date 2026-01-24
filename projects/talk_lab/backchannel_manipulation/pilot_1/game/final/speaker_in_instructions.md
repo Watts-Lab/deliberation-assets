@@ -5,7 +5,7 @@ type: noResponse
 
 ## Please tell the story one last time
 
-The video is recording automatically so just start telling your story whenever you are ready!
+The video is recording automatically - begin telling your story whenever you are ready.
 
 When you're done, click the button below to continue to the next stage.
 
