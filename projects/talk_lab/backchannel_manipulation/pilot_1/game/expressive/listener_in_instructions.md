@@ -7,8 +7,8 @@ type: noResponse
 
 ## ✅ You should:
 
-- Nod and smile
-- Use "mm-hmm", "Yeah!", "Wow!", "OMG!" "Right!?!"
+- Nod and smile often
+- Use "mm-hmm", "Yeah!", "Wow!", "OMG!", "Right!?!"
 - React to the storyteller and show how how you feel
 
 ### 👉 Please don't tell your partner about these instructions. 👈

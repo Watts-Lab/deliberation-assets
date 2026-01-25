@@ -3,7 +3,7 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_
 type: multipleChoice
 ---
 
-## How much do you think the listener enjoyed your story?
+## How much do you think the **listener** enjoyed your story?
 
 ---
 

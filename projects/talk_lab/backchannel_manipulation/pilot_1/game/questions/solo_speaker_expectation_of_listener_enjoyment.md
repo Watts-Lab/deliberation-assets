@@ -3,7 +3,7 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_spe
 type: multipleChoice
 ---
 
-## How much do you think a listener would enjoy your story?
+## How much do you think **a listener** would enjoy your story?
 
 ---
 

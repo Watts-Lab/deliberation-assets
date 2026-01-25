@@ -23,7 +23,8 @@ templates:
           chatType: video
           showNickname: true
           showTitle: true
-          showSelfView: true # todo: make this "small" later
+          showReportMissing: false
+          showSelfView: false # todo: make this "small" later, for a Picture-in-Picture view
           rooms: ${roomAssignments}
 
         elements:
@@ -42,36 +43,26 @@ templates:
         elements:
           # Questions for listeners
           - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_success.md
-            name: listener_success_${story_round}
-            showToPositions: [0, 2, 4]
-          # Show following questions only if listener said "yes" to success
-          - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_story_well_told.md
             name: listener_story_well_told_${story_round}
             showToPositions: [0, 2, 4]
-            conditions:
-              - reference: prompt.listener_success_${story_round}
-                comparator: equals
-                value: "Yes"
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_enjoy.md
             name: listener_enjoy_${story_round}
             showToPositions: [0, 2, 4]
-            conditions:
-              - reference: prompt.listener_success_${story_round}
-                comparator: equals
-                value: "Yes"
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_perception_of_speaker_comfort.md
             name: listener_perception_of_speaker_comfort_${story_round}
             showToPositions: [0, 2, 4]
-            conditions:
-              - reference: prompt.listener_success_${story_round}
-                comparator: equals
-                value: "Yes"
 
-          - type: submitButton # If yes, only show if all 3 questions answered
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/connection_trouble.md
+            name: listener_connection_trouble_${story_round}
+            showToPositions: [0, 2, 4]
+
+          - type: submitButton
             buttonText: "Continue"
             conditions: # all required
               - reference: prompt.listener_story_well_told_${story_round}
@@ -81,45 +72,28 @@ templates:
               - reference: prompt.listener_enjoy_${story_round}
                 comparator: exists
 
-          - type: submitButton # If no, show immediately
-            buttonText: "Continue"
-            conditions:
-              - reference: prompt.listener_success_${story_round}
-                comparator: includes
-                value: "No"
-
           # Questions for storytellers
-          - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_success.md
-            name: speaker_success_${story_round}
-            showToPositions: [1, 3, 5]
-          # Show following questions only if speaker said "yes" to success
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
             name: "speaker_story_well_told_${story_round}"
             showToPositions: [1, 3, 5]
-            conditions:
-              - reference: prompt.speaker_success_${story_round}
-                comparator: equals
-                value: "Yes"
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
             name: speaker_perception_of_listener_enjoy_${story_round}
             showToPositions: [1, 3, 5]
-            conditions:
-              - reference: prompt.speaker_success_${story_round}
-                comparator: equals
-                value: "Yes"
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
             name: speaker_comfort_${story_round}
             showToPositions: [1, 3, 5]
-            conditions:
-              - reference: prompt.speaker_success_${story_round}
-                comparator: equals
-                value: "Yes"
 
-          - type: submitButton # If yes, only show if all 3 questions answered
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/connection_trouble.md
+            name: speaker_connection_trouble_${story_round}
+            showToPositions: [1, 3, 5]
+
+          - type: submitButton
             buttonText: "Continue"
             conditions: # all required
               - reference: prompt.speaker_story_well_told_${story_round}
@@ -128,13 +102,6 @@ templates:
                 comparator: exists
               - reference: prompt.speaker_perception_of_listener_enjoy_${story_round}
                 comparator: exists
-
-          - type: submitButton # If no, show immediately
-            buttonText: "Continue"
-            conditions:
-              - reference: prompt.speaker_success_${story_round}
-                comparator: includes
-                value: "No"
 
   - templateName: game
     contentType: treatments
@@ -209,6 +176,7 @@ templates:
               showNickname: true
               showTitle: true
               showSelfView: true
+              showReportMissing: false
               showToPositions: [1, 3, 5] # only the speakers can see the call interface
               rooms:
                 - includePositions: [1]
@@ -307,6 +275,7 @@ templates:
               chatType: video
               showNickname: true
               showTitle: true
+              showReportMissing: false
               showSelfView: true
               rooms:
                 - includePositions: [0]

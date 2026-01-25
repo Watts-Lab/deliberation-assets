@@ -15,7 +15,7 @@ At the end of the study you will tell your story a final time to just the camera
 
 Take a moment to think of one now.
 
-Remember the story should be a close call or near-miss incident — a time when something almost went wrong, but everything turned out okay in the end.
+The story should be a close call or near-miss incident — a time when something almost went wrong, but everything turned out okay in the end.
 
 You can pick any story you like, but here are a few ideas to help you get started:
 
