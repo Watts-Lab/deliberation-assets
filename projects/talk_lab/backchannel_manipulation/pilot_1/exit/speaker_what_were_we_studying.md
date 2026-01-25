@@ -3,7 +3,7 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_what_were_
 type: openResponse
 ---
 
-## If you had to guess, what would you say this study was trying to measure?
+## If you had to guess, what do you think this study was trying to measure?
 
 ---
 

@@ -3,7 +3,7 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_
 type: multipleChoice
 ---
 
-## Should you let the speaker know what instructions you have been given in each round?
+## Should you let the speaker know what instructions you were given in each round?
 
 ---
 

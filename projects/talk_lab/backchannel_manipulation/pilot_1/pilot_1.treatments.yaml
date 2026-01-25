@@ -1,5 +1,7 @@
 templates:
   - templateName: storytelling_round
+    # This is the template for the 3 different rounds of partner storytelling
+    # including associated questions after each round
     contentType: stages
     templateContent:
       - name: pre_instructions_${story_round}
@@ -16,12 +18,13 @@ templates:
             name: pre_instructions_${story_round}
 
       - name: storytelling_${story_round}
-        duration: 300
+        duration: 180
         discussion:
           chatType: video
           showNickname: true
           showTitle: true
-          showSelfView: false
+          showReportMissing: false
+          showSelfView: false # todo: make this "small" later, for a Picture-in-Picture view
           rooms: ${roomAssignments}
 
         elements:
@@ -43,13 +46,20 @@ templates:
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_story_well_told.md
             name: listener_story_well_told_${story_round}
             showToPositions: [0, 2, 4]
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_enjoy.md
             name: listener_enjoy_${story_round}
             showToPositions: [0, 2, 4]
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_perception_of_speaker_comfort.md
             name: listener_perception_of_speaker_comfort_${story_round}
+            showToPositions: [0, 2, 4]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/connection_trouble.md
+            name: listener_connection_trouble_${story_round}
             showToPositions: [0, 2, 4]
 
           - type: submitButton
@@ -67,13 +77,20 @@ templates:
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
             name: "speaker_story_well_told_${story_round}"
             showToPositions: [1, 3, 5]
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
             name: speaker_perception_of_listener_enjoy_${story_round}
             showToPositions: [1, 3, 5]
+
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
             name: speaker_comfort_${story_round}
+            showToPositions: [1, 3, 5]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/connection_trouble.md
+            name: speaker_connection_trouble_${story_round}
             showToPositions: [1, 3, 5]
 
           - type: submitButton
@@ -113,6 +130,7 @@ templates:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/speaker_practice_pre_instructions.md
                 showToPositions: [1, 3, 5]
+                name: story_notes
 
               - type: submitButton # for speakers
                 buttonText: "Continue"
@@ -126,29 +144,28 @@ templates:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_num_speakers.md
                 showToPositions: [0, 2, 4]
-                name: comp1
+                name: listener_instructions_comp1
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_task.md
                 conditions:
-                  - reference: prompt.comp1
+                  - reference: prompt.listener_instructions_comp1
                     comparator: equals
                     value: "3"
                 showToPositions: [0, 2, 4]
-                name: comp2
+                name: listener_instructions_comp2
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/listener_comp_check_reveal.md
                 conditions:
-                  - reference: prompt.comp2
+                  - reference: prompt.listener_instructions_comp2
                     comparator: includes
                     value: "responsively"
                 showToPositions: [0, 2, 4]
-                name: comp3
-
+                name: listener_instructions_comp3
               - type: submitButton # for listeners
                 buttonText: "Continue"
                 showToPositions: [0, 2, 4]
                 conditions:
-                  - reference: prompt.comp3
+                  - reference: prompt.listener_instructions_comp3
                     comparator: includes
                     value: "No"
 
@@ -158,35 +175,39 @@ templates:
               chatType: video
               showNickname: true
               showTitle: true
-              showSelfView: false
+              showSelfView: true
+              showReportMissing: false
               showToPositions: [1, 3, 5] # only the speakers can see the call interface
               rooms:
                 - includePositions: [1]
                 - includePositions: [3]
                 - includePositions: [5]
-              # Q: how do we hide the call interface from the others? add a "showToPositions" field to the discussion, and not render the discussion for those positions?
+
             elements:
+              # Prompt storytellers to practice telling their story
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/practice/speaker_practice_in_instructions.md
                 showToPositions: [1, 3, 5]
+              - type: submitButton
+                buttonText: "I'm ready"
+                showToPositions: [1, 3, 5]
 
-              # - type: video # a demo video showing how people do these things
-              #   url: https://youtu.be/R1qo5BxnXSw?si=ZE8qh_q84qhpg_iT # replace with actual video url
-              #   showToPositions: [0, 2, 4]
-
-              # Ask listeners to wait
+              # Ask listeners to wait while the storytellers practice
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/please_wait.md
-              - type: submitButton
                 showToPositions: [0, 2, 4]
+
+              - type: submitButton
                 buttonText: "Continue"
+                showToPositions: [0, 2, 4]
 
           - name: post_story_questions_practice_round
             duration: 120
             elements:
-              # Ask listeners to wait
+              # Ask listeners to wait while the storytellers answer questions
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/please_wait.md
+                showToPositions: [0, 2, 4]
               - type: submitButton
                 showToPositions: [0, 2, 4]
                 buttonText: "Continue"
@@ -254,7 +275,8 @@ templates:
               chatType: video
               showNickname: true
               showTitle: true
-              showSelfView: false
+              showReportMissing: false
+              showSelfView: true
               rooms:
                 - includePositions: [0]
                 - includePositions: [1]
@@ -331,25 +353,18 @@ templates:
                 name: speaker_whose_story
                 showToPositions: [1, 3, 5]
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_what_were_we_studying.md
-                name: speaker_what_were_we_studying
-                showToPositions: [1, 3, 5]
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_difference_between_listeners.md
-                name: difference_between_listeners
-                showToPositions: [1, 3, 5]
-              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_compliance_open_response.md
                 name: speaker_compliance_open_response
                 showToPositions: [1, 3, 5]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_what_were_we_studying.md
+                name: speaker_what_were_we_studying
+                showToPositions: [1, 3, 5]
+
               - type: submitButton
                 buttonText: "Continue"
                 conditions:
                   - reference: prompt.speaker_whose_story
-                    comparator: exists
-                  - reference: prompt.difference_between_listeners
-                    comparator: exists
-                  - reference: prompt.speaker_what_were_we_studying
                     comparator: exists
 
               # listener questions
@@ -378,6 +393,21 @@ templates:
                     comparator: exists
                   - reference: prompt.listener_compliance_minimal
                     comparator: exists
+
+          - name: Observations of Listeners
+            elements:
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_difference_between_listeners.md
+                name: speaker_difference_between_listeners
+                showToPositions: [1, 3, 5]
+
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_difference_between_speakers.md
+                name: listener_difference_between_speakers
+                showToPositions: [0, 2, 4]
+
+              - type: submitButton
+                buttonText: "Continue"
 
           - name: Demographics
             elements:

@@ -15,12 +15,12 @@ At the end of the study you will tell your story a final time to just the camera
 
 Take a moment to think of one now.
 
-Remember the story should be a close call or near-miss incident — a time when something almost went wrong, but everything turned out okay in the end.
+The story should be a close call or near-miss incident — a time when something almost went wrong, but everything turned out okay in the end.
 
 You can pick any story you like, but here are a few ideas to help you get started:
 
 - A **close call** when something almost went very wrong
-- A **bad travel experience** — what went wrong? 🛫
+- A **bad travel experience** — what went wrong?
 - A story about bad **weather** or the **outdoors**.
 - The craziest thing you ever saw while **driving**.
 - A **near injury** — what were you doing and what happened next?
@@ -35,4 +35,4 @@ When you’ve thought of a story, **click the button below** to continue.
 
 ---
 
-> ✏️ Feel free to jot down a few notes below to help you plan your story (note: you won't have access to these when you start talking).
+> ✏️ Feel free to make notes to help you plan your story. (note: you won't have access to these when you start talking).

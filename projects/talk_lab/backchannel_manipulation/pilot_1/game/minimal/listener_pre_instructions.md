@@ -17,6 +17,6 @@ You are about to listen to someone tell a story.
 - Give strong reactions
 - Show strong emotion
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
 
 ---

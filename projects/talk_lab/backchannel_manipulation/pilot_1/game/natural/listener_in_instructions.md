@@ -9,8 +9,8 @@ type: noResponse
 
 - React as you normally would.
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
 
-When the speaker has finished, click the button below.
+When the storyteller has finished, click the button below.
 
 ---

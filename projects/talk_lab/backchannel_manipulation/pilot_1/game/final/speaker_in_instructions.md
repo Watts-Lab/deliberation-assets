@@ -3,9 +3,11 @@ name: projects/talk_lab/backchannel_manipulation/pilot_1/game/final/speaker_in_i
 type: noResponse
 ---
 
-## Please tell the story one last time
+## Please tell your story one last time
 
-The video is recording automatically so just start telling your story whenever you are ready!
+This time, there is no listener, we just want you to tell your story one last time to the camera, as naturally as possible.
+
+The video is recording automatically - begin telling your story whenever you are ready.
 
 When you're done, click the button below to continue to the next stage.
 

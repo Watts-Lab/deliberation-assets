@@ -5,7 +5,9 @@ type: noResponse
 
 ## Practice telling your story to an empty room.
 
-The video is recording automatically so just start telling your story whenever you are ready!
+The video is recording automatically - begin telling your story whenever you are ready.
+
+👉 Remember, the story should be 1-2 minutes long.
 
 When you're done, click the button below to continue to the next stage.
 

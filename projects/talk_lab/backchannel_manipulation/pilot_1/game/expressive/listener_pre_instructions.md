@@ -11,10 +11,10 @@ Show you are extra **engaged** and **interested** in the story, without being un
 
 ## ✅ You should:
 
-- Nod and smile
-- Use "mm-hmm", "Yeah!", "Wow!", "OMG!" "Right!?!"
-- React to their speaker and show Show how you feel
+- Nod and smile often
+- Use "mm-hmm", "Yeah!", "Wow!", "OMG!", "Right!?!"
+- React to the storyteller and show how you feel
 
-### 👉 Do not let the speaker know you have been given these instructions. 👈
+### 👉 Please don't tell your partner about these instructions. 👈
 
 ---
