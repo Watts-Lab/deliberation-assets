@@ -39,7 +39,7 @@ templates:
             buttonText: "End call and continue to questions"
 
       - name: post_story_questions_${story_round}
-        duration: 60
+        duration: 90
         elements:
           # Questions for listeners
           - type: prompt
@@ -48,13 +48,23 @@ templates:
             showToPositions: [0, 2, 4]
 
           - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_enjoy.md
-            name: listener_enjoy_${story_round}
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_story_engaging.md
+            name: listener_story_engaging_${story_round}
             showToPositions: [0, 2, 4]
 
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_perception_of_speaker_comfort.md
             name: listener_perception_of_speaker_comfort_${story_round}
+            showToPositions: [0, 2, 4]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_enjoy.md
+            name: listener_enjoy_${story_round}
+            showToPositions: [0, 2, 4]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/listener_connected_to_speaker.md
+            name: listener_connected_to_speaker_${story_round}
             showToPositions: [0, 2, 4]
 
           - type: prompt
@@ -67,9 +77,13 @@ templates:
             conditions: # all required
               - reference: prompt.listener_story_well_told_${story_round}
                 comparator: exists
+              - reference: prompt.listener_story_engaging_${story_round}
+                comparator: exists
               - reference: prompt.listener_perception_of_speaker_comfort_${story_round}
                 comparator: exists
               - reference: prompt.listener_enjoy_${story_round}
+                comparator: exists
+              - reference: prompt.listener_connected_to_speaker_${story_round}
                 comparator: exists
 
           # Questions for storytellers
@@ -79,13 +93,23 @@ templates:
             showToPositions: [1, 3, 5]
 
           - type: prompt
-            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
-            name: speaker_perception_of_listener_enjoy_${story_round}
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_engaging.md
+            name: speaker_story_engaging_${story_round}
             showToPositions: [1, 3, 5]
 
           - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
             name: speaker_comfort_${story_round}
+            showToPositions: [1, 3, 5]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
+            name: speaker_perception_of_listener_enjoy_${story_round}
+            showToPositions: [1, 3, 5]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_connected_to_listener.md
+            name: speaker_connected_to_listener_${story_round}
             showToPositions: [1, 3, 5]
 
           - type: prompt
@@ -101,6 +125,10 @@ templates:
               - reference: prompt.speaker_comfort_${story_round}
                 comparator: exists
               - reference: prompt.speaker_perception_of_listener_enjoy_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_connected_to_listener_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_story_engaging_${story_round}
                 comparator: exists
 
   - templateName: game
@@ -218,6 +246,10 @@ templates:
                 name: speaker_story_well_told_practice
                 showToPositions: [1, 3, 5]
               - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_engaging.md
+                name: speaker_story_engaging_practice
+                showToPositions: [1, 3, 5]
+              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
                 name: speaker_perception_of_listener_enjoy_practice
                 showToPositions: [1, 3, 5]
@@ -234,6 +266,8 @@ templates:
                   - reference: prompt.speaker_comfort_practice
                     comparator: exists
                   - reference: prompt.speaker_perception_of_listener_enjoy_practice
+                    comparator: exists
+                  - reference: prompt.speaker_story_engaging_practice
                     comparator: exists
 
           - template: storytelling_round
@@ -269,6 +303,7 @@ templates:
                 showToPositions: [0, 2, 4]
               - type: submitButton
                 buttonText: "Continue"
+
           - name: final_storytelling
             duration: 180
             discussion:
@@ -301,6 +336,9 @@ templates:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_well_told.md
                 name: speaker_story_well_told_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_story_engaging.md
+                name: speaker_story_engaging_final
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
                 name: speaker_perception_of_listener_enjoy_final
