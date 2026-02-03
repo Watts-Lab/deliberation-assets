@@ -1,0 +1,51 @@
+{
+  "batchName": "pilot",
+  "cdn": "prod",
+  "treatmentFile": "projects/talk_lab/backchannel_manipulation/pilot_1/pilot_1.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": [
+    "expressive_minimal_natural",
+    "expressive_natural_minimal",
+    "minimal_expressive_natural",
+    "minimal_natural_expressive",
+    "natural_expressive_minimal",
+    "neutral_minimal_expressive",
+    "natural_natural_natural"
+  ],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "Talk-Lab",
+      "repo": "backchannel-manipulation",
+      "branch": "main",
+      "directory": "data/test"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "Talk-Lab",
+      "repo": "backchannel-manipulation",
+      "branch": "main",
+      "directory": "data/test"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-talk-lab",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "C16T4LN8",
+    "error": "C18JLSCV",
+    "lobbyTimeout": "C18JLSCV",
+    "failedEquipmentCheck": "C18JLSCV"
+  }
+}
