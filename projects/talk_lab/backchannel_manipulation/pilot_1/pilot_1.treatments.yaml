@@ -103,6 +103,11 @@ templates:
             showToPositions: [1, 3, 5]
 
           - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_listener_good.md
+            name: speaker_listener_good_${story_round}
+            showToPositions: [1, 3, 5]
+
+          - type: prompt
             file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_perception_of_listener_enjoy.md
             name: speaker_perception_of_listener_enjoy_${story_round}
             showToPositions: [1, 3, 5]
@@ -250,12 +255,12 @@ templates:
                 name: speaker_story_engaging_practice
                 showToPositions: [1, 3, 5]
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
-                name: speaker_perception_of_listener_enjoy_practice
-                showToPositions: [1, 3, 5]
-              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/speaker_comfort.md
                 name: speaker_comfort_practice
+                showToPositions: [1, 3, 5]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/pilot_1/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
+                name: speaker_perception_of_listener_enjoy_practice
                 showToPositions: [1, 3, 5]
 
               - type: submitButton
