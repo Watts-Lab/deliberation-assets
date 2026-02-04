@@ -1,9 +1,9 @@
 ---
-name: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_compliance_natural.md
+name: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_compliance_t_tapping.md
 type: multipleChoice
 ---
 
-## How well were you able to **listen naturally** when we asked you to?
+## How well were you able to count the "t's" when we asked you to?
 
 (This won't affect your payment, we are just interested in how difficult the task was.)
 
