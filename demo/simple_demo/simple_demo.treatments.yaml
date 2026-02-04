@@ -1,0 +1,35 @@
+introSequences:
+  - name: default
+    introSteps:
+      - name: Intro
+        elements:
+          - type: prompt
+            file: demo/simple_demo/intro/introduction.md
+          - type: submitButton
+
+treatments:
+  - name: simple_demo
+    desc: 2 player demo
+    playerCount: 2
+
+    gameStages:
+      - name: discussion
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+        elements:
+          - type: prompt
+            file: demo/simple_demo/game/discussion_prompt.md
+          - type: submitButton
+            buttonText: Leave Discussion
+
+    exitSequence:
+      - name: post_survey
+        elements:
+          - name: exit_question
+            type: prompt
+            file: demo/simple_demo/exit/exit_question.md
+          - type: submitButton
+            buttonText: Submit Survey
