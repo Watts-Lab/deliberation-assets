@@ -1,0 +1,43 @@
+{
+  "batchName": "pilot_tTapping",
+  "cdn": "prod",
+  "treatmentFile": "projects/talk_lab/backchannel_manipulation/t_tapping/t_tapping.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": ["t_tapping_natural", "natural_t_tapping"],
+  "payoffs": "equal",
+  "knockdowns": 0.95,
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [
+    {
+      "owner": "Talk-Lab",
+      "repo": "backchannel-manipulation",
+      "branch": "main",
+      "directory": "data/test/t_tapping"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "Talk-Lab",
+      "repo": "backchannel-manipulation",
+      "branch": "main",
+      "directory": "data/test/t_tapping"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-talk-lab",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "C16T4LN8",
+    "error": "C18JLSCV",
+    "lobbyTimeout": "C18JLSCV",
+    "failedEquipmentCheck": "C18JLSCV"
+  }
+}
