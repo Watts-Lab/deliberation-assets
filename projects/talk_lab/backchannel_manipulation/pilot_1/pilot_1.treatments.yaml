@@ -39,7 +39,6 @@ templates:
           - type: submitButton
             name: storytelling_${story_round}
             buttonText: "End call and continue to questions"
-            displayTime: 30
 
       - name: post_story_questions_${story_round}
         duration: 90
@@ -422,6 +421,8 @@ templates:
                     comparator: exists
                   - reference: prompt.listener_compliance_minimal
                     comparator: exists
+                  - reference: prompt.listener_comfort_with_manipulation
+                    comparator: exists
 
           - name: partner_differences
             elements:
@@ -437,6 +438,12 @@ templates:
 
               - type: submitButton
                 buttonText: "Continue"
+
+          - name: big_5
+            elements:
+              - type: survey
+                name: big_5
+                surveyName: TIPI
 
           - name: Demographics
             elements:

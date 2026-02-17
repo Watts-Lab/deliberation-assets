@@ -28,6 +28,8 @@ templates:
           showNickname: true
           showTitle: true
           showReportMissing: false
+          showAudioMute: false
+          showVideoMute: false
           showSelfView: false # todo: make this "small" later, for a Picture-in-Picture view
           rooms: ${roomAssignments}
 
@@ -211,6 +213,8 @@ templates:
               showNickname: true
               showTitle: true
               showSelfView: true
+              showAudioMute: false
+              showVideoMute: false
               showReportMissing: false
               showToPositions: [1, 3] # only the speakers can see the call interface
               rooms:
@@ -243,7 +247,7 @@ templates:
                 showToPositions: [0, 2]
 
               - type: audio
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/intro/t_tappingPractice.m4a
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/t_tappingPractice.m4a
                 showToPositions: [0, 2]
                 conditions:
                   - reference: prompt.listener_practice_task_ready
@@ -258,7 +262,7 @@ templates:
             elements:
               # Ask listeners to wait while the storytellers answer questions
               - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/please_wait.md
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_please_wait_questions.md
                 showToPositions: [0, 2]
               - type: submitButton
                 showToPositions: [0, 2]
@@ -326,6 +330,8 @@ templates:
               chatType: video
               showNickname: true
               showTitle: true
+              showAudioMute: false
+              showVideoMute: false
               showReportMissing: false
               showSelfView: true
               rooms:
@@ -371,33 +377,7 @@ templates:
                     comparator: exists
 
         exitSequence:
-          - name: post-survey page 1
-            elements:
-              # speaker questions
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_best_time_told.md
-                name: speaker_best_time_told
-                showToPositions: [1, 3]
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_best_listener.md
-                name: speaker_best_listener
-                showToPositions: [1, 3]
-
-              # listener questions
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_best_story.md
-                name: listener_best_story
-                showToPositions: [0, 2]
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_best_speaker.md
-                name: listener_best_speaker
-                showToPositions: [0, 2]
-
-              # ungated continue
-              - type: submitButton
-                buttonText: "Continue"
-
-          - name: post-survey page 2
+          - name: post_survey
             elements:
               # speaker questions
               - type: prompt
@@ -429,6 +409,10 @@ templates:
                 name: listener_compliance_t_tapping
                 showToPositions: [0, 2]
               - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_comfort_with_manipulation.md
+                name: listener_comfort_with_manipulation
+                showToPositions: [0, 2]
+              - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_compliance_open_response.md
                 name: listener_compliance_open_response
                 showToPositions: [0, 2]
@@ -439,8 +423,10 @@ templates:
                     comparator: exists
                   - reference: prompt.listener_compliance_t_tapping
                     comparator: exists
+                  - reference: prompt.listener_comfort_with_manipulation
+                    comparator: exists
 
-          - name: Observations of Listeners
+          - name: partner_differences
             elements:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_difference_between_listeners.md
@@ -454,6 +440,12 @@ templates:
 
               - type: submitButton
                 buttonText: "Continue"
+
+          - name: big_5
+            elements:
+              - type: survey
+                name: big_5
+                surveyName: TIPI
 
           - name: Demographics
             elements:
