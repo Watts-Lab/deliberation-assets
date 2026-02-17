@@ -19,7 +19,7 @@ We'll tell you which type of listening to use before each story.
 For this story, listen **the way you normally would in everyday conversation**.
 
 - Focus on what the person is saying.
-- Respond naturally (e.g., “mm-hmm,” nodding, facial reactions).
+- Respond naturally (e.g., “mm-hmm,” "wow!", "yeah", nodding, facial reactions, etc).
 
 ### Listening for words that start with 'T'
 

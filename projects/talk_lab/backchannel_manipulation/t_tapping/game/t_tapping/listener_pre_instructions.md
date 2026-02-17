@@ -5,9 +5,7 @@ type: noResponse
 
 You are about to listen to someone tell a story.
 
-## Listen for words that start with'T'
-
-For this story, **listen for words that start with the letter 'T'**.
+## For this story, **listen for words that start with the letter 'T'**.
 
 - Listen carefully to the speaker’s words.
 - Each time you hear a word that starts with T, **type the letter “t” in the box** on your screen.
