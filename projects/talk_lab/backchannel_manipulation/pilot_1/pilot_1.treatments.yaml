@@ -369,33 +369,7 @@ templates:
                     comparator: exists
 
         exitSequence:
-          - name: post-survey page 1
-            elements:
-              # speaker questions
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_best_time_told.md
-                name: speaker_best_time_told
-                showToPositions: [1, 3, 5]
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_best_listener.md
-                name: speaker_best_listener
-                showToPositions: [1, 3, 5]
-
-              # listener questions
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_best_story.md
-                name: listener_best_story
-                showToPositions: [0, 2, 4]
-              - type: prompt
-                file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/listener_best_speaker.md
-                name: listener_best_speaker
-                showToPositions: [0, 2, 4]
-
-              # ungated continue
-              - type: submitButton
-                buttonText: "Continue"
-
-          - name: post-survey page 2
+          - name: post_survey
             elements:
               # speaker questions
               - type: prompt
@@ -449,7 +423,7 @@ templates:
                   - reference: prompt.listener_compliance_minimal
                     comparator: exists
 
-          - name: Observations of Listeners
+          - name: partner_differences
             elements:
               - type: prompt
                 file: projects/talk_lab/backchannel_manipulation/pilot_1/exit/speaker_difference_between_listeners.md
