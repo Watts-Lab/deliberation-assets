@@ -1,0 +1,576 @@
+introSequences:
+  - name: default
+    introSteps:
+      - name: introduction
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/introduction.md
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: flowerboy_prescreener
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/stimuli/flowerboy.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: flowerboy_judgment
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/certainty.md
+            name: flowerboy_certainty
+          - type: submitButton
+            buttonText: "Continue"
+            name: flowerboy_prescreener_submit
+
+      - name: flowerboy_wiggleroom
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/wiggleroom.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/lowest_acceptable.md
+            name: flowerboy_lowest_acceptable
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/highest_acceptable.md
+            name: flowerboy_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: flowerboy_wiggleroom_submit
+      
+      - name: house_burnt_down_prescreener
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/stimuli/house_burnt_down.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: house_burnt_down_judgment
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/certainty.md
+            name: house_burnt_down_certainty
+          - type: submitButton
+            buttonText: "Continue"
+            name: house_burnt_down_prescreener_submit
+
+      - name: house_burnt_down_wiggleroom
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/wiggleroom.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/lowest_acceptable.md
+            name: house_burnt_down_lowest_acceptable
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/highest_acceptable.md
+            name: house_burnt_down_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: house_burnt_down_wiggleroom_submit
+
+      - name: computer_privacy_prescreener
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/stimuli/computer_privacy.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: computer_privacy_judgment
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/certainty.md
+            name: computer_privacy_certainty
+          - type: submitButton
+            buttonText: "Continue"
+            name: computer_privacy_prescreener_submit
+
+      - name: computer_privacy_wiggleroom
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/wiggleroom.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/lowest_acceptable.md
+            name: computer_privacy_lowest_acceptable
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/highest_acceptable.md
+            name: computer_privacy_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: computer_privacy_wiggleroom_submit
+
+treatments:
+  - name: flowerboy_network_6maj_2min_v1
+    desc: "dyadic discussions via parallel networks of weak majority members and strong minority members | 6maj & 2min"
+    playerCount: 8
+
+    groupComposition:
+      - position: 0
+        title: "maj 1"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 1
+        title: "maj 2"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 2
+        title: "maj 3"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 3
+        title: "maj 4"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 4
+        title: "maj 5"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 5
+        title: "maj 6"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAbove
+            value: 50
+          - reference: prompt.flowerboy_judgment
+            comparator: isBelow
+            value: 75
+
+      - position: 6
+        title: "min 1"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAtMost
+            value: 25
+
+      - position: 7
+        title: "min 2"
+        conditions:
+          - reference: prompt.flowerboy_judgment
+            comparator: isAtMost
+            value: 25
+    
+    gameStages:
+      - name: topic_refresh
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/refresh.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/stimuli/flowerboy.md
+          - type: submitButton
+            buttonText: "Enter Discussion"
+            name: topic_refresh_submit
+      
+      - name: dyad_1
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 4]
+            - includePositions: [1, 5]
+            - includePositions: [2, 6]
+            - includePositions: [3, 7]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_1_submit
+              
+      - name: midsurvey_1
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_1
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_1
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_1_submit
+
+      - name: dyad_2
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 5]
+            - includePositions: [1, 6]
+            - includePositions: [2, 7]
+            - includePositions: [3, 4]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_2_submit
+
+      - name: midsurvey_2
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_2
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_2
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_2_submit
+
+      - name: dyad_3
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 6]
+            - includePositions: [1, 7]
+            - includePositions: [2, 4]
+            - includePositions: [3, 5]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_3_submit
+
+      - name: midsurvey_3
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_3
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_3
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_3_submit
+
+      - name: dyad_4
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 7]
+            - includePositions: [1, 4]
+            - includePositions: [2, 5]
+            - includePositions: [3, 6]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_4_submit
+
+      - name: midsurvey_4
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_4
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_4
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_4_submit
+
+    exitSequence:
+      - name: exit_survey
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/exit/exit_question.md
+            name: exit_question_response
+          - type: submitButton
+            buttonText: "Submit and Finish"
+            name: exit_survey_submit
+  
+  - name: house_burnt_down_network_6maj_2min_v2
+    desc: "dyadic discussions via parallel networks of weak majority members and strong minority members | 6maj & 2min"
+    playerCount: 8
+
+    groupComposition:
+      - position: 0
+        title: "maj 1"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 1
+        title: "maj 2"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 2
+        title: "maj 3"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 3
+        title: "maj 4"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 4
+        title: "maj 5"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 5
+        title: "maj 6"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAbove
+            value: 25
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isBelow
+            value: 50
+
+      - position: 6
+        title: "min 1"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAtLeast
+            value: 75
+
+      - position: 7
+        title: "min 2"
+        conditions:
+          - reference: prompt.house_burnt_down_judgment
+            comparator: isAtLeast
+            value: 75
+    
+    gameStages:
+      - name: topic_refresh
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/refresh.md
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/stimuli/house_burnt_down.md
+          - type: submitButton
+            buttonText: "Enter Discussion"
+            name: topic_refresh_submit
+      
+      - name: dyad_1
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 7]
+            - includePositions: [1, 4]
+            - includePositions: [2, 5]
+            - includePositions: [3, 6]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_1_submit
+              
+      - name: midsurvey_1
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_1
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_1
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_1_submit
+
+      - name: dyad_2
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 4]
+            - includePositions: [1, 5]
+            - includePositions: [2, 6]
+            - includePositions: [3, 7]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_2_submit
+
+      - name: midsurvey_2
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_2
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_2
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_2_submit
+
+      - name: dyad_3
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 5]
+            - includePositions: [1, 6]
+            - includePositions: [2, 7]
+            - includePositions: [3, 4]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_3_submit
+
+      - name: midsurvey_3
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_3
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_3
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_3_submit
+
+      - name: dyad_4
+        duration: 300
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+          rooms:
+            - includePositions: [0, 6]
+            - includePositions: [1, 7]
+            - includePositions: [2, 4]
+            - includePositions: [3, 5]
+        elements:
+          - type: timer
+            startTime: 1
+            endTime: 300
+            warnTimeRemaining: 30
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/discussion_instructions.md
+          - type: submitButton
+            buttonText: "Proceed to Judgment"
+            name: dyad_4_submit
+
+      - name: midsurvey_4
+        duration: 90
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/game/agreement.md
+            name: agreement_midsurvey_4
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/intro/judgment.md
+            name: judgment_midsurvey_4
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_4_submit
+
+    exitSequence:
+      - name: exit_survey
+        elements:
+          - type: prompt
+            file: projects/ioffrida/moraltps/v1/exit/exit_question.md
+            name: exit_question_response
+          - type: submitButton
+            buttonText: "Submit and Finish"
+            name: exit_survey_submit

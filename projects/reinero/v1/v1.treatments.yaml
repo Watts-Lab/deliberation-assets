@@ -1,0 +1,158 @@
+introSequences:
+  - name: default
+    introSteps:
+      - name: instructions
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/intro/instructions.md
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: scenario_7_flowerboy_presurvey
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/stimuli/7_flowerboy.md
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement.md
+            name: 7_flowerboy_judgement
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_certainty.md
+            name: 7_flowerboy_judgement_certainty
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_lowest_acceptable.md
+            name: 7_flowerboy_judgement_lowest_acceptable
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_highest_acceptable.md
+            name: 7_flowerboy_judgement_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: scenario_7_flowerboy_presurvey
+            # TODO: make this conditional on responses submitted
+            # Maybe raise an error if the highest acceptable is below the lowest
+
+      - name: scenario_10_house_burn_down_presurvey
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/stimuli/10_house_burn_down.md
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement.md
+            name: 10_house_burn_down_judgement
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_certainty.md
+            name: 10_house_burn_down_judgement_certainty
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_lowest_acceptable.md
+            name: 10_house_burn_down_judgement_lowest_acceptable
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_highest_acceptable.md
+            name: 10_house_burn_down_judgement_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: scenario_10_house_burn_down_presurvey
+
+      - name: scenario_17_computer_privacy_presurvey
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/stimuli/17_computer_privacy.md
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement.md
+            name: 17_computer_privacy_judgement
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_certainty.md
+            name: 17_computer_privacy_judgement_certainty
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_lowest_acceptable.md
+            name: 17_computer_privacy_judgement_lowest_acceptable
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement_highest_acceptable.md
+            name: 17_computer_privacy_judgement_highest_acceptable
+          - type: submitButton
+            buttonText: "Continue"
+            name: scenario_17_computer_privacy_presurvey
+
+treatments:
+  - name: demo_flowerboy_strong_disagreement
+    playerCount: 2 # Temp for development
+    # groupComposition:
+    #   - position: 0
+    #     conditions:
+    #       - reference: prompt.7_flowerboy_judgement
+    #         comparator: isAbove
+    #         value: 70
+    #   - position: 1
+    #     conditions:
+    #       - reference: prompt.7_flowerboy_judgement
+    #         comparator: isBelow
+    #         value: 30
+
+    gameStages:
+      - name: topic_refresh
+        duration: 60
+        elements:
+          - type: audio
+            file: shared/westminster_short.mp3
+          - type: prompt
+            file: projects/reinero/v1/game/refresh.md
+          - type: prompt
+            file: projects/reinero/v1/stimuli/7_flowerboy.md
+          - type: submitButton # allow to proceed when ready
+            buttonText: "Next"
+            name: topic_refresh
+
+      - name: discussion_1
+        duration: 180 # no submit button
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/game/discussion_instructions.md
+          - type: audio
+            file: shared/counter_bell.mp3
+            displayTime: 150
+          - type: prompt
+            file: projects/reinero/v1/game/warn_30_seconds.md
+            displayTime: 150
+
+      - name: midsurvey_1
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/game/partner_agreement.md
+            name: partner_agreement_midsurvey_1
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement.md
+            name: judgement_midsurvey_1
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_1
+
+      - name: discussion_2
+        duration: 180 # no submit button
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: false
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/game/discussion_instructions.md
+          - type: audio
+            file: shared/counter_bell.mp3
+            displayTime: 150
+          - type: prompt
+            file: projects/reinero/v1/game/warn_30_seconds.md
+            displayTime: 150
+
+      - name: midsurvey_2
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/reinero/v1/game/partner_agreement.md
+            name: partner_agreement_midsurvey_2
+          - type: prompt
+            file: projects/reinero/v1/intro/judgement.md
+            name: judgement_midsurvey_2
+          - type: submitButton
+            buttonText: "Continue"
+            name: midsurvey_2
