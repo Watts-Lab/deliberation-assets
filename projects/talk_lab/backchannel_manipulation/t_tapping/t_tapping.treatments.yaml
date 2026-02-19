@@ -1,0 +1,477 @@
+# This replicates (more closely) the original paper
+# we only have 2 conditions to cycle through, (distracted/t_tapping vs. natural listening)
+# so we only need groups of 4. This makes recruitment easier.
+
+templates:
+  - templateName: storytelling_round
+    # This is the template for the 3 different rounds of partner storytelling
+    # including associated questions after each round
+    contentType: stages
+    templateContent:
+      - name: pre_instructions_${story_round}
+        duration: 60
+        elements:
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/${condition}/listener_pre_instructions.md
+            showToPositions: [0, 2]
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/speaker_pre_instructions.md
+            showToPositions: [1, 3]
+          - type: submitButton
+            buttonText: "Continue to the call"
+            name: pre_instructions_${story_round}
+
+      - name: storytelling_${story_round}
+        duration: 180
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          showReportMissing: false
+          showAudioMute: false
+          showVideoMute: false
+          showSelfView: false # todo: make this "small" later, for a Picture-in-Picture view
+          rooms: ${roomAssignments}
+
+        elements:
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/${condition}/listener_in_instructions.md
+            showToPositions: [0, 2]
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/speaker_in_instructions.md
+            showToPositions: [1, 3]
+          - type: submitButton
+            name: storytelling_${story_round}
+            buttonText: "End call and continue to questions"
+
+      - name: post_story_questions_${story_round}
+        duration: 90
+        elements:
+          # Questions for listeners
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/listener_story_well_told.md
+            name: listener_story_well_told_${story_round}
+            showToPositions: [0, 2]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/listener_story_engaging.md
+            name: listener_story_engaging_${story_round}
+            showToPositions: [0, 2]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/listener_perception_of_speaker_comfort.md
+            name: listener_perception_of_speaker_comfort_${story_round}
+            showToPositions: [0, 2]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/listener_enjoy.md
+            name: listener_enjoy_${story_round}
+            showToPositions: [0, 2]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/listener_connected_to_speaker.md
+            name: listener_connected_to_speaker_${story_round}
+            showToPositions: [0, 2]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/connection_trouble.md
+            name: listener_connection_trouble_${story_round}
+            showToPositions: [0, 2]
+
+          - type: submitButton
+            buttonText: "Continue"
+            conditions: # all required
+              - reference: prompt.listener_story_well_told_${story_round}
+                comparator: exists
+              - reference: prompt.listener_story_engaging_${story_round}
+                comparator: exists
+              - reference: prompt.listener_perception_of_speaker_comfort_${story_round}
+                comparator: exists
+              - reference: prompt.listener_enjoy_${story_round}
+                comparator: exists
+              - reference: prompt.listener_connected_to_speaker_${story_round}
+                comparator: exists
+
+          # Questions for storytellers
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_well_told.md
+            name: "speaker_story_well_told_${story_round}"
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_engaging.md
+            name: speaker_story_engaging_${story_round}
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_comfort.md
+            name: speaker_comfort_${story_round}
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_listener_good.md
+            name: speaker_listener_good_${story_round}
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_perception_of_listener_enjoy.md
+            name: speaker_perception_of_listener_enjoy_${story_round}
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_connected_to_listener.md
+            name: speaker_connected_to_listener_${story_round}
+            showToPositions: [1, 3]
+
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/connection_trouble.md
+            name: speaker_connection_trouble_${story_round}
+            showToPositions: [1, 3]
+
+          - type: submitButton
+            buttonText: "Continue"
+            conditions: # all required
+              - reference: prompt.speaker_story_well_told_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_story_engaging_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_comfort_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_listener_good_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_perception_of_listener_enjoy_${story_round}
+                comparator: exists
+              - reference: prompt.speaker_connected_to_listener_${story_round}
+                comparator: exists
+
+  - templateName: game
+    contentType: treatments
+    templateContent:
+      - name: ${treatment_name}
+        playerCount: 4
+        groupComposition:
+          - position: 0
+            title: Listener
+          - position: 1
+            title: Storyteller
+          - position: 2
+            title: Listener
+          - position: 3
+            title: Storyteller
+
+        gameStages:
+          - name: practice_instructions
+            duration: 180
+            elements:
+              # speaker instructions
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/speaker_practice_pre_instructions.md
+                showToPositions: [1, 3]
+                name: story_notes
+
+              - type: submitButton # for speakers
+                buttonText: "Continue"
+                showToPositions: [1, 3]
+
+              # listener instructions
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_practice_pre_instructions.md
+                showToPositions: [0, 2]
+
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_comp_check_num_speakers.md
+                showToPositions: [0, 2]
+                name: listener_instructions_comp1
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_comp_check_task.md
+                conditions:
+                  - reference: prompt.listener_instructions_comp1 # how many storytellers
+                    comparator: equals
+                    value: "2"
+                showToPositions: [0, 2]
+                name: listener_instructions_comp2
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_comp_check_reveal.md
+                conditions:
+                  - reference: prompt.listener_instructions_comp2
+                    comparator: includes
+                    value: "start with the letter"
+                showToPositions: [0, 2]
+                name: listener_instructions_comp3
+              - type: submitButton # for listeners
+                buttonText: "Continue"
+                showToPositions: [0, 2]
+                conditions:
+                  - reference: prompt.listener_instructions_comp3
+                    comparator: includes
+                    value: "No"
+
+          - name: practice_round
+            duration: 180
+            discussion:
+              chatType: video
+              showNickname: true
+              showTitle: true
+              showSelfView: true
+              showAudioMute: false
+              showVideoMute: false
+              showReportMissing: false
+              showToPositions: [1, 3] # only the speakers can see the call interface
+              rooms:
+                - includePositions: [1]
+                - includePositions: [3]
+
+            elements:
+              # Prompt storytellers to practice telling their story
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/speaker_practice_in_instructions.md
+                showToPositions: [1, 3]
+              - type: submitButton
+                buttonText: "End call and continue to questions"
+                showToPositions: [1, 3]
+
+              # Ask listeners to wait while the storytellers practice
+              # - type: prompt
+              #   file: projects/talk_lab/backchannel_manipulation/t_tapping/game/please_wait.md
+              #   showToPositions: [0, 2]
+
+              # Give listeners the practice task
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_practice_in_instructions.md
+                name: listener_practice_task_ready
+                showToPositions: [0, 2]
+
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_practice_in_instructions_b.md
+                name: listener_practice_task_ts
+                showToPositions: [0, 2]
+
+              - type: audio
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/t_tappingPractice.m4a
+                showToPositions: [0, 2]
+                conditions:
+                  - reference: prompt.listener_practice_task_ready
+                    comparator: exists
+
+              - type: submitButton
+                buttonText: "Continue"
+                showToPositions: [0, 2]
+
+          - name: post_story_questions_practice_round
+            duration: 60
+            elements:
+              # Ask listeners to wait while the storytellers answer questions
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/practice/listener_please_wait_questions.md
+                showToPositions: [0, 2]
+              - type: submitButton
+                showToPositions: [0, 2]
+                buttonText: "Continue"
+
+              # Questions for storytellers
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_well_told.md
+                name: speaker_story_well_told_practice
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_engaging.md
+                name: speaker_story_engaging_practice
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_comfort.md
+                name: speaker_comfort_practice
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
+                name: speaker_perception_of_listener_enjoy_practice
+                showToPositions: [1, 3]
+
+              - type: submitButton
+                buttonText: "Continue"
+                conditions: # all required
+                  - reference: prompt.speaker_story_well_told_practice
+                    comparator: exists
+                  - reference: prompt.speaker_comfort_practice
+                    comparator: exists
+                  - reference: prompt.speaker_perception_of_listener_enjoy_practice
+                    comparator: exists
+                  - reference: prompt.speaker_story_engaging_practice
+                    comparator: exists
+
+          - template: storytelling_round
+            broadcast:
+              d0:
+                - condition: ${first_condition}
+                  roomAssignments:
+                    - includePositions: [0, 1]
+                    - includePositions: [2, 3]
+                  story_round: "1"
+                - condition: ${second_condition}
+                  roomAssignments:
+                    - includePositions: [0, 3]
+                    - includePositions: [2, 1]
+                  story_round: "2"
+
+          - name: last_telling_instructions
+            duration: 60
+            elements:
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/final/speaker_pre_instructions.md
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/final/listener_pre_instructions.md
+                showToPositions: [0, 2]
+              - type: submitButton
+                buttonText: "Continue"
+
+          - name: final_storytelling
+            duration: 180
+            discussion:
+              chatType: video
+              showNickname: true
+              showTitle: true
+              showAudioMute: false
+              showVideoMute: false
+              showReportMissing: false
+              showSelfView: true
+              rooms:
+                - includePositions: [0]
+                - includePositions: [1]
+                - includePositions: [2]
+                - includePositions: [3]
+            elements:
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/final/speaker_in_instructions.md
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/final/listener_in_instructions.md
+                showToPositions: [0, 2]
+              - type: submitButton
+                buttonText: "End call and continue to questions"
+
+          - name: post_story_questions_final
+            duration: 60
+            elements:
+              # Questions for storytellers
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_well_told.md
+                name: speaker_story_well_told_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_story_engaging.md
+                name: speaker_story_engaging_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/speaker_comfort.md
+                name: speaker_comfort_final
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/game/questions/solo_speaker_expectation_of_listener_enjoyment.md
+                name: speaker_perception_of_listener_enjoy_final
+
+              - type: submitButton
+                buttonText: "Continue"
+                conditions: # all required
+                  - reference: prompt.speaker_story_well_told_final
+                    comparator: exists
+                  - reference: prompt.speaker_comfort_final
+                    comparator: exists
+                  - reference: prompt.speaker_perception_of_listener_enjoy_final
+                    comparator: exists
+
+        exitSequence:
+          - name: post_survey
+            elements:
+              # speaker questions
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_whose_story.md
+                name: speaker_whose_story
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_compliance_open_response.md
+                name: speaker_compliance_open_response
+                showToPositions: [1, 3]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_what_were_we_studying.md
+                name: speaker_what_were_we_studying
+                showToPositions: [1, 3]
+
+              - type: submitButton
+                buttonText: "Continue"
+                conditions:
+                  - reference: prompt.speaker_whose_story
+                    comparator: exists
+
+              # listener questions
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_compliance_natural.md
+                name: listener_compliance_natural
+                showToPositions: [0, 2]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_compliance_t_tapping.md
+                name: listener_compliance_t_tapping
+                showToPositions: [0, 2]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_comfort_with_manipulation.md
+                name: listener_comfort_with_manipulation
+                showToPositions: [0, 2]
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_compliance_open_response.md
+                name: listener_compliance_open_response
+                showToPositions: [0, 2]
+              - type: submitButton
+                buttonText: "Continue"
+                conditions:
+                  - reference: prompt.listener_compliance_natural
+                    comparator: exists
+                  - reference: prompt.listener_compliance_t_tapping
+                    comparator: exists
+                  - reference: prompt.listener_comfort_with_manipulation
+                    comparator: exists
+
+          - name: partner_differences
+            elements:
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/speaker_difference_between_listeners.md
+                name: speaker_difference_between_listeners
+                showToPositions: [1, 3]
+
+              - type: prompt
+                file: projects/talk_lab/backchannel_manipulation/t_tapping/exit/listener_difference_between_speakers.md
+                name: listener_difference_between_speakers
+                showToPositions: [0, 2]
+
+              - type: submitButton
+                buttonText: "Continue"
+
+          - name: big_5
+            elements:
+              - type: survey
+                name: big_5
+                surveyName: TIPI
+
+          - name: Demographics
+            elements:
+              - type: survey
+                name: demographics
+                surveyName: DemographicsShortUS
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: Instructions
+        elements:
+          - type: prompt
+            file: projects/talk_lab/backchannel_manipulation/t_tapping/intro/introduction.md
+          - type: submitButton
+            buttonText: "Begin"
+
+treatments:
+  - template: game
+    fields:
+      treatment_name: ${first_condition}_${second_condition}
+    broadcast:
+      d0:
+        - first_condition: natural
+          second_condition: t_tapping
+        - first_condition: t_tapping
+          second_condition: natural
+        - first_condition: natural # To see changes just due to repetition
+          second_condition: natural

@@ -8,7 +8,7 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "Default",
-  "treatments": ["schema", "nonschema", "schema_black_and_white", "schema_tangrams", "schema_nonschema"],
+  "treatments": ["nonschema_black_and_white", "nonschema_tangrams"],
   "payoffs": "equal",
   "knockdowns": 0.9,
   "dispatchWait": 1,
@@ -36,8 +36,8 @@
   },
   "exitCodes": {
     "complete": "CVZFDWA9",
-    "error": "C78R6USS",
-    "lobbyTimeout": "C78R6USS",
-    "failedEquipmentCheck": "C78R6USS"
+    "error": "CYAQQQJ3",
+    "lobbyTimeout": "CYAQQQJ3",
+    "failedEquipmentCheck": "CYAQQQJ3"
   }
 }
