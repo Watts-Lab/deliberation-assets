@@ -1,0 +1,46 @@
+{
+  "batchName": "moraltps_v1demo",
+  "cdn": "prod",
+  "treatmentFile": "projects/ioffrida/moraltps/v1/moraltps.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": [
+    "flowerboy_network_6maj_2min_v1", 
+    "house_burnt_down_network_6maj_2min_v2"
+  ],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 600,
+  "launchDate": "immediate",
+  "centralPrereg": true,
+  "preregRepos": [
+    {
+      "owner": "reinerolab",
+      "repo": "deliberation-assets-moraltps",
+      "branch": "main",
+      "directory": "demo"
+    }
+  ],
+  "dataRepos": [
+    {
+      "owner": "reinerolab",
+      "repo": "deliberation-assets-moraltps",
+      "branch": "main",
+      "directory": "demo"
+    }
+  ],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-reinero",
+    "region": "us-east-1"
+  },
+  "exitCodes": {
+    "complete": "STUDY_COMPLETE",
+    "error": "SYSTEM_ERROR",
+    "lobbyTimeout": "NO_MATCH_TIMEOUT",
+    "failedEquipmentCheck": "EQUIPMENT_FAILED"
+  }
+}
