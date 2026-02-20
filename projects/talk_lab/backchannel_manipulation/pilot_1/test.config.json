@@ -43,9 +43,9 @@
     "region": "us-east-1"
   },
   "exitCodes": {
-    "complete": "C16T4LN8",
-    "error": "C18JLSCV",
-    "lobbyTimeout": "C18JLSCV",
-    "failedEquipmentCheck": "C18JLSCV"
+    "complete": "SESSION_COMPLETE_A47N9P",
+    "error": "C4W8UXTP",
+    "lobbyTimeout": "C4W8UXTP",
+    "failedEquipmentCheck": "C4W8UXTP"
   }
 }

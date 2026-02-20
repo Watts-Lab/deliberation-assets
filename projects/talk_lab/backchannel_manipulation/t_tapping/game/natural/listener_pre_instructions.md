@@ -10,7 +10,7 @@ You are about to listen to someone tell a story.
 For this story, listen **the way you normally would in everyday conversation**.
 
 - Focus on what the person is saying.
-- Respond naturally (e.g., “mm-hmm,” nodding, facial reactions).
+- Respond naturally (e.g., “mm-hmm,” "wow!", "yeah", nodding, facial reactions, etc).
 
 ### 👉 Please don't tell your partner about these instructions. 👈
 

@@ -5,7 +5,7 @@ type: openResponse
 
 ## Was there anything that made the experience difficult?
 
-Did you have any particular challenges changing your listening behavior?
+Did you have any particular challenges?
 
 How could we help future listeners understand the task or perform better?
 
