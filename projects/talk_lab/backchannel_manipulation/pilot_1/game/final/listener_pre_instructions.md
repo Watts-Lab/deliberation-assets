@@ -7,8 +7,8 @@ type: noResponse
 
 You just heard three storytellers each tell their own stories.
 
-In the next stage, we'd like you to **retell the last story you heard** in as much detail as possible, as if you were sharing it with a friend.
+In the next stage, we'd like you to remember the story that you just finished listening to and **retell it in as much detail as possible**.
 
-You will be the only one in the call, but tell it as naturally as possible.
+You will be the only one in the call.
 
 ---

@@ -7,10 +7,10 @@ type: multipleChoice
 
 ---
 
-- Not very connected (1)
+- 1 - Not very connected
 - 2
 - 3
 - 4
 - 5
 - 6
-- Very connected (7)
+- 7 - Very connected

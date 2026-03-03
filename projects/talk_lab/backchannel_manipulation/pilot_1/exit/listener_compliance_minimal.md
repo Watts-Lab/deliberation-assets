@@ -9,10 +9,10 @@ type: multipleChoice
 
 ---
 
-- 1 Not very well
+- 1 - Not very well
 - 2
 - 3
 - 4
 - 5
 - 6
-- 7 Very well
+- 7 - Very well

@@ -7,10 +7,10 @@ type: multipleChoice
 
 ---
 
-- Not very good (1)
+- 1 - Not very good
 - 2
 - 3
 - 4
 - 5
 - 6
-- Very good (7)
+- 7 - Very good

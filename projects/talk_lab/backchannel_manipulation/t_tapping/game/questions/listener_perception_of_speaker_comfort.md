@@ -8,10 +8,10 @@ type: multipleChoice
 
 ---
 
-- Not very comfortable (1)
+- 1 - Not very comfortable
 - 2
 - 3
 - 4
 - 5
 - 6
-- Very comfortable (7)
+- 7 - Very comfortable

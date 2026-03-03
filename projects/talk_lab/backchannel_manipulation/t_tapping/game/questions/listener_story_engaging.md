@@ -7,10 +7,10 @@ type: multipleChoice
 
 ---
 
-- Not very engaging (1)
+- 1 - Not very engaging
 - 2
 - 3
 - 4
 - 5
 - 6
-- Very engaging (7)
+- 7 - Very engaging

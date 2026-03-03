@@ -3,15 +3,9 @@ name: projects/talk_lab/backchannel_manipulation/t_tapping/game/final/listener_i
 type: noResponse
 ---
 
-## Please retell the last story you heard
+## Remember the story that you just finished listening to and retell it in as much detail as possible
 
-You just heard two storytellers each tell their own stories.
-
-Please **retell the last story you heard** in as much detail as possible, as if you were sharing it with a friend.
-
-The video is recording automatically - begin telling the story whenever you are ready.
-
-You are the only one in the call, but tell it as naturally as possible.
+You are the only one in the call, **begin when you are ready**.
 
 When you're done, click the button below to continue to the next stage.
 

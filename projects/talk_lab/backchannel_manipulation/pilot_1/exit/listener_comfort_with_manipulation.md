@@ -9,10 +9,10 @@ type: multipleChoice
 
 ---
 
-- 1 Not at all uncomfortable
+- 1 - Not at all uncomfortable
 - 2
 - 3
 - 4
 - 5
 - 6
-- 7 Very uncomfortable
+- 7 - Very uncomfortable
