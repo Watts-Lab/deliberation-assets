@@ -788,9 +788,9 @@ templates:
               name: signup_link
               url: https://example.org/form
               displayText: Pick a time at 🟣 The Purple Scheduler
-              # urlParams:
-              #   - key: participant
-              #     reference: participantInfo.platformId
+              urlParams:
+                - key: source
+                  reference: participantInfo.platformId
             - type: prompt
               file: projects/css_lab/dialogue_levers/pilot_2/exit/talk_with_someone_new_why.md
               name: talk_with_someone_new_why
