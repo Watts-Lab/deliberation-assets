@@ -1,12 +1,11 @@
 ---
-name: projects/talk_lab/backchannel_manipulation/pilot_1/intro/introduction.md
+name: projects/talk_lab/backchannel_manipulation/t_tapping/intro/introduction.md
 type: noResponse
 ---
 
 ## 🗣️ About this study
 
-This is a study about **storytelling**.
-
+This is a study about **storytelling**.  
 You’ll be randomly assigned to either **tell a story** or **listen to someone telling a story**.
 
 Take a moment to think of a story you might tell **if you’re chosen as the storyteller**.
