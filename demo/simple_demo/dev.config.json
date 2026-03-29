@@ -1,0 +1,26 @@
+{
+  "batchName": "annotated_demo",
+  "cdn": "local",
+  "treatmentFile": "demo/simple_demo/simple_demo.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": ["simple_demo"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": {
+    "complete": "MyCompleteExitCode",
+    "error": "MyErrorExitCode",
+    "lobbyTimeout": "MyTimeoutExitCode",
+    "failedEquipmentCheck": "MyFailedEquipmentCheckExitCode"
+  }
+}
