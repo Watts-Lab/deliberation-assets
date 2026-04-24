@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/game/describeConditionalAssignment.prompt.md
+name: game/describeConditionalAssignment.prompt.md
 type: noResponse
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/intro/presurvey_instructions.prompt.md
+name: intro/presurvey_instructions.prompt.md
 type: noResponse
 ---
 

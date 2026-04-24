@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/game/describeDiscussion.prompt.md
+name: game/describeDiscussion.prompt.md
 type: noResponse
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/exit/describeDisplayByPosition.prompt.md
+name: exit/describeDisplayByPosition.prompt.md
 type: noResponse
 ---
 

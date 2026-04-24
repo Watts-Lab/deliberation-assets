@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/intro/describeAsyncSync.prompt.md
+name: intro/describeAsyncSync.prompt.md
 type: noResponse
 ---
 

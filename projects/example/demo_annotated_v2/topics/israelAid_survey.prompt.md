@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/topics/israelAid_survey.prompt.md
+name: topics/israelAid_survey.prompt.md
 title: israelAid
 type: multipleChoice
 ---

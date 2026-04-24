@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/intro/all_mandatory.prompt.md
+name: intro/all_mandatory.prompt.md
 type: noResponse
 ---
 

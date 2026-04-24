@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/game/pre_discussion_instructions_republican.prompt.md
+name: game/pre_discussion_instructions_republican.prompt.md
 type: noResponse
 notes: To be shown to republicans paired with a democrat
 ---

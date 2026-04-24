@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/exit/consider_partner.prompt.md
+name: exit/consider_partner.prompt.md
 type: noResponse
 ---
 

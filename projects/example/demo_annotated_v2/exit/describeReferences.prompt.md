@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/exit/describeReferences.prompt.md
+name: exit/describeReferences.prompt.md
 type: noResponse
 ---
 

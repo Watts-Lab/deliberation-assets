@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/topics/slaveReparations_survey.prompt.md
+name: topics/slaveReparations_survey.prompt.md
 title: slaveReparations
 type: multipleChoice
 ---

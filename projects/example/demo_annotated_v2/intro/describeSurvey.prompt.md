@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/intro/describeSurvey.prompt.md
+name: intro/describeSurvey.prompt.md
 type: noResponse
 ---
 

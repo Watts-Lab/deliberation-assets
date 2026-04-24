@@ -1,5 +1,5 @@
 ---
-name: projects/example/demo_annotated_v2/exit/guess_partner_party.prompt.md
+name: exit/guess_partner_party.prompt.md
 type: multipleChoice
 ---
 
