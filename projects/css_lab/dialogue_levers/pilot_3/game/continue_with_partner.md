@@ -1,5 +1,5 @@
 ---
-name: projects/css_lab/dialogue_levers/pilot_2/exit/continue_with_partner.md
+name: projects/css_lab/dialogue_levers/pilot_3/game/continue_with_partner.md
 type: multipleChoice
 ---
 
