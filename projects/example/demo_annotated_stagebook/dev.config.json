@@ -1,8 +1,8 @@
 {
   "batchName": "annotated_demo",
   "cdn": "local",
-  "treatmentFile": "projects/example/demo_annotated_v2/demo.treatments.yaml",
-  "customIdInstructions": "projects/example/demo_annotated_v2/intro/describeAnnotatedDemo.prompt.md",
+  "treatmentFile": "projects/example/demo_annotated_stagebook/demo.treatments.yaml",
+  "customIdInstructions": "projects/example/demo_annotated_stagebook/intro/describeAnnotatedDemo.prompt.md",
   "platformConsent": "US",
   "consentAddendum": "none",
   "checkAudio": true,
