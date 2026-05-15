@@ -1,0 +1,21 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/talk_lab/backchannel_manipulation/t_tapping/t_tapping.treatments.yaml",
+  "customIdInstructions": "none",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": ["t_tapping_natural"],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}

@@ -44,14 +44,12 @@ templates:
           conditions:
             - reference: prompt.${topicName}_presurvey
               comparator: isOneOf
-              value:
-                ["6 - Moderately ${p0_stance}", "7 - Extremely ${p0_stance}"]
+              value: ${p0_stance}
         - position: 1
           conditions:
             - reference: prompt.${topicName}_presurvey
               comparator: isOneOf
-              value:
-                ["1 - Extremely ${p1_stance}", "2 - Moderately ${p1_stance}"]
+              value: ${p1_stance}
 
       gameStages:
         - name: instructions
@@ -72,7 +70,33 @@ templates:
             chatType: text
             showNickname: true
             showTitle: false
+            reactionEmojisAvailable:
+              [
+                "😊",
+                "😭",
+                "😂",
+                "❤️",
+                "✨",
+                "⭐",
+                "🎉",
+                "🔥",
+                "💯",
+                "👍🏻",
+                "👎🏻",
+                "✅",
+                "❌",
+                "💀",
+                "👀",
+              ]
+            reactToSelf: false
+            numReactionsPerMessage: 1
           elements:
+            - type: prompt
+              file: projects/weinstein_listening/safak_text_dyads/game/p0_in_instructions_${p0_condition}.md
+              showToPositions: [0]
+            - type: prompt
+              file: projects/weinstein_listening/safak_text_dyads/game/p1_in_instructions.md
+              showToPositions: [1]
             - type: prompt
               file: projects/weinstein_listening/safak_text_dyads/topics/${topicName}_discussion.md
               showToPositions: [1]
@@ -86,17 +110,25 @@ templates:
 treatments:
   - template: condition
     fields:
-      treatmentName: "t_${p0_condition}_${topicName}_p0_${p0_stance}_p1_${p1_stance}"
+      treatmentName: "t_${p0_condition}_${topicName}_p0_${p0_direction}_p1_${p1_direction}"
     broadcast:
       d0:
-        - p0_stance: "Negative" # opposite stance, treated individual is negative
-          p1_stance: "Positive"
-        - p0_stance: "Positive" # opposite stance, treated individual is positive
-          p1_stance: "Negative"
-        - p0_stance: "Positive" # same stance, positive
-          p1_stance: "Positive"
-        - p0_stance: "Negative" # same stance, negative
-          p1_stance: "Negative"
+        - p0_stance: ["1 - Extremely Negative", "2 - Moderately Negative"] # opposite stance, treated individual is negative
+          p1_stance: ["6 - Moderately Positive", "7 - Extremely Positive"]
+          p0_direction: "negative"
+          p1_direction: "positive"
+        - p0_stance: ["6 - Moderately Positive", "7 - Extremely Positive"] # opposite stance, treated individual is positive
+          p1_stance: ["1 - Extremely Negative", "2 - Moderately Negative"]
+          p0_direction: "positive"
+          p1_direction: "negative"
+        - p0_stance: ["6 - Moderately Positive", "7 - Extremely Positive"] # same stance, positive
+          p1_stance: ["6 - Moderately Positive", "7 - Extremely Positive"]
+          p0_direction: "positive"
+          p1_direction: "positive"
+        - p0_stance: ["1 - Extremely Negative", "2 - Moderately Negative"] # same stance, negative
+          p1_stance: ["1 - Extremely Negative", "2 - Moderately Negative"]
+          p0_direction: "negative"
+          p1_direction: "negative"
 
       d1:
         - topicName: "assisted_suicide"

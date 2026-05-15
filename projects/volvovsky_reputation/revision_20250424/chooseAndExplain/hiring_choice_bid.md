@@ -1,6 +1,10 @@
 ---
 name: projects/volvovsky_reputation/revision_20250424/chooseAndExplain/hiring_choice_bid.md
-type: multipleChoice
+type: slider
+min: 0
+max: 80
+interval: 1
+labelPts: [0, 10, 20, 30, 40, 50, 60, 70, 80]
 ---
 
 ## Now it's your turn.

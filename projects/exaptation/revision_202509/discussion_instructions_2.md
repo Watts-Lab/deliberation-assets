@@ -1,7 +1,7 @@
 ---
 name: projects/exaptation/revision_202509/discussion_instructions_2.md
 type: openResponse
-rows: 2
+rows: 4
 ---
 
 As a group, come up with labels for each of these images, and enter them in the shared text box below.

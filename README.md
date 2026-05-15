@@ -11,9 +11,30 @@ The collection presented here is the work of a variety of authors. Unless otherw
 This repo is synced to a CDN, but also provides version control for files, so that
 we can refer to the precise version of a file when tracing the data.
 
+## Dev usage with deliberation lab run in container
+
+To start the deliberation lab in a local dev server, run this command in the current workspace root:
+
+```
+docker run --rm \
+  --name deliberation-dev \
+  --platform=linux/amd64 \
+  -p 3000:3000 \
+  -p 9090:9090 \
+  -v "$PWD/.data:/data" \
+  -v "$PWD:/assets" \
+  --env-file default.env \
+  -e DATA_DIR=/data \
+  -e SUBDOMAIN=local \
+  -e CONTAINER_IMAGE_VERSION_TAG=local \
+  -e ASSET_SERVER_DIR=/assets \
+  -e TEST_CONTROLS=enabled \
+  ghcr.io/watts-lab/deliberation-empirica:dev-latest
+```
+
 ## Dev Usage
 
-During dev, you can start this as a local webserver by running:
+To serve files for testing with a locally installed deliberation lab instance, start a local webserver for this folder by running:
 
 ```bash
 npx http-server --cors -a localhost -p 9090

@@ -1,0 +1,28 @@
+{
+  "batchName": "demo",
+  "cdn": "local",
+  "treatmentFile": "projects/css_lab/dialogue_levers/pilot_2/pilot2.treatments.yaml",
+  "customIdInstructions": "shared/id_instructions/prolific.md",
+  "platformConsent": "US",
+  "consentAddendum": "none",
+  "checkAudio": true,
+  "checkVideo": true,
+  "introSequence": "default",
+  "treatments": [
+    "abortion-go_around",
+    "DEI-prep_collecting_thoughts",
+    "death_penalty-control",
+    "reparations-go_around",
+    "support_ICE-control",
+    "tax_religion-goal_understanding"
+  ],
+  "payoffs": "equal",
+  "knockdowns": "none",
+  "dispatchWait": 1,
+  "launchDate": "immediate",
+  "centralPrereg": false,
+  "preregRepos": [],
+  "dataRepos": [],
+  "videoStorage": "none",
+  "exitCodes": "none"
+}

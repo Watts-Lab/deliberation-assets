@@ -1,11 +1,15 @@
 ---
 name: projects/volvovsky_reputation/revision_20250424/observeArtGame/pre_observe_bid.md
-type: multipleChoice
+type: slider
+min: 0
+max: 80
+interval: 1
+labelPts: [0, 10, 20, 30, 40, 50, 60, 70, 80]
 ---
 
 In a few moments, you will have an opportunity to play the game as a "collector", and the following player will play the "agent":
 
-![Red Rabbit Agent](projects/volvovsky_reputation/revision_20250424/icons/agent_elephant.jpg)
+![Agent Elephant](projects/volvovsky_reputation/revision_20250424/icons/agent_elephant.jpg)
 
 How many points would you like to offer the agent in order to buy the art for you?
 
