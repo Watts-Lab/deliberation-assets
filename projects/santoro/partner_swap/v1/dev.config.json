@@ -3,12 +3,12 @@
   "cdn": "local",
   "treatmentFile": "projects/santoro/partner_swap/v1/v1.treatments.yaml",
   "customIdInstructions": "none",
-  "platformConsent": "US",
-  "consentAddendum": "none",
+  "platformConsent": "custom",
+  "consentAddendum": "projects/santoro/partner_swap/v1/intro/custom_consent.md",
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "default",
-  "treatments": ["default"],
+  "treatments": ["session_type_A", "session_type_B"],
   "payoffs": "equal",
   "knockdowns": "none",
   "dispatchWait": 1,
@@ -17,5 +17,10 @@
   "preregRepos": [],
   "dataRepos": [],
   "videoStorage": "none",
-  "exitCodes": "none"
+  "exitCodes": {
+    "complete": "C1IWVCW5",
+    "error": "C50XN8UL",
+    "lobbyTimeout": "C50XN8UL",
+    "failedEquipmentCheck": "C50XN8UL"
+  }
 }

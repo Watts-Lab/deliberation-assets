@@ -1,0 +1,127 @@
+{
+  "preregistrations": {
+    "total": 128,
+    "treatmentBreakdown": {
+      "session_type_B": 84,
+      "session_type_A": 32,
+      "session_type_C": 12
+    },
+    "percentComplete": 2.34375
+  },
+  "participants": {
+    "total": 34,
+    "completeIntroSteps": 34,
+    "enterLobby": 34,
+    "beginGame": 34,
+    "finishGame": 34,
+    "complete": 3,
+    "ipTimezoneBreakdown": {
+      "undefined": 34
+    },
+    "ipCountryBreakdown": {
+      "undefined": 34
+    },
+    "possibleVPN": {
+      "true": 17,
+      "false": 17
+    },
+    "browserLanguageBreakdown": {
+      "en-US": 17,
+      "undefined": 17
+    },
+    "browserTimezoneBreakdown": {
+      "America/New_York": 17,
+      "undefined": 17
+    },
+    "knownVPN": {
+      "undefined": 34
+    },
+    "reportingDiscussionProblems": 0,
+    "checkingIn": 0
+  },
+  "completedSampleIds": [
+    "12da4b9f-bdce-4d7b-9faf-f4037835c978",
+    "238fcd4a-98c3-4af3-88a3-4d008f56d4c9",
+    "3a7a11e2-e40b-401e-869f-032c0a1f8b84"
+  ],
+  "timings": {
+    "intro": {
+      "max": 250587.948,
+      "min": 1.467,
+      "mean": 11599.591199999999,
+      "median": 3.633
+    },
+    "countdown": {
+      "max": null,
+      "min": null,
+      "mean": null
+    },
+    "lobby": {
+      "max": 251338.178,
+      "min": 1.281,
+      "mean": 71244.10157142857,
+      "median": 83296.248
+    },
+    "game": {
+      "max": 215.376,
+      "min": 0.242,
+      "mean": 74.15979999999999,
+      "median": 0.65
+    },
+    "exit": {
+      "max": 576.185,
+      "min": 62.29,
+      "mean": 240.66799999999998,
+      "median": 62.29
+    },
+    "totalTime": {
+      "max": null,
+      "min": null,
+      "mean": null,
+      "median": null
+    },
+    "totalActiveTime": {
+      "max": 502717.68700000003,
+      "min": 65.28,
+      "mean": 83158.52057142857,
+      "median": 83362.821
+    }
+  },
+  "connections": {
+    "min": 1,
+    "max": 2,
+    "mean": 1.1176470588235294,
+    "median": 1
+  },
+  "QC": {
+    "participateAgain": {
+      "undefined": 1
+    },
+    "adequateCompensation": {
+      "undefined": 1
+    },
+    "adequateTime": {
+      "undefined": 1
+    },
+    "clearInstructions": {
+      "undefined": 1
+    },
+    "videoQuality": {
+      "undefined": 1
+    },
+    "joiningProblems": {
+      "undefined": 1
+    },
+    "technicalProblems": {
+      "undefined": 1
+    },
+    "textExpansion": [],
+    "technicalDetail": [],
+    "joiningDetail": []
+  },
+  "finalPayoffs": [
+    1,
+    1,
+    1
+  ]
+}
