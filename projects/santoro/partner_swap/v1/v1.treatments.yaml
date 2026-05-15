@@ -1,0 +1,418 @@
+introSequences:
+  - name: default
+    introSteps:
+      # Note: Participants arrive from Qualtrics
+      # They have: participantType (i.e. D or R) in URL params
+      # (URL parameters are automatically captured)
+      - name: Before Match
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/intro/beforematch.md
+            name: welcome
+          - type: submitButton
+            buttonText: "Continue"
+
+treatments:
+  # Treatment A: Two conversations with same partner - 4 people
+  - name: session_type_A
+    desc: Session Type A - two conversations with same partner (4 participants)
+    playerCount: 4
+    groupComposition:
+      - position: 0
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "A"
+                
+      - position: 1
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "A"
+      
+      - position: 2
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "A"
+                
+      - position: 3
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "A"
+    
+    gameStages:
+      - name: Round 1 Pair Discussions - A
+        duration: 60
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 1]
+          - includePositions: [2, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+      - name: Post-Round 1 Manipulation Check Questions - A
+        duration: 50
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round1HadConvoManipulationCheck
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
+            name: manipPartnerParty
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round1_manip_talkTopic.md
+            name: manipTalkTopic
+          - type: submitButton
+            buttonText: "Continue"
+           
+      - name: Post-Round 1 Feeling Thermometers - A
+        duration: 60
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToD
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToR
+            showToPositions:
+              - 1
+              - 3
+          # Democrats (positions 0,2) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToD
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToR
+            showToPositions:
+              - 1
+              - 3
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound1
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound1
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound1
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 2 (same partner as Round 1)
+      - name: Breakout Rooms High Level - Round 2 - A
+        duration: 15
+        elements:
+          # Instructions for 0-3: two-same (same partner again)
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_instructions_two.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+
+      - name: Round 2 Pair Discussions - A
+        duration: 30
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 1]
+          - includePositions: [2, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+    exitSequence:     
+      - name: Post-Round 2 Manipulation Check Questions - A
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round2HadConvoManipulationCheckA
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
+            name: manipPartnerPartyRound2A
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_BC_talkTopic.md
+            name: manipTalkTopicRound2A
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: redirect
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics_A.md
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Qualtrics Survey - A
+        elements:
+          - type: qualtrics
+            url: https://wharton.qualtrics.com/jfe/form/SV_baBr8i4yLeWnbXU
+            urlParams:
+              - key: participantType
+                reference: urlParams.participantType
+              - key: sessionType
+                value: A
+
+  # Treatment B: Two conversations with different partner - 4 people
+  - name: session_type_B
+    desc: Session Type B - two conversations with different partner (4 participants)
+    playerCount: 4
+    groupComposition:
+      - position: 0
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "B"
+                
+      - position: 1
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "B"
+      
+      - position: 2
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "B"
+                
+      - position: 3
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+          - reference: urlParams.sessionType
+            comparator: equals
+            value: "B"
+    
+    gameStages:
+      - name: Round 1 Pair Discussions - B
+        duration: 60
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 1]
+          - includePositions: [2, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+      - name: Post-Round 1 Manipulation Check Questions - B
+        duration: 50
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round1HadConvoManipulationCheck
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
+            name: manipPartnerParty
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round1_manip_talkTopic.md
+            name: manipTalkTopic
+          - type: submitButton
+            buttonText: "Continue"
+           
+      - name: Post-Round 1 Feeling Thermometers - B
+        duration: 60
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToD
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToR
+            showToPositions:
+              - 1
+              - 3
+          # Democrats (positions 0,2) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToD
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToR
+            showToPositions:
+              - 1
+              - 3
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound1
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound1
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound1
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 2 (different partner as Round 1)
+      - name: Breakout Rooms High Level - Round 2 - B
+        duration: 15
+        elements:
+          # Instructions for 0-3: two-different
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_instructions_two.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+      
+      - name: Round 2 Pair Discussions - B
+        duration: 15
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 3]
+          - includePositions: [2, 1]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+    exitSequence:     
+      - name: Post-Round 2 Manipulation Check Questions - B
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round2HadConvoManipulationCheckB
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
+            name: manipPartnerPartyRound2B
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_BC_talkTopic.md
+            name: manipTalkTopicRound2B
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Qualtrics
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics_B.md
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Qualtrics Survey - B
+        elements:
+          - type: qualtrics
+            url: https://wharton.qualtrics.com/jfe/form/SV_baBr8i4yLeWnbXU
+            urlParams:
+              - key: participantType
+                reference: urlParams.participantType
+              - key: sessionType
+                value: B
