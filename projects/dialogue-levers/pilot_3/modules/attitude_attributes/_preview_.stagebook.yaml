@@ -1,0 +1,31 @@
+# Tester for the attitude_attributes module — invokes the
+# `attitude_attributes_questions` template inside a single gameStage so
+# you can preview the seven question prompts in their intended display
+# order. Mirrors the demographics tester next door.
+#
+# This file is for module-development preview only; it is NOT imported
+# by the main study and has no role at run time.
+
+imports:
+  - ./attitude_attributes.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: filler
+        elements:
+          - type: submitButton
+            buttonText: go on
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: attitude_attributes
+        duration: 120
+        elements:
+          - template: attitude_attributes_questions
+            fields:
+              prefix: preview
+          - type: submitButton

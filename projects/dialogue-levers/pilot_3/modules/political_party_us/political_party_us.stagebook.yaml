@@ -1,0 +1,124 @@
+# PoliticalPartyUS — root party-ID item with three branching follow-ups,
+# implementing the standard ANES party-identification protocol.
+#
+# Adapted from the Watts-Lab `politicalPartyUS` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/politicalPartyUS
+#
+# Items:
+#
+#   1. party              — Republican / Democrat / Independent / Other
+#                           (always shown)
+#   2. party_other        — free-text, shown if party = "Other"
+#   3. republican_strength — Strong / Not very strong,
+#                            shown if party = "Republican"
+#   4. democrat_strength   — Strong / Not very strong,
+#                            shown if party = "Democrat"
+#   5. independent_lean    — Closer to R / Neither / Closer to D,
+#                            shown if party = "Independent"
+#
+# THIS MODULE INTENTIONALLY OMITS THE UPSTREAM IMPORTANCE-SLIDER PAGE.
+# Upstream has four `*Importance` 0-100 sliders (one per party branch)
+# capturing identity strength. They're not needed for the pilot_3
+# analysis plan, which only uses the categorical party-ID for
+# matching/blocking and the strength/lean items to recover the 7-point
+# Republican–Independent–Democrat scale. To add them back, see the
+# upstream JSON `page2` elements.
+#
+# WHY introExitStep (NOT elements)? Branching follow-ups need their
+# unlocked branch enforced as required-before-submit. That enforcement
+# has to live in a submitButton whose conditions can resolve to the
+# template-emitted storage keys — which only works if the submit
+# button and the prompts share a parent that the schema validator
+# expands together. Baking the whole thing into one introExitStep
+# template achieves that; the consumer invokes the template AS a
+# step rather than as elements inside a step. Same pattern as the
+# demographics module.
+#
+# The `${stageName}` field is required on every invocation so the
+# storage keys (e.g. `prompt_<stageName>_party`) don't collide if the
+# module is invoked more than once in the same study.
+
+templates:
+  - name: political_party_us_questions
+    contentType: introExitStep
+    notes: |
+      Root party item + four conditional follow-ups + a submit button
+      that enforces the upstream required-field logic (root always
+      required; unlocked branch's follow-up required IFF its branch
+      was chosen). The page-2 importance sliders are intentionally
+      omitted (see file header).
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_party
+          file: party.prompt.md
+
+        - type: prompt
+          name: ${stageName}_party_other
+          file: party_other.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_party
+              comparator: equals
+              value: "Other"
+
+        - type: prompt
+          name: ${stageName}_republican_strength
+          file: republican_strength.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_party
+              comparator: equals
+              value: "Republican"
+
+        - type: prompt
+          name: ${stageName}_democrat_strength
+          file: democrat_strength.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_party
+              comparator: equals
+              value: "Democrat"
+
+        - type: prompt
+          name: ${stageName}_independent_lean
+          file: independent_lean.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_party
+              comparator: equals
+              value: "Independent"
+
+        # Required-field enforcement. The root `party` item is always
+        # required. Each follow-up is required IFF its branch was
+        # chosen, encoded as an `any:` tree: either the branch wasn't
+        # chosen (so this follow-up isn't expected to exist), OR the
+        # follow-up exists. Exactly one of the four follow-ups will
+        # ever apply per session, but listing all four keeps the
+        # template branch-agnostic.
+
+        - type: submitButton
+          conditions:
+            - reference: self.prompt.${stageName}_party
+              comparator: exists
+            - any:
+                - reference: self.prompt.${stageName}_party
+                  comparator: doesNotEqual
+                  value: "Other"
+                - reference: self.prompt.${stageName}_party_other
+                  comparator: exists
+            - any:
+                - reference: self.prompt.${stageName}_party
+                  comparator: doesNotEqual
+                  value: "Republican"
+                - reference: self.prompt.${stageName}_republican_strength
+                  comparator: exists
+            - any:
+                - reference: self.prompt.${stageName}_party
+                  comparator: doesNotEqual
+                  value: "Democrat"
+                - reference: self.prompt.${stageName}_democrat_strength
+                  comparator: exists
+            - any:
+                - reference: self.prompt.${stageName}_party
+                  comparator: doesNotEqual
+                  value: "Independent"
+                - reference: self.prompt.${stageName}_independent_lean
+                  comparator: exists

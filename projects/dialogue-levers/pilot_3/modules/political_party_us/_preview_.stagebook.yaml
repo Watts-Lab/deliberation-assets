@@ -1,0 +1,25 @@
+# Tester for the political_party_us module — invokes the
+# `political_party_us_questions` template directly as an introStep.
+# The submit button + required-field gating are baked into the
+# template; the consumer only needs to supply `stageName:`.
+
+imports:
+  - ./political_party_us.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - template: political_party_us_questions
+        fields:
+          stageName: preview
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: filler
+        duration: 10
+        elements:
+          - type: submitButton
+            buttonText: Done

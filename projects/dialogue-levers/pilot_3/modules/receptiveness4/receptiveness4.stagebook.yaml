@@ -1,0 +1,133 @@
+# Receptiveness4 — Watts-Lab's four-item adaptation of the Receptiveness
+# to Opposing Views scale (Minson, Chen, & Tinsley 2020). One item per
+# factor in the four-factor solution from the source paper's oblique
+# rotation factor analysis.
+#
+# Adapted from the Watts-Lab `receptiveness4` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/receptiveness4
+#
+# Items, in upstream display order:
+#
+#   1. frustrated           — Negative Emotion         (R)
+#   2. reading              — Intellectual Curiosity
+#   3. emotional_arguments  — Derogation of Opponents  (R)
+#   4. ideas_dangerous      — Taboo Issues             (R)
+#
+# (R) = reverse-coded at scoring time via `8 - X` (raw 1–7 → receptiveness-
+# aligned 1–7). See `receptiveness4.score.js` upstream and the README in
+# this folder for the scoring formula. Encoding here is raw 1–7 (Strongly
+# Disagree → Strongly Agree) — display direction is preserved for
+# visual consistency with the rest of the pilot_3 sliders, and (R)
+# items are NOT pre-inverted at the prompt level (matches the TIPI
+# module's policy; see TIPI/README.md for rationale).
+#
+# RENDERING. Each item is a `slider` with `min: 1, max: 7, interval: 1`
+# so it snaps to integer values. Anchors at 1 (Strongly Disagree),
+# 4 (Neither agree nor disagree), 7 (Strongly Agree) — matching the
+# TIPI module's slider UX. The upstream renders the same items as a
+# radio-button row with all 7 anchor labels and an HTML intro paragraph
+# repeating the full scale key; we don't reproduce that intro paragraph
+# (the slider's three anchors are self-explanatory).
+#
+# DISPLAY ORDER. Upstream uses `questionsOrder: "random"` on the
+# panel — items are presented in random order per participant. Stagebook
+# doesn't expose a shuffle option on template element lists, so this
+# module presents items in fixed display order. If item-order effects
+# turn out to matter, file an enhancement against stagebook for a
+# `shuffle:` field on prompt elements (or split into separate panels).
+#
+# The template emits `contentType: introExitStep` — a self-contained
+# step that includes all four prompts AND a submitButton with required-
+# field gating (matches the demographics + political_party_us + TIPI
+# pattern). The consumer invokes the template directly AS a step, not
+# as elements inside a wrapping step. See _preview_ and the pilot_3
+# call site for examples.
+#
+# The `${stageName}` field is required on every invocation: it sets
+# the step's name AND the storage-key prefix (e.g.
+# `prompt_<stageName>_frustrated`), so the same battery can be invoked
+# more than once without collision.
+
+templates:
+  - name: receptiveness4_questions
+    contentType: introExitStep
+    notes: |
+      Four receptiveness items in upstream display order. All required
+      in the source schema. Raw 1–7 encoding; scoring uses `8 - X` for
+      the three (R) items and averages the four into a composite. See
+      README for the per-factor breakdown.
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_frustrated
+          file: frustrated.prompt.md
+
+        - type: prompt
+          name: ${stageName}_reading
+          file: reading.prompt.md
+
+        - type: prompt
+          name: ${stageName}_emotional_arguments
+          file: emotional_arguments.prompt.md
+
+        - type: prompt
+          name: ${stageName}_ideas_dangerous
+          file: ideas_dangerous.prompt.md
+
+        - type: submitButton
+          name: ${stageName}
+          conditions:
+            - reference: self.prompt.${stageName}_frustrated
+              comparator: exists
+            - reference: self.prompt.${stageName}_reading
+              comparator: exists
+            - reference: self.prompt.${stageName}_emotional_arguments
+              comparator: exists
+            - reference: self.prompt.${stageName}_ideas_dangerous
+              comparator: exists
+
+  # Likert-scale (multipleChoice) variant of receptiveness4_questions.
+  # Same four items in the same display order, identical scoring
+  # conventions — the only difference is the response widget: vertical
+  # radio buttons with 7 explicit options instead of a slider.
+  # Authored as a UX-alternative because the slider renderer has known
+  # issues (stagebook#326 thumb-alignment). Same `${stageName}` contract.
+  - name: receptiveness4_questions_likert
+    contentType: introExitStep
+    notes: |
+      Four receptiveness items as a Likert-scale battery. Encoding,
+      scoring (raw 1–7; `8 − X` applied at scoring time for the three
+      (R) items), and per-item factor assignments are identical to
+      receptiveness4_questions (slider variant). See README for the
+      per-factor breakdown.
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_frustrated
+          file: frustrated_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_reading
+          file: reading_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_emotional_arguments
+          file: emotional_arguments_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_ideas_dangerous
+          file: ideas_dangerous_likert.prompt.md
+
+        - type: submitButton
+          name: ${stageName}
+          conditions:
+            - reference: self.prompt.${stageName}_frustrated
+              comparator: exists
+            - reference: self.prompt.${stageName}_reading
+              comparator: exists
+            - reference: self.prompt.${stageName}_emotional_arguments
+              comparator: exists
+            - reference: self.prompt.${stageName}_ideas_dangerous
+              comparator: exists

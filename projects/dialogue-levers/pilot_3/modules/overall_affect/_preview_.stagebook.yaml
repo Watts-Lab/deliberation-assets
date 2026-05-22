@@ -1,0 +1,34 @@
+# Tester for the overall_affect module — exercises both templates
+# (forecast and realized) so you can preview the wording side by side.
+# The templates use `contentType: elements`, so each invocation is
+# wrapped in a gameStage that supplies the stage-level wrapping.
+
+imports:
+  - ./overall_affect.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: filler
+        elements:
+          - type: submitButton
+            buttonText: Begin
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: preview_forecast
+        duration: 90
+        elements:
+          - template: overall_affect_forecast
+            fields:
+              prefix: preview_forecast
+
+      - name: preview_realized
+        duration: 90
+        elements:
+          - template: overall_affect_realized
+            fields:
+              prefix: preview_realized

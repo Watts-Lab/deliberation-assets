@@ -1,0 +1,104 @@
+# Perception-of-others battery — seven Likert items capturing the
+# participant's perceptions of a specific other person (typically their
+# discussion partner): perspective-taking in both directions, shared
+# identity, politeness, listening, talking, and defensiveness.
+#
+# Adapted from the Watts-Lab `perceptionOfOthers` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/perceptionOfOthers
+#
+# Items, in display order:
+#
+#   1. self_perspective_taking    — How easy was it for YOU to see THEIR POV?
+#   2. common                     — How much do you have in common with them?
+#   3. polite                     — How polite were they?
+#   4. listening                  — How well did they listen?
+#   5. partner_perspective_taking — How well were THEY able to see YOUR POV?
+#   6. talking                    — How much did they talk? (U-SHAPED scale)
+#   7. defensive                  — Did they get defensive? (NEGATIVELY valenced)
+#
+# Items 6 (talking) and 7 (defensive) are not simply higher-is-better:
+#   - talking has a U-shaped scale where 0.5 ("about the right amount")
+#     is the best outcome and both extremes are sub-optimal.
+#   - defensive is negatively valenced (higher = more defensive = worse).
+# Both flagged in their per-prompt `notes:` fields.
+#
+# `liking` was pulled from this module on 2026-05-11 and consolidated
+# into the new `overall_affect` module as the realized-liking
+# component of the affect composite. `common` (perceived similarity)
+# is intentionally kept here — it measures a different construct from
+# `overall_affect/connection` (felt-bond). See ADR
+# 2026-05-11-overall-affect-and-forecast-design.md.
+#
+# The upstream README emphasizes that the battery is written for a
+# generic "them/they", so the consumer should precede the invocation
+# with an instruction telling the participant who to think about (e.g.
+# "We'd like to ask some questions about your discussion partner:").
+# The pilot_3 study uses `exit/perception_of_partner/consider_partner.prompt.md`
+# for this purpose.
+#
+# The template emits `contentType: elements` — a flat list of prompt
+# elements that the consumer embeds inside an existing stage. It does
+# NOT include its own submitButton, matching the attitude_attributes
+# and discussion_general modules' pattern.
+#
+# The `${prefix}` field is required on every invocation so the eight
+# storage keys (e.g. `prompt_<prefix>_liking`) don't collide when the
+# same battery is invoked multiple times in the same study.
+
+templates:
+  - name: perception_of_others_questions
+    contentType: elements
+    notes: |
+      Seven perception-of-others items, in fixed display order:
+      self_perspective_taking, common, polite, listening,
+      partner_perspective_taking, talking, defensive. All five-point
+      Likert; all required in the source schema. Items 6 (talking)
+      and 7 (defensive) need special handling for composite scoring —
+      see the README and per-item notes. (`liking` was pulled into
+      the overall_affect module on 2026-05-11.)
+    content:
+      - type: prompt
+        name: ${prefix}_self_perspective_taking
+        file: self_perspective_taking.prompt.md
+
+      - type: prompt
+        name: ${prefix}_common
+        file: common.prompt.md
+
+      - type: prompt
+        name: ${prefix}_polite
+        file: polite.prompt.md
+
+      - type: prompt
+        name: ${prefix}_listening
+        file: listening.prompt.md
+
+      - type: prompt
+        name: ${prefix}_partner_perspective_taking
+        file: partner_perspective_taking.prompt.md
+
+      - type: prompt
+        name: ${prefix}_talking
+        file: talking.prompt.md
+
+      - type: prompt
+        name: ${prefix}_defensive
+        file: defensive.prompt.md
+
+      - type: submitButton
+        name: ${prefix}_submit
+        conditions:
+          - reference: self.prompt.${prefix}_self_perspective_taking
+            comparator: exists
+          - reference: self.prompt.${prefix}_common
+            comparator: exists
+          - reference: self.prompt.${prefix}_polite
+            comparator: exists
+          - reference: self.prompt.${prefix}_listening
+            comparator: exists
+          - reference: self.prompt.${prefix}_partner_perspective_taking
+            comparator: exists
+          - reference: self.prompt.${prefix}_talking
+            comparator: exists
+          - reference: self.prompt.${prefix}_defensive
+            comparator: exists

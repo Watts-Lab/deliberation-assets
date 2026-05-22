@@ -1,0 +1,109 @@
+# Overall Affect — three-item composite measuring participants'
+# affective response to a cross-partisan dialogue partner. Authored
+# for pilot_3 as a candidate third primary DV (alongside understanding
+# and willingness-to-return). See ADR
+# 2026-05-11-overall-affect-and-forecast-design.md.
+#
+# Items, all 7-point Likert:
+#
+#   1. quality    — How good was / How much do you expect to enjoy …
+#   2. liking     — How much did / do you expect to like your partner
+#   3. connection — How socially connected do you feel / expect to feel
+#
+# Two template flavors share the dimensions but differ in tense:
+#
+#   - `overall_affect_realized`  — past tense, post-discussion
+#   - `overall_affect_forecast`  — future-expectation, pre-discussion
+#
+# In pilot_3, `overall_affect_realized` runs once (post-discussion),
+# and `overall_affect_forecast` runs twice (before pre-discussion
+# intervention as a baseline expectation; after pre-discussion
+# intervention as an updated expectation). The repeat-measurement
+# design lets us separate intervention effects on EXPECTATIONS from
+# intervention effects on REALITY — see the ADR for the analytical
+# framing. The pilot will inform whether we keep all three time points
+# or drop one for the main study.
+#
+# CONTENT TYPE. Both templates emit `contentType: elements` rather
+# than `introExitStep`. This is so the same template can be invoked
+# inside a gameStage (where the call site supplies `duration:`,
+# `conditions:`, etc.) AND inside an exit/intro step (no duration).
+# The template is responsible for the prompts + the submit button;
+# the call site wraps with name + the stage-level fields it needs.
+#
+# Caveat: schema validation can't see the template's own submit button
+# (stagebook#317/318), so call sites that wrap this template inside a
+# gameStage may surface "must include advancement element" as an IDE
+# false positive. The runtime expansion is correct.
+#
+# The `${prefix}` field is required on every invocation so the storage
+# keys (e.g. `prompt_<prefix>_quality`) don't collide across the three
+# time points (T1 / T2 / T3) and any future invocations.
+
+templates:
+  - name: overall_affect_realized
+    contentType: elements
+    notes: |
+      Three realized affect items in fixed order: quality, liking,
+      connection. Each is a 7-point multipleChoice with anchors at
+      1 / 4 / 7 (Not very <X> / Somewhat <X> / Very <X>). All required.
+      Includes a submitButton with `exists` gates on every item.
+    content:
+      - type: prompt
+        name: ${prefix}_quality
+        file: quality_realized.prompt.md
+
+      - type: prompt
+        name: ${prefix}_liking
+        file: liking_realized.prompt.md
+
+      - type: prompt
+        name: ${prefix}_connection
+        file: connection_realized.prompt.md
+
+      - type: submitButton
+        name: ${prefix}
+        conditions:
+          - reference: self.prompt.${prefix}_quality
+            comparator: exists
+          - reference: self.prompt.${prefix}_liking
+            comparator: exists
+          - reference: self.prompt.${prefix}_connection
+            comparator: exists
+
+  - name: overall_affect_forecast
+    contentType: elements
+    notes: |
+      Three forecast (expected) affect items in fixed order: quality,
+      liking, connection. Each is a 7-point multipleChoice with
+      anchors at 1 / 4 / 7. All required. Wording note: the quality
+      forecast asks "expect to enjoy" rather than "expect to be good"
+      because the latter parses awkwardly as a forecast — see ADR for
+      the slight construct shift this creates between forecast and
+      realized quality.
+    content:
+      - type: prompt
+        name: ${prefix}_quality
+        file: quality_forecast.prompt.md
+
+      - type: prompt
+        name: ${prefix}_liking
+        file: liking_forecast.prompt.md
+
+      - type: prompt
+        name: ${prefix}_connection
+        file: connection_forecast.prompt.md
+
+      # The forecast template runs pre-discussion, so this submit
+      # button is the last click before the discussion stage begins.
+      # Customized text tells the participant what's about to happen.
+      - type: submitButton
+        name: ${prefix}
+        buttonText: Continue to Discussion
+        conditions:
+          - reference: self.prompt.${prefix}_quality
+            comparator: exists
+          - reference: self.prompt.${prefix}_liking
+            comparator: exists
+          - reference: self.prompt.${prefix}_connection
+            comparator: exists

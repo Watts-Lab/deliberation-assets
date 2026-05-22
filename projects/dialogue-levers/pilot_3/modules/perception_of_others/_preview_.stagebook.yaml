@@ -1,0 +1,27 @@
+# Tester for the perception_of_others module — invokes the
+# `perception_of_others_questions` template inside a single gameStage so
+# you can preview the eight items in their intended display order.
+# Mirrors the testers in the other modules.
+
+imports:
+  - ./perception_of_others.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: filler
+        elements:
+          - type: submitButton
+            buttonText: go on
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: perception_of_others
+        duration: 120
+        elements:
+          - template: perception_of_others_questions
+            fields:
+              prefix: preview

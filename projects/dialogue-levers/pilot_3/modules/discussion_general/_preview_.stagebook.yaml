@@ -1,0 +1,28 @@
+# Tester for the discussion_general module — invokes the
+# `discussion_general_questions` template inside a single gameStage so
+# you can preview the ten Likert items in their intended display order.
+# Mirrors the demographics + attitude_attributes testers next door.
+
+imports:
+  - ./discussion_general.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: filler
+        elements:
+          - type: submitButton
+            buttonText: go on
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: discussion_general
+        duration: 120
+        elements:
+          - template: discussion_general_questions
+            fields:
+              prefix: preview
+          - type: submitButton

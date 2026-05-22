@@ -1,0 +1,200 @@
+# TIPI — Ten-Item Personality Inventory (Gosling, Rentfrow, & Swann, 2003).
+#
+# A brief Big-5 personality measure: ten 7-point items, two per
+# dimension (one positively keyed, one negatively keyed). Often used
+# when researchers need a Big-5 read but can't afford the full NEO-PI
+# or even the BFI-44. Validation: Gosling et al. (2003), JRP.
+#
+# Adapted from the Watts-Lab `TIPI` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/TIPI
+#
+# Items, in upstream display order (matching the published TIPI):
+#
+#   1.  extroversion     — Extraverted, enthusiastic.        (E+)
+#   2.  criticalness     — Critical, quarrelsome.            (A- · R)
+#   3.  dependability    — Dependable, self-disciplined.     (C+)
+#   4.  anxiety          — Anxious, easily upset.            (ES- · R)
+#   5.  openness         — Open to new experiences, complex. (O+)
+#   6.  quietness        — Reserved, quiet.                  (E- · R)
+#   7.  sympathy         — Sympathetic, warm.                (A+)
+#   8.  carelessness     — Disorganized, careless.           (C- · R)
+#   9.  calmness         — Calm, emotionally stable.         (ES+)
+#   10. conventionality  — Conventional, uncreative.         (O- · R)
+#
+# (R) = reverse-coded at scoring time via `8 - X`. Encoding here is
+# RAW 1–7 (Strongly Disagree → Strongly Agree), matching the published
+# scoring conventions; do NOT pre-invert the items in this file.
+#
+# Rendering: each item is a `slider` with `min: 1, max: 7, interval: 1`
+# so it snaps to integer values. The slider form is more ergonomic for
+# a long battery than ten radio-button groups but the stored numeric
+# value is identical to the radio-button equivalent (an integer 1–7).
+# To swap to radio buttons, change every `.prompt.md` to `type:
+# multipleChoice` — the option list works as-is.
+#
+# The template emits `contentType: introExitStep` — a self-contained
+# step that includes all ten prompts AND a submitButton with required-
+# field gating (matches the demographics + political_party_us pattern).
+# The consumer invokes the template directly AS a step, not as elements
+# inside a wrapping step. See _preview_ and the pilot_3 call site for
+# examples.
+#
+# The `${stageName}` field is required on every invocation: it sets
+# the step's name AND the storage-key prefix (e.g.
+# `prompt_<stageName>_extroversion`), so the same battery can be
+# invoked more than once without collision.
+
+templates:
+  - name: TIPI_questions
+    contentType: introExitStep
+    notes: |
+      Ten TIPI items in upstream display order. All required in the
+      source schema. Raw 1–7 encoding; scoring uses `8 - X` for the
+      (R) items and averages each dimension's two items. See README
+      for the composite formulas.
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_extroversion
+          file: extroversion.prompt.md
+
+        - type: prompt
+          name: ${stageName}_criticalness
+          file: criticalness.prompt.md
+
+        - type: prompt
+          name: ${stageName}_dependability
+          file: dependability.prompt.md
+
+        - type: prompt
+          name: ${stageName}_anxiety
+          file: anxiety.prompt.md
+
+        - type: prompt
+          name: ${stageName}_openness
+          file: openness.prompt.md
+
+        - type: prompt
+          name: ${stageName}_quietness
+          file: quietness.prompt.md
+
+        - type: prompt
+          name: ${stageName}_sympathy
+          file: sympathy.prompt.md
+
+        - type: prompt
+          name: ${stageName}_carelessness
+          file: carelessness.prompt.md
+
+        - type: prompt
+          name: ${stageName}_calmness
+          file: calmness.prompt.md
+
+        - type: prompt
+          name: ${stageName}_conventionality
+          file: conventionality.prompt.md
+
+        - type: submitButton
+          name: ${stageName}
+          conditions:
+            - reference: self.prompt.${stageName}_extroversion
+              comparator: exists
+            - reference: self.prompt.${stageName}_criticalness
+              comparator: exists
+            - reference: self.prompt.${stageName}_dependability
+              comparator: exists
+            - reference: self.prompt.${stageName}_anxiety
+              comparator: exists
+            - reference: self.prompt.${stageName}_openness
+              comparator: exists
+            - reference: self.prompt.${stageName}_quietness
+              comparator: exists
+            - reference: self.prompt.${stageName}_sympathy
+              comparator: exists
+            - reference: self.prompt.${stageName}_carelessness
+              comparator: exists
+            - reference: self.prompt.${stageName}_calmness
+              comparator: exists
+            - reference: self.prompt.${stageName}_conventionality
+              comparator: exists
+
+  # Likert-scale (multipleChoice) variant of TIPI_questions. Same ten
+  # items in the same display order, identical scoring conventions —
+  # the only difference is the response widget: vertical radio buttons
+  # with 7 explicit options instead of a slider. Authored as a UX-
+  # alternative because the slider renderer has known issues
+  # (stagebook#326 thumb-alignment, #333 char-counter exact-max).
+  # Same `${stageName}` contract as the slider variant.
+  - name: TIPI_questions_likert
+    contentType: introExitStep
+    notes: |
+      Ten TIPI items as a Likert-scale battery. Encoding, scoring,
+      and per-item dimension assignments are identical to TIPI_questions
+      (slider variant). See README for the composite formulas.
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_extroversion
+          file: extroversion_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_criticalness
+          file: criticalness_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_dependability
+          file: dependability_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_anxiety
+          file: anxiety_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_openness
+          file: openness_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_quietness
+          file: quietness_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_sympathy
+          file: sympathy_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_carelessness
+          file: carelessness_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_calmness
+          file: calmness_likert.prompt.md
+
+        - type: prompt
+          name: ${stageName}_conventionality
+          file: conventionality_likert.prompt.md
+
+        - type: submitButton
+          name: ${stageName}
+          conditions:
+            - reference: self.prompt.${stageName}_extroversion
+              comparator: exists
+            - reference: self.prompt.${stageName}_criticalness
+              comparator: exists
+            - reference: self.prompt.${stageName}_dependability
+              comparator: exists
+            - reference: self.prompt.${stageName}_anxiety
+              comparator: exists
+            - reference: self.prompt.${stageName}_openness
+              comparator: exists
+            - reference: self.prompt.${stageName}_quietness
+              comparator: exists
+            - reference: self.prompt.${stageName}_sympathy
+              comparator: exists
+            - reference: self.prompt.${stageName}_carelessness
+              comparator: exists
+            - reference: self.prompt.${stageName}_calmness
+              comparator: exists
+            - reference: self.prompt.${stageName}_conventionality
+              comparator: exists

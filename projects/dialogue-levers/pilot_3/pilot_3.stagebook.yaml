@@ -1,0 +1,1302 @@
+imports:
+  # Demographics survey. Provides the
+  # `demographics_questions` template invoked from the `demographics`
+  # introStep below.
+  - ./modules/demographics/demographics.stagebook.yaml
+  # Attitude attributes battery. Provides the
+  # `attitude_attributes_questions` template invoked from both the
+  # `attitude_attributes` (pre-discussion) and `attitude_attributes_post`
+  # gameStages below.
+  - ./modules/attitude_attributes/attitude_attributes.stagebook.yaml
+  # General discussion-quality battery. Provides the
+  # `discussion_general_questions` template invoked from both
+  # `perception_of_discussion` (after the first discussion) and
+  # `second_discussion_followup` (after the optional second discussion).
+  - ./modules/discussion_general/discussion_general.stagebook.yaml
+  # Perception-of-others battery. Provides the
+  # `perception_of_others_questions` template invoked from the
+  # `perception_of_partner` gameStage below.
+  - ./modules/perception_of_others/perception_of_others.stagebook.yaml
+  # TIPI (Ten-Item Personality Inventory) battery. Provides the
+  # `TIPI_questions` template invoked from the `big_5_personality`
+  # introStep below.
+  - ./modules/TIPI/TIPI.stagebook.yaml
+  # Political party identification (US, page 1 only — the upstream's
+  # identity-importance sliders are intentionally dropped per the
+  # pilot_3 analysis plan; see module README). Provides the
+  # `political_party_us_questions` template invoked from the
+  # `party_affiliation` introStep below.
+  - ./modules/political_party_us/political_party_us.stagebook.yaml
+  # Four-item Receptiveness to Opposing Views (Watts-Lab adaptation of
+  # Minson, Chen, & Tinsley 2020).Provides the
+  # `receptiveness4_questions` template invoked from the `receptiveness`
+  # introStep below.
+  - ./modules/receptiveness4/receptiveness4.stagebook.yaml
+  # Overall-affect composite — candidate third primary DV. Provides
+  # `overall_affect_realized` (post-discussion T3) and
+  # `overall_affect_forecast` (pre-discussion, used at T1 baseline and
+  # T2 post-intervention) templates. Exploratory for pilot_3; see ADR
+  # 2026-05-11-overall-affect-and-forecast-design.md.
+  - ./modules/overall_affect/overall_affect.stagebook.yaml
+
+templates:
+  ############# INTERVENTIONS #############
+
+  # Control - no intervention, just a prompt to remind them of the topic
+  - name: control_pre
+    contentType: elements
+    content:
+      - type: submitButton
+        name: pre # check that all submit buttons on _pre templates are named "pre", to make it easy to aggregate timing data
+
+  - name: control_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/control/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Reflect and share - Collecting Thoughts
+  - name: prep_collecting_thoughts_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_collecting_thoughts/pre_B.prompt.md
+        name: prep_collecting_thoughts_pre_notes
+      # Engagement gate per ADR 2026-05-11-prep-intervention-engagement-gate.md:
+      # the "Reflect and Share" family doesn't use comprehension checks
+      # (per registered report § Interventions), so completion of the
+      # writing task itself is the engagement signal. 100 chars ≈ a few
+      # sentences — the floor below which we treat participation as
+      # non-engagement. Applied uniformly across all 8 prep_* arms.
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.prep_collecting_thoughts_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_collecting_thoughts_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_collecting_thoughts/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/prep_collecting_thoughts/mid_B.prompt.md
+      - type: display # Display P's notes from the pre-discussion stage
+        reference: self.prompt.prep_collecting_thoughts_pre_notes
+
+  # Treatment: Reflect and share - Personal Storytelling
+  - name: prep_personal_storytelling_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_personal_storytelling/pre_B.prompt.md
+        name: prep_personal_storytelling_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_personal_storytelling_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_personal_storytelling_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_personal_storytelling/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/prep_personal_storytelling/mid_B.prompt.md
+      - type: display
+        reference: self.prompt.prep_personal_storytelling_pre_notes
+
+  # Treatment: Reflect and share - Hopes and Fears
+  - name: prep_hopes_and_fears_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_hopes_and_fears/pre_B.prompt.md
+        name: prep_hopes_fears_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_hopes_fears_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_hopes_and_fears_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_hopes_and_fears/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/prep_hopes_and_fears/mid_B.prompt.md
+      - type: display
+        reference: self.prompt.prep_hopes_fears_pre_notes
+
+  # Treatment: Reflect and share - Topic-specific values
+  - name: prep_topic_specific_values_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_topic_specific_values/pre_B.prompt.md
+        name: prep_topic_specific_values_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_topic_specific_values_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_topic_specific_values_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_topic_specific_values/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/prep_topic_specific_values/mid_B.prompt.md
+      - type: display
+        reference: self.prompt.prep_topic_specific_values_pre_notes
+
+  # Treatment: Reflect and share - General Values
+  - name: prep_general_values_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_general_values/pre_B.prompt.md
+        name: prep_general_values_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_general_values_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_general_values_mid
+    contentType: elements
+    content:
+      - type: prompt # step 1
+        file: game/prep_general_values/mid_A.prompt.md
+      - type: display
+        reference: self.prompt.prep_general_values_pre_notes
+      - type: prompt # step 2
+        file: game/prep_general_values/mid_B.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Reflect and share - Addressing Stereotypes
+  - name: prep_addressing_stereotypes_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_addressing_stereotypes/pre_B.prompt.md
+        name: prep_addressing_stereotypes_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_addressing_stereotypes_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_addressing_stereotypes_mid
+    contentType: elements
+    content:
+      - type: prompt # step 1
+        file: game/prep_addressing_stereotypes/mid_A.prompt.md
+      - type: display
+        reference: self.prompt.prep_addressing_stereotypes_pre_notes
+      - type: prompt # step 2
+        file: game/prep_addressing_stereotypes/mid_B.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Reflect and share - Importance of Dialogue
+  - name: prep_importance_of_dialogue_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_importance_of_dialogue/pre_B.prompt.md
+        name: prep_importance_of_dialogue_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_importance_of_dialogue_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_importance_of_dialogue_mid
+    contentType: elements
+    content:
+      - type: prompt # step 1
+        file: game/prep_importance_of_dialogue/mid_A.prompt.md
+      - type: display
+        reference: self.prompt.prep_importance_of_dialogue_pre_notes
+      - type: prompt # step 2
+        file: game/prep_importance_of_dialogue/mid_B.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Reflect and share - Open-ended questions
+  - name: prep_open_ended_questions_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_open_ended_questions/pre_B.prompt.md
+        name: prep_open_ended_questions_pre_notes
+
+      - type: submitButton
+        name: pre
+        conditions: # see ADR 2026-05-11-prep-intervention-engagement-gate.md
+          - reference: self.prompt.prep_open_ended_questions_pre_notes
+            comparator: hasLengthAtLeast
+            value: 100
+
+  - name: prep_open_ended_questions_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/prep_open_ended_questions/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/prep_open_ended_questions/mid_B.prompt.md
+      - type: display
+        reference: self.prompt.prep_open_ended_questions_pre_notes
+
+  # Treatment: Instructions - Goal setting - understanding
+  - name: goal_understanding_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_understanding/pre_B.prompt.md
+      - type: prompt # Q1
+        file: game/goal_understanding/pre_comp_goal.prompt.md
+        name: pre_comp_goal
+      - type: prompt # Q2
+        file: game/goal_understanding/pre_comp_shared.prompt.md
+        name: pre_comp_shared
+        conditions:
+          - reference: self.prompt.pre_comp_goal # force a correct response on Q1
+            comparator: includes
+            value: "understand"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.pre_comp_shared # force a correct response on Q2
+            comparator: equals
+            value: "Yes"
+
+  - name: goal_understanding_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_understanding/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Instructions - Goal setting - joint problem solving
+  - name: goal_joint_problem_solving_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_joint_problem_solving/pre_B.prompt.md
+      - type: prompt # Q1
+        file: game/goal_joint_problem_solving/pre_comp_goal.prompt.md
+        name: pre_comp_goal
+      - type: prompt # Q2
+        file: game/goal_joint_problem_solving/pre_comp_shared.prompt.md
+        name: pre_comp_shared # Was `t5_pre_comp_shared` in source; renamed to match the submitButton's condition reference and the other goal templates' naming
+        conditions:
+          - reference: self.prompt.pre_comp_goal
+            comparator: includes
+            value: "joint solution"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.pre_comp_shared
+            comparator: equals
+            value: "Yes"
+
+  - name: goal_joint_problem_solving_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_joint_problem_solving/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Instructions - Goal - Naming Differences
+  - name: goal_naming_differences_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_naming_differences/pre_B.prompt.md
+      - type: prompt # Q1
+        file: game/goal_naming_differences/pre_comp_goal.prompt.md
+        name: goal_naming_differences_pre_comp_goal
+      - type: prompt # Q2
+        file: game/goal_naming_differences/pre_comp_shared.prompt.md
+        name: goal_naming_differences_pre_comp_shared
+        conditions:
+          - reference: self.prompt.goal_naming_differences_pre_comp_goal
+            comparator: includes
+            value: "how your views differ"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.goal_naming_differences_pre_comp_shared
+            comparator: equals
+            value: "Yes"
+
+  - name: goal_naming_differences_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_naming_differences/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Instructions - Goal - Finding Common Ground
+  - name: goal_common_ground_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_common_ground/pre_B.prompt.md
+      - type: prompt # Q1
+        file: game/goal_common_ground/pre_comp_goal.prompt.md
+        name: goal_common_ground_pre_comp_goal
+      - type: prompt # Q2
+        file: game/goal_common_ground/pre_comp_shared.prompt.md
+        name: goal_common_ground_pre_comp_shared
+        conditions:
+          - reference: self.prompt.goal_common_ground_pre_comp_goal
+            comparator: includes
+            value: "areas of agreement"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.goal_common_ground_pre_comp_shared
+            comparator: equals
+            value: "Yes"
+
+  - name: goal_common_ground_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/goal_common_ground/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Warmup - Co-creating Ground rules
+  - name: warmup_ground_rules_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_ground_rules/pre_B.prompt.md
+      - type: prompt
+        file: game/warmup_ground_rules/pre_comp_task.prompt.md
+        name: ground_rules_pre_comp_task
+      - type: prompt
+        file: game/warmup_ground_rules/pre_comp_who.prompt.md
+        name: ground_rules_pre_comp_who
+        conditions:
+          - reference: self.prompt.ground_rules_pre_comp_task
+            comparator: includes
+            value: "ground rules"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.ground_rules_pre_comp_who
+            comparator: includes
+            value: "Both partners"
+
+  - name: warmup_ground_rules_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_ground_rules/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Warmup - Finding Incidental Similarities
+  - name: warmup_incidental_similarities_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_incidental_similarities/pre_B.prompt.md
+      - type: prompt
+        file: game/warmup_incidental_similarities/pre_comp_task.prompt.md
+        name: incidental_similarities_pre_comp_task
+      - type: prompt
+        file: game/warmup_incidental_similarities/pre_comp_time.prompt.md
+        name: incidental_similarities_pre_comp_time
+        conditions:
+          - reference: self.prompt.incidental_similarities_pre_comp_task
+            comparator: includes
+            value: "similarities"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.incidental_similarities_pre_comp_time
+            comparator: includes
+            value: "3-4 minutes"
+
+  - name: warmup_incidental_similarities_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_incidental_similarities/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Warmup - Low-intimacy disclosure
+  - name: warmup_disclosure_low_intimacy_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_disclosure_low_intimacy/pre_B.prompt.md
+      - type: prompt
+        file: game/warmup_disclosure_low_intimacy/pre_comp_task.prompt.md
+        name: disclosure_low_intimacy_pre_comp_task
+      - type: prompt
+        file: game/warmup_disclosure_low_intimacy/pre_comp_time.prompt.md
+        name: disclosure_low_intimacy_pre_comp_time
+        conditions:
+          - reference: self.prompt.disclosure_low_intimacy_pre_comp_task
+            comparator: includes
+            value: "one of the questions"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.disclosure_low_intimacy_pre_comp_time
+            comparator: includes
+            value: "3-4 minutes"
+
+  - name: warmup_disclosure_low_intimacy_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_disclosure_low_intimacy/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Warmup - High-intimacy disclosure
+  - name: warmup_disclosure_high_intimacy_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_disclosure_high_intimacy/pre_B.prompt.md
+      - type: prompt
+        file: game/warmup_disclosure_high_intimacy/pre_comp_task.prompt.md
+        name: disclosure_high_intimacy_pre_comp_task
+      - type: prompt
+        file: game/warmup_disclosure_high_intimacy/pre_comp_time.prompt.md
+        name: disclosure_high_intimacy_pre_comp_time
+        conditions:
+          - reference: self.prompt.disclosure_high_intimacy_pre_comp_task
+            comparator: includes
+            value: "one of the questions"
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.disclosure_high_intimacy_pre_comp_time
+            comparator: includes
+            value: "3-4 minutes"
+
+  - name: warmup_disclosure_high_intimacy_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/warmup_disclosure_high_intimacy/mid.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+
+  # Treatment: Instructions - Go-around structure
+  - name: go_around_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/go_around/pre_B.prompt.md
+      - type: prompt # Q1
+        file: game/go_around/pre_comp_duration.prompt.md
+        name: go_around_pre_comp_duration
+      - type: prompt # Q2
+        file: game/go_around/pre_comp_interruptions.prompt.md
+        name: go_around_pre_comp_interruptions
+        conditions:
+          - reference: self.prompt.go_around_pre_comp_duration
+            comparator: equals
+            value: "2 minutes"
+      - type: prompt # Q3
+        file: game/go_around/pre_comp_timer.prompt.md
+        name: go_around_pre_comp_timer
+        conditions:
+          - reference: self.prompt.go_around_pre_comp_interruptions
+            comparator: equals
+            value: "No"
+      # NOTE: source had a duplicate Q4 element here (same file + name as Q3,
+      # gated on `prompt.go_around_pre_comp_open` which is never defined). It
+      # never displayed, so it has been removed in the migration. Flag for
+      # researcher review.
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.go_around_pre_comp_timer
+            comparator: includes
+            value: "yourself"
+
+  - name: go_around_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/go_around/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/go_around/mid_B.prompt.md
+
+  # Treatment: Skill-building - Hedging
+  - name: skill_hedging_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_hedging/pre_B.prompt.md
+      - type: prompt
+        file: game/skill_hedging/practice_cyclists.prompt.md
+        name: skill_hedging_practice_cyclists
+      - type: prompt
+        file: game/skill_hedging/practice_broccoli.prompt.md
+        name: skill_hedging_practice_broccoli
+      - type: prompt
+        file: game/skill_hedging/practice_boss.prompt.md
+        name: skill_hedging_practice_boss
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.skill_hedging_practice_cyclists
+            comparator: exists
+          - reference: self.prompt.skill_hedging_practice_broccoli
+            comparator: exists
+          - reference: self.prompt.skill_hedging_practice_boss
+            comparator: exists
+
+  - name: skill_hedging_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_hedging/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/skill_hedging/mid_B.prompt.md
+
+  # Treatment: Skill-building - Elaboration Questions
+  - name: skill_elaboration_questions_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_elaboration_questions/pre_B.prompt.md
+      - type: prompt
+        file: game/skill_elaboration_questions/practice_pineapple.prompt.md
+        name: skill_elaboration_questions_practice_pineapple
+      - type: prompt
+        file: game/skill_elaboration_questions/practice_cyclists.prompt.md
+        name: skill_elaboration_questions_practice_cyclists
+      - type: prompt
+        file: game/skill_elaboration_questions/practice_kids.prompt.md
+        name: skill_elaboration_questions_practice_kids
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.skill_elaboration_questions_practice_pineapple
+            comparator: exists
+          - reference: self.prompt.skill_elaboration_questions_practice_cyclists
+            comparator: exists
+          - reference: self.prompt.skill_elaboration_questions_practice_kids
+            comparator: exists
+
+  - name: skill_elaboration_questions_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_elaboration_questions/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/skill_elaboration_questions/mid_B.prompt.md
+
+  # Treatment: Skill-building - Looping for understanding
+  - name: skill_looping_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_looping/pre_B.prompt.md
+      - type: prompt
+        file: game/skill_looping/practice_neighborhood.prompt.md
+        name: skill_looping_practice_neighborhood
+      - type: prompt
+        file: game/skill_looping/practice_work.prompt.md
+        name: skill_looping_practice_work
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.skill_looping_practice_neighborhood
+            comparator: exists
+          - reference: self.prompt.skill_looping_practice_work
+            comparator: exists
+
+  - name: skill_looping_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_looping/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/skill_looping/mid_B.prompt.md
+
+  # Treatment: Skill-building - Reframe to the positive
+  - name: skill_reframe_to_positive_pre
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_reframe_to_positive/pre_B.prompt.md
+      - type: prompt
+        file: game/skill_reframe_to_positive/practice_kids.prompt.md
+        name: skill_reframe_to_positive_practice_kids
+      - type: prompt
+        file: game/skill_reframe_to_positive/practice_phone.prompt.md
+        name: skill_reframe_to_positive_practice_phone
+      - type: prompt
+        file: game/skill_reframe_to_positive/practice_ready.prompt.md
+        name: skill_reframe_to_positive_practice_ready
+
+      - type: submitButton
+        name: pre
+        conditions:
+          - reference: self.prompt.skill_reframe_to_positive_practice_kids
+            comparator: exists
+          - reference: self.prompt.skill_reframe_to_positive_practice_phone
+            comparator: exists
+          - reference: self.prompt.skill_reframe_to_positive_practice_ready
+            comparator: exists
+
+  - name: skill_reframe_to_positive_mid
+    contentType: elements
+    content:
+      - type: prompt
+        file: game/skill_reframe_to_positive/mid_A.prompt.md
+      - type: prompt
+        file: topics/${topicName}.prompt.md
+      - type: prompt
+        file: game/skill_reframe_to_positive/mid_B.prompt.md
+
+  ############## REPEATED PIECES ##############
+  # Displays a stage asking the user's opinion and knowledge of the topic,
+  # used in the intro sequence to gauge opinions.
+  - name: topicPrompt
+    contentType: introSteps
+    content:
+      - name: ${topicName}_presurvey
+        elements:
+          - type: prompt
+            file: intro/topicPrompt/consider_topic.prompt.md
+
+          - type: prompt
+            file: topics/${topicName}.prompt.md
+
+          - type: prompt
+            name: presurvey_${topicName}
+            file: intro/topicPrompt/topic_opinion.prompt.md
+
+          - type: prompt
+            name: presurvey_${topicName}_familiarity
+            file: intro/topicPrompt/topic_familiarity.prompt.md
+
+          - type: submitButton
+            name: presurvey_${topicName}
+            conditions:
+              - reference: self.prompt.presurvey_${topicName}
+                comparator: exists
+              - reference: self.prompt.presurvey_${topicName}_familiarity
+                comparator: exists
+
+  ############# GENERIC STUDY STRUCTURE #############
+  - name: condition
+    contentType: treatment
+    content:
+      name: ${conditionName}
+      # playerCount: 1 # for development; uncomment below for study
+      playerCount: 2
+      groupComposition:
+        - position: 0 # In favor
+          conditions:
+            - reference: self.prompt.presurvey_${topicName}
+              comparator: isOneOf
+              value: ["Strongly Support", "Moderately Support"]
+            - reference: self.prompt.presurvey_${topicName}_familiarity
+              comparator: isOneOf
+              value:
+                ["Extremely familiar", "Very familiar", "Moderately familiar"]
+        - position: 1 # Opposed
+          conditions:
+            - reference: self.prompt.presurvey_${topicName}
+              comparator: isOneOf
+              value: ["Strongly Oppose", "Moderately Oppose"]
+            - reference: self.prompt.presurvey_${topicName}_familiarity
+              comparator: isOneOf
+              value:
+                ["Extremely familiar", "Very familiar", "Moderately familiar"]
+
+      gameStages:
+        - name: attitude_attributes
+          duration: 120
+          elements:
+            - type: audio
+              file: stimuli/westminster_short.mp3 # Do we need this?
+              hideTime: 5
+
+            - type: prompt
+              file: game/attitude_attribute_instructions_A.prompt.md
+            - type: prompt
+              file: topics/${topicName}.prompt.md
+            - type: display
+              reference: self.prompt.presurvey_${topicName}
+
+            - type: prompt
+              file: game/attitude_attribute_instructions_B.prompt.md
+            - template: attitude_attributes_questions
+              fields:
+                prefix: attitude_attributes_pre
+
+            - type: submitButton
+              name: attitude_attributes
+              conditions: # reinsert after we fix validators
+                - reference: self.prompt.attitude_attributes_pre_importance
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_perceived_knowledge
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_certainty
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_ambivalence
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_personal_relevance
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_moral_conviction
+                  comparator: exists
+                - reference: self.prompt.attitude_attributes_pre_perceived_elaboration
+                  comparator: exists
+
+        # T1 (pre-intervention forecast) was dropped per ADR
+        # 2026-05-11-drop-t1-reframe-t2-as-confidence.md. Reasons:
+        # (a) the within-subjects T2-T1 comparison isn't apples-to-apples
+        # because at T1 participants don't yet know what intervention
+        # they'll receive, and (b) it's awkward to ask for a forecast
+        # about an undefined upcoming experience. T2 (now the only
+        # pre-discussion affect measurement) is treated as a between-
+        # subjects pre-discussion CONFIDENCE measure, not as the second
+        # leg of a forecast/realized within-subjects diff.
+
+        - name: pre_discussion_intervention
+          duration: 300
+          elements:
+            - type: prompt
+              file: game/pre_A_shared.prompt.md
+            - type: prompt
+              file: topics/${topicName}.prompt.md
+            - template: ${arm}_pre
+              fields:
+                topicName: ${topicName}
+
+        # T2 — pre-discussion confidence measure. Asked AFTER the
+        # pre-discussion intervention has had its chance to shape the
+        # participant's subjective state about the upcoming conversation.
+        # Treated as a between-subjects outcome (cross-arm comparison
+        # `T2[arm] − T2[control]` = arm's effect on confidence). NOT
+        # used in a within-subjects diff against any prior measurement
+        # (T1 was dropped — see ADR 2026-05-11-drop-t1-reframe-t2-as-confidence.md).
+        # The interesting analytic question is the joint pattern:
+        # which interventions move T2 (confidence) without moving T3
+        # (realized affect), and vice versa.
+        - name: affect_expectation
+          duration: 90
+          elements:
+            - template: overall_affect_forecast
+              fields:
+                prefix: affect_expectation
+
+        - name: discussion
+          duration: 900 # 15 minutes exactly
+          discussion:
+            chatType: video
+            showNickname: true
+            showTitle: false # Titles not used in this study
+          elements:
+            # Instructions
+            - template: ${arm}_mid
+              fields:
+                topicName: ${topicName}
+
+            # End-of-call alert (after 14 minutes)
+            - type: prompt
+              file: game/call_end_alert.prompt.md
+              displayTime: 840
+            - type: audio
+              file: stimuli/counter_bell.mp3
+              displayTime: 840
+
+        - name: describe_partner_views
+          duration: 240 # 4 min fixed — see docs/decisions/2026-05-09-describe-partner-views-timing.md
+          elements:
+            - type: prompt
+              file: game/describe_partner_views.prompt.md
+              name: describe_partner_views
+            - type: timer
+              warnTimeRemaining: 30
+
+        # T3 realized affect — candidate third primary DV. Three items
+        # (quality, liking, social connection) measured AFTER the
+        # discussion. Cross-arm comparison `T3[arm] − T3[control]`
+        # measures the arm's effect on realized affect; paired with
+        # the T2 confidence measure (`affect_expectation`
+        # above) for the joint subjective-vs-objective analysis. Placed
+        # right after describe_partner_views so the realized affect
+        # rating happens while the conversation is freshest, before any
+        # partner-rating contamination risk. See ADRs
+        # 2026-05-11-overall-affect-and-forecast-design.md and
+        # 2026-05-11-drop-t1-reframe-t2-as-confidence.md.
+        - name: affect_post_discussion
+          duration: 90
+          elements:
+            - template: overall_affect_realized
+              fields:
+                prefix: affect_post_discussion
+
+        # Two WTR indicators on separate pages with 45-sec timers each.
+        - name: willingness_to_return_partner_post
+          duration: 45
+          elements:
+            - type: prompt
+              file: exit/willingness_to_return_post/WTR_partner_post.prompt.md
+              name: WTR_partner_post
+
+            - type: submitButton
+              name: WTR_partner_post
+              conditions:
+                - reference: self.prompt.WTR_partner_post
+                  comparator: exists
+
+        - name: willingness_to_return_general_post
+          duration: 45
+          elements:
+            - type: prompt
+              file: exit/willingness_to_return_post/WTR_general_post.prompt.md
+              name: WTR_general_post
+
+            - type: submitButton
+              name: WTR_general_post
+              conditions:
+                - reference: self.prompt.WTR_general_post
+                  comparator: exists
+
+        # Asked BEFORE rate_partner_description so the binary commitment decision
+        # is only a function of the discussion not of the partner's writing.
+        # See docs/decisions/2026-05-09-willingness-to-return-measurement.md
+        - name: continue_with_partner
+          duration: 120
+          elements:
+            - type: prompt
+              file: exit/continue_with_partner/continue_with_partner.prompt.md
+              name: continue_with_partner
+            - type: prompt
+              file: exit/continue_with_partner/continue_with_partner_why.prompt.md
+              name: continue_with_partner_why
+
+            - type: submitButton
+              name: continue_with_partner
+              conditions:
+                - reference: self.prompt.continue_with_partner
+                  comparator: exists
+
+        - name: talk_with_someone_new
+          duration: 180
+          elements:
+            - type: prompt
+              file: exit/talk_with_someone_new/talk_with_someone_new.prompt.md
+            - type: trackedLink
+              name: signup_link
+              url: https://example.org/form # set up the study!
+              displayText: Pick a time at 🟣 The Purple Scheduler
+              urlParams:
+                - key: source
+                  reference: self.participantInfo.platformId
+            - type: prompt
+              file: exit/talk_with_someone_new/talk_with_someone_new_why.prompt.md
+              name: talk_with_someone_new_why
+            - type: submitButton
+              name: talk_with_someone_new
+
+        # ability_to_comply is placed BEFORE rate_partner_description
+        # so the participant's self-rated compliance with the
+        # intervention isn't contaminated by reading their partner's
+        # summary of their views (which might shift perceived clarity
+        # / felt-understanding and bleed into the comply judgment).
+        - name: ability_to_comply
+          duration: 120
+          elements:
+            - type: prompt
+              file: exit/ability_to_comply/ability_to_comply.prompt.md
+              name: ability_to_comply
+            - type: prompt
+              file: exit/ability_to_comply/ability_to_comply_elaboration.prompt.md
+              name: ability_to_comply_elaboration
+            - type: submitButton
+              name: ability_to_comply
+
+        - name: rate_partner_description
+          duration: 180
+          elements:
+            - type: prompt
+              file: exit/rate_partner_description/score_description_instructions.prompt.md
+
+            - type: display
+              reference: 0.prompt.describe_partner_views
+              showToPositions: [1]
+
+            - type: display
+              reference: 1.prompt.describe_partner_views
+              showToPositions: [0]
+
+            - type: prompt
+              name: score_description_accuracy
+              file: exit/rate_partner_description/score_description_accuracy.prompt.md
+
+            - type: prompt
+              name: score_description_completeness
+              file: exit/rate_partner_description/score_description_completeness.prompt.md
+
+            - type: prompt
+              name: score_description_fairness
+              file: exit/rate_partner_description/score_description_fairness.prompt.md
+
+            # Exploratory free-text rationale — qualitative probe to
+            # detect whether participants are conflating "the summary
+            # is accurate" with "I agree with my partner's view."
+            # Asked after the three ratings to avoid biasing them.
+            # 50-char gate per the prompt's minLength.
+            - type: prompt
+              name: score_description_rationale
+              file: exit/rate_partner_description/score_description_rationale.prompt.md
+
+            - type: submitButton
+              name: rate_partner_description
+              conditions:
+                - reference: self.prompt.score_description_accuracy
+                  comparator: exists
+                - reference: self.prompt.score_description_completeness
+                  comparator: exists
+                - reference: self.prompt.score_description_fairness
+                  comparator: exists
+
+        # The slimmed perception_of_discussion and perception_of_partner
+        # stages were moved to here (post rate_partner_description) on
+        # 2026-05-11 — see ADR
+        # 2026-05-11-overall-affect-and-forecast-design.md. Their
+        # primary affect-relevant items (enjoy, liking) were promoted
+        # into the new overall_affect composite, leaving these as
+        # secondary measures of cognitive / behavioral conversation
+        # quality. Tradeoff accepted: reading the partner's summary
+        # in rate_partner_description may contaminate these perception
+        # ratings (you might think more positively of someone whose
+        # summary felt accurate). They're now secondary, so the
+        # contamination risk is acceptable in exchange for putting the
+        # primary DVs (affect, WTR, partner-summary rating) up front
+        # before participant fatigue sets in.
+        - name: perception_of_discussion
+          duration: 180
+          elements:
+            - template: discussion_general_questions
+              fields:
+                prefix: perception_of_discussion
+
+        - name: perception_of_partner
+          duration: 180
+          elements:
+            - type: prompt
+              file: exit/perception_of_partner/consider_partner.prompt.md
+
+            - type: display
+              reference: 0.participantInfo.name
+              showToPositions: [1]
+            - type: display
+              reference: 1.participantInfo.name
+              showToPositions: [0]
+
+            - template: perception_of_others_questions
+              fields:
+                prefix: perception_of_partner
+
+        # NOTE: attitude_attributes_post is currently commented out
+        # upstream; if reinstated, place between ability_to_comply and
+        # rate_partner_description per the original anti-contamination
+        # logic (a partner's summary could shift perceived certainty /
+        # clarity / moral grounding on the post-discussion attitude
+        # ratings).
+
+        # Branched lead-in to the optional second discussion. Shows a
+        # "you're going back into a call" message if both partners said
+        # Yes; an "all done with the conversation" message otherwise.
+        # With playerCount: 1 dev mode, only position 0's answer is
+        # checked; for playerCount: 2 study mode, expand each leaf into
+        # an `all:` / `any:` operator with explicit per-position references.
+        - name: pre_second_discussion
+          duration: 60
+          elements:
+            - type: prompt
+              file: game/pre_second_discussion.prompt.md
+              conditions:
+                - all:
+                    - reference: 0.prompt.continue_with_partner
+                      comparator: equals
+                      value: "Yes"
+                    - reference: 1.prompt.continue_with_partner
+                      comparator: equals
+                      value: "Yes"
+            - type: prompt
+              file: game/no_second_discussion.prompt.md
+              conditions:
+                - any:
+                    - reference: 0.prompt.continue_with_partner
+                      comparator: doesNotEqual # bug preventing undefined from not equaling yes. see: https://github.com/deliberation-lab/stagebook/issues/348
+                      value: "Yes"
+                    - reference: 1.prompt.continue_with_partner
+                      comparator: doesNotEqual
+                      value: "Yes"
+                    - reference: 0.prompt.continue_with_partner
+                      comparator: doesNotExist
+                    - reference: 1.prompt.continue_with_partner
+                      comparator: doesNotExist
+
+            - type: submitButton
+
+        # Optional second discussion — fires only if (per playerCount: 1)
+        # position 0 said Yes; for playerCount: 2 expand to an `all:`
+        # operator over both positions. By the time this runs, all
+        # primary and secondary DVs are already collected, so attrition
+        # during this stage doesn't lose outcome data.
+        - name: second_discussion
+          conditions:
+            - reference: 0.prompt.continue_with_partner
+              comparator: equals
+              value: "Yes"
+            - reference: 1.prompt.continue_with_partner
+              comparator: equals
+              value: "Yes"
+          duration: 900
+          discussion:
+            chatType: video
+            showNickname: true
+            showTitle: false
+          elements:
+            - type: prompt
+              file: game/second_discussion_instructions.prompt.md
+            # End-of-call alert (after 14 minutes), mirroring the first
+            # discussion stage's UX
+            - type: prompt
+              file: game/call_end_alert.prompt.md
+              displayTime: 840
+            - type: audio
+              file: stimuli/counter_bell.mp3
+              displayTime: 840
+            - type: submitButton
+              buttonText: End conversation
+              name: end_second_discussion
+
+      exitSequence:
+        # Pretreatment covariates moved from intro to async exit per ADR
+        # 2026-05-11-move-covariates-to-exit.md. Trade-off summary:
+        # losing some completion rate to attrition in exchange for
+        # (a) shorter intro → faster matching, fewer pre-pair dropouts,
+        # and (b) no priming of the very identities (partisan, demographic)
+        # the discussion is about to engage. These four surveys measure
+        # stable traits that don't change in 30 minutes, so post-discussion
+        # measurement is methodologically defensible. Order preserved
+        # from the previous intro placement for minimal-diff churn.
+
+        # Big-5 personality — provided by the imported module
+        # `modules/TIPI/TIPI.stagebook.yaml`. Ten 7-point Likert items
+        # (vertical radio buttons) in the published TIPI display order.
+        # Using the `_likert` variant of the template rather than the
+        # slider variant — the slider renderer has UX issues we're
+        # waiting on stagebook to fix (see stagebook#326). Encoding,
+        # scoring, and per-item dimension assignments are identical
+        # across the two variants.
+        - template: TIPI_questions_likert
+          fields:
+            stageName: big_5_personality
+
+        # Party affiliation — provided by the imported module
+        # `modules/political_party_us/political_party_us.stagebook.yaml`.
+        # The template is a self-contained step (root party item +
+        # four conditional follow-ups + submit button with required-field
+        # gating for whichever branch the participant chose). The
+        # upstream's identity-importance sliders (page 2) are
+        # intentionally dropped. Asking partisan ID AFTER the discussion
+        # is the main motivation for the move per the covariates ADR —
+        # priming partisan identity right before a partisan conversation
+        # is textbook demand-characteristic risk.
+        - template: political_party_us_questions
+          fields:
+            stageName: party_affiliation
+
+        # Demographics — provided by the imported module
+        # `modules/demographics/demographics.stagebook.yaml`. Submit
+        # button conditions enforce the source survey's required fields
+        # (birth_year, gender, language_primary, education, race);
+        # gender_other and language_primary_expansion are conditional
+        # on their parents and so not required; latin is optional per
+        # the source.
+        # NOTE: this revises ADR 2026-05-09-willingness-to-return-measurement.md
+        # Q2 (which moved demographics into intro to avoid attrition).
+        # The new placement accepts attrition cost in exchange for the
+        # priming/matching benefits documented in the 2026-05-11 ADR.
+        - template: demographics_questions
+          fields:
+            stageName: demographics
+
+        # Receptiveness to opposing views (4-item adaptation) — provided
+        # by the imported module
+        # `modules/receptiveness4/receptiveness4.stagebook.yaml`. Four
+        # 7-point Likert items (vertical radio buttons) in upstream
+        # display order. Using the `_likert` variant of the template
+        # rather than the slider variant — see the big_5_personality
+        # comment above for the rationale. Encoding, scoring, and
+        # per-item factor assignments are identical across variants.
+        - template: receptiveness4_questions_likert
+          fields:
+            stageName: receptiveness
+
+        # Followup survey for participants who actually had a second
+        # discussion. Stage-level condition gates the entire step on
+        # the same predicate as second_discussion. Items here are
+        # provisional — see docs/decisions/2026-05-09-willingness-to-return-measurement.md
+        - name: second_discussion_followup
+          conditions:
+            - reference: 0.prompt.continue_with_partner
+              comparator: equals
+              value: "Yes"
+            - reference: 1.prompt.continue_with_partner
+              comparator: equals
+              value: "Yes"
+          elements:
+            # - template: discussion_general_questions
+            #   fields:
+            #     prefix: second_discussion_general
+            - type: prompt
+              file: exit/second_discussion_followup/comparison.prompt.md
+              name: second_discussion_comparison
+            - type: prompt
+              file: exit/second_discussion_followup/topic.prompt.md
+              name: second_discussion_topic
+            - type: prompt
+              file: exit/second_discussion_followup/continue_third.prompt.md
+              name: second_discussion_continue_third
+            - type: submitButton
+              name: second_discussion_followup
+
+####### INTRO SEQUENCES #######
+introSequences:
+  - name: default
+    introSteps:
+      # Pretreatment covariate surveys (TIPI, party, demographics,
+      # receptiveness) used to live here. Moved to async exitSequence
+      # per ADR 2026-05-11-move-covariates-to-exit.md to (a) shorten
+      # intro for faster matching and (b) avoid priming the very
+      # identities the discussion is about to engage. Only the topic
+      # prompt remains here, since the topicName is needed at matching
+      # time to set group composition and to hand to the intervention
+      # template at game-start.
+
+      - template: topicPrompt
+        broadcast:
+          d0:
+            - topicName: abortion
+            - topicName: assault_weapons
+            - topicName: death_penalty
+            - topicName: DEI
+            - topicName: misinformation
+            - topicName: reparations
+            - topicName: support_ICE
+            - topicName: attention_check
+            - topicName: tax_religion
+            - topicName: trans_sports
+            - topicName: vaccination
+
+####### TREATMENT DEFINITIONS #######
+treatments:
+  - template: condition
+    fields:
+      conditionName: ${topicName}-${arm}
+    broadcast:
+      d0:
+        - topicName: abortion
+        - topicName: assault_weapons
+        - topicName: death_penalty
+        - topicName: DEI
+        - topicName: misinformation
+        - topicName: reparations
+        - topicName: support_ICE
+        - topicName: tax_religion
+        - topicName: trans_sports
+        - topicName: vaccination
+      d1:
+        - arm: control
+        - arm: prep_collecting_thoughts
+        - arm: prep_personal_storytelling
+        - arm: prep_hopes_and_fears
+        # - arm: prep_topic_specific_values
+        # - arm: prep_general_values
+        # - arm: prep_addressing_stereotypes
+        # - arm: prep_importance_of_dialogue
+        # - arm: prep_open_ended_questions
+        # - arm: goal_understanding
+        # - arm: goal_joint_problem_solving
+        # - arm: goal_naming_differences
+        # - arm: goal_common_ground
+        # - arm: warmup_ground_rules
+        # - arm: warmup_incidental_similarities
+        # - arm: warmup_disclosure_low_intimacy
+        # - arm: warmup_disclosure_high_intimacy
+        # - arm: go_around
+        # - arm: skill_hedging
+        # - arm: skill_elaboration_questions
+        # - arm: skill_looping
+        # - arm: skill_reframe_to_positive

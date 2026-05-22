@@ -1,0 +1,26 @@
+imports:
+  - ./demographics.stagebook.yaml
+
+introSequences:
+  - name: default
+    introSteps:
+      - name: filler
+        elements:
+          - type: submitButton
+            buttonText: go on
+
+treatments:
+  - name: preview
+    playerCount: 1
+
+    gameStages:
+      - name: filler
+        duration: 10
+        elements:
+          - type: submitButton
+            buttonText: go to survey
+
+    exitSequence:
+      - template: demographics_questions
+        fields:
+          stageName: demographics

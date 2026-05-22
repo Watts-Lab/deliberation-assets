@@ -1,0 +1,82 @@
+# Reusable short-US demographics module.
+#
+# Adapted from the Watts-Lab `demographicsShortUS` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/demographicsShortUS
+#
+# Provides one template, `demographics_questions`, that emits the eight
+# demographic question elements. The consumer is responsible for adding a
+# submitButton with appropriate `comparator: exists` conditions on the
+# required fields (see README for the list and an example).
+#
+# The template uses a `${stageName}` field on every named element so the
+# consumer can invoke the module more than once without storage-key
+# collisions (e.g. demographics + post-experiment demographics, or two
+# arms within the same study). See the upstream Stagebook docs on the
+# stageName-extension convention:
+# https://github.com/deliberation-lab/stagebook/blob/main/docs/researcher/templates.md
+
+templates:
+  - name: demographics_questions
+    contentType: introExitStep
+    notes: |
+      Adapted from Watts-Lab/surveys/demographicsShortUS. Eight prompts:
+      birth_year (text), gender (radio), gender_other (conditional text),
+      language_primary (radio, ~30 options), language_primary_expansion
+      (conditional text), education (radio), race (multi-select), latin
+      (radio).
+    content:
+      name: ${stageName}
+      elements:
+        - type: prompt
+          name: ${stageName}_birth_year
+          file: birth_year.prompt.md
+
+        - type: prompt
+          name: ${stageName}_gender
+          file: gender.prompt.md
+
+        # Conditional: only shown if `${stageName}_gender` == "Other"
+        - type: prompt
+          name: ${stageName}_gender_other
+          file: gender_other.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_gender
+              comparator: equals
+              value: "Other"
+
+        - type: prompt
+          name: ${stageName}_language_primary
+          file: language_primary.prompt.md
+
+        # Conditional: only shown if `${stageName}_language_primary` == "Other"
+        - type: prompt
+          name: ${stageName}_language_primary_expansion
+          file: language_primary_expansion.prompt.md
+          conditions:
+            - reference: self.prompt.${stageName}_language_primary
+              comparator: equals
+              value: "Other"
+
+        - type: prompt
+          name: ${stageName}_education
+          file: education.prompt.md
+
+        - type: prompt
+          name: ${stageName}_race
+          file: race.prompt.md
+
+        - type: prompt
+          name: ${stageName}_latin
+          file: latin.prompt.md
+
+        - type: submitButton
+          conditions:
+            - reference: self.prompt.${stageName}_birth_year
+              comparator: hasLengthAtLeast
+              value: 4
+            - reference: self.prompt.${stageName}_gender
+              comparator: exists
+            - reference: self.prompt.${stageName}_language_primary
+              comparator: exists
+            - reference: self.prompt.${stageName}_education
+              comparator: exists

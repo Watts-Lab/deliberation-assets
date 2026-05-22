@@ -1,0 +1,70 @@
+# Attitude attributes module — a seven-item meta-attitudinal battery
+# measuring distinct dimensions of attitude strength.
+#
+# Adapted from the Watts-Lab `attitudeAttributes` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/attitudeAttributes
+#
+# Items, in display order:
+#
+#   1. Importance              — How important is this topic to you personally?
+#   2. Perceived Knowledge     — How well informed are you about this topic?
+#   3. Certainty               — How certain are you of your opinion on this topic?
+#   4. Ambivalence             — Are your feelings mixed?
+#   5. Personal Relevance      — Does this topic affect your life?
+#   6. Moral Conviction        — Is your opinion connected to moral beliefs?
+#   7. Perceived Elaboration   — How much have you thought about this topic?
+#
+# README.md contains the literature trail for each construct: which
+# papers operationalized it how, what alternative formats were considered,
+# and the rationale for the wording / scale points we chose. Per-prompt
+# `notes:` frontmatter on each `*.prompt.md` file in this folder gives a
+# condensed pointer back to the relevant README section.
+#
+# The template emits `contentType: elements` — a list of prompt elements
+# that the consumer embeds inside an existing stage (typically alongside
+# topic-display elements and an instructions prompt). It does NOT include
+# its own submitButton, because the parent stage usually contains other
+# elements before/after the battery and timing varies by use site.
+#
+# The `${prefix}` field is required on every invocation so the seven
+# storage keys (e.g. `prompt_<prefix>_importance`) don't collide when
+# the same battery is invoked multiple times in the same study (e.g.
+# pre- and post-discussion).
+
+templates:
+  - name: attitude_attributes_questions
+    contentType: elements
+    notes: |
+      Seven meta-attitudinal questions, in fixed display order: importance,
+      perceived_knowledge, certainty, ambivalence, personal_relevance,
+      moral_conviction, perceived_elaboration. All five-point Likert. The
+      consumer is responsible for the surrounding stage context
+      (instructions, topic display, submitButton).
+    content:
+      - type: prompt
+        name: ${prefix}_importance
+        file: importance.prompt.md
+
+      - type: prompt
+        name: ${prefix}_perceived_knowledge
+        file: perceived_knowledge.prompt.md
+
+      - type: prompt
+        name: ${prefix}_certainty
+        file: certainty.prompt.md
+
+      - type: prompt
+        name: ${prefix}_ambivalence
+        file: ambivalence.prompt.md
+
+      - type: prompt
+        name: ${prefix}_personal_relevance
+        file: personal_relevance.prompt.md
+
+      - type: prompt
+        name: ${prefix}_moral_conviction
+        file: moral_conviction.prompt.md
+
+      - type: prompt
+        name: ${prefix}_perceived_elaboration
+        file: perceived_elaboration.prompt.md

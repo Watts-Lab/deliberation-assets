@@ -1,0 +1,106 @@
+# General discussion-quality battery — nine Likert items capturing
+# learning, depth, conflict, atmosphere, and psychological safety
+# dimensions of a just-completed discussion.
+#
+# Adapted from the Watts-Lab `discussionGeneral` survey:
+# https://github.com/Watts-Lab/surveys/tree/main/surveys/discussionGeneral
+#
+# Items, in display order:
+#
+#   1. learned       — How much did you learn during the discussion?
+#   2. depth         — How thoroughly did the discussion explore different ideas?
+#   3. disagreement  — How much did participants disagree?
+#   4. tension       — How would you describe the emotional atmosphere?
+#   5. speak_up      — Did you get a chance to speak when you had something to say?
+#   6. voice         — Did you feel comfortable speaking up?
+#   7. anxious       — How often did you feel anxious during the discussion?
+#   8. judged        — Did you feel that you (or people like you) were being judged?
+#   9. insight       — How much did the discussion help you understand your own thoughts?
+#
+# Items 3, 4, 7, 8 are NEGATIVELY-valenced or reverse-direction relative
+# to the rest — see the per-item `notes:` fields for details. Per the
+# upstream README's design notes, the more socially-desirable answer is
+# placed at the bottom of each item's option list to mitigate primacy
+# effects.
+#
+# `enjoy` was pulled from this module on 2026-05-11 and consolidated
+# into the new `overall_affect` module as the realized-quality
+# component of the affect composite. See ADR
+# 2026-05-11-overall-affect-and-forecast-design.md.
+#
+# The template emits `contentType: elements` — a flat list of prompt
+# elements that the consumer embeds inside an existing stage, and a submit
+# button.
+#
+# The `${prefix}` field is required on every invocation so the ten
+# storage keys (e.g. `prompt_<prefix>_enjoy`) don't collide when the
+# same battery is invoked multiple times in the same study (e.g.
+# post-first-discussion and post-second-discussion).
+
+templates:
+  - name: discussion_general_questions
+    contentType: elements
+    notes: |
+      Nine general discussion-quality items, in fixed display order:
+      learned, depth, disagreement, tension, speak_up, voice,
+      anxious, judged, insight. All five-point Likert; all required in
+      the source schema. (`enjoy` was pulled into the overall_affect
+      module on 2026-05-11.)
+    content:
+      - type: prompt
+        name: ${prefix}_learned
+        file: learned.prompt.md
+
+      - type: prompt
+        name: ${prefix}_depth
+        file: depth.prompt.md
+
+      - type: prompt
+        name: ${prefix}_disagreement
+        file: disagreement.prompt.md
+
+      - type: prompt
+        name: ${prefix}_tension
+        file: tension.prompt.md
+
+      - type: prompt
+        name: ${prefix}_speak_up
+        file: speak_up.prompt.md
+
+      - type: prompt
+        name: ${prefix}_voice
+        file: voice.prompt.md
+
+      - type: prompt
+        name: ${prefix}_anxious
+        file: anxious.prompt.md
+
+      - type: prompt
+        name: ${prefix}_judged
+        file: judged.prompt.md
+
+      - type: prompt
+        name: ${prefix}_insight
+        file: insight.prompt.md
+
+      - type: submitButton
+        name: ${prefix}_submit
+        conditions:
+          - reference: self.prompt.${prefix}_learned
+            comparator: exists
+          - reference: self.prompt.${prefix}_depth
+            comparator: exists
+          - reference: self.prompt.${prefix}_disagreement
+            comparator: exists
+          - reference: self.prompt.${prefix}_tension
+            comparator: exists
+          - reference: self.prompt.${prefix}_speak_up
+            comparator: exists
+          - reference: self.prompt.${prefix}_voice
+            comparator: exists
+          - reference: self.prompt.${prefix}_anxious
+            comparator: exists
+          - reference: self.prompt.${prefix}_judged
+            comparator: exists
+          - reference: self.prompt.${prefix}_insight
+            comparator: exists
