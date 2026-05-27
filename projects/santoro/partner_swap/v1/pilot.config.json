@@ -1,6 +1,6 @@
 {
-  "batchName": "dev",
-  "cdn": "local",
+  "batchName": "pilot",
+  "cdn": "prod",
   "treatmentFile": "projects/santoro/partner_swap/v1/v1.treatments.yaml",
   "customIdInstructions": "none",
   "platformConsent": "custom",
@@ -8,16 +8,39 @@
   "checkAudio": true,
   "checkVideo": true,
   "introSequence": "default",
-  "debrief": "none",
-  "treatments": ["session_type_A", "session_type_B", "session_type_C"],
+  "treatments":  ["session_type_A", "session_type_B", "session_type_C"],
   "payoffs": [1,1,1],
   "knockdowns": "none",
   "dispatchWait": 1,
   "launchDate": "immediate",
   "centralPrereg": false,
-  "preregRepos": [],
-  "dataRepos": [],
-  "videoStorage": "none",
+  "preregRepos": [
+
+{
+"owner": "santoroe",
+"repo": "multiple_crosspartisan_conversations_project",
+"branch": "main",
+"directory": "pilot"
+}
+
+
+],
+  "dataRepos": [
+{
+"owner": "santoroe",
+"repo": "multiple_crosspartisan_conversations_project",
+"branch": "main", 
+"directory": "pilot"
+}
+
+
+],
+  "videoStorage": {
+    "bucket": "deliberation-lab-recordings-santoro",
+    "region": "us-east-1"
+  },
+
+  "debrief": "none",
   "exitCodes": {
     "complete": "C1IWVCW5",
     "error": "C50XN8UL",

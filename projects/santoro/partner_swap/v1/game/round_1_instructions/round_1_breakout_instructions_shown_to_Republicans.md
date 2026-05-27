@@ -5,7 +5,7 @@ type: noResponse
 
 ### Instructions
 
-Please have a 10-minute conversation with your partner about illegal immigration. Specifically, discuss whether or not you agree that immigrants who entered the United States illegally should have the opportunity to become United States citizens.
+Please have a 10-minute conversation with your partner. Specifically, discuss the following question: What does the "perfect" day looks like to you? Do not discuss any other topic.
 
 Please note that your partner favors the Democratic Party. 
 

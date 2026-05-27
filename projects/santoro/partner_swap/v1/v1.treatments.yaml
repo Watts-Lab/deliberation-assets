@@ -23,40 +23,28 @@ treatments:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "A"
                 
       - position: 1
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "A"
-      
+        
       - position: 2
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "A"
-                
+                   
       - position: 3
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "A"
     
     gameStages:
       - name: Round 1 Pair Discussions - A
-        duration: 60
+        duration: 600
         discussion:
           chatType: video
           showNickname: true
@@ -82,18 +70,15 @@ treatments:
             buttonText: "The conversation has ended."
 
       - name: Post-Round 1 Manipulation Check Questions - A
-        duration: 50
+        duration: 30
         elements:
           - type: separator
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
-            name: round1HadConvoManipulationCheck
-          - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
-            name: manipPartnerParty
+            name: round1HadConvoManipulationCheckA
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_round1_manip_talkTopic.md
-            name: manipTalkTopic
+            name: manipTalkTopicA
           - type: submitButton
             buttonText: "Continue"
            
@@ -106,40 +91,40 @@ treatments:
           # Democrats (positions 0,2) see Rep thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
-            name: feelingThermometerRepPostRound1ShownToD
+            name: feelingThermometerRepPostRound1ShownToD_A
             showToPositions:
               - 0
               - 2
           # Republicans (positions 1,3) see Dem thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
-            name: feelingThermometerDemPostRound1ShownToR
+            name: feelingThermometerDemPostRound1ShownToR_A
             showToPositions:
               - 1
               - 3
           # Democrats (positions 0,2) see Dem thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
-            name: feelingThermometerDemPostRound1ShownToD
+            name: feelingThermometerDemPostRound1ShownToD_A
             showToPositions:
               - 0
               - 2
           # Republicans (positions 1,3) see Rep thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
-            name: feelingThermometerRepPostRound1ShownToR
+            name: feelingThermometerRepPostRound1ShownToR_A
             showToPositions:
               - 1
               - 3
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
-            name: feelingThermometerMenPostRound1
+            name: feelingThermometerMenPostRound1A
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
-            name: feelingThermometerWomenPostRound1
+            name: feelingThermometerWomenPostRound1A
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
-            name: feelingThermometerAmericansPostRound1
+            name: feelingThermometerAmericansPostRound1A
           - type: submitButton
             buttonText: "Continue"
 
@@ -149,7 +134,7 @@ treatments:
         elements:
           # Instructions for 0-3: two-same (same partner again)
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/round2_instructions_two.md
+            file: projects/santoro/partner_swap/v1/game/round2_instructions_same_person.md
             showToPositions:
               - 0
               - 1
@@ -157,7 +142,7 @@ treatments:
               - 3
 
       - name: Round 2 Pair Discussions - A
-        duration: 30
+        duration: 600
         discussion:
           chatType: video
           showNickname: true
@@ -190,10 +175,7 @@ treatments:
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
             name: round2HadConvoManipulationCheckA
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
-            name: manipPartnerPartyRound2A
-          - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_BC_talkTopic.md
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
             name: manipTalkTopicRound2A
           - type: submitButton
             buttonText: "Continue"
@@ -201,7 +183,7 @@ treatments:
       - name: redirect
         elements:
           - type: prompt
-            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics_A.md
+            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics.md
           - type: submitButton
             buttonText: "Continue"
 
@@ -212,6 +194,8 @@ treatments:
             urlParams:
               - key: participantType
                 reference: urlParams.participantType
+              - key: qualtricsRID
+                reference: urlParams.qualtricsRID
               - key: sessionType
                 value: A
 
@@ -225,40 +209,28 @@ treatments:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "B"
-                
+
       - position: 1
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "B"
       
       - position: 2
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "B"
                 
       - position: 3
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
-          - reference: urlParams.sessionType
-            comparator: equals
-            value: "B"
     
     gameStages:
       - name: Round 1 Pair Discussions - B
-        duration: 60
+        duration: 600
         discussion:
           chatType: video
           showNickname: true
@@ -284,18 +256,15 @@ treatments:
             buttonText: "The conversation has ended."
 
       - name: Post-Round 1 Manipulation Check Questions - B
-        duration: 50
+        duration: 30
         elements:
           - type: separator
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
-            name: round1HadConvoManipulationCheck
-          - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
-            name: manipPartnerParty
+            name: round1HadConvoManipulationCheckB
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_round1_manip_talkTopic.md
-            name: manipTalkTopic
+            name: manipTalkTopicB
           - type: submitButton
             buttonText: "Continue"
            
@@ -308,40 +277,40 @@ treatments:
           # Democrats (positions 0,2) see Rep thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
-            name: feelingThermometerRepPostRound1ShownToD
+            name: feelingThermometerRepPostRound1ShownToD_B
             showToPositions:
               - 0
               - 2
           # Republicans (positions 1,3) see Dem thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
-            name: feelingThermometerDemPostRound1ShownToR
+            name: feelingThermometerDemPostRound1ShownToR_B
             showToPositions:
               - 1
               - 3
           # Democrats (positions 0,2) see Dem thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
-            name: feelingThermometerDemPostRound1ShownToD
+            name: feelingThermometerDemPostRound1ShownToD_B
             showToPositions:
               - 0
               - 2
           # Republicans (positions 1,3) see Rep thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
-            name: feelingThermometerRepPostRound1ShownToR
+            name: feelingThermometerRepPostRound1ShownToR_B
             showToPositions:
               - 1
               - 3
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
-            name: feelingThermometerMenPostRound1
+            name: feelingThermometerMenPostRound1B
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
-            name: feelingThermometerWomenPostRound1
+            name: feelingThermometerWomenPostRound1B
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
-            name: feelingThermometerAmericansPostRound1
+            name: feelingThermometerAmericansPostRound1B
           - type: submitButton
             buttonText: "Continue"
 
@@ -351,7 +320,7 @@ treatments:
         elements:
           # Instructions for 0-3: two-different
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/round2_instructions_two.md
+            file: projects/santoro/partner_swap/v1/game/round2_instructions_different_person.md
             showToPositions:
               - 0
               - 1
@@ -359,7 +328,7 @@ treatments:
               - 3
       
       - name: Round 2 Pair Discussions - B
-        duration: 15
+        duration: 600
         discussion:
           chatType: video
           showNickname: true
@@ -392,10 +361,7 @@ treatments:
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
             name: round2HadConvoManipulationCheckB
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_partner_party.md
-            name: manipPartnerPartyRound2B
-          - type: prompt
-            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_BC_talkTopic.md
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
             name: manipTalkTopicRound2B
           - type: submitButton
             buttonText: "Continue"
@@ -403,7 +369,7 @@ treatments:
       - name: Qualtrics
         elements:
           - type: prompt
-            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics_B.md
+            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics.md
           - type: submitButton
             buttonText: "Continue"
 
@@ -414,5 +380,173 @@ treatments:
             urlParams:
               - key: participantType
                 reference: urlParams.participantType
+              - key: qualtricsRID
+                reference: urlParams.qualtricsRID
               - key: sessionType
                 value: B
+
+  # Treatment C: Two conversations with different partner - 4 people (blind to partner party id)
+  - name: session_type_C
+    desc: Session Type C - two conversations with different partner (4 participants)
+    playerCount: 4
+    groupComposition:
+      - position: 0
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+                
+      - position: 1
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+        
+      - position: 2
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+                       
+      - position: 3
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
+        
+    gameStages:
+      - name: Round 1 Pair Discussions - C
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 1]
+          - includePositions: [2, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions.md
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+      - name: Post-Round 1 Manipulation Check Questions - C
+        duration: 30
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round1HadConvoManipulationCheckC
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round1_manip_talkTopic.md
+            name: manipTalkTopicC
+          - type: submitButton
+            buttonText: "Continue"
+           
+      - name: Post-Round 1 Feeling Thermometers - C
+        duration: 60
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToD_C
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToR_C
+            showToPositions:
+              - 1
+              - 3
+          # Democrats (positions 0,2) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound1ShownToD_C
+            showToPositions:
+              - 0
+              - 2
+          # Republicans (positions 1,3) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound1ShownToR_C
+            showToPositions:
+              - 1
+              - 3
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound1C
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound1C
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound1C
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 2 (different partner as Round 1)
+      - name: Breakout Rooms High Level - Round 2 - C
+        duration: 15
+        elements:
+          # Instructions for 0-3: two-different
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_instructions_different_person.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+      
+      - name: Round 2 Pair Discussions - C
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 3]
+          - includePositions: [2, 1]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions.md
+          - type: submitButton
+            buttonText: "The conversation has ended."
+
+    exitSequence:     
+      - name: Post-Round 2 Manipulation Check Questions - C
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round2HadConvoManipulationCheckC
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
+            name: manipTalkTopicRound2C
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Qualtrics
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics.md
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Qualtrics Survey - C
+        elements:
+          - type: qualtrics
+            url: https://wharton.qualtrics.com/jfe/form/SV_baBr8i4yLeWnbXU
+            urlParams:
+              - key: participantType
+                reference: urlParams.participantType
+              - key: qualtricsRID
+                reference: urlParams.qualtricsRID
+              - key: sessionType
+                value: C
