@@ -7,7 +7,7 @@ interval: 1
 labelPts: [0, 50, 100]
 ---
 
-Men
+**Men**
 
 ---
 

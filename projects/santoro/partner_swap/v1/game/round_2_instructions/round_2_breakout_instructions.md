@@ -5,7 +5,9 @@ type: noResponse
 
 ### Instructions
 
-Please have a 10-minute conversation with your partner. Specifically, discuss the following: Share with your partner your life story. Do not discuss any other topic.
+Please have a 10-minute conversation with your partner. 
+
+**Discuss the following: Share with your partner your life story.** Do not discuss any other topic.
 
 ---
 

@@ -8,7 +8,7 @@ labelPts: [0, 50, 100]
 ---
 
 
-Americans
+**Americans**
 
 ---
 

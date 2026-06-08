@@ -7,7 +7,7 @@ interval: 1
 labelPts: [0, 50, 100]
 ---
 
-People who vote for the Democratic Party
+**People who vote for the Democratic Party**
 
 ---
 

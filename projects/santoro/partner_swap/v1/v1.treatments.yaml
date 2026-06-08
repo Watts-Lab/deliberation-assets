@@ -19,24 +19,28 @@ treatments:
     playerCount: 4
     groupComposition:
       - position: 0
+        title: "Democrat"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
                 
       - position: 1
+        title: "Republican"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
         
       - position: 2
+        title: "Democrat"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
                    
       - position: 3
+        title: "Republican"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
@@ -67,7 +71,7 @@ treatments:
                 comparator: equals
                 value: "D"
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
       - name: Post-Round 1 Manipulation Check Questions - A
         duration: 30
@@ -83,7 +87,7 @@ treatments:
             buttonText: "Continue"
            
       - name: Post-Round 1 Feeling Thermometers - A
-        duration: 60
+        duration: 75
         elements:
           - type: separator
           - type: prompt
@@ -130,7 +134,7 @@ treatments:
 
       # Round 2 (same partner as Round 1)
       - name: Breakout Rooms High Level - Round 2 - A
-        duration: 15
+        duration: 10
         elements:
           # Instructions for 0-3: two-same (same partner again)
           - type: prompt
@@ -165,7 +169,7 @@ treatments:
                 comparator: equals
                 value: "D"
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
     exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - A
@@ -180,7 +184,7 @@ treatments:
           - type: submitButton
             buttonText: "Continue"
 
-      - name: redirect
+      - name: Qualtrics
         elements:
           - type: prompt
             file: projects/santoro/partner_swap/v1/exit/transition_to_qualtrics.md
@@ -205,24 +209,28 @@ treatments:
     playerCount: 4
     groupComposition:
       - position: 0
+        title: "Democrat"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
 
       - position: 1
+        title: "Republican"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
       
       - position: 2
+        title: "Democrat"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
             value: "D"
                 
       - position: 3
+        title: "Republican"
         conditions:
           - reference: urlParams.participantType
             comparator: equals
@@ -253,7 +261,7 @@ treatments:
                 comparator: equals
                 value: "D"
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
       - name: Post-Round 1 Manipulation Check Questions - B
         duration: 30
@@ -269,7 +277,7 @@ treatments:
             buttonText: "Continue"
            
       - name: Post-Round 1 Feeling Thermometers - B
-        duration: 60
+        duration: 75
         elements:
           - type: separator
           - type: prompt
@@ -316,7 +324,7 @@ treatments:
 
       # Round 2 (different partner as Round 1)
       - name: Breakout Rooms High Level - Round 2 - B
-        duration: 15
+        duration: 10
         elements:
           # Instructions for 0-3: two-different
           - type: prompt
@@ -351,7 +359,7 @@ treatments:
                 comparator: equals
                 value: "D"
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
     exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - B
@@ -429,7 +437,7 @@ treatments:
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/round_1_instructions/round_1_breakout_instructions.md
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
       - name: Post-Round 1 Manipulation Check Questions - C
         duration: 30
@@ -445,7 +453,7 @@ treatments:
             buttonText: "Continue"
            
       - name: Post-Round 1 Feeling Thermometers - C
-        duration: 60
+        duration: 75
         elements:
           - type: separator
           - type: prompt
@@ -492,7 +500,7 @@ treatments:
 
       # Round 2 (different partner as Round 1)
       - name: Breakout Rooms High Level - Round 2 - C
-        duration: 15
+        duration: 10
         elements:
           # Instructions for 0-3: two-different
           - type: prompt
@@ -517,7 +525,7 @@ treatments:
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/round_2_instructions/round_2_breakout_instructions.md
           - type: submitButton
-            buttonText: "The conversation has ended."
+            buttonText: "Click here to end the call."
 
     exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - C

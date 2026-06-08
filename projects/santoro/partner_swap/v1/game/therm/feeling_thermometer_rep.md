@@ -7,7 +7,7 @@ interval: 1
 labelPts: [0, 50, 100]
 ---
 
-People who vote for the Republican Party
+**People who vote for the Republican Party**
 
 ---
 
