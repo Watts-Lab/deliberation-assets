@@ -7,7 +7,7 @@ type: noResponse
 
 Please have a 10-minute conversation with your partner. 
 
-**Discuss the following: What does the "perfect" day looks like to you?** Do not discuss any other topic.
+**Discuss the following: What does the "perfect" day look like to you?** Do not discuss any other topic.
 
 **Please note that your partner favors the Democratic Party.**
 

@@ -3,7 +3,7 @@ name: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkT
 type: multipleChoice
 ---
 
-We talked about our life stories.
+We talked about what we feel most grateful for in life.
 
 ---
 

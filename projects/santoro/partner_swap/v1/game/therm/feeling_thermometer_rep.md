@@ -4,13 +4,21 @@ type: slider
 min: 0
 max: 100
 interval: 1
-labelPts: [0, 50, 100]
+labelPts: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ---
 
 **People who vote for the Republican Party**
 
 ---
 
-- Very cold / unfavorable (0)
-- Neutral (50)
-- Very warm / favorable (100)
+- 0
+- 10
+- 20
+- 30
+- 40
+- 50
+- 60
+- 70
+- 80
+- 90
+- 100

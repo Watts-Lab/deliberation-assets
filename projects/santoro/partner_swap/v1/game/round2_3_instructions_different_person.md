@@ -1,5 +1,5 @@
 ---
-name: projects/santoro/partner_swap/v1/game/round2_instructions_different_person.md
+name: projects/santoro/partner_swap/v1/game/round2_3_instructions_different_person.md
 type: noResponse
 ---
 

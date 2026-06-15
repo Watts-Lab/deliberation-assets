@@ -13,10 +13,10 @@ introSequences:
             buttonText: "Continue"
 
 treatments:
-  # Treatment A: Two conversations with same partner - 4 people
+  # Treatment A: Three conversations with same partner - 6 people
   - name: session_type_A
-    desc: Session Type A - two conversations with same partner (4 participants)
-    playerCount: 4
+    desc: Session Type A - three conversations with same partner (6 participants)
+    playerCount: 6
     groupComposition:
       - position: 0
         title: "Democrat"
@@ -45,6 +45,20 @@ treatments:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
+
+      - position: 4
+        title: "Democrat"
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+                   
+      - position: 5
+        title: "Republican"
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
     
     gameStages:
       - name: Round 1 Pair Discussions - A
@@ -56,6 +70,7 @@ treatments:
           rooms:
           - includePositions: [0, 1]
           - includePositions: [2, 3]
+          - includePositions: [4, 5]
         elements:
           - type: separator
           - type: prompt
@@ -92,34 +107,38 @@ treatments:
           - type: separator
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
-          # Democrats (positions 0,2) see Rep thermometer first
+          # Democrats (positions 0,2,4) see Rep thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToD_A
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Dem thermometer first
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToR_A
             showToPositions:
               - 1
               - 3
-          # Democrats (positions 0,2) see Dem thermometer second
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToD_A
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Rep thermometer second
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToR_A
             showToPositions:
               - 1
               - 3
+              - 5
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
             name: feelingThermometerMenPostRound1A
@@ -134,16 +153,18 @@ treatments:
 
       # Round 2 (same partner as Round 1)
       - name: Breakout Rooms High Level - Round 2 - A
-        duration: 10
+        duration: 15
         elements:
-          # Instructions for 0-3: two-same (same partner again)
+          # Instructions for 0-5: same partner again
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/round2_instructions_same_person.md
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_same_person.md
             showToPositions:
               - 0
               - 1
               - 2
               - 3
+              - 4
+              - 5
 
       - name: Round 2 Pair Discussions - A
         duration: 600
@@ -154,6 +175,7 @@ treatments:
           rooms:
           - includePositions: [0, 1]
           - includePositions: [2, 3]
+          - includePositions: [4, 5]
         elements:
           - type: separator
           - type: prompt
@@ -171,8 +193,8 @@ treatments:
           - type: submitButton
             buttonText: "Click here to end the call."
 
-    exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - A
+        duration: 30
         elements:
           - type: separator
           - type: prompt
@@ -181,6 +203,110 @@ treatments:
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
             name: manipTalkTopicRound2A
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Post-Round 2 Feeling Thermometers - A
+        duration: 75
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2,4) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToD_A
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToR_A
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToD_A
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToR_A
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound2A
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound2A
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound2A
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 3 (same partner as Rounds 1 and 2)
+      - name: Breakout Rooms High Level - Round 3 - A
+        duration: 15
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_same_person.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+
+      - name: Round 3 Pair Discussions - A
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 1]
+          - includePositions: [2, 3]
+          - includePositions: [4, 5]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_3_instructions/round_3_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_3_instructions/round_3_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "Click here to end the call."
+
+    exitSequence:     
+      - name: Post-Round 3 Manipulation Check Questions - A
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round3HadConvoManipulationCheckA
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round3_manip_talkTopic.md
+            name: manipTalkTopicRound3A
           - type: submitButton
             buttonText: "Continue"
 
@@ -203,10 +329,10 @@ treatments:
               - key: sessionType
                 value: A
 
-  # Treatment B: Two conversations with different partner - 4 people
+  # Treatment B: Three conversations with different partners - 6 people
   - name: session_type_B
-    desc: Session Type B - two conversations with different partner (4 participants)
-    playerCount: 4
+    desc: Session Type B - three conversations with different partner (6 participants)
+    playerCount: 6
     groupComposition:
       - position: 0
         title: "Democrat"
@@ -235,6 +361,20 @@ treatments:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
+
+      - position: 4
+        title: "Democrat"
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+                
+      - position: 5
+        title: "Republican"
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
     
     gameStages:
       - name: Round 1 Pair Discussions - B
@@ -246,6 +386,7 @@ treatments:
           rooms:
           - includePositions: [0, 1]
           - includePositions: [2, 3]
+          - includePositions: [4, 5]
         elements:
           - type: separator
           - type: prompt
@@ -282,34 +423,38 @@ treatments:
           - type: separator
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
-          # Democrats (positions 0,2) see Rep thermometer first
+          # Democrats (positions 0,2,4) see Rep thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToD_B
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Dem thermometer first
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToR_B
             showToPositions:
               - 1
               - 3
-          # Democrats (positions 0,2) see Dem thermometer second
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToD_B
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Rep thermometer second
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToR_B
             showToPositions:
               - 1
               - 3
+              - 5
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
             name: feelingThermometerMenPostRound1B
@@ -322,18 +467,19 @@ treatments:
           - type: submitButton
             buttonText: "Continue"
 
-      # Round 2 (different partner as Round 1)
+      # Round 2 (different partner from Round 1)
       - name: Breakout Rooms High Level - Round 2 - B
-        duration: 10
+        duration: 15
         elements:
-          # Instructions for 0-3: two-different
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/round2_instructions_different_person.md
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_different_person.md
             showToPositions:
               - 0
               - 1
               - 2
               - 3
+              - 4
+              - 5
       
       - name: Round 2 Pair Discussions - B
         duration: 600
@@ -343,7 +489,8 @@ treatments:
           showTitle: true
           rooms:
           - includePositions: [0, 3]
-          - includePositions: [2, 1]
+          - includePositions: [2, 5]
+          - includePositions: [4, 1]
         elements:
           - type: separator
           - type: prompt
@@ -361,8 +508,8 @@ treatments:
           - type: submitButton
             buttonText: "Click here to end the call."
 
-    exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - B
+        duration: 30
         elements:
           - type: separator
           - type: prompt
@@ -371,6 +518,110 @@ treatments:
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
             name: manipTalkTopicRound2B
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Post-Round 2 Feeling Thermometers - B
+        duration: 75
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2,4) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToD_B
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToR_B
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToD_B
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToR_B
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound2B
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound2B
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound2B
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 3 (different partner from Rounds 1 and 2)
+      - name: Breakout Rooms High Level - Round 3 - B
+        duration: 15
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_different_person.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+
+      - name: Round 3 Pair Discussions - B
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 5]
+          - includePositions: [2, 1]
+          - includePositions: [4, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_3_instructions/round_3_breakout_instructions_shown_to_Republicans.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "R"
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_3_instructions/round_3_breakout_instructions_shown_to_Democrats.md
+            conditions:
+              - reference: urlParams.participantType
+                comparator: equals
+                value: "D"
+          - type: submitButton
+            buttonText: "Click here to end the call."
+
+    exitSequence:     
+      - name: Post-Round 3 Manipulation Check Questions - B
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round3HadConvoManipulationCheckB
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round3_manip_talkTopic.md
+            name: manipTalkTopicRound3B
           - type: submitButton
             buttonText: "Continue"
 
@@ -393,10 +644,10 @@ treatments:
               - key: sessionType
                 value: B
 
-  # Treatment C: Two conversations with different partner - 4 people (blind to partner party id)
+  # Treatment C: Three conversations with different partner - 6 people (blind to partner party id)
   - name: session_type_C
-    desc: Session Type C - two conversations with different partner (4 participants)
-    playerCount: 4
+    desc: Session Type C - three conversations with different partner (6 participants, blind to party)
+    playerCount: 6
     groupComposition:
       - position: 0
         conditions:
@@ -421,6 +672,18 @@ treatments:
           - reference: urlParams.participantType
             comparator: equals
             value: "R"
+
+      - position: 4
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "D"
+                       
+      - position: 5
+        conditions:
+          - reference: urlParams.participantType
+            comparator: equals
+            value: "R"
         
     gameStages:
       - name: Round 1 Pair Discussions - C
@@ -432,6 +695,7 @@ treatments:
           rooms:
           - includePositions: [0, 1]
           - includePositions: [2, 3]
+          - includePositions: [4, 5]
         elements:
           - type: separator
           - type: prompt
@@ -458,34 +722,38 @@ treatments:
           - type: separator
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
-          # Democrats (positions 0,2) see Rep thermometer first
+          # Democrats (positions 0,2,4) see Rep thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToD_C
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Dem thermometer first
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToR_C
             showToPositions:
               - 1
               - 3
-          # Democrats (positions 0,2) see Dem thermometer second
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
             name: feelingThermometerDemPostRound1ShownToD_C
             showToPositions:
               - 0
               - 2
-          # Republicans (positions 1,3) see Rep thermometer second
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
             name: feelingThermometerRepPostRound1ShownToR_C
             showToPositions:
               - 1
               - 3
+              - 5
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
             name: feelingThermometerMenPostRound1C
@@ -498,18 +766,19 @@ treatments:
           - type: submitButton
             buttonText: "Continue"
 
-      # Round 2 (different partner as Round 1)
+      # Round 2 (different partner from Round 1)
       - name: Breakout Rooms High Level - Round 2 - C
-        duration: 10
+        duration: 15
         elements:
-          # Instructions for 0-3: two-different
           - type: prompt
-            file: projects/santoro/partner_swap/v1/game/round2_instructions_different_person.md
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_different_person.md
             showToPositions:
               - 0
               - 1
               - 2
               - 3
+              - 4
+              - 5
       
       - name: Round 2 Pair Discussions - C
         duration: 600
@@ -519,7 +788,8 @@ treatments:
           showTitle: true
           rooms:
           - includePositions: [0, 3]
-          - includePositions: [2, 1]
+          - includePositions: [2, 5]
+          - includePositions: [4, 1]
         elements:
           - type: separator
           - type: prompt
@@ -527,8 +797,8 @@ treatments:
           - type: submitButton
             buttonText: "Click here to end the call."
 
-    exitSequence:     
       - name: Post-Round 2 Manipulation Check Questions - C
+        duration: 30
         elements:
           - type: separator
           - type: prompt
@@ -537,6 +807,100 @@ treatments:
           - type: prompt
             file: projects/santoro/partner_swap/v1/game/manip_checks/post_round2_manip_talkTopic.md
             name: manipTalkTopicRound2C
+          - type: submitButton
+            buttonText: "Continue"
+
+      - name: Post-Round 2 Feeling Thermometers - C
+        duration: 75
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_instructions.md
+          # Democrats (positions 0,2,4) see Rep thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToD_C
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Dem thermometer first
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToR_C
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          # Democrats (positions 0,2,4) see Dem thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_dem.md
+            name: feelingThermometerDemPostRound2ShownToD_C
+            showToPositions:
+              - 0
+              - 2
+              - 4
+          # Republicans (positions 1,3,5) see Rep thermometer second
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_rep.md
+            name: feelingThermometerRepPostRound2ShownToR_C
+            showToPositions:
+              - 1
+              - 3
+              - 5
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_men.md
+            name: feelingThermometerMenPostRound2C
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_women.md
+            name: feelingThermometerWomenPostRound2C
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/therm/feeling_thermometer_americans.md
+            name: feelingThermometerAmericansPostRound2C
+          - type: submitButton
+            buttonText: "Continue"
+
+      # Round 3 (different partner from Rounds 1 and 2)
+      - name: Breakout Rooms High Level - Round 3 - C
+        duration: 15
+        elements:
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round2_3_instructions_different_person.md
+            showToPositions:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+
+      - name: Round 3 Pair Discussions - C
+        duration: 600
+        discussion:
+          chatType: video
+          showNickname: true
+          showTitle: true
+          rooms:
+          - includePositions: [0, 5]
+          - includePositions: [2, 1]
+          - includePositions: [4, 3]
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/round_3_instructions/round_3_breakout_instructions.md
+          - type: submitButton
+            buttonText: "Click here to end the call."
+
+    exitSequence:     
+      - name: Post-Round 3 Manipulation Check Questions - C
+        elements:
+          - type: separator
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_convo_manip_hadconvo.md
+            name: round3HadConvoManipulationCheckC
+          - type: prompt
+            file: projects/santoro/partner_swap/v1/game/manip_checks/post_round3_manip_talkTopic.md
+            name: manipTalkTopicRound3C
           - type: submitButton
             buttonText: "Continue"
 

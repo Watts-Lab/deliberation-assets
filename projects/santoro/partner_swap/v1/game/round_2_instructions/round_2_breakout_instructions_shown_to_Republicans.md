@@ -7,7 +7,7 @@ type: noResponse
 
 Please have a 10-minute conversation with your partner. 
 
-**Discuss the following: Share with your partner your life story.** Do not discuss any other topic.
+**Discuss the following: For what in your life do you feel most grateful?** Do not discuss any other topic.
 
 **Please note that your partner favors the Democratic Party.**
 
